@@ -3,21 +3,16 @@ import { useSpring } from 'react-spring'
 import validate from './validateInfo'
 import useForm from './useForm'
 import {
-  ContactBackground,
-  FormContainer,
-  FormContent,
-  CloseContactButton,
-  FormWrap,
-  FormH1,
-  FormInputs,
-  FormLabel,
-  FormInput,
-  FormTextArea,
-  FormButton,
-  SuccessFormWrap,
+  ContactBackground, FormContainer,
+  FormContent, CloseContactButton,
+  FormWrap, FormH1,
+  FormInputs, FormLabel,
+  FormInput, FormTextArea,
+  FormButton, SuccessFormWrap,
+  FormImgLottie, FormImgWrap,
   FormImg
 } from './ContactElements'
-
+import * as SendMessage from '../../images/send-message.json'
 
 const Contact = ({ showModal, setShowModal, contactForm }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -33,6 +28,21 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
     opacity: showModal ? 1 : 0,
     transform: showModal ? 'translateY(0%)' : 'translateY(-100%)'
   })
+
+  const [isPaused, setIsPaused] = useState(false)
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    renderer: 'svg',
+    animationData: SendMessage.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid meet'
+    },
+    initialSegment: [0, 120],
+  }
+  function toggleIsPaused() {
+    setIsPaused(!isPaused)
+  }
 
   function submitForm() {
     setIsSubmitted(true)
@@ -108,7 +118,23 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
                   <CloseContactButton aria-label='Close modal' onClick={() => setShowModal(prev => !prev)} />
                   <SuccessFormWrap>
                     <FormH1>{contactForm.successMsg}</FormH1>
-                    <FormImg src={contactForm.successImg} alt='success-image' />
+                    <FormImgWrap>
+                      {
+                        !isPaused ? (
+                          <FormImgLottie options={defaultOptions}
+                            height='100%'
+                            eventListeners={[
+                              {
+                                eventName: 'complete',
+                                callback: () => toggleIsPaused()
+                              }
+                            ]}
+                          />
+                        ) : (
+                          <FormImg src={contactForm.successImg} alt='success-image' />
+                        )
+                      }
+                    </FormImgWrap>
                   </SuccessFormWrap>
                 </FormContent>
               )}
@@ -120,28 +146,3 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
 }
 
 export default Contact
-
-
-/*import React, { useState } from 'react'
-import FormSuccess from './FormSuccess'
-import FormContact from './FormContact'
-
-const Form = ({ showModal, setShowModal }) => {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  function submitForm() {
-    setIsSubmitted(true)
-  }
-  return (
-    <div>
-      {!isSubmitted ? (
-        <FormContact submitForm={submitForm} showModal={showModal}
-          setShowModal={setShowModal} />
-      ) : (
-        <FormSuccess />
-      )}
-    </div>
-  )
-}
-
-export default Form*/

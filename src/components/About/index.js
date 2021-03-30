@@ -1,13 +1,14 @@
 import React from 'react'
 import { FaEnvelope, FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaSkype } from 'react-icons/fa'
 import { animateScroll as scroll } from 'react-scroll'
+import { Button } from '../ButtonElement'
 import {
   AboutContainer, Icon,
   CloseIcon, AboutWrapper,
   AboutGrid, AboutImg,
   AboutInfo, AboutImgWrap,
   AboutName, AboutDescription,
-  BtnWrap, BtnDownload,
+  BtnWrap,
   ContactWrapper, ContactSection,
   ContactIconDiv, ContactSectionTitle,
   ContactSectionItem, ContactInfoDiv,
@@ -46,7 +47,7 @@ const About = ({
               {about.description}
             </AboutDescription>
             <BtnWrap>
-              <BtnDownload href={about.resumeLink} target="_blank">{about.resumeBtn}</BtnDownload>
+              <Button href={about.resumeLink} target="_blank">{about.resumeBtn}</Button>
             </BtnWrap>
           </AboutInfo>
         </AboutGrid>
@@ -83,7 +84,7 @@ const About = ({
           </ContactSection>
         </ContactWrapper>
         <BtnWrap>
-          <BtnDownload onClick={openModal}>{about.contactBtn}</BtnDownload>
+          <Button onClick={openModal}>{about.contactBtn}</Button>
         </BtnWrap>
         <SocialMedia>
           <SocialMediaWrap>

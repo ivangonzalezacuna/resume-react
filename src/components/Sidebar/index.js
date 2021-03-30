@@ -46,26 +46,25 @@ const Sidebar = ({
             <SidebarLink to={info.link} key={index}
               onClick={() => { func1(); func2(info.link); }}
               smooth={true} duration={500} spy={true}
-              exact='true' offset={-50}
-            >{info.title}</SidebarLink>
+              exact='true' offset={-50}>{info.title}</SidebarLink>
           ))}
         </SidebarMenu>
       </SidebarWrapper>
       <SocialMediaWrap onClick={toggleSidebar}>
         <SocialIcons>
-          <SocialIconLink key={0} href={social.linkedinLink} target="_blank" aria-label={social.linkedinLabel}>
+          <SocialIconLink href={social.linkedinLink} target="_blank" aria-label={social.linkedinLabel}>
             <FaLinkedinIn />
           </SocialIconLink>
-          <SocialIconLink key={1} href={social.githubLink} target="_blank" aria-label={social.githubLabel}>
+          <SocialIconLink href={social.githubLink} target="_blank" aria-label={social.githubLabel}>
             <FaGithub />
           </SocialIconLink>
-          <SocialIconLink key={2} href={social.skypeLink} target="_blank" aria-label={social.skypeLabel}>
+          <SocialIconLink href={social.skypeLink} target="_blank" aria-label={social.skypeLabel}>
             <FaSkype />
           </SocialIconLink>
-          <SocialIconLink key={3} href={social.instagramLink} target="_blank" aria-label={social.instagramLabel}>
+          <SocialIconLink href={social.instagramLink} target="_blank" aria-label={social.instagramLabel}>
             <FaInstagram />
           </SocialIconLink>
-          <SocialIconLink key={4} href={social.facebookLink} target="_blank" aria-label={social.facebookLabel}>
+          <SocialIconLink href={social.facebookLink} target="_blank" aria-label={social.facebookLabel}>
             <FaFacebookF />
           </SocialIconLink>
         </SocialIcons>

@@ -77,7 +77,7 @@ export const translation_ES = {
         company: 'Universidad de Vigo',
         jobTitle: 'I + D',
         dates: 'Febrero 2020 - Actualidad',
-        description: 'Investigación y desarrollo usando Golang y Python.',
+        description: 'Investigación y desarrollo usando Golang y Python entre otras cosas. Además de Qt y así.',
         fadeLeft: true,
         fadeRight: false
       },
@@ -172,5 +172,9 @@ export const translation_ES = {
         level: '90%',
       }
     ]
+  },
+  notFound: {
+    button: "Página Principal",
+    message: "Página No Encontrada"
   }
 }

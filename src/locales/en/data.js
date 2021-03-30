@@ -172,5 +172,9 @@ export const translation_EN = {
         level: '90%',
       }
     ]
+  },
+  notFound: {
+    button: "Home Page",
+    message: "Page Not Found"
   }
 }

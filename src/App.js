@@ -1,6 +1,7 @@
 import GlobalStyle from './globalStyles'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Resume from './pages'
+import Resume from './pages/resume'
+import Page404 from './pages/page404'
 import { useTranslation } from 'react-i18next'
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route path="/" exact render={() =>
+          <Route exact path="/" render={() =>
             <Resume t={t} i18n={i18n} />}
           />
+          <Route path="*" render={() =>
+            <Page404 t={t} />} />
         </Switch>
       </Router>
     </>

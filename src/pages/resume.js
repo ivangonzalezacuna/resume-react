@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
@@ -7,6 +7,7 @@ import Skills from '../components/SkillsSection'
 import Footer from '../components/Footer'
 import About from '../components/About'
 import Contact from '../components/Contact'
+import Loading from '../components/Loading'
 
 const Resume = ({ t, i18n }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -33,9 +34,65 @@ const Resume = ({ t, i18n }) => {
     i18n.changeLanguage("en")
   }
 
+  const [test, setTest] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTest(true)
+    }, 2250)
+  }, [])
+
   return (
     <>
-      <Contact
+      {!test ? (
+        <Loading />
+      ) : (
+        <>
+          <Contact
+            showModal={showModal}
+            setShowModal={setShowModal}
+            contactForm={t('contactForm', { returnObjects: true })} />
+          <About
+            isAboutOpen={isAboutOpen}
+            toggleAbout={toggleAbout}
+            about={t('about', { returnObjects: true })}
+            social={t('social', { returnObjects: true })}
+            openModal={openModal} />
+          <Sidebar
+            currentLang={i18n.language}
+            setLangES={setLangES} setLangEN={setLangEN}
+            isSidebarOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+            toggleAbout={toggleAbout}
+            menuData={t('navBar', { returnObjects: true })}
+            social={t('social', { returnObjects: true })} />
+          <Navbar
+            currentLang={i18n.language}
+            setLangES={setLangES} setLangEN={setLangEN}
+            toggleSidebar={toggleSidebar}
+            toggleAbout={toggleAbout}
+            menuData={t('navBar', { returnObjects: true })} />
+          <Header
+            header={t('header', { returnObjects: true })}
+            openModal={openModal} />
+          <InfoSection
+            info={t('work', { returnObjects: true })} />
+          <InfoSection
+            info={t('education', { returnObjects: true })} />
+          <Skills
+            skills={t('skills', { returnObjects: true })} />
+          <Footer
+            social={t('social', { returnObjects: true })} />
+        </>
+      )}
+    </>
+  )
+}
+
+export default Resume
+
+/*
+<Contact
         showModal={showModal}
         setShowModal={setShowModal}
         contactForm={t('contactForm', { returnObjects: true })} />
@@ -69,9 +126,5 @@ const Resume = ({ t, i18n }) => {
       <Skills
         skills={t('skills', { returnObjects: true })} />
       <Footer
-        social={t('social', { returnObjects: true })} />
-    </>
-  )
-}
-
-export default Resume
+        social={t('social', { returnObjects: true })}></Footer>
+*/

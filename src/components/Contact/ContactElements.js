@@ -2,6 +2,7 @@ import { MdClose } from 'react-icons/md'
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { final } from '../../data/palette'
+import Lottie from 'react-lottie'
 
 export const ContactBackground = styled.div`
   width: 100%;
@@ -147,12 +148,12 @@ export const FormTextArea = styled.textarea`
 export const FormButton = styled.button`
   width: 100%;
   background: ${final.foreground_light2};
+  color: ${final.background};
   padding: 14px 0;
   margin-top: 25px;
   margin-bottom: 20px;
   border: none;
-  border-radius: 4px;
-  color: ${final.background_light};
+  border-radius: 50px;
   font-size: clamp(16px, 4vw, 20px);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -175,16 +176,28 @@ export const SuccessFormWrap = styled.form`
   transform: translate(-50%, -50%);
   width: 100%;
   height: 90%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
 `
 
-export const FormImg = styled.img`
-  width: 60%;
-  height: 60%;
-  position: absolute;
+export const FormImgWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 95%;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%, -50%);
 `
+
+export const FormImg = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
+export const FormImgLottie = styled(Lottie)``

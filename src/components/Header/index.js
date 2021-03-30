@@ -1,6 +1,7 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import HeaderBg from '../../images/header.jpg'
+import { Button } from '../ButtonElement'
 import {
   HeaderSection,
   HeaderWrapper,
@@ -8,8 +9,7 @@ import {
   HeaderImage,
   HeaderContainer,
   HeaderName,
-  HeaderDescription,
-  HeaderButton
+  HeaderDescription
 } from './HeaderElements'
 
 const Header = ({ openModal, header }) => {
@@ -26,9 +26,9 @@ const Header = ({ openModal, header }) => {
               <HeaderDescription>{header.description}</HeaderDescription>
             </Fade>
             <Fade bottom duration={1000} delay={1000}>
-              <HeaderButton onClick={openModal}>
+              <Button onClick={openModal}>
                 {header.contactButton}
-              </HeaderButton>
+              </Button>
             </Fade>
           </HeaderContent>
         </HeaderContainer>

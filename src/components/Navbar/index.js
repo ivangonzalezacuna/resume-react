@@ -60,9 +60,7 @@ const Navbar = ({
             <NavMenuLink to={item.link} key={index}
               onClick={item.link === 'about' ? toggleAbout : undefined}
               smooth={true} duration={500} spy={true}
-              exact='true' offset={-50}>
-              {item.title}
-            </NavMenuLink>
+              exact='true' offset={-50}>{item.title}</NavMenuLink>
           ))}
         </NavMenu>
         <NavLang>

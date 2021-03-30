@@ -195,12 +195,20 @@ export const ContactSection = styled.div`
   width: auto;
   max-width: 1100px;
   height: 150px;
-  background: ${final.background};
+  background: ${final.foreground_dark1_op01};
   margin: 5px 10px;
-  box-shadow: 0 1px 3px ${final.foreground_light2};
+  box-shadow: 0 1px 3px ${final.foreground_light1_op05};
   border-radius: 6px;
   display: flex;
   align-items: center;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-1px);
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 480px) {
     flex-direction: column;
@@ -256,15 +264,15 @@ export const ContactSectionItem = styled.h1`
 `
 
 export const SocialMedia = styled.section`
-  max-width: 1000px;
   width: 100%;
+  padding: 0 24px;
 `
 
 export const SocialMediaWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 48px auto 0 auto;
 
   @media screen and (max-width: 820px) {

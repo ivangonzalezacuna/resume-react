@@ -21,7 +21,6 @@ import {
 } from './InfoElements'
 
 const InfoSection = ({ info }) => {
-
   return (
     <>
       <InfoContainer id={info.id}>
@@ -35,9 +34,7 @@ const InfoSection = ({ info }) => {
                 <InfoRow>
                   <Column1>
                     <TextWrapper>
-                      <TextRow>
-                        <Company>{section.company}</Company>
-                      </TextRow>
+                      <TextRow><Company>{section.company}</Company></TextRow>
                       <TextRow>
                         <TextIcon>
                           {info.icon ? <MdWork /> : <FaUserGraduate />}
@@ -45,9 +42,7 @@ const InfoSection = ({ info }) => {
                         <JobTitle>{section.jobTitle}</JobTitle>
                       </TextRow>
                       <TextRow>
-                        <TextIcon>
-                          <FaCalendarAlt />
-                        </TextIcon>
+                        <TextIcon><FaCalendarAlt /></TextIcon>
                         <Dates>{section.dates}</Dates>
                       </TextRow>
                     </TextWrapper>

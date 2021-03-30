@@ -4,5 +4,7 @@ export const final = {
   foreground_light1: '#32d7ff',
   foreground_light2: '#00b5e1',
   foreground_dark1: '#005061',
-  foreground_dark2: '#00738b'
+  foreground_dark2: '#00738b',
+  foreground_light1_op05: '#32d7ff80',
+  foreground_dark1_op01: '#0050611A'
 }

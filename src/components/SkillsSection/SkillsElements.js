@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { IoIosCloseCircle, IoIosInformationCircle } from 'react-icons/io'
 import { final } from '../../data/palette'
 
 export const SkillsContainer = styled.div`
@@ -33,14 +34,14 @@ export const TopLine = styled.p`
   text-transform: uppercase;
 `
 
-export const ServicesWrapper = styled.div`
+export const SkillsWrapper = styled.div`
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   align-items: center;
-  grid-gap: 16px;
+  grid-gap: 24px;
   padding: 100px 50px;
 
   @media screen and (max-width: 400px) {
@@ -48,62 +49,67 @@ export const ServicesWrapper = styled.div`
   }
 `
 
-export const ServicesCard = styled.div`
-    background: ${final.background_light};
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 10px;
-    max-height: 340px;
-    padding: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-        transform: scale(1.02);
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-    }
+export const SkillCard = styled.div`
+  background: ${final.background_light};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 320px;
+  max-height: 320px;
+  padding: 20px;
+  box-shadow: 0 1px 3px ${final.foreground_light1_op05};
 `
 
-export const ServicesIcon = styled.img`
-    height: 140px;
-    width: 140px;
-    margin-bottom: 10px;
+export const ShowBackCard = styled(IoIosInformationCircle)`
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  color: ${final.background};
+  font-size: 36px;
+  padding: 5px;
+  cursor: pointer;
 `
 
-export const ServicesH2 = styled.h2`
-    font-size: 1rem;
-    margin-bottom: 10px;
+export const CloseBackCard = styled(IoIosCloseCircle)`
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  color: ${final.background};
+  font-size: 36px;
+  padding: 5px;
+  cursor: pointer;
 `
 
-export const ServicesP = styled.p`
-    font-size: 1rem;
-    text-align: center;
+export const FrontImg = styled.img`
+  height: 140px;
+  width: 140px;
+  margin-bottom: 20px;
 `
 
-export const ServiceBar = styled.div`
+export const BackImg = styled.img`
+  height: 100px;
+  width: 100px;
+  margin-bottom: 40px;
+`
+
+export const SkillH2 = styled.h2`
+  font-size: 1rem;
+`
+
+export const SkillP = styled.p`
+  font-size: 0.9rem;
+  text-align: center;
+`
+
+export const SkillBarWrap = styled.div`
   margin: 20px 0;
   padding: 0;
   height: 20px;
   border-radius: 4px;
   width: 100%;
-  background: ${final.background};
-`
-
-const animate = keyframes`
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-`
-
-const animate2 = keyframes`
-  from { opacity: 0 }
-  to { opacity: 1 }
+  background-color: ${final.background};
 `
 
 export const SkillBar = styled.div`
@@ -116,11 +122,12 @@ export const SkillBar = styled.div`
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1),
                     0px 1px rgba(255, 255, 255, 0.8);
 
-  ${ServicesCard}:hover & {
-    transform-origin: left;
-    animation: ${animate} 1s cubic-bezier(.13,1.2,1,.99) forwards;
-  }
+
 `
+/*${ServicesCard}:hover & {
+  transform-origin: left;
+  animation: ${animate} 1s cubic-bezier(.13,1.2,1,.99) forwards;
+}*/
 
 export const SkillValue = styled.p`
   height: 100%;
@@ -130,9 +137,4 @@ export const SkillValue = styled.p`
   position: absolute;
   margin-left: 8px;
   top: 3px;
-
-  ${ServicesCard}:hover & {
-    transform-origin: left;
-    animation: ${animate2} 1s ease-in-out;
-  }
 `

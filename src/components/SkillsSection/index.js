@@ -1,38 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReactCardFlip from 'react-card-flip'
 import {
-  ServicesWrapper,
-  ServicesCard,
-  ServicesIcon,
-  ServicesH2,
+  SkillsWrapper,
+  SkillCard,
   TopLine,
-  ServiceBar,
+  SkillBarWrap,
   SkillBar,
   SkillValue,
   SkillsContainer,
-  TopLineWrap
+  TopLineWrap,
+  FrontImg,
+  BackImg,
+  SkillH2,
+  SkillP,
+  ShowBackCard,
+  CloseBackCard
 } from './SkillsElements'
 
-const Skills = ({ skills }) => {
+const Card = ({ info }) => {
+  const [isFlipped, setIsFlipped] = useState(false)
 
+  const toggleFlip = () => {
+    setIsFlipped(!isFlipped)
+  }
+
+  return (
+    <>
+      <ReactCardFlip
+        isFlipped={isFlipped}
+        flipDirection='vertical'
+        flipSpeedBackToFront='0.3'
+        flipSpeedFrontToBack='0.3'>
+        <SkillCard>
+          <ShowBackCard onClick={toggleFlip} />
+          <FrontImg src={info.icon} />
+          <SkillH2>{info.technology}</SkillH2>
+          <SkillBarWrap>
+            <SkillBar skillValue={info.level}>
+              <SkillValue>{info.level}</SkillValue>
+            </SkillBar>
+          </SkillBarWrap>
+        </SkillCard>
+        <SkillCard>
+          <CloseBackCard onClick={toggleFlip} />
+          <BackImg src={info.icon} />
+          <SkillP>{info.description}</SkillP>
+        </SkillCard>
+      </ReactCardFlip>
+    </>
+  )
+}
+
+const Skills = ({ skills }) => {
   return (
     <>
       <SkillsContainer id={skills.id}>
         <TopLineWrap>
           <TopLine>{skills.sectionTitle}</TopLine>
         </TopLineWrap>
-        <ServicesWrapper>
+        <SkillsWrapper>
           {skills.data.map((info, index) => (
-            <ServicesCard key={index}>
-              <ServicesIcon src={info.icon} />
-              <ServicesH2>{info.technology}</ServicesH2>
-              <ServiceBar>
-                <SkillBar skillValue={info.level}>
-                  <SkillValue> {info.level}</SkillValue>
-                </SkillBar>
-              </ServiceBar>
-            </ServicesCard>
+            <Card info={info} key={index} />
           ))}
-        </ServicesWrapper>
+        </SkillsWrapper>
       </SkillsContainer>
     </>
   )
