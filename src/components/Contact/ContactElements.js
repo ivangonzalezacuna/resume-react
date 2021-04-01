@@ -1,8 +1,8 @@
 import { MdClose } from 'react-icons/md'
 import styled from 'styled-components'
-import { animated } from 'react-spring'
 import { final } from '../../data/palette'
 import Lottie from 'react-lottie'
+import { motion } from 'framer-motion'
 
 export const ContactBackground = styled.div`
   width: 100%;
@@ -27,7 +27,7 @@ export const CloseContactButton = styled(MdClose)`
   color: ${final.background_light};
 `
 
-export const FormContainer = styled(animated.div)`
+export const FormContainer = styled(motion.div)`
   margin: 100px auto;
   max-width: 800px;
   width: calc(100% - 20vw);

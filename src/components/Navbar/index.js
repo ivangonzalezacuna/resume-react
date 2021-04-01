@@ -7,9 +7,10 @@ import {
   NavMenu,
   Logo,
   NavMenuLink,
-  MobileIcon,
+  IconWrap,
   NavLang,
-  NavLangItem
+  NavLangItem,
+  MobileIcon
 } from './NavbarElements'
 
 const Navbar = ({
@@ -21,7 +22,6 @@ const Navbar = ({
   currentLang
 }) => {
   const [scrollNav, setScrollNav] = useState(false)
-  //const [hideLogo, setHideLogo] = useState(false)
 
   const changeNav = () => {
     if (window.scrollY >= window.innerHeight * 0.80) {
@@ -31,17 +31,8 @@ const Navbar = ({
     }
   }
 
-  /*const changeLogo = () => {
-    if (window.scrollY >= 200 && window.scrollY <= 500) {
-      setHideLogo(true)
-    } else {
-      setHideLogo(false)
-    }
-  }*/
-
   useEffect(() => {
     window.addEventListener('scroll', changeNav)
-    //window.addEventListener('scroll', changeLogo)
   }, [])
 
   const toggleHome = () => {
@@ -53,7 +44,9 @@ const Navbar = ({
       <Nav scrollNav={scrollNav}>
         <Logo to='/' onClick={toggleHome}>ivan</Logo>
         <MobileIcon onClick={toggleSidebar}>
-          <FaBars />
+          <IconWrap scrollNav={scrollNav}>
+            <FaBars />
+          </IconWrap>
         </MobileIcon>
         <NavMenu>
           {menuData.map((item, index) => (

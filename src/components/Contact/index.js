@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { useSpring } from 'react-spring'
 import validate from './validateInfo'
 import useForm from './useForm'
 import {
@@ -21,13 +20,14 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
     submitForm,
     validate
   )
-  const animation = useSpring({
-    config: {
-      duration: 250
-    },
-    opacity: showModal ? 1 : 0,
-    transform: showModal ? 'translateY(0%)' : 'translateY(-100%)'
-  })
+
+  const modalVariants = {
+    hidden: { opacity: 0, transform: 'translateY(-100%)' },
+    visible: {
+      opacity: 1, transform: 'translateY(0%)',
+      transition: { duration: 0.5 },
+    }
+  }
 
   const [isPaused, setIsPaused] = useState(false)
   const defaultOptions = {
@@ -59,7 +59,8 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
       {
         showModal ? (
           <ContactBackground ref={modalRef} onClick={closeModal} >
-            <FormContainer style={animation}>
+            <FormContainer variants={modalVariants}
+              initial='hidden' animate='visible'>
               {!isSubmitted ? (
                 <FormContent>
                   <CloseContactButton aria-label='Close modal' onClick={() => setShowModal(prev => !prev)} />

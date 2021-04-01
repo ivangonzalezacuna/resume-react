@@ -34,17 +34,17 @@ const Resume = ({ t, i18n }) => {
     i18n.changeLanguage("en")
   }
 
-  const [test, setTest] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
-      setTest(true)
+      setIsLoading(true)
     }, 2250)
   }, [])
 
   return (
     <>
-      {!test ? (
+      {!isLoading ? (
         <Loading />
       ) : (
         <>
@@ -53,6 +53,9 @@ const Resume = ({ t, i18n }) => {
             setShowModal={setShowModal}
             contactForm={t('contactForm', { returnObjects: true })} />
           <About
+            currentLang={i18n.language}
+            setLangES={setLangES}
+            setLangEN={setLangEN}
             isAboutOpen={isAboutOpen}
             toggleAbout={toggleAbout}
             about={t('about', { returnObjects: true })}
@@ -60,7 +63,8 @@ const Resume = ({ t, i18n }) => {
             openModal={openModal} />
           <Sidebar
             currentLang={i18n.language}
-            setLangES={setLangES} setLangEN={setLangEN}
+            setLangES={setLangES}
+            setLangEN={setLangEN}
             isSidebarOpen={isSidebarOpen}
             toggleSidebar={toggleSidebar}
             toggleAbout={toggleAbout}
@@ -68,7 +72,8 @@ const Resume = ({ t, i18n }) => {
             social={t('social', { returnObjects: true })} />
           <Navbar
             currentLang={i18n.language}
-            setLangES={setLangES} setLangEN={setLangEN}
+            setLangES={setLangES}
+            setLangEN={setLangEN}
             toggleSidebar={toggleSidebar}
             toggleAbout={toggleAbout}
             menuData={t('navBar', { returnObjects: true })} />
@@ -90,41 +95,3 @@ const Resume = ({ t, i18n }) => {
 }
 
 export default Resume
-
-/*
-<Contact
-        showModal={showModal}
-        setShowModal={setShowModal}
-        contactForm={t('contactForm', { returnObjects: true })} />
-      <About
-        isAboutOpen={isAboutOpen}
-        toggleAbout={toggleAbout}
-        about={t('about', { returnObjects: true })}
-        social={t('social', { returnObjects: true })}
-        openModal={openModal} />
-      <Sidebar
-        currentLang={i18n.language}
-        setLangES={setLangES} setLangEN={setLangEN}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        toggleAbout={toggleAbout}
-        menuData={t('navBar', { returnObjects: true })}
-        social={t('social', { returnObjects: true })} />
-      <Navbar
-        currentLang={i18n.language}
-        setLangES={setLangES} setLangEN={setLangEN}
-        toggleSidebar={toggleSidebar}
-        toggleAbout={toggleAbout}
-        menuData={t('navBar', { returnObjects: true })} />
-      <Header
-        header={t('header', { returnObjects: true })}
-        openModal={openModal} />
-      <InfoSection
-        info={t('work', { returnObjects: true })} />
-      <InfoSection
-        info={t('education', { returnObjects: true })} />
-      <Skills
-        skills={t('skills', { returnObjects: true })} />
-      <Footer
-        social={t('social', { returnObjects: true })}></Footer>
-*/

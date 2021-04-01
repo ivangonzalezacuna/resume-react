@@ -78,6 +78,7 @@ export const InfoRow = styled.div`
   grid-gap: 10px;
   align-items: center;
   grid-template-areas: 'col1 col2';
+  width: 100%;
 
   @media screen and (max-width: 800px) {
     grid-template-areas: 'col1 col1' 'col2 col2';
@@ -98,7 +99,7 @@ export const Column2 = styled.div`
 
 export const TextWrapper = styled.div`
   max-width: 540px;
-  height: 200px;
+  min-height: 200px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -186,20 +187,4 @@ export const TextIcon = styled.a`
   font-size: 16px;
   margin-right: 10px;
   display: 'block';
-`
-
-export const BtnWrap = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`
-
-export const ImgWrap = styled.div`
-  max-width: 555px;
-  height: 100%;
-`
-
-export const Img = styled.img`
-  width: 100%;
-  margin: 0 0 10px 0;
-  padding-right: 0;
 `

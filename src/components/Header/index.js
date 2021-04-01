@@ -1,5 +1,4 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade'
 import HeaderBg from '../../images/header.jpg'
 import { Button } from '../ButtonElement'
 import {
@@ -9,8 +8,33 @@ import {
   HeaderImage,
   HeaderContainer,
   HeaderName,
-  HeaderDescription
+  HeaderDescription,
+  HeaderBtnWrap
 } from './HeaderElements'
+
+const nameVariants = {
+  hidden: { opacity: 0, transform: 'translateX(100%)' },
+  visible: {
+    opacity: 1, transform: 'translateX(0%)',
+    transition: { delay: 1, duration: 1 },
+  }
+}
+
+const descVariants = {
+  hidden: { opacity: 0, transform: 'translateX(-100%)' },
+  visible: {
+    opacity: 1, transform: 'translateX(0%)',
+    transition: { delay: 1, duration: 1.2 },
+  }
+}
+
+const btnVariants = {
+  hidden: { opacity: 0, transform: 'translateY(30vh)' },
+  visible: {
+    opacity: 1, transform: 'translateY(0vh)',
+    transition: { delay: 1.2, duration: 1.5 },
+  }
+}
 
 const Header = ({ openModal, header }) => {
   return (
@@ -19,17 +43,19 @@ const Header = ({ openModal, header }) => {
         <HeaderContainer>
           <HeaderImage src={HeaderBg} alt='header' />
           <HeaderContent>
-            <Fade right duration={1500}>
-              <HeaderName>{header.name}</HeaderName>
-            </Fade>
-            <Fade left duration={2000}>
-              <HeaderDescription>{header.description}</HeaderDescription>
-            </Fade>
-            <Fade bottom duration={1000} delay={1000}>
+            <HeaderName
+              variants={nameVariants}
+              initial='hidden' animate='visible'>{header.name}</HeaderName>
+            <HeaderDescription
+              variants={descVariants}
+              initial='hidden' animate='visible'>{header.description}</HeaderDescription>
+            <HeaderBtnWrap
+              variants={btnVariants}
+              initial='hidden' animate='visible'>
               <Button onClick={openModal}>
                 {header.contactButton}
               </Button>
-            </Fade>
+            </HeaderBtnWrap>
           </HeaderContent>
         </HeaderContainer>
       </HeaderWrapper>

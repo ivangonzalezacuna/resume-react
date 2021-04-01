@@ -13,8 +13,7 @@ const GlobalStyle = createGlobalStyle`
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
-      width: 0;
-      background: transparent;
+      display: none;
     }
   }
 `

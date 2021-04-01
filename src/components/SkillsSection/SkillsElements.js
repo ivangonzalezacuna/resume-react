@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { IoIosCloseCircle, IoIosInformationCircle } from 'react-icons/io'
+import { FiInfo, FiXCircle } from 'react-icons/fi'
 import { final } from '../../data/palette'
 
 export const SkillsContainer = styled.div`
@@ -42,7 +42,7 @@ export const SkillsWrapper = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   align-items: center;
   grid-gap: 24px;
-  padding: 100px 50px;
+  padding: 100px 24px;
 
   @media screen and (max-width: 400px) {
     grid-template-columns: 1fr;
@@ -62,24 +62,38 @@ export const SkillCard = styled.div`
   box-shadow: 0 1px 3px ${final.foreground_light1_op05};
 `
 
-export const ShowBackCard = styled(IoIosInformationCircle)`
-  position: absolute;
+export const ShowBackCard = styled(FiInfo)`
+  position: fixed;
   top: 0.6rem;
   right: 0.6rem;
-  color: ${final.background};
-  font-size: 36px;
+  color: ${({ invisible }) => (invisible === 'true') ?
+    final.background_light : final.background};
+  font-size: 32px;
   padding: 5px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
 `
 
-export const CloseBackCard = styled(IoIosCloseCircle)`
-  position: absolute;
+export const CloseBackCard = styled(FiXCircle)`
+  position: fixed;
   top: 0.6rem;
   right: 0.6rem;
-  color: ${final.background};
-  font-size: 36px;
+  color: ${({ invisible }) => (invisible === 'true') ?
+    final.background_light : final.background};
+  font-size: 32px;
   padding: 5px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
 `
 
 export const FrontImg = styled.img`

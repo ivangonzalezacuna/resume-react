@@ -53,7 +53,7 @@ export const translation_ES = {
     name1: 'Soy',
     name2: 'Ivan Gonzalez',
     description: 'Buen trabajador en equipo. Eager to have new work experiences where I can have the opportunity to learn more in the technological field, grow personally and professionally, and thus be able to contribute positively to the achievement of the objectives',
-    resumeLink: 'http://www.google.es',
+    resumeLink: 'https://drive.google.com/file/d/1boY9fP7aX6BPYJpG2h4W-wRK6ekz_THO/view?usp=sharing',
     resumeBtn: 'Descargar CV',
     contactTitle: 'Detalles de contacto',
     phoneTitle: 'Teléfono',
@@ -77,17 +77,13 @@ export const translation_ES = {
         company: 'Universidad de Vigo',
         jobTitle: 'I + D',
         dates: 'Febrero 2020 - Actualidad',
-        description: 'Investigación y desarrollo usando Golang y Python entre otras cosas. Además de Qt y así.',
-        fadeLeft: true,
-        fadeRight: false
+        description: 'Investigación y desarrollo usando Golang y Python.',
       },
       {
         company: 'Muutech Monitoring Solutions SL',
         jobTitle: 'Prácticas de empresa',
         dates: 'Junio 2019 - Julio 2019',
-        description: 'Investigación y desarrollo de un sistema de detección de anomalías industrial usando inteligencia artificial.',
-        fadeLeft: false,
-        fadeRight: true
+        description: 'Investigación y desarrollo de un sistema de detección de anomalías industrial usando inteligencia artificial.'
       }
     ]
   },
@@ -105,17 +101,13 @@ export const translation_ES = {
         company: 'Universidad de Vigo',
         jobTitle: 'Grado de Teleco',
         dates: 'Agosto 2016 - Junio 2020',
-        description: 'Especialidad de telemática, where I could learn not only a lot about programming, but also several communication protocols over Internet and other networks.',
-        fadeLeft: true,
-        fadeRight: false
+        description: 'Especialidad de telemática, where I could learn not only a lot about programming, but also several communication protocols over Internet and other networks.'
       },
       {
         company: 'Oulu University of Applied Sciences',
         jobTitle: 'Desarrollo de Software',
         dates: 'Agosto 2019 - Diciembre 2019',
-        description: "Intercambio Erasmus+ during my last year's semester.Where I learned a lot about the MEAN Stack (MongoDB, Express, Angular8, Node.js), Android & iOS App Development and also improved my skills in Java, CSS or Javascript.",
-        fadeLeft: false,
-        fadeRight: true
+        description: "Intercambio Erasmus+ during my last year's semester.Where I learned a lot about the MEAN Stack (MongoDB, Express, Angular8, Node.js), Android & iOS App Development and also improved my skills in Java, CSS or Javascript."
       }
     ]
   },

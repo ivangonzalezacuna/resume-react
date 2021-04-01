@@ -32,6 +32,22 @@ export const Icon = styled.div`
   outline: none;
 `
 
+export const Lang = styled.div`
+  position: absolute;
+  top: 1.6rem;
+  left: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const LangItem = styled.div`
+  color: ${({ current }) => (current ? final.foreground_light2 : final.background_light)};
+  font-size: 13px;
+  cursor: pointer;
+  margin: 0 4px 0 4px;
+`
+
 export const AboutWrapper = styled.div`
   color: ${final.background_light};
   width: 100%;
@@ -130,19 +146,26 @@ export const BtnWrap = styled.div`
 `
 
 export const BtnDownload = styled.a`
-  border-radius: 100px;
-  padding: 16px 24px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
+  background: ${final.foreground_light2};
   white-space: nowrap;
-  background: ${final.foreground_light1};
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  min-width: 100px;
+  max-width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
   color: ${final.background};
+  font-size: 14px;
+  transition: 0.3s;
 
   &:hover {
-    background: ${final.background_light};
-    color: ${final.background};
     transition: 0.3s;
+    background-color: ${final.background_light};
   }
 `
 

@@ -54,4 +54,10 @@ export const NotFoundBtn = styled(Link)`
   &:hover {
     background: ${final.background_light};
   }
+
+  @media screen and (max-height: 400px) {
+    margin: 10px;
+    font-size: clamp(0.4rem, 6vw, 0.7rem);
+    padding: 8px 14px;
+  }
 `

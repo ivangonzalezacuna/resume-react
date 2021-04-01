@@ -8,15 +8,16 @@ import {
   AboutGrid, AboutImg,
   AboutInfo, AboutImgWrap,
   AboutName, AboutDescription,
-  BtnWrap,
-  ContactWrapper, ContactSection,
-  ContactIconDiv, ContactSectionTitle,
-  ContactSectionItem, ContactInfoDiv,
-  ContactIconImg, ImgWrap,
-  SocialMedia, SocialMediaWrap,
-  SocialLogo, WebsiteRights,
-  SocialIcons, SocialIconLink,
-  TopLineWrap, TopLine
+  BtnWrap, ContactWrapper,
+  ContactSection, ContactIconDiv,
+  ContactSectionTitle, ContactSectionItem,
+  ContactInfoDiv, ContactIconImg,
+  ImgWrap, SocialMedia,
+  SocialMediaWrap, SocialLogo,
+  WebsiteRights, SocialIcons,
+  SocialIconLink, TopLineWrap,
+  TopLine, Lang,
+  LangItem, BtnDownload
 } from './AboutElements'
 
 const About = ({
@@ -24,7 +25,10 @@ const About = ({
   toggleAbout,
   openModal,
   about,
-  social
+  social,
+  setLangES,
+  setLangEN,
+  currentLang
 }) => {
   const toggleHome = () => {
     scroll.scrollToTop()
@@ -34,6 +38,16 @@ const About = ({
       <Icon onClick={toggleAbout}>
         <CloseIcon />
       </Icon>
+      <Lang>
+        <LangItem onClick={setLangEN}
+          current={(currentLang === "en" || currentLang === "en-US") ? true : false}>
+          EN
+          </LangItem>
+        <LangItem onClick={setLangES}
+          current={(currentLang === "es" || currentLang === "es-ES") ? true : false}>
+          ES
+          </LangItem>
+      </Lang>
       <AboutWrapper>
         <AboutGrid>
           <AboutImgWrap>
@@ -47,7 +61,7 @@ const About = ({
               {about.description}
             </AboutDescription>
             <BtnWrap>
-              <Button href={about.resumeLink} target="_blank">{about.resumeBtn}</Button>
+              <BtnDownload href={about.resumeLink} target="_blank">{about.resumeBtn}</BtnDownload>
             </BtnWrap>
           </AboutInfo>
         </AboutGrid>

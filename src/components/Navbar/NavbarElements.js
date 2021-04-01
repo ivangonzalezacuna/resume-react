@@ -11,12 +11,13 @@ export const Nav = styled.nav`
   position: fixed;
   width: 100%;
   background: ${({ scrollNav }) => (scrollNav ? final.background : 'transparent')};
-  //display: ${({ hideLogo }) => (hideLogo ? 'none' : 'flex')};
-  //pointer-events: ${({ hideLogo }) => (hideLogo ? 'none' : 'auto')};
-  display: flex;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
+  }
+
+  @media screen and (max-height: 400px) {
+    background: transparent;
   }
 `
 
@@ -30,6 +31,10 @@ export const Logo = styled(Link)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+
+  @media screen and (max-height: 400px) {
+    display: none;
+  }
 `
 
 export const MobileIcon = styled.div`
@@ -40,10 +45,32 @@ export const MobileIcon = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 40%);
-    font-size: 1.8rem;
+    transform: translate(-60%, 30%);
     cursor: pointer;
-    color: #fff;
+    color: ${final.background_light};
+  }
+
+  @media screen and (max-height: 400px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-60%, 30%);
+    cursor: pointer;
+    color: ${final.background_light};
+  }
+`
+
+export const IconWrap = styled.div`
+  display: flex;
+  align-items: center;
+  background: ${({ scrollNav }) => (scrollNav ? final.background : 'transparent')};
+  font-size: 1.8rem;
+  padding: 5px;
+  border-radius: 3px;
+
+  @media screen and (max-height: 400px) {
+    background: ${final.background};
   }
 `
 
@@ -53,6 +80,10 @@ export const NavMenu = styled.div`
   margin-right: -48px;
 
   @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (max-height: 400px) {
     display: none;
   }
 `
@@ -84,6 +115,10 @@ export const NavLang = styled.div`
   border-radius: 50px;
 
   @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (max-height: 400px) {
     display: none;
   }
 `

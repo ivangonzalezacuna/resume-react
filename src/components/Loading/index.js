@@ -15,7 +15,8 @@ const Loading = () => {
   return (
     <>
       <LoadingContainer>
-        <LoadingAnimation options={defaultOptions}
+        <LoadingAnimation
+          options={defaultOptions}
           height='50vh'
         />
       </LoadingContainer>

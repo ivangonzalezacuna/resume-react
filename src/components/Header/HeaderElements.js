@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { final } from '../../data/palette'
+import { motion } from 'framer-motion'
 
 export const HeaderSection = styled.section`
   height: 100vh;
@@ -66,7 +67,9 @@ export const HeaderContent = styled.div`
   color: ${final.background_light};
 `
 
-export const HeaderName = styled.h1`
+export const HeaderBtnWrap = styled(motion.div)``
+
+export const HeaderName = styled(motion.h1)`
   font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -75,32 +78,8 @@ export const HeaderName = styled.h1`
   margin-bottom: 0.8rem;
 `
 
-export const HeaderDescription = styled.p`
+export const HeaderDescription = styled(motion.p)`
   font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 1.2rem;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
-`
-
-export const HeaderButton = styled.div`
-  background: ${final.foreground_light2};
-  white-space: nowrap;
-  outline: none;
-  border: none;
-  border-radius: 50px;
-  min-width: 100px;
-  max-width: 200px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 24px;
-  color: ${final.background};
-  font-size: 14px;
-
-  &:hover {
-    background: ${final.background_light};
-    color: ${final.background};
-  }
 `
