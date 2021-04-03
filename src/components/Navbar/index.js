@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { FaBars } from 'react-icons/fa'
-import { IconContext } from 'react-icons/lib'
 import { animateScroll as scroll } from 'react-scroll'
+import { IconContext } from 'react-icons/lib'
 import {
   Nav,
   NavMenu,
   Logo,
   NavMenuLink,
-  IconWrap,
   NavLang,
-  NavLangItem,
-  MobileIcon
+  NavLangItem
 } from './NavbarElements'
 
 const Navbar = ({
   menuData,
-  toggleSidebar,
   toggleAbout,
   setLangES,
   setLangEN,
-  currentLang
+  currentLang,
 }) => {
   const [scrollNav, setScrollNav] = useState(false)
 
@@ -43,11 +39,6 @@ const Navbar = ({
     <IconContext.Provider value={{ color: '#f9f9f9' }}>
       <Nav scrollNav={scrollNav}>
         <Logo to='/' onClick={toggleHome}>ivan</Logo>
-        <MobileIcon onClick={toggleSidebar}>
-          <IconWrap scrollNav={scrollNav}>
-            <FaBars />
-          </IconWrap>
-        </MobileIcon>
         <NavMenu>
           {menuData.map((item, index) => (
             <NavMenuLink to={item.link} key={index}

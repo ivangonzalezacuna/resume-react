@@ -3,8 +3,7 @@ import { FaEnvelope, FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaMapMark
 import { animateScroll as scroll } from 'react-scroll'
 import { Button } from '../ButtonElement'
 import {
-  AboutContainer, Icon,
-  CloseIcon, AboutWrapper,
+  AboutContainer, AboutWrapper,
   AboutGrid, AboutImg,
   AboutInfo, AboutImgWrap,
   AboutName, AboutDescription,
@@ -35,9 +34,6 @@ const About = ({
   }
   return (
     <AboutContainer isAboutOpen={isAboutOpen}>
-      <Icon onClick={toggleAbout}>
-        <CloseIcon />
-      </Icon>
       <Lang>
         <LangItem onClick={setLangEN}
           current={(currentLang === "en" || currentLang === "en-US") ? true : false}>

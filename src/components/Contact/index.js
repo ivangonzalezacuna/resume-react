@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
+import $ from 'jquery'
 import validate from './validateInfo'
 import useForm from './useForm'
+import * as SendMessage from '../../images/lottie/send-message.json'
 import {
   ContactBackground, FormContainer,
   FormContent, CloseContactButton,
@@ -11,7 +13,6 @@ import {
   FormImgLottie, FormImgWrap,
   FormImg
 } from './ContactElements'
-import * as SendMessage from '../../images/send-message.json'
 
 const Contact = ({ showModal, setShowModal, contactForm }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -45,7 +46,19 @@ const Contact = ({ showModal, setShowModal, contactForm }) => {
   }
 
   function submitForm() {
+    executeQuery()
     setIsSubmitted(true)
+  }
+
+  function executeQuery() {
+    $.ajax({
+      type: "POST",
+      url: "https://script.google.com/macros/s/AKfycbyq8tGvTbLVgvG7VXkYfuRcMZ0ASZlJrQIFiyp-U2CqI_VrvOg/exec",
+      data: values,
+      dataType: "json",
+      error: function (error) { console.log(error) },
+      success: function (msg) { console.log(msg.result) }
+    })
   }
 
   const closeModal = e => {

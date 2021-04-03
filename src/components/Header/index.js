@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderBg from '../../images/header.jpg'
+import HeaderBg from '../../images/headers/header1.svg'
 import { Button } from '../ButtonElement'
 import {
   HeaderSection,

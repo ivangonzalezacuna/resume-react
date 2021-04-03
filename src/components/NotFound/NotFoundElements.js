@@ -1,7 +1,7 @@
 import styled from 'styled-components'
+import { final } from '../../data/palette'
 import Lottie from 'react-lottie'
 import { Link } from 'react-router-dom'
-import { final } from '../../data/palette'
 
 export const NotFoundContainer = styled.div`
   height: 100vh;

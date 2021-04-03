@@ -1,8 +1,8 @@
-import { MdClose } from 'react-icons/md'
 import styled from 'styled-components'
 import { final } from '../../data/palette'
-import Lottie from 'react-lottie'
+import { MdClose } from 'react-icons/md'
 import { motion } from 'framer-motion'
+import Lottie from 'react-lottie'
 
 export const ContactBackground = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ export const ContactBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 500;
 `
 
 export const CloseContactButton = styled(MdClose)`
@@ -23,7 +23,7 @@ export const CloseContactButton = styled(MdClose)`
   width: 32px;
   height: 32px;
   padding: 0;
-  z-index: 1000;
+  z-index: 500;
   color: ${final.background_light};
 `
 

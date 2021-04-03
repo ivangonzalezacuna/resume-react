@@ -1,6 +1,6 @@
 import React from 'react'
+import * as Loader from '../../images/lottie/loader.json'
 import { LoadingAnimation, LoadingContainer } from './LoadingElements'
-import * as Loader from '../../images/loader.json'
 
 const Loading = () => {
   const defaultOptions = {

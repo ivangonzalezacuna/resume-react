@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { FaTimes } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 import { final } from '../../data/palette'
+import { Link } from 'react-router-dom'
 
 export const AboutContainer = styled.aside`
   position: fixed;
-  z-index: ${({ isAboutOpen }) => (isAboutOpen ? '999' : '100')};
+  z-index: ${({ isAboutOpen }) => (isAboutOpen ? '300' : '1')};
   width: 100%;
   height: 100%;
   background: ${final.background};
@@ -16,20 +15,6 @@ export const AboutContainer = styled.aside`
   opacity: ${({ isAboutOpen }) => (isAboutOpen ? '100%' : '0%')};
   top: ${({ isAboutOpen }) => (isAboutOpen ? '0' : '-100%')};
   cursor: default;
-`
-
-export const CloseIcon = styled(FaTimes)`
-  color: ${final.background_light};
-`
-
-export const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  background: transparent;
-  font-size: 2rem;
-  cursor: pointer;
-  outline: none;
 `
 
 export const Lang = styled.div`

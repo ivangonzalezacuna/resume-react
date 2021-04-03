@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { Link as LinkS } from 'react-scroll'
-import { FaTimes } from 'react-icons/fa'
 import { final } from '../../data/palette'
+import { Link } from 'react-scroll'
 
 export const SidebarContainer = styled.aside`
   position: fixed;
-  z-index: 999;
+  z-index: 200;
   width: 100%;
   height: 100%;
   background: ${final.background};
@@ -16,24 +15,6 @@ export const SidebarContainer = styled.aside`
   transition: 0.3s ease-in-out;
   opacity: ${({ isSidebarOpen }) => (isSidebarOpen ? '100%' : '0%')};
   top: ${({ isSidebarOpen }) => (isSidebarOpen ? '0' : '-100%')};
-`
-
-export const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  background: transparent;
-  font-size: 2rem;
-  cursor: pointer;
-  outline: none;
-
-  @media screen and (max-width: 400px) {
-    right: 1rem;
-  }
-`
-
-export const CloseIcon = styled(FaTimes)`
-  color: ${final.background_light};
 `
 
 export const SidebarWrapper = styled.div`
@@ -69,13 +50,17 @@ export const SidebarMenu = styled.ul`
   @media screen and (max-height: 280px) {
     grid-gap: 4px;
   }
+
+  @media screen and (max-height: 220px) {
+    grid-gap: 2px;
+  }
 `
 
-export const SidebarLink = styled(LinkS)`
+export const SidebarLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.2rem, 5vh, 2rem);
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
@@ -121,6 +106,6 @@ export const SocialIcons = styled.div`
 
 export const SocialIconLink = styled.a`
   color: ${final.background_light};
-  font-size: 28px;
+  font-size: clamp(24px, 6vh, 28px);
   margin: 0 8px;
 `

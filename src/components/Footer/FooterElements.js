@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { final } from '../../data/palette'
+import { Link } from 'react-router-dom'
 
 export const FooterContainer = styled.footer`
   background-color: ${final.background};

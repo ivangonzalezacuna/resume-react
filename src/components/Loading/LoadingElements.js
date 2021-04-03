@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Lottie from 'react-lottie'
 import { final } from '../../data/palette'
+import Lottie from 'react-lottie'
 
 export const LoadingContainer = styled.div`
   width: 100vw;

@@ -1,6 +1,5 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-
 import Backend from 'i18next-http-backend'
 import LocalStorageBackend from 'i18next-localstorage-backend'
 import HttpBackend from 'i18next-http-backend'

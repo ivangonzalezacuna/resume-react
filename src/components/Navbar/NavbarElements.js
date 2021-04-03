@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Link } from 'react-scroll'
 import { final } from '../../data/palette'
+import { Link } from 'react-scroll'
 
 export const Nav = styled.nav`
   height: 60px;
@@ -34,43 +34,6 @@ export const Logo = styled(Link)`
 
   @media screen and (max-height: 400px) {
     display: none;
-  }
-`
-
-export const MobileIcon = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-60%, 30%);
-    cursor: pointer;
-    color: ${final.background_light};
-  }
-
-  @media screen and (max-height: 400px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-60%, 30%);
-    cursor: pointer;
-    color: ${final.background_light};
-  }
-`
-
-export const IconWrap = styled.div`
-  display: flex;
-  align-items: center;
-  background: ${({ scrollNav }) => (scrollNav ? final.background : 'transparent')};
-  font-size: 1.8rem;
-  padding: 5px;
-  border-radius: 3px;
-
-  @media screen and (max-height: 400px) {
-    background: ${final.background};
   }
 `
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { FiInfo, FiXCircle } from 'react-icons/fi'
 import { final } from '../../data/palette'
+import { FiInfo, FiXCircle } from 'react-icons/fi'
 
 export const SkillsContainer = styled.div`
   height: auto;

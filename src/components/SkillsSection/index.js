@@ -12,6 +12,33 @@ import {
   ShowBackCard, CloseBackCard
 } from './SkillsElements'
 
+function FadeInCard({ children }) {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ triggerOnce: true })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  const cardVariants = {
+    visible: { opacity: 1, transform: 'translateY(0vh)' },
+    hidden: { opacity: 0, transform: 'translateY(10vh)' }
+  }
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial='hidden'
+      transition={{ duration: 0.5 }}
+      variants={cardVariants}>
+      {children}
+    </motion.div>
+  )
+}
+
 function FadeInTitle({ children }) {
   const controls = useAnimation()
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -83,7 +110,9 @@ const Skills = ({ skills }) => {
         </TopLineWrap>
         <SkillsWrapper>
           {skills.data.map((info, index) => (
-            <Card info={info} key={index} />
+            <FadeInCard key={index}>
+              <Card info={info} />
+            </FadeInCard>
           ))}
         </SkillsWrapper>
       </SkillsContainer>

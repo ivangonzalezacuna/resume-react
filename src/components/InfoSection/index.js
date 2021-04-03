@@ -25,10 +25,9 @@ function FadeInWhenVisible({ children, index }) {
   }, [controls, inView])
 
   const cardVariants = {
-    visible: { opacity: 1, transform: 'translateX(0%)' },
+    visible: { opacity: 1, transform: 'translateY(0vh)' },
     hidden: {
-      opacity: 0,
-      transform: (index % 2) ? 'translateX(100%)' : 'translateX(-100%)'
+      opacity: 0, transform: 'translateY(10vh)'
     }
   }
 

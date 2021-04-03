@@ -1,4 +1,5 @@
 import React from 'react'
+import * as NotFoundImg from '../../images/lottie/404.json'
 import {
   NotFoundAnimation,
   NotFoundBtn,
@@ -6,7 +7,6 @@ import {
   NotFoundContainer,
   NotFoundText
 } from './NotFoundElements'
-import * as NotFoundImg from '../../images/404.json'
 
 const NotFound = ({ t }) => {
   const defaultOptions = {

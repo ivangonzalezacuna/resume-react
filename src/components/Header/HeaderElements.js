@@ -55,6 +55,7 @@ export const HeaderImage = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  background-color: ${final.foreground_dark1};
 `
 
 export const HeaderContent = styled.div`

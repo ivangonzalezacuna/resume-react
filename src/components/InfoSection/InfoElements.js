@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Element } from 'react-scroll'
 import { final } from '../../data/palette'
+import { Element } from 'react-scroll'
 
 export const InfoContainer = styled(Element)`
   color: ${final.background_light};

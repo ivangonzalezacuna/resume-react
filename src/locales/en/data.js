@@ -41,7 +41,7 @@ export const translation_EN = {
     messagePlaceholder: 'Enter your message',
     submit: 'Submit',
     successMsg: 'Your request has been received',
-    successImg: require('../../images/img-3.svg').default,
+    successImg: require('../../images/success.svg').default,
   },
   header: {
     name: 'Ivan Gonzalez',
@@ -117,49 +117,49 @@ export const translation_EN = {
     data: [
       {
         technology: 'Android',
-        icon: require('../../images/android.svg').default,
+        icon: require('../../images/skills/android.svg').default,
         description: 'Android desciption Android desciption Android desciption',
         level: '50%',
       },
       {
         technology: 'Golang',
-        icon: require('../../images/golang.svg').default,
+        icon: require('../../images/skills/golang.svg').default,
         description: 'Golang description Golang description Golang description',
         level: '80%',
       },
       {
         technology: 'Java',
-        icon: require('../../images/java.svg').default,
+        icon: require('../../images/skills/java.svg').default,
         description: 'Java description Java description Java description Java description',
         level: '86%',
       },
       {
         technology: 'HTML5',
-        icon: require('../../images/html5.svg').default,
+        icon: require('../../images/skills/html5.svg').default,
         description: 'Golang description Golang description Golang description',
         level: '25%',
       },
       {
         technology: 'Javascript',
-        icon: require('../../images/javascript.svg').default,
+        icon: require('../../images/skills/javascript.svg').default,
         description: 'Javascript description Golang description Golang description',
         level: '22%',
       },
       {
         technology: 'Swift',
-        icon: require('../../images/swift.svg').default,
+        icon: require('../../images/skills/swift.svg').default,
         description: 'Swift description Golang description Golang description',
         level: '76%',
       },
       {
         technology: 'Windows',
-        icon: require('../../images/windows.svg').default,
+        icon: require('../../images/skills/windows.svg').default,
         description: 'Windows description Golang description Golang description',
         level: '55%',
       },
       {
         technology: 'Linux',
-        icon: require('../../images/linux.svg').default,
+        icon: require('../../images/skills/linux.svg').default,
         description: 'Linux description Golang description Golang description',
         level: '90%',
       }

@@ -8,6 +8,8 @@ import Footer from '../components/Footer'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Loading from '../components/Loading'
+import ScrollToTop from '../components/ScrollToTop'
+import HamburgerMenu from '../components/HamburgerMenu'
 
 const Resume = ({ t, i18n }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -48,6 +50,12 @@ const Resume = ({ t, i18n }) => {
         <Loading />
       ) : (
         <>
+          <ScrollToTop />
+          <HamburgerMenu
+            toggleSidebar={toggleSidebar}
+            isSidebarOpen={isSidebarOpen}
+            toggleAbout={toggleAbout}
+            isAboutOpen={isAboutOpen} />
           <Contact
             showModal={showModal}
             setShowModal={setShowModal}
@@ -74,7 +82,6 @@ const Resume = ({ t, i18n }) => {
             currentLang={i18n.language}
             setLangES={setLangES}
             setLangEN={setLangEN}
-            toggleSidebar={toggleSidebar}
             toggleAbout={toggleAbout}
             menuData={t('navBar', { returnObjects: true })} />
           <Header
