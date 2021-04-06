@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { useInView } from "react-intersection-observer"
-import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
 import { FaCalendarAlt, FaUserGraduate } from 'react-icons/fa'
 import { MdWork } from 'react-icons/md'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   InfoContainer, InfoWrapper,
   TopLineWrap, TopLine,
@@ -11,70 +11,39 @@ import {
   TextRow, Company,
   JobTitle, Dates,
   TextIcon, Column2,
-  Description,
+  Description
 } from './InfoElements'
-
-function FadeInWhenVisible({ children, index }) {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ triggerOnce: true })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-  }, [controls, inView])
-
-  const cardVariants = {
-    visible: { opacity: 1, transform: 'translateY(0vh)' },
-    hidden: {
-      opacity: 0, transform: 'translateY(10vh)'
-    }
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial='hidden'
-      transition={{ duration: 0.8 }}
-      variants={cardVariants}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-function FadeInTitle({ children }) {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ triggerOnce: true })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-  }, [controls, inView])
-
-  const topLineVariants = {
-    visible: { opacity: 1, transform: 'translateX(0vw)' },
-    hidden: { opacity: 0, transform: 'translateX(-10vw)' }
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial='hidden'
-      transition={{ duration: 0.8 }}
-      variants={topLineVariants}
-    >
-      {children}
-    </motion.div>
-  )
-}
+gsap.registerPlugin(ScrollTrigger)
 
 const CardSection = ({ section, icon }) => {
+  const sectionRef = useRef(null)
+  useEffect(() => {
+    gsap.fromTo(sectionRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "0% 100%",
+          end: "40% 90%",
+          scrub: true,
+        }
+      })
+    gsap.fromTo(sectionRef.current,
+      { opacity: 1 },
+      {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "50% 10%",
+          end: "80% 0%",
+          scrub: true,
+        }
+      })
+  }, [])
+
   return (
-    <InfoCard>
+    <InfoCard ref={sectionRef}>
       <InfoRow>
         <Column1>
           <TextWrapper>
@@ -102,19 +71,41 @@ const CardSection = ({ section, icon }) => {
 }
 
 const InfoSection = ({ info }) => {
+  const titleRef = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo(titleRef.current,
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1, x: 0,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "0% 100%",
+          end: "100% 80%",
+          scrub: true,
+        }
+      })
+    gsap.fromTo(titleRef.current,
+      { opacity: 1, x: 0 },
+      {
+        opacity: 0, x: 50,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "0% 20%",
+          end: "100% 0%",
+          scrub: true,
+        }
+      })
+  })
   return (
     <>
       <InfoContainer id={info.id}>
         <TopLineWrap>
-          <FadeInTitle>
-            <TopLine>{info.sectionTitle}</TopLine>
-          </FadeInTitle>
+          <TopLine ref={titleRef}>{info.sectionTitle}</TopLine>
         </TopLineWrap>
         <InfoWrapper>
           {info.data.map((section, index) => (
-            <FadeInWhenVisible key={index} index={index}>
-              <CardSection section={section} icon={info.icon} />
-            </FadeInWhenVisible>
+            <CardSection key={index} section={section} icon={info.icon} />
           ))}
         </InfoWrapper>
       </InfoContainer>
