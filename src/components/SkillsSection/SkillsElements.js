@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { final } from '../../data/palette'
 import { FiInfo, FiXCircle } from 'react-icons/fi'
+import { motion } from 'framer-motion'
 
 export const SkillsContainer = styled.div`
   height: auto;
@@ -25,7 +26,7 @@ export const TopLineWrap = styled.div`
   justify-content: start;
 `
 
-export const TopLine = styled.p`
+export const TopLine = styled(motion.p)`
   color: ${final.foreground_light1};
   font-size: 16px;
   line-height: 16px;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 import ReactCardFlip from 'react-card-flip'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -12,6 +13,18 @@ import {
   ShowBackCard, CloseBackCard
 } from './SkillsElements'
 gsap.registerPlugin(ScrollTrigger)
+
+const titleVariants = {
+  hidden: { opacity: 0, x: -50 },
+  fadeIn: {
+    opacity: 1, x: 0,
+    transition: { duration: 0.5 },
+  },
+  fadeOut: {
+    opacity: 0, x: -50,
+    transition: { duration: 0.5 },
+  }
+}
 
 const Card = ({ info }) => {
   const [isFlipped, setIsFlipped] = useState(false)
@@ -72,38 +85,20 @@ const Card = ({ info }) => {
 }
 
 const Skills = ({ skills }) => {
-  const titleRef = useRef(null)
-
-  useEffect(() => {
-    gsap.fromTo(titleRef.current,
-      { opacity: 0, x: -50 },
-      {
-        opacity: 1, x: 0,
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "0% 100%",
-          end: "100% 80%",
-          scrub: true,
-        }
-      })
-    gsap.fromTo(titleRef.current,
-      { opacity: 1, x: 0 },
-      {
-        opacity: 0, x: 50,
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "0% 20%",
-          end: "100% 0%",
-          scrub: true,
-        }
-      })
+  const [ref, inView] = useInView({
+    threshold: 0,
+    rootMargin: '-60px',
+    triggerOnce: true,
   })
 
   return (
     <>
       <SkillsContainer id={skills.id}>
         <TopLineWrap>
-          <TopLine ref={titleRef}>{skills.sectionTitle}</TopLine>
+          <TopLine ref={ref}
+            variants={titleVariants}
+            initial='hidden' animate={inView ? 'fadeIn' : 'fadeOut'}
+          >{skills.sectionTitle}</TopLine>
         </TopLineWrap>
         <SkillsWrapper>
           {skills.data.map((info, index) => (

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { final } from '../../data/palette'
 import { Element } from 'react-scroll'
+import { motion } from 'framer-motion'
 
 export const InfoContainer = styled(Element)`
   color: ${final.background_light};
@@ -24,7 +25,7 @@ export const TopLineWrap = styled.div`
   justify-content: start;
 `
 
-export const TopLine = styled.p`
+export const TopLine = styled(motion.p)`
   color: ${final.foreground_light1};
   font-size: 16px;
   line-height: 16px;
@@ -45,7 +46,7 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 `
 
-export const InfoCard = styled.div`
+export const InfoCard = styled(motion.div)`
   background: ${final.foreground_dark1_op01};
   display: flex;
   flex-direction: column;
@@ -122,7 +123,7 @@ export const TextRow = styled.div`
   }
 `
 
-export const Company = styled.p`
+export const Company = styled(motion.p)`
   color: ${final.background_light};
   font-weight: 600;
   line-height: 1.5;
@@ -138,7 +139,7 @@ export const Company = styled.p`
   }
 `
 
-export const JobTitle = styled.p`
+export const JobTitle = styled(motion.p)`
   color: ${final.background_light};
   font-weight: 700;
   font-size: 14px;
@@ -152,7 +153,7 @@ export const JobTitle = styled.p`
   }
 `
 
-export const Dates = styled.p`
+export const Dates = styled(motion.p)`
   color: ${final.background_light};
   font-style: italic;
   font-weight: 700;
@@ -167,7 +168,7 @@ export const Dates = styled.p`
   }
 `
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: 15px;
   line-height: 24px;
   color: ${final.background_light};
@@ -182,7 +183,7 @@ export const Description = styled.p`
   }
 `
 
-export const TextIcon = styled.a`
+export const TextIcon = styled(motion.a)`
   color: ${final.background_light};
   font-size: 16px;
   margin-right: 10px;

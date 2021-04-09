@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React from 'react'
+import { useInView } from 'react-intersection-observer'
 import HeaderBg from '../../images/headers/header1.svg'
 import { Button } from '../ButtonElement'
 import {
@@ -13,107 +12,84 @@ import {
   HeaderDescription,
   HeaderBtnWrap
 } from './HeaderElements'
-gsap.registerPlugin(ScrollTrigger)
+
 
 const nameVariants = {
-  hidden: { opacity: 0, transform: 'translateX(100%)' },
-  visible: {
-    opacity: 1, transform: 'translateX(0%)',
-    transition: { delay: 1, duration: 1 },
+  hidden: { opacity: 0, transform: 'translate(100%, 0%)' },
+  fadeIn: {
+    opacity: 1, transform: 'translate(0%, 0%)',
+    transition: { duration: 1 },
+  },
+  fadeOut: {
+    opacity: 0, transform: 'translate(0%, -20%)',
+    transition: { duration: 0.5 },
   }
 }
 
 const descVariants = {
-  hidden: { opacity: 0, transform: 'translateX(-100%)' },
-  visible: {
-    opacity: 1, transform: 'translateX(0%)',
-    transition: { delay: 1, duration: 1.2 },
+  hidden: { opacity: 0, transform: 'translate(-100%, 0%)' },
+  fadeIn: {
+    opacity: 1, transform: 'translate(0%, 0%)',
+    transition: { duration: 1.2 },
+  },
+  fadeOut: {
+    opacity: 0, transform: 'translate(0%, -20%)',
+    transition: { duration: 0.5 },
   }
 }
 
 const btnVariants = {
-  hidden: { opacity: 0, transform: 'translateY(80px)' },
-  visible: {
-    opacity: 1, transform: 'translateY(0px)',
-    transition: { delay: 1.2, duration: 1.5 },
+  hidden: { opacity: 0, transform: 'translate(0%, 150px)' },
+  fadeIn: {
+    opacity: 1, transform: 'translate(0%, 0%)',
+    transition: { duration: 1.5 },
+  },
+  fadeOut: {
+    opacity: 0, transform: 'translate(0%, -20%)',
+    transition: { duration: 0.5 },
   }
 }
 
 const HeaderNameDiv = ({ text }) => {
-  const headerRef = useRef(null)
-
-  useEffect(() => {
-    gsap.to(headerRef.current, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      immediateRender: false,
-      overwrite: 'auto',
-      scrollTrigger: {
-        trigger: headerRef.current,
-        start: 'top top+=60px',
-        end: 'bottom top+=40px',
-        scrub: true,
-      }
-    })
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    rootMargin: '-60px',
+    initialInView: true,
   })
+
   return (
-    <HeaderName ref={headerRef}
+    <HeaderName ref={ref}
       variants={nameVariants}
-      initial='hidden' animate='visible'>{text}</HeaderName>
+      initial='hidden' animate={inView ? 'fadeIn' : 'fadeOut'}>{text}</HeaderName>
   )
 }
 
 const HeaderDescDiv = ({ text }) => {
-  const headerRef = useRef(null)
-
-  useEffect(() => {
-    gsap.to(headerRef.current, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      immediateRender: false,
-      overwrite: 'auto',
-      scrollTrigger: {
-        trigger: headerRef.current,
-        start: 'top top+=60px',
-        end: 'bottom top+=40px',
-        scrub: true,
-      }
-    })
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    rootMargin: '-60px',
+    initialInView: true
   })
+
   return (
-    <HeaderDescription ref={headerRef}
+    <HeaderDescription ref={ref}
       variants={descVariants}
-      initial='hidden' animate='visible'>{text}</HeaderDescription>
+      initial='hidden' animate={inView ? 'fadeIn' : 'fadeOut'}>{text}</HeaderDescription>
   )
 }
 
 const HeaderButtonDiv = ({ text, openModal }) => {
-  const headerRef = useRef(null)
-
-  useEffect(() => {
-    gsap.to(headerRef.current,
-      {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        immediateRender: false,
-        overwrite: 'auto',
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top-=80px top+=60px',
-          end: 'bottom-=80px top+=60px',
-          invalidateOnRefresh: true,
-          scrub: true,
-        }
-      })
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    rootMargin: '-60px',
+    initialInView: true
   })
+
   return (
-    <HeaderBtnWrap
+    <HeaderBtnWrap ref={ref}
       variants={btnVariants}
-      initial='hidden' animate='visible'>
-      <Button ref={headerRef} onClick={openModal}>
+      initial='hidden' animate={inView ? 'fadeIn' : 'fadeOut'}>
+      <Button onClick={openModal}>
         {text}
       </Button>
     </HeaderBtnWrap>
