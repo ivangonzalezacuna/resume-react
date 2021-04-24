@@ -8,7 +8,7 @@ export const SidebarContainer = styled(motion.div)`
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 20;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;

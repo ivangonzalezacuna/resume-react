@@ -1,20 +1,19 @@
 import React from 'react'
 import {
-  HeaderContainer,
-  HeaderSection,
-  HeaderWrapper,
-  HeaderBackground,
-  HeaderContent,
-  HeaderName,
-  HeaderDescription,
-  HeaderContactBtn,
-  HeaderContactBtnWrap,
-  HeaderGoAboutWrap,
-  HeaderGoAboutText,
-  HeaderGoAboutIcon,
-  HeaderGoAbout
+  HeaderContainer, HeaderSection,
+  HeaderWrapper, HeaderBackground,
+  HeaderContent, HeaderName,
+  HeaderDescription, HeaderContactBtn,
+  HeaderContactBtnWrap, HeaderGoAboutWrap,
+  HeaderGoAboutText, HeaderGoAboutIcon,
+  HeaderGoAbout, HeaderSocialWrap,
+  SocialIcon
 } from './HeaderElements'
 import HeaderBg from '../../images/background/header1.svg'
+import {
+  FaFacebookF, FaGithub, FaInstagram,
+  FaLinkedinIn, FaSkype
+} from 'react-icons/fa'
 
 const content = (isFirstMount, fastTransition) => ({
   animate: {
@@ -69,7 +68,7 @@ const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
                 Ivan Gonzalez
               </HeaderName>
               <HeaderDescription variants={title}>
-                This is my website
+                I'm a software Developer
               </HeaderDescription>
               <HeaderContactBtnWrap variants={title}>
                 <HeaderContactBtn to="/contact"
@@ -90,6 +89,13 @@ const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
               <HeaderGoAboutIcon />
             </HeaderGoAbout>
           </HeaderGoAboutWrap>
+          <HeaderSocialWrap>
+            <SocialIcon><FaFacebookF /></SocialIcon>
+            <SocialIcon><FaGithub /></SocialIcon>
+            <SocialIcon><FaInstagram /></SocialIcon>
+            <SocialIcon><FaLinkedinIn /></SocialIcon>
+            <SocialIcon><FaSkype /></SocialIcon>
+          </HeaderSocialWrap>
         </HeaderWrapper>
       </HeaderSection>
     </>

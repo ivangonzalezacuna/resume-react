@@ -103,6 +103,17 @@ export const HeaderContactBtn = styled(Link)`
   }
 `
 
+export const HeaderExtraContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  background: red;
+  bottom: 0;
+  z-index: 3;
+`
+
 export const HeaderGoAboutWrap = styled(Link)`
   text-decoration: none;
   z-index: 3;
@@ -127,4 +138,31 @@ export const HeaderGoAboutText = styled.p`
 
 export const HeaderGoAboutIcon = styled(Icon)`
   color: #f9f9f9;
+`
+
+export const HeaderSocialWrap = styled.div`
+  position: fixed;
+  right: 0;
+  z-index: 3;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+export const SocialIcon = styled.a`
+  font-size: 24px;
+  margin: 6px 8px;
+  color: #f9f9f9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 `
