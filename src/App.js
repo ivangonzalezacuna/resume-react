@@ -1,25 +1,86 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react"
+import { Switch, Route, useLocation, useHistory } from "react-router-dom"
+import { AnimatePresence } from "framer-motion"
+import GlobalStyle from "./globalStyles"
+import AboutPage from "./pages/about.js"
+import HomePage from "./pages/home.js"
+import ContactPage from "./pages/contact.js"
+import SkillsPage from "./pages/skills.js"
+import Navbar from "./components/Navbar"
 
-function App() {
+const App = () => {
+  const [isFirstMount, setIsFirstMount] = useState(true)
+  const location = useLocation()
+  const history = useHistory()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [fastTransition, setFastTransition] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
+  const updateFastTransition = (value) => {
+    setFastTransition(value)
+  }
+
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      isFirstMount && setIsFirstMount(false)
+    })
+    return unlisten
+  }, [history, isFirstMount])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      <Navbar key='navbar'
+        hideNav={(location.pathname === "/") ? true : false}
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        updateFastTransition={updateFastTransition} />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact
+            render={() => (
+              <HomePage
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+                isFirstMount={isFirstMount}
+                fastTransition={fastTransition}
+                updateFastTransition={updateFastTransition} />
+            )}
+          />
+          <Route path="/about"
+            render={() => (
+              <AboutPage
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+                isFirstMount={false}
+                fastTransition={fastTransition} />
+            )}
+          />
+          <Route path="/skills"
+            render={() => (
+              <SkillsPage
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+                isFirstMount={false}
+                fastTransition={fastTransition} />
+            )}
+          />
+          <Route path="/contact"
+            render={() => (
+              <ContactPage
+                toggleSidebar={toggleSidebar}
+                isSidebarOpen={isSidebarOpen}
+                isFirstMount={false}
+                fastTransition={fastTransition} />
+            )}
+          />
+        </Switch>
+      </AnimatePresence>
+    </>
+  )
 }
 
-export default App;
+export default App
