@@ -47,7 +47,8 @@ const goAbout = (isFirstMount, fastTransition) => ({
   hover: {
     y: -10,
     transition: {
-      yoyo: 3,
+      repeat: 3,
+      repeatType: "reverse",
       duration: 0.25,
     }
   }

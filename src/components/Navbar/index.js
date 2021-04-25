@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { HamburgerMenu, LangItem, LangMenu, Logo, Nav, NavItem, NavMenu } from './NavbarElements'
 import Sidebar from '../Sidebar'
 
-const Stroke = (props) => {
+const Stroke = props => {
   return (
     <motion.path
       fill='transparent'
@@ -53,7 +53,10 @@ const MenuBars = ({ isOpen }) => {
   )
 }
 
-const Navbar = ({ hideNav, isSidebarOpen, toggleSidebar, updateFastTransition }) => {
+const Navbar = ({
+  hideNav, isSidebarOpen, toggleSidebar, updateFastTransition,
+  currentLang, setSpanish, setEnglish
+}) => {
   const checkToggleSidebar = e => {
     if (isSidebarOpen) {
       e.preventDefault()
@@ -62,23 +65,35 @@ const Navbar = ({ hideNav, isSidebarOpen, toggleSidebar, updateFastTransition })
       updateFastTransition(true)
     }
   }
+
+  const switchPage = () => {
+    updateFastTransition(true)
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <Nav hideNav={hideNav}>
         <Logo to="/" onClick={checkToggleSidebar}>ivan</Logo>
         <NavMenu>
           <NavItem to="/"
-            onClick={() => updateFastTransition(true)}>Home</NavItem>
+            onClick={switchPage}>Home</NavItem>
           <NavItem to="/about"
-            onClick={() => updateFastTransition(true)}>About</NavItem>
+            onClick={switchPage}>About</NavItem>
           <NavItem to="/skills"
-            onClick={() => updateFastTransition(true)}>Skills</NavItem>
+            onClick={switchPage}>Skills</NavItem>
           <NavItem to="/contact"
-            onClick={() => updateFastTransition(true)}>Contact</NavItem>
+            onClick={switchPage}>Contact</NavItem>
         </NavMenu>
         <LangMenu>
-          <LangItem>EN</LangItem>
-          <LangItem>ES</LangItem>
+          <LangItem
+            onClick={setEnglish}
+            current={(currentLang === "en" || currentLang === "en-US") ? true : false}
+          >EN</LangItem>
+          <LangItem
+            onClick={setSpanish}
+            current={(currentLang === "es" || currentLang === "es-ES") ? true : false}
+          >ES</LangItem>
         </LangMenu>
         <HamburgerMenu onClick={toggleSidebar} sidebarOpen={isSidebarOpen}>
           <MenuBars isOpen={isSidebarOpen} />
@@ -87,7 +102,10 @@ const Navbar = ({ hideNav, isSidebarOpen, toggleSidebar, updateFastTransition })
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
-        updateFastTransition={updateFastTransition} />
+        updateFastTransition={updateFastTransition}
+        currentLang={currentLang}
+        setSpanish={setSpanish}
+        setEnglish={setEnglish} />
     </>
   )
 }

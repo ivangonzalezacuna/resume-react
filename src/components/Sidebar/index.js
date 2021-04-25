@@ -9,7 +9,7 @@ import {
 } from './SidebarElements'
 
 const blackBox = {
-  initial: { height: 0, opacity: 0 },
+  initial: { height: 0, opacity: 1 },
   animate: {
     height: '100vh',
     opacity: 1,
@@ -22,7 +22,7 @@ const blackBox = {
   },
   close: {
     height: 0,
-    opacity: 0,
+    opacity: 1,
     transition: {
       delay: 0.5,
       staggerChildren: 0.05,
@@ -31,6 +31,29 @@ const blackBox = {
       ease: [0.76, 0, 0.24, 1],
     },
   },
+}
+
+const sidebarMenu = {
+  initial: { display: 'none' },
+  animate: {
+    display: 'block',
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0,
+      duration: 0.5,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  close: {
+    display: 'none',
+    transition: {
+      delay: 0.8,
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      duration: 0.5,
+      ease: [0.76, 0, 0.24, 1],
+    }
+  }
 }
 
 const links = {
@@ -45,14 +68,29 @@ const langs = {
   close: { opacity: 0, duration: 0.2 },
 }
 
-const Sidebar = ({ isSidebarOpen, toggleSidebar, updateFastTransition }) => {
+const Sidebar = ({
+  isSidebarOpen, toggleSidebar, updateFastTransition,
+  currentLang, setSpanish, setEnglish
+}) => {
   const ref = useRef()
+
+  const closeSidebar = e => {
+    if (ref.current === e.target) {
+      toggleSidebar()
+    }
+  }
+
+  const switchPage = () => {
+    updateFastTransition(false)
+    toggleSidebar()
+    window.scrollTo(0, 0)
+  }
 
   return (
     <>
       <SidebarContainer
         ref={ref}
-        onClick={toggleSidebar}
+        onClick={closeSidebar}
         initial="initial"
         animate={isSidebarOpen ? "animate" : "close"}
         variants={blackBox}>
@@ -60,33 +98,27 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, updateFastTransition }) => {
           initial='initial'
           animate={isSidebarOpen ? "animate" : "close"}
           variants={langs}>
-          <LangItem>EN</LangItem>
-          <LangItem>ES</LangItem>
+          <LangItem
+            onClick={setEnglish}
+            current={(currentLang === "en" || currentLang === "en-US") ? true : false}
+          >EN</LangItem>
+          <LangItem
+            onClick={setSpanish}
+            current={(currentLang === "es" || currentLang === "es-ES") ? true : false}
+          >ES</LangItem>
         </LangMenu>
-        <SidebarMenu>
+        <SidebarMenu variants={sidebarMenu}>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/" onClick={() => {
-              updateFastTransition(false)
-              toggleSidebar()
-            }}>Home</SidebarLink>
+            <SidebarLink to="/" onClick={switchPage}>Home</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/about" onClick={() => {
-              updateFastTransition(false)
-              toggleSidebar()
-            }}>About</SidebarLink>
+            <SidebarLink to="/about" onClick={switchPage}>About</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/skills" onClick={() => {
-              updateFastTransition(false)
-              toggleSidebar()
-            }}>Skills</SidebarLink>
+            <SidebarLink to="/skills" onClick={switchPage}>Skills</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/contact" onClick={() => {
-              updateFastTransition(false)
-              toggleSidebar()
-            }}>Contact</SidebarLink>
+            <SidebarLink to="/contact" onClick={switchPage}>Contact</SidebarLink>
           </SidebarLinkItem>
         </SidebarMenu>
       </SidebarContainer>

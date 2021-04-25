@@ -78,7 +78,7 @@ const btnItem = {
   },
 }
 
-const ModalCard = ({ openModal, setOpenModal, toggleModal }) => {
+const ModalCard = ({ openModal, toggleModal }) => {
   const ref = useRef()
   const modalVariants = {
     hidden: { opacity: 0, transform: 'translateY(-100%)' },
@@ -94,7 +94,7 @@ const ModalCard = ({ openModal, setOpenModal, toggleModal }) => {
 
   const closeModal = e => {
     if (ref.current === e.target) {
-      setOpenModal(false)
+      toggleModal()
     }
   }
 
@@ -124,7 +124,7 @@ const Card = ({ card }) => {
 
   return (
     <>
-      <ModalCard openModal={openModal} setOpenModal={setOpenModal} toggleModal={toggleModal} />
+      <ModalCard openModal={openModal} toggleModal={toggleModal} />
       <SkillCard variants={card}>
         <SkillLogoWrap variants={cardItem}><SkillLogo src={require('../../images/skills/git.svg').default} /></SkillLogoWrap>
         <SkillName variants={cardItem}>Skill Name</SkillName>

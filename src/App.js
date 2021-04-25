@@ -7,6 +7,8 @@ import HomePage from "./pages/home.js"
 import ContactPage from "./pages/contact.js"
 import SkillsPage from "./pages/skills.js"
 import Navbar from "./components/Navbar"
+import { useTranslation } from 'react-i18next'
+import Theme from "./Theme"
 
 const App = () => {
   const [isFirstMount, setIsFirstMount] = useState(true)
@@ -14,6 +16,7 @@ const App = () => {
   const history = useHistory()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [fastTransition, setFastTransition] = useState(false)
+  const { i18n } = useTranslation('data')
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
@@ -30,55 +33,53 @@ const App = () => {
     return unlisten
   }, [history, isFirstMount])
 
+  const setSpanish = () => {
+    i18n.changeLanguage("es")
+  }
+  const setEnglish = () => {
+    i18n.changeLanguage("en")
+  }
+
   return (
     <>
-      <GlobalStyle />
-      <Navbar key='navbar'
-        hideNav={(location.pathname === "/") ? true : false}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        updateFastTransition={updateFastTransition} />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route path="/" exact
-            render={() => (
-              <HomePage
-                toggleSidebar={toggleSidebar}
-                isSidebarOpen={isSidebarOpen}
-                isFirstMount={isFirstMount}
-                fastTransition={fastTransition}
-                updateFastTransition={updateFastTransition} />
-            )}
-          />
-          <Route path="/about"
-            render={() => (
-              <AboutPage
-                toggleSidebar={toggleSidebar}
-                isSidebarOpen={isSidebarOpen}
-                isFirstMount={false}
-                fastTransition={fastTransition} />
-            )}
-          />
-          <Route path="/skills"
-            render={() => (
-              <SkillsPage
-                toggleSidebar={toggleSidebar}
-                isSidebarOpen={isSidebarOpen}
-                isFirstMount={false}
-                fastTransition={fastTransition} />
-            )}
-          />
-          <Route path="/contact"
-            render={() => (
-              <ContactPage
-                toggleSidebar={toggleSidebar}
-                isSidebarOpen={isSidebarOpen}
-                isFirstMount={false}
-                fastTransition={fastTransition} />
-            )}
-          />
-        </Switch>
-      </AnimatePresence>
+      <Theme>
+        <GlobalStyle />
+        <Navbar key='navbar'
+          hideNav={(location.pathname === "/") ? true : false}
+          isSidebarOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+          updateFastTransition={updateFastTransition}
+          currentLang={i18n.language}
+          setSpanish={setSpanish}
+          setEnglish={setEnglish} />
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route path="/" exact
+              render={() => (
+                <HomePage
+                  isFirstMount={isFirstMount}
+                  fastTransition={fastTransition}
+                  updateFastTransition={updateFastTransition} />
+              )}
+            />
+            <Route path="/about"
+              render={() => (
+                <AboutPage fastTransition={fastTransition} />
+              )}
+            />
+            <Route path="/skills"
+              render={() => (
+                <SkillsPage fastTransition={fastTransition} />
+              )}
+            />
+            <Route path="/contact"
+              render={() => (
+                <ContactPage fastTransition={fastTransition} />
+              )}
+            />
+          </Switch>
+        </AnimatePresence>
+      </Theme>
     </>
   )
 }

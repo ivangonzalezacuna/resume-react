@@ -16,7 +16,7 @@ export const SidebarContainer = styled(motion.div)`
   background: #121212;
 `
 
-export const SidebarMenu = styled.div`
+export const SidebarMenu = styled(motion.div)`
   margin: 60px 0;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,12 @@ export const SidebarMenu = styled.div`
 export const SidebarLinkItem = styled(motion.div)`
   font-weight: 400;
   margin: 10px;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 8vh, 1.5rem);
+  text-align: center;
+
+  @media screen and (max-height: 300px) {
+    margin: 6px;
+  }
 `
 
 export const SidebarLink = styled(Link)`
@@ -56,7 +61,7 @@ export const LangItem = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 0 4px 0 4px;
-  color: #f9f9f9;
+  color: ${({ current }) => current ? "red" : "#f9f9f9"};
   transition: 0.4s;
 
   &:hover {
