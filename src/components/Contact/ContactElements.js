@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Lottie from 'react-lottie-player'
 import { motion } from 'framer-motion'
 
 export const ContactContainer = styled(motion.div)`
@@ -17,11 +18,11 @@ export const SectionTitle = styled(motion.h1)`
   color: gray;
   position: absolute;
   text-align: center;
-  top: 20%;
+  top: ${({ center }) => center ? '50%' : '20%'};
   z-index: 1;
 
   @media screen and (max-width: 500px) {
-    top: 22%;
+    top: ${({ center }) => center ? '50%' : '22%'};
   }
 `
 
@@ -128,6 +129,16 @@ export const FormTextArea = styled(motion.textarea)`
   }
 `
 
+export const Error = styled.p`
+  font-size: 0.8rem;
+  margin: 0.5rem;
+  padding: 5px;
+  color: #f00e0e;
+  text-align: center;
+  background: #101010;
+  border-radius: 2px;
+`
+
 export const FormBtnWrap = styled(motion.div)`
   width: 50%;
   margin: 0 auto;
@@ -176,4 +187,37 @@ export const FormSuccessMsg = styled.h2`
   text-align: center;
   background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
   color: #f9f9f9;
+`
+
+export const LoadingOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(30,30,30,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+`
+
+export const LoadingPopupWrap = styled(motion.div)`
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 150px;
+  height: 150px;
+  margin-top: -75px;
+  margin-right: -75px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const LoadingAnimation = styled(Lottie)`
+  height: 150px;
+  width: 150px;
 `

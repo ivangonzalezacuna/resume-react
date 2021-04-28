@@ -83,7 +83,6 @@ const Sidebar = ({
   const switchPage = () => {
     updateFastTransition(false)
     toggleSidebar()
-    window.scrollTo(0, 0)
   }
 
   return (
@@ -91,34 +90,34 @@ const Sidebar = ({
       <SidebarContainer
         ref={ref}
         onClick={closeSidebar}
-        initial="initial"
-        animate={isSidebarOpen ? "animate" : "close"}
+        initial='initial'
+        animate={isSidebarOpen ? 'animate' : 'close'}
         variants={blackBox}>
         <LangMenu
           initial='initial'
-          animate={isSidebarOpen ? "animate" : "close"}
+          animate={isSidebarOpen ? 'animate' : 'close'}
           variants={langs}>
           <LangItem
             onClick={setEnglish}
-            current={(currentLang === "en" || currentLang === "en-US") ? true : false}
+            current={(currentLang === 'en' || currentLang === 'en-US') ? true : false}
           >EN</LangItem>
           <LangItem
             onClick={setSpanish}
-            current={(currentLang === "es" || currentLang === "es-ES") ? true : false}
+            current={(currentLang === 'es' || currentLang === 'es-ES') ? true : false}
           >ES</LangItem>
         </LangMenu>
         <SidebarMenu variants={sidebarMenu}>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/" onClick={switchPage}>Home</SidebarLink>
+            <SidebarLink to='/' onClick={switchPage}>Home</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/about" onClick={switchPage}>About</SidebarLink>
+            <SidebarLink to='/about' onClick={switchPage}>About</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/skills" onClick={switchPage}>Skills</SidebarLink>
+            <SidebarLink to='/skills' onClick={switchPage}>Skills</SidebarLink>
           </SidebarLinkItem>
           <SidebarLinkItem variants={links}>
-            <SidebarLink to="/contact" onClick={switchPage}>Contact</SidebarLink>
+            <SidebarLink to='/contact' onClick={switchPage}>Contact</SidebarLink>
           </SidebarLinkItem>
         </SidebarMenu>
       </SidebarContainer>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import $ from 'jquery'
+import { AnimatePresence } from 'framer-motion'
+import axios from 'axios'
 import validate from './validateInfo'
 import useForm from './useForm'
 import {
@@ -9,9 +10,12 @@ import {
   FormInputs, FormInput,
   FormLabel, FormTextArea,
   FormButton, FormBtnWrap,
-  FormSuccessContainer,
-  FormSuccessMsg,
+  LoadingPopupWrap,
+  LoadingOverlay,
+  Error,
+  LoadingAnimation,
 } from './ContactElements'
+import * as LoadingSpinner from '../../images/lottie/loading-spinner.json'
 
 const content = (fastTransition) => ({
   animate: {
@@ -62,38 +66,93 @@ const btnItem = {
   },
 }
 
+const Loading = ({ isLoading }) => {
+  const modalVariants = {
+    hidden: { opacity: 0, transform: 'translateY(-100%)' },
+    visible: {
+      opacity: 1, transform: 'translateY(0%)',
+      transition: { duration: 0.4 },
+    },
+    exit: {
+      opacity: 0, transform: 'translateY(-100%)',
+      transition: { duration: 0.4 },
+    }
+  }
+
+  return (
+    <>
+      <AnimatePresence>
+        {isLoading &&
+          <LoadingOverlay>
+            <LoadingPopupWrap variants={modalVariants}
+              initial='hidden' animate='visible' exit="exit">
+              <LoadingAnimation
+                loop
+                animationData={LoadingSpinner.default}
+                play />
+            </LoadingPopupWrap>
+          </LoadingOverlay>
+        }
+      </AnimatePresence>
+    </>
+  )
+}
+
 const Contact = ({ fastTransition }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [sendError, setSendError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   )
 
   function submitForm() {
-    executeQuery()
-    setIsSubmitted(true)
+    setSendError(false)
+    setIsLoading(true)
+    sendEmail()
   }
 
-  function executeQuery() {
-    $.ajax({
-      type: "GET",
-      //url: "https://script.google.com/macros/s/AKfycbyq8tGvTbLVgvG7VXkYfuRcMZ0ASZlJrQIFiyp-U2CqI_VrvOg/exec",
-      data: values,
-      dataType: "json",
-      error: function (error) { console.log(error) },
-      success: function (msg) { console.log(msg.result) }
+  const sendEmail = () => {
+    var message = {
+      service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      user_id: process.env.REACT_APP_EMAILJS_USER_ID,
+      template_params: { ...values }
+    }
+
+    console.log(message)
+
+    axios.post(process.env.REACT_APP_EMAILJS_ENDPOINT, message, {
+      timeout: 4000,
+      headers: { 'Content-Type': 'application/json' }
     })
+      .then(response => {
+        console.log(response)
+        setIsSubmitted(true)
+        setIsLoading(false)
+        window.scrollTo(0, 0)
+      })
+      .catch(error => {
+        console.log(JSON.stringify(error))
+        setIsLoading(false)
+        errors.send = error.message
+        setSendError(true)
+      })
   }
 
   return (
     <>
+      <Loading isLoading={isLoading} />
       <ContactContainer
         initial="initial"
         animate="animate"
         variants={content(fastTransition)}>
-        <SectionTitle variants={title}>Contact Me</SectionTitle>
+        <SectionTitle
+          center={!isSubmitted ? false : true} variants={title}
+        >{!isSubmitted ? 'Contact Me' : 'Message Sent!'}</SectionTitle>
         <FormContainer variants={formContainer}>
-          {!isSubmitted ? (
+          {!isSubmitted &&
             <FormContent>
               <FormWrap onSubmit={handleSubmit} noValidate>
                 <FormInputs>
@@ -148,18 +207,16 @@ const Contact = ({ fastTransition }) => {
                 <FormBtnWrap variants={btnItem} type='submit'>
                   <FormButton type='submit'>Submit</FormButton>
                 </FormBtnWrap>
+                {sendError && <Error>{errors.send}</Error>}
               </FormWrap>
             </FormContent>
-          ) : (
-            <>
-              <FormSuccessContainer>
-                <FormSuccessMsg>Message sent</FormSuccessMsg>
-              </FormSuccessContainer>
-            </>
-          )}
+          }
         </FormContainer>
       </ContactContainer>
     </>
+
+    // Add extra info like phone number and email
+    // That info could also go into the footer, but only if I find a way to include more data
   )
 }
 

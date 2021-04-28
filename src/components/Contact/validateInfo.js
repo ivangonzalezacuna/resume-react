@@ -24,5 +24,5 @@ export default function validateInfo(values) {
     values.subject = "Resume Contact Form"
   }
 
-  return errors;
+  return errors
 }

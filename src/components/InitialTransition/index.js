@@ -1,5 +1,8 @@
 import React from 'react'
-import { InitialTransitionContainer, InitialTransitionText } from './InititalTransitionElements';
+import {
+  InitialTransitionContainer,
+  InitialTransitionText
+} from './InititalTransitionElements'
 
 const blackBox = {
   initial: { height: '100vh' },
@@ -30,12 +33,8 @@ const InitialTransition = () => {
     <InitialTransitionContainer
       initial="initial"
       animate="animate"
-      variants={blackBox}
-    >
-      <InitialTransitionText
-
-        variants={textContainer}
-      >ivan</InitialTransitionText>
+      variants={blackBox}>
+      <InitialTransitionText variants={textContainer}>ivan</InitialTransitionText>
     </InitialTransitionContainer>
   )
 }

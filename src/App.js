@@ -34,10 +34,10 @@ const App = () => {
   }, [history, isFirstMount])
 
   const setSpanish = () => {
-    i18n.changeLanguage("es")
+    i18n.changeLanguage('es')
   }
   const setEnglish = () => {
-    i18n.changeLanguage("en")
+    i18n.changeLanguage('en')
   }
 
   return (
