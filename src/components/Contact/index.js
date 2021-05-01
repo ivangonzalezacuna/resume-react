@@ -122,16 +122,7 @@ const Contact = ({ fastTransition }) => {
   }
 
   const sendEmail = () => {
-    var message = {
-      service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      user_id: process.env.REACT_APP_EMAILJS_USER_ID,
-      template_params: { ...values }
-    }
-
-    console.log(message)
-
-    axios.post(process.env.REACT_APP_EMAILJS_ENDPOINT, message, {
+    axios.post("/api/sendmail", values, {
       timeout: 4000,
       headers: { 'Content-Type': 'application/json' }
     })

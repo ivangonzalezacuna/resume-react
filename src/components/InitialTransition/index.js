@@ -22,7 +22,7 @@ const textContainer = {
     opacity: 0,
     transition: {
       delay: 1,
-      duration: 1,
+      duration: 0.75,
       ease: [0.87, 0, 0.13, 1],
     },
   },
