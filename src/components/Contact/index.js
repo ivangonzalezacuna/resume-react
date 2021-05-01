@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import axios from 'axios'
 import validate from './validateInfo'
 import useForm from './useForm'
 import {
   ContactContainer, FormContainer,
-  SectionTitle,
-  FormContent, FormWrap,
+  SectionTitle, FormContent, FormWrap,
   FormInputs, FormInput,
   FormLabel, FormTextArea,
   FormButton, FormBtnWrap,
   LoadingPopupWrap,
-  LoadingOverlay,
-  Error,
+  LoadingOverlay, Error,
   LoadingAnimation,
+  ExtraInfoContainer,
+  ExtraInfoTitleWrap,
+  ExtraInfoTitle,
+  ContactMeWrap,
+  ContactSection,
+  ContactSectionIconWrap,
+  SectionInfoWrap,
+  SectionInfoTitle,
+  SectionInfoData,
 } from './ContactElements'
 import * as LoadingSpinner from '../../images/lottie/loading-spinner.json'
 
@@ -148,8 +156,7 @@ const Contact = ({ fastTransition }) => {
         initial="initial"
         animate="animate"
         variants={content(fastTransition)}>
-        <SectionTitle
-          center={!isSubmitted ? false : true} variants={title}
+        <SectionTitle variants={title}
         >{!isSubmitted ? 'Contact Me' : 'Message Sent!'}</SectionTitle>
         <FormContainer variants={formContainer}>
           {!isSubmitted &&
@@ -212,11 +219,33 @@ const Contact = ({ fastTransition }) => {
             </FormContent>
           }
         </FormContainer>
+        <ExtraInfoContainer>
+          <ExtraInfoTitleWrap>
+            <ExtraInfoTitle>You can also reach me through:</ExtraInfoTitle>
+          </ExtraInfoTitleWrap>
+          <ContactMeWrap>
+            <ContactSection>
+              <ContactSectionIconWrap>
+                <FaPhoneAlt />
+              </ContactSectionIconWrap>
+              <SectionInfoWrap>
+                <SectionInfoTitle>Email</SectionInfoTitle>
+                <SectionInfoData>ivangonzalezacuna@gmail.com</SectionInfoData>
+              </SectionInfoWrap>
+            </ContactSection>
+            <ContactSection>
+              <ContactSectionIconWrap>
+                <FaEnvelope />
+              </ContactSectionIconWrap>
+              <SectionInfoWrap>
+                <SectionInfoTitle>Phone</SectionInfoTitle>
+                <SectionInfoData>(+34) 654 46 26 02</SectionInfoData>
+              </SectionInfoWrap>
+            </ContactSection>
+          </ContactMeWrap>
+        </ExtraInfoContainer>
       </ContactContainer>
     </>
-
-    // Add extra info like phone number and email
-    // That info could also go into the footer, but only if I find a way to include more data
   )
 }
 

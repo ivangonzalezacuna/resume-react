@@ -10,6 +10,7 @@ export const ContactContainer = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   background: #161616;
+  cursor: default;
 `
 
 export const SectionTitle = styled(motion.h1)`
@@ -18,11 +19,11 @@ export const SectionTitle = styled(motion.h1)`
   color: gray;
   position: absolute;
   text-align: center;
-  top: ${({ center }) => center ? '50%' : '20%'};
+  top: 20%;
   z-index: 1;
 
   @media screen and (max-width: 500px) {
-    top: ${({ center }) => center ? '50%' : '22%'};
+    top: 22%;
   }
 `
 
@@ -52,14 +53,6 @@ export const FormContent = styled.div`
 
 export const FormWrap = styled.form`
   padding: 20px 30px;
-`
-
-export const FormH1 = styled.h1`
-  font-size: 1rem;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #f9f9f9;
 `
 
 export const FormInputs = styled.div`
@@ -167,26 +160,107 @@ export const FormButton = styled.button`
   }
 `
 
-export const FormSuccessContainer = styled.div`
+export const ExtraInfoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 150px;
+`
+
+export const ExtraInfoTitleWrap = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px;
+  justify-content: start;
+`
+
+export const ExtraInfoTitle = styled(motion.p)`
+  color: gray;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+`
+
+export const ContactMeWrap = styled.div`
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const ContactSection = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 50vh;
-  width: 50vw;
-  max-width: 400px;
+  margin: 5px 0;
+  padding: 14px;
+  background: #343434;
+  border-radius: 6px;
 
-  @media screen and (max-width: 400px) {
-    width: 80vw;
+  @media screen and (max-width: 440px) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 `
 
-export const FormSuccessMsg = styled.h2`
-  font-size: clamp(1.2rem, 8vw, 1.5rem);
-  padding: 20px;
-  border-radius: 4px;
-  text-align: center;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
-  color: #f9f9f9;
+export const ContactSectionIconWrap = styled.div`
+  height: 50px;
+  width: 50px;
+  border: 3px solid gray;
+  color: gray;
+  font-size: 24px;
+  margin-left: 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 440px) {
+    margin-bottom: 20px;
+    height: 45px;
+    width: 45px;
+    font-size: 22px;
+  }
+`
+
+export const SectionInfoWrap = styled.div`
+  margin-left: 20px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media screen and (max-width: 440px) {
+    margin-left: 10px;
+  }
+`
+
+export const SectionInfoTitle = styled.h1`
+  color: gray;
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 14px;
+
+  @media screen and (max-width: 440px) {
+    margin-bottom: 8px;
+  }
+`
+
+export const SectionInfoData = styled.p`
+  color: gray;
+  font-size: clamp(13px, 4vw, 15px);
+  font-weight: 400;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: #f9f9f9;
+  }
 `
 
 export const LoadingOverlay = styled.div`
@@ -203,13 +277,8 @@ export const LoadingOverlay = styled.div`
 `
 
 export const LoadingPopupWrap = styled(motion.div)`
-  position: fixed;
-  top: 50%;
-  right: 50%;
   width: 150px;
   height: 150px;
-  margin-top: -75px;
-  margin-right: -75px;
   background: #f9f9f9;
   border-radius: 10px;
   display: flex;
