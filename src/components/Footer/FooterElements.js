@@ -4,7 +4,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   padding-top: 50px;
   padding-bottom: 30px;
-  background: #063a5b;
+  background: ${props => props.theme.background.footer2};
   background: linear-gradient(
     0deg,
     rgba(6,58,91,1) 80%,
@@ -27,7 +27,7 @@ export const FooterWrap = styled.div`
 `
 
 export const Logo = styled.div`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
@@ -36,7 +36,7 @@ export const Logo = styled.div`
 `
 
 export const Copyright = styled.small`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   margin: 8px 0;
   display: flex;
   align-items: center;
@@ -53,7 +53,7 @@ export const SocialWrap = styled.div`
 export const SocialIcon = styled.a`
   font-size: 24px;
   margin: 0 8px;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   cursor: pointer;
   display: flex;
   align-items: center;

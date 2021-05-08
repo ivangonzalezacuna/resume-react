@@ -13,7 +13,7 @@ export const SidebarContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #121212;
+  background: ${props => props.theme.background.sidebar};
 `
 
 export const SidebarMenu = styled(motion.div)`
@@ -26,8 +26,8 @@ export const SidebarMenu = styled(motion.div)`
 
 export const SidebarLinkItem = styled(motion.div)`
   font-weight: 400;
-  margin: 10px;
-  font-size: clamp(1.3rem, 8vh, 1.5rem);
+  margin: 15px;
+  font-size: clamp(1.3rem, 8vh, 1.7rem);
   text-align: center;
 
   @media screen and (max-height: 300px) {
@@ -37,11 +37,11 @@ export const SidebarLinkItem = styled(motion.div)`
 
 export const SidebarLink = styled(Link)`
   text-decoration: none;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   transition: 0.4s;
 
   &:hover {
-    color: red;
+    color: ${props => props.theme.colors.blue};
   }
 `
 
@@ -50,7 +50,6 @@ export const LangMenu = styled(motion.div)`
   bottom: 0;
   right: 0;
   height: 40px;
-  color: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,10 +60,10 @@ export const LangItem = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 0 4px 0 4px;
-  color: ${({ current }) => current ? "red" : "#f9f9f9"};
+  color: ${({ current, theme: { colors } }) => current ? colors.blue : colors.white};
   transition: 0.4s;
 
   &:hover {
-    color: red;
+    color: ${props => props.theme.colors.blue};
   }
 `

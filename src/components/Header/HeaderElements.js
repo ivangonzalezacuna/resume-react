@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.div`
 export const HeaderContainer = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background: blue;
+  background: ${props => props.theme.background.section};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +42,10 @@ export const HeaderContainer = styled(motion.div)`
       rgba(0,0,0,0.2) 0%,
       rgba(0,0,0,0.3) 75%,
       rgba(0,0,0,0.9) 100%),
-      linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+      linear-gradient(
+        180deg, 
+        rgba(0,0,0,0.2) 0%, 
+        transparent 100%);
     z-index: 2;
   }
 `
@@ -54,7 +57,7 @@ export const HeaderBackground = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  background-color: #121212;
+  background-color: ${props => props.theme.background.section};
 `
 
 export const HeaderContent = styled.div`
@@ -64,7 +67,7 @@ export const HeaderContent = styled.div`
   flex-direction: column;
   max-width: 1100px;
   width: calc(100% - 100px);
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
 `
 
 export const HeaderName = styled(motion.h1)`
@@ -90,28 +93,18 @@ export const HeaderContactBtnWrap = styled(motion.div)`
 
 export const HeaderContactBtn = styled(Link)`
   padding: 12px 32px;
-  background: #f9f9f9;
+  background: ${props => props.theme.colors.white};
   border-radius: 50px;
-  color: #121212;
+  color: ${props => props.theme.colors.black};
   text-decoration: none;
   transition: 0.4s;
   cursor: pointer;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
 
   &:hover {
-    background: blue;
-    color: #f9f9f9;
+    background: ${props => props.theme.colors.blue};
+    color: ${props => props.theme.colors.black};
   }
-`
-
-export const HeaderExtraContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  position: fixed;
-  background: red;
-  bottom: 0;
-  z-index: 3;
 `
 
 export const HeaderGoAboutWrap = styled(Link)`
@@ -132,12 +125,12 @@ export const HeaderGoAbout = styled(motion.div)`
 `
 
 export const HeaderGoAboutText = styled.p`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   
 `
 
 export const HeaderGoAboutIcon = styled(Icon)`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
 `
 
 export const HeaderSocialWrap = styled.div`
@@ -159,7 +152,7 @@ export const HeaderSocialWrap = styled.div`
 export const SocialIcon = styled.a`
   font-size: 24px;
   margin: 6px 8px;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -4,21 +4,27 @@ import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaSkype } from 'react
 import { RiCopyrightLine } from 'react-icons/ri'
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   return (
     <>
       <FooterContainer>
         <FooterWrap>
-          <Logo>ivan</Logo>
+          <Logo onClick={scrollToTop}>ivan</Logo>
           <Copyright>
             <RiCopyrightLine style={{ marginRight: '4px' }} />
             {new Date().getFullYear()} Iván Gonzalez. All rights reserved.
             </Copyright>
           <SocialWrap>
-            <SocialIcon><FaFacebookF /></SocialIcon>
-            <SocialIcon><FaGithub /></SocialIcon>
-            <SocialIcon><FaInstagram /></SocialIcon>
-            <SocialIcon><FaLinkedinIn /></SocialIcon>
-            <SocialIcon><FaSkype /></SocialIcon>
+            <SocialIcon href={"http://www.facebook.com"} target="_blank"><FaFacebookF /></SocialIcon>
+            <SocialIcon href={"http://www.github.com"} target="_blank"><FaGithub /></SocialIcon>
+            <SocialIcon href={"http://www.instagram.com"} target="_blank"><FaInstagram /></SocialIcon>
+            <SocialIcon href={"http://www.linkedin.com"} target="_blank"><FaLinkedinIn /></SocialIcon>
+            <SocialIcon href={"http://www.skype.com"} target="_blank"><FaSkype /></SocialIcon>
           </SocialWrap>
         </FooterWrap>
       </FooterContainer>

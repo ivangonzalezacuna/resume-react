@@ -9,7 +9,7 @@ export const SkillsContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #161616;
+  background: ${props => props.theme.background.section};
 `
 
 export const SectionTitleWrap = styled.div`
@@ -24,7 +24,7 @@ export const SectionTitleWrap = styled.div`
 `
 
 export const SectionTitle = styled(motion.p)`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   text-transform: uppercase;
   font-size: 18px;
   line-height: 16px;
@@ -37,18 +37,19 @@ export const SkillGrid = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, 250px);
   align-items: center;
+  justify-content: center;
   grid-gap: 24px;
   padding: 100px 24px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 350px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 `
 
 export const SkillCard = styled(motion.div)`
-  background: #f9f9f9;
+  background: ${props => props.theme.background.card};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +66,7 @@ export const SkillCard = styled(motion.div)`
 export const SkillName = styled(motion.h2)`
   font-weight: bold;
   font-size: 1.1rem;
-  color: #121212;
+  color: ${props => props.theme.colors.black};
   margin: 10px 0;
 `
 
@@ -85,13 +86,13 @@ export const SkillLogo = styled.img`
 export const SkillLevelWrap = styled(motion.div)`
   width: 100%;
   height: 15px;
-  background: #121212;
+  background: ${props => props.theme.background.section};
   border-radius: 4px;
   margin: 10px 0 30px 0;
 `
 
 export const SkillLevelBar = styled(motion.div)`
-  background: red;
+  background: ${props => props.theme.colors.blue};
   height: 100%;
   width: ${({ skill }) => skill ? skill : '0%'};
   border-radius: 4px;
@@ -102,34 +103,6 @@ export const SkillLevelValue = styled(motion.p)`
   font-weight: bold;
   padding-left: 5px;
   padding-top: 2px;
-`
-
-export const SkillBtn = styled(motion.div)`
-  background: blue;
-  color: #f9f9f9;
-  border-radius: 50px;
-  outline: none;
-  padding: 8px 14px;
-  transition: 0.4s;
-  font-size: 0.8rem;
-  cursor: pointer;
-
-  &:hover {
-    background: green;
-  }
-`
-
-export const SkillDescWrap = styled(motion.div)`
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  background: #e9e9e9;
-  border-radius: 8px;
-`
-
-export const SkillDesc = styled(motion.p)`
-  color: #121212;
-  font-size: 13px;
 `
 
 export const ModalOverlay = styled.div`
@@ -150,7 +123,7 @@ export const ModalContainer = styled(motion.div)`
   padding: 28px 3px 3px 3px;
   width: 50vw;
   max-width: 400px;
-  background: black;
+  background: ${props => props.theme.background.section};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -166,7 +139,7 @@ export const CloseIcon = styled(MdClose)`
   position: absolute;
   top: 0;
   right: 0;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   font-size: 1.5rem;
   margin: 4px;
   cursor: pointer;
@@ -179,6 +152,6 @@ export const ModalContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
 `
 

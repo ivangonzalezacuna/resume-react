@@ -10,12 +10,12 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ hideNav }) => hideNav ? 'transparent' : '#121212'};
+  background: ${({ hideNav, theme: { background } }) => hideNav ? background.transparent : background.navbar};
   z-index: 15;
 `
 
 export const Logo = styled(Link)`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   justify-self: start;
   font-size: 1.5rem;
   display: flex;
@@ -29,14 +29,14 @@ export const Logo = styled(Link)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  
+
   @media screen and (max-width: 768px) {
     display: none;
   }
 `
 
 export const NavItem = styled(Link)`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   display: flex;
   align-items: center;
   margin: 0 0.8rem;
@@ -46,12 +46,12 @@ export const NavItem = styled(Link)`
   transition: 0.4s;
 
   &:hover {
-    color: red;
+    color: ${props => props.theme.colors.blue};
   }
 `
 
 export const LangMenu = styled.div`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -68,18 +68,17 @@ export const LangItem = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 0 4px 0 4px;
-  color: ${({ current }) => current ? "red" : "#f9f9f9"};
- 
+  color: ${({ current, theme: { colors } }) => current ? colors.blue : colors.white};
   transition: 0.4s;
 
   &:hover {
-    color: red;
+    color: ${props => props.theme.colors.blue};
   }
 `
 
 export const HamburgerMenu = styled.div`
   display: none;
-
+  
   @media screen and (max-width: 768px) {
     display: flex;
     align-items: center;

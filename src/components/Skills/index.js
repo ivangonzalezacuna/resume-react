@@ -1,12 +1,13 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useState, useRef } from 'react'
+import { CustomButton } from '../../molecules/Button'
+import { SectionTitle } from '../../molecules/SectionTitle'
 import {
   CloseIcon,
   ModalContainer,
   ModalContentWrap,
   ModalOverlay,
-  SectionTitle, SectionTitleWrap,
-  SkillBtn, SkillCard, SkillGrid,
+  SkillCard, SkillGrid,
   SkillLevelBar, SkillLevelValue,
   SkillLevelWrap, SkillLogo,
   SkillLogoWrap, SkillName,
@@ -15,7 +16,10 @@ import {
 
 const content = (fastTransition) => ({
   animate: {
-    transition: { staggerChildren: 0.07, delayChildren: fastTransition ? 0 : 1 },
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: fastTransition ? 0 : 0.5
+    },
   },
 })
 
@@ -115,27 +119,35 @@ const ModalCard = ({ openModal, toggleModal }) => {
   )
 }
 
-const Card = ({ card }) => {
+const Card = () => {
   const [openModal, setOpenModal] = useState(false)
 
   const toggleModal = () => {
     setOpenModal(!openModal)
   }
 
+  const skillBarValue = {
+    initial: { width: '0%' },
+    animate: { width: '50%', transition: { duration: 1 } }
+  }
+
   return (
     <>
       <ModalCard openModal={openModal} toggleModal={toggleModal} />
       <SkillCard variants={card}>
-        <SkillLogoWrap variants={cardItem}><SkillLogo src={require('../../images/skills/git.svg').default} /></SkillLogoWrap>
+        <SkillLogoWrap variants={cardItem}>
+          <SkillLogo src={require('../../images/skills/git.svg').default} />
+        </SkillLogoWrap>
         <SkillName variants={cardItem}>Skill Name</SkillName>
         <SkillLevelWrap variants={skillBar}>
-          <SkillLevelBar skill='50%' variants={{
-            initial: { width: '0%' },
-            animate: { width: '50%', transition: { duration: 1 } }
-          }} />
+          <SkillLevelBar skill='50%' variants={skillBarValue} />
           <SkillLevelValue variants={btnItem}>50%</SkillLevelValue>
         </SkillLevelWrap>
-        <SkillBtn variants={btnItem} onClick={toggleModal}>Show more</SkillBtn>
+        <CustomButton
+          variants={btnItem}
+          onClick={toggleModal}
+          text={"Show more"}
+          small dark />
       </SkillCard>
     </>
   )
@@ -150,12 +162,10 @@ const Skills = ({ fastTransition }) => {
         initial="initial"
         animate="animate"
         variants={content(fastTransition)}>
-        <SectionTitleWrap>
-          <SectionTitle variants={title}>Skills</SectionTitle>
-        </SectionTitleWrap>
+        <SectionTitle variants={title} text={"Skills"} />
         <SkillGrid>
           {cardList.map((value) => (
-            <Card key={value} card={card} />
+            <Card key={value} />
           ))}
         </SkillGrid>
       </SkillsContainer>

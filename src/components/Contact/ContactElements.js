@@ -9,22 +9,16 @@ export const ContactContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #161616;
+  background: ${props => props.theme.background.section};
   cursor: default;
 `
 
 export const SectionTitle = styled(motion.h1)`
   font-size: clamp(1.7rem, 8vw, 3rem);
   letter-spacing: 1.5px;
-  color: gray;
-  position: absolute;
+  color: ${props => props.theme.colors.gray};
   text-align: center;
-  top: 20%;
-  z-index: 1;
-
-  @media screen and (max-width: 500px) {
-    top: 22%;
-  }
+  padding: ${({ submitted }) => submitted ? '150px 50px 50px 50px' : '150px 50px 10px 50px'} ;
 `
 
 export const FormContainer = styled(motion.div)`
@@ -32,11 +26,9 @@ export const FormContainer = styled(motion.div)`
   height: auto;
   width: calc(100% - 40px);
   max-width: 900px;
-  margin: 200px 0 20px 0;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  z-index: 2;
 
   @media screen and (max-height: 400px) {
     margin-top: 130px;
@@ -48,7 +40,7 @@ export const FormContent = styled.div`
   position: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+  background: ${props => props.theme.background.section};
 `
 
 export const FormWrap = styled.form`
@@ -63,7 +55,7 @@ export const FormInputs = styled.div`
   p {
     font-size: 0.8rem;
     margin-top: 0.5rem;
-    color: #f00e0e;
+    color: ${props => props.theme.colors.red};
   }
 `
 
@@ -71,10 +63,10 @@ export const FormLabel = styled(motion.label)`
   display: inline-block;
   font-size: 0.8rem;
   margin-bottom: 6px;
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
 
   span {
-    color: red;
+    color: ${props => props.theme.colors.lightBlue};
     font-weight: 700;
     margin-left: 5px;
   }
@@ -91,13 +83,13 @@ export const FormInput = styled(motion.input)`
   opacity: 0.7;
 
   &::placeholder {
-    color: #595959;
+    color: ${props => props.theme.colors.placeholderGray};
     font-size: 12px;
   }
 
   &:focus {
     opacity: 1;
-    border: 2px solid red;
+    border: 2px solid ${props => props.theme.colors.lightBlue};
   }
 `
 
@@ -112,13 +104,13 @@ export const FormTextArea = styled(motion.textarea)`
   resize: vertical;
 
   &::placeholder {
-    color: #595959;
+    color: ${props => props.theme.colors.placeholderGray};
     font-size: 12px;
   }
 
   &:focus {
     opacity: 1;
-    border: 2px solid red;
+    border: 2px solid ${props => props.theme.colors.lightBlue};
   }
 `
 
@@ -126,38 +118,10 @@ export const Error = styled.p`
   font-size: 0.8rem;
   margin: 0.5rem;
   padding: 5px;
-  color: #f00e0e;
+  color: ${props => props.theme.colors.red};
   text-align: center;
-  background: #101010;
+  background: ${props => props.theme.background.error};
   border-radius: 2px;
-`
-
-export const FormBtnWrap = styled(motion.div)`
-  width: 50%;
-  margin: 0 auto;
-`
-
-export const FormButton = styled.button`
-  width: 100%;
-  background: red;
-  color: #121212;
-  padding: 14px 0;
-  margin-top: 25px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: clamp(16px, 4vw, 20px);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  white-space: nowrap;
-  outline: none;
-  border: none;
-
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    background: #f9f9f9;
-    color: #121212;
-  }
 `
 
 export const ExtraInfoContainer = styled.div`
@@ -180,7 +144,7 @@ export const ExtraInfoTitleWrap = styled.div`
 `
 
 export const ExtraInfoTitle = styled(motion.p)`
-  color: gray;
+  color: ${props => props.theme.colors.white};
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -200,7 +164,7 @@ export const ContactSection = styled.div`
   align-items: center;
   margin: 5px 0;
   padding: 14px;
-  background: #343434;
+  border: 2px solid ${props => props.theme.background.gray};
   border-radius: 6px;
 
   @media screen and (max-width: 440px) {
@@ -212,8 +176,8 @@ export const ContactSection = styled.div`
 export const ContactSectionIconWrap = styled.div`
   height: 50px;
   width: 50px;
-  border: 3px solid gray;
-  color: gray;
+  border: 3px solid ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white};
   font-size: 24px;
   margin-left: 10px;
   border-radius: 6px;
@@ -242,7 +206,7 @@ export const SectionInfoWrap = styled.div`
 `
 
 export const SectionInfoTitle = styled.h1`
-  color: gray;
+  color: ${props => props.theme.colors.white};
   font-size: clamp(16px, 4vw, 20px);
   margin-bottom: 14px;
 
@@ -252,14 +216,14 @@ export const SectionInfoTitle = styled.h1`
 `
 
 export const SectionInfoData = styled.p`
-  color: gray;
+  color: ${props => props.theme.colors.white};
   font-size: clamp(13px, 4vw, 15px);
   font-weight: 400;
   transition: all 0.3s;
   cursor: pointer;
 
   &:hover {
-    color: #f9f9f9;
+    color: ${props => props.theme.colors.blue};
   }
 `
 
@@ -279,7 +243,7 @@ export const LoadingOverlay = styled.div`
 export const LoadingPopupWrap = styled(motion.div)`
   width: 150px;
   height: 150px;
-  background: #f9f9f9;
+  background: ${props => props.theme.colors.white};
   border-radius: 10px;
   display: flex;
   align-items: center;

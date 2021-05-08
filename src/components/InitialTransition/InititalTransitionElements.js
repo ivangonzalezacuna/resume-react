@@ -7,7 +7,7 @@ export const InitialTransitionContainer = styled(motion.div)`
   position: absolute;
   top: 0;
   right: 0;
-  background: #121212;
+  background: ${props => props.theme.background.initial};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,5 +16,5 @@ export const InitialTransitionContainer = styled(motion.div)`
 `
 
 export const InitialTransitionText = styled(motion.h1)`
-  color: #f9f9f9;
+  color: ${props => props.theme.colors.white};
 `

@@ -1,16 +1,24 @@
 import React from 'react'
 import {
-  AboutContainer, TitleWrap,
-  Title, PersonalInfoContainer,
+  AboutContainer, PersonalInfoContainer,
   PersonalInfoGrid, AboutWrap,
   Name, Description, ImgAnimateWrap,
-  Img, ImgWrap, BtnWrap, Btn
+  Img, ImgWrap, WorkContainer, EducationContainer,
+  TimelineWrap, Timeline, TimelineItem, ItemTime,
+  ItemContent, TimeText, ItemTitle, ItemSubtitle,
+  ItemDescription
 } from './AboutElements'
 import ProfilePic from '../../images/profile/ivan.png'
+import PdfResume from '../../images/pdf/resume-en.pdf'
+import { HrefButton } from '../../molecules/Button'
+import { SectionTitle } from '../../molecules/SectionTitle'
 
 const content = (fastTransition) => ({
   animate: {
-    transition: { staggerChildren: 0.07, delayChildren: fastTransition ? 0 : 1 },
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: fastTransition ? 0 : 0.5
+    },
   },
 })
 
@@ -58,16 +66,12 @@ const About = ({ fastTransition }) => {
       initial="initial"
       animate="animate"
       variants={content(fastTransition)}>
-      <TitleWrap>
-        <Title variants={title}>About Me</Title>
-      </TitleWrap>
+      <SectionTitle variants={title} text={"About Me"} />
       <PersonalInfo />
-      <TitleWrap>
-        <Title variants={title}>Work Experience</Title>
-      </TitleWrap>
-      <TitleWrap>
-        <Title variants={title}>Education</Title>
-      </TitleWrap>
+      <SectionTitle variants={title} text={"Work Experience"} />
+      <WorkInfo />
+      <SectionTitle variants={title} text={"Education"} />
+      <EducationInfo />
     </AboutContainer>
   )
 }
@@ -85,13 +89,79 @@ const PersonalInfo = () => {
           <AboutWrap>
             <Name variants={aboutItem}>I'm Ivan Gonzalez</Name>
             <Description variants={aboutItem}>Lorem ipsum some text goes here with a nice description about me in a copuple of lines. Let's say from 5 to 6 would be nice, or even less if possible</Description>
-            <BtnWrap variants={aboutItem}>
-              <Btn>Download CV</Btn>
-            </BtnWrap>
+            <HrefButton
+              variants={aboutItem}
+              href={PdfResume}
+              text={"Download CV"} />
           </AboutWrap>
         </PersonalInfoGrid>
       </PersonalInfoContainer>
     </>
+  )
+}
+
+const workItems = [
+  {
+    date: "Feb 2020 - Present",
+    place: "University of Vigo",
+    role: "Research and Development",
+    description: "Some text as a description"
+  },
+  {
+    date: "Jun 2019 - Jul 2019",
+    place: "Muutech Monitoring Solutions SL",
+    role: "Internship",
+    description: "Some text as a description"
+  }
+]
+
+const educationItems = [
+  {
+    date: "Aug 2016 - Jul 2020",
+    place: "University of Vigo",
+    role: "Degree in Telecommunications",
+    description: "Some text as a description"
+  },
+  {
+    date: "Aug 2019 - Dec 2019",
+    place: "University of Oulu",
+    role: "Software Development",
+    description: "Some text as a description"
+  }
+]
+
+const WorkInfo = () => {
+  return (
+    <WorkContainer variants={about}>
+      <TimelineElement items={workItems} />
+    </WorkContainer>
+  )
+}
+
+const EducationInfo = () => {
+  return (
+    <EducationContainer variants={about}>
+      <TimelineElement items={educationItems} />
+    </EducationContainer>
+  )
+}
+
+const TimelineElement = ({ items }) => {
+  return (
+    <TimelineWrap>
+      <Timeline>
+        {items.map((item, index) => (
+          <TimelineItem key={index}>
+            <ItemTime><TimeText variants={aboutItem}>{item.date}</TimeText></ItemTime>
+            <ItemContent>
+              <ItemTitle variants={aboutItem}>{item.place}</ItemTitle>
+              <ItemSubtitle variants={aboutItem}>{item.role}</ItemSubtitle>
+              <ItemDescription variants={aboutItem}>{item.description}</ItemDescription>
+            </ItemContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </TimelineWrap>
   )
 }
 

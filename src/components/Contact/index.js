@@ -9,7 +9,6 @@ import {
   SectionTitle, FormContent, FormWrap,
   FormInputs, FormInput,
   FormLabel, FormTextArea,
-  FormButton, FormBtnWrap,
   LoadingPopupWrap,
   LoadingOverlay, Error,
   LoadingAnimation,
@@ -24,6 +23,7 @@ import {
   SectionInfoData,
 } from './ContactElements'
 import * as LoadingSpinner from '../../images/lottie/loading-spinner.json'
+import { FormButton } from '../../molecules/Button'
 
 const content = (fastTransition) => ({
   animate: {
@@ -118,9 +118,18 @@ const Contact = ({ fastTransition }) => {
   function submitForm() {
     setSendError(false)
     setIsLoading(true)
-    sendEmail()
+    //sendEmail()
+    sendMail()
   }
 
+  const sendMail = () => {
+    setTimeout(() => {
+      setIsSubmitted(true)
+      setIsLoading(false)
+      window.scrollTo(0, 0)
+    }, 1000)
+  }
+  // eslint-disable-next-line
   const sendEmail = () => {
     axios.post("/api/sendmail", values, {
       timeout: 4000,
@@ -147,7 +156,7 @@ const Contact = ({ fastTransition }) => {
         initial="initial"
         animate="animate"
         variants={content(fastTransition)}>
-        <SectionTitle variants={title}
+        <SectionTitle variants={title} submitted={isSubmitted ? true : false}
         >{!isSubmitted ? 'Contact Me' : 'Message Sent!'}</SectionTitle>
         <FormContainer variants={formContainer}>
           {!isSubmitted &&
@@ -202,9 +211,9 @@ const Contact = ({ fastTransition }) => {
                   />
                   {errors.message && <p>{errors.message}</p>}
                 </FormInputs>
-                <FormBtnWrap variants={btnItem} type='submit'>
-                  <FormButton type='submit'>Submit</FormButton>
-                </FormBtnWrap>
+                <FormButton
+                  variants={btnItem}
+                  text={"Send Message"} />
                 {sendError && <Error>{errors.send}</Error>}
               </FormWrap>
             </FormContent>
