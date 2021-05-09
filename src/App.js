@@ -9,6 +9,7 @@ import SkillsPage from "./pages/skills.js"
 import Navbar from "./components/Navbar"
 import { useTranslation } from 'react-i18next'
 import Theme from "./Theme"
+import NotFoundPage from "./pages/404"
 
 const App = () => {
   const [isFirstMount, setIsFirstMount] = useState(true)
@@ -75,6 +76,11 @@ const App = () => {
             <Route path="/contact"
               render={() => (
                 <ContactPage fastTransition={fastTransition} />
+              )}
+            />
+            <Route path="*"
+              render={() => (
+                <NotFoundPage />
               )}
             />
           </Switch>

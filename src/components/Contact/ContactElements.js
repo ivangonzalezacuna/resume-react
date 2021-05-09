@@ -24,15 +24,12 @@ export const SectionTitle = styled(motion.h1)`
 export const FormContainer = styled(motion.div)`
   display: flex;
   height: auto;
-  width: calc(100% - 40px);
+  width: 100%;
+  padding: 0 20px;
   max-width: 900px;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-
-  @media screen and (max-height: 400px) {
-    margin-top: 130px;
-  }
 `
 
 export const FormContent = styled.div`
@@ -170,6 +167,7 @@ export const ContactSection = styled.div`
   @media screen and (max-width: 440px) {
     flex-direction: column;
     align-items: flex-start;
+    padding: 14px 0;
   }
 `
 
@@ -217,7 +215,7 @@ export const SectionInfoTitle = styled.h1`
 
 export const SectionInfoData = styled.p`
   color: ${props => props.theme.colors.white};
-  font-size: clamp(13px, 4vw, 15px);
+  font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
   transition: all 0.3s;
   cursor: pointer;
