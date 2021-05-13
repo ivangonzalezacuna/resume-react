@@ -15,15 +15,15 @@ export const Nav = styled.div`
 `
 
 export const Logo = styled(Link)`
-  color: ${props => props.theme.colors.white};
   justify-self: start;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
   text-decoration: none;
-  font-weight: bold;
   margin-left: 2rem;
   cursor: pointer;
+`
+
+export const LogoImg = styled.img`
+  height: 23px;
+  width: auto;
 `
 
 export const NavMenu = styled.div`

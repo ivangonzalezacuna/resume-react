@@ -1,7 +1,8 @@
 import React from 'react'
-import { FooterContainer, FooterWrap, Logo, SocialWrap, SocialIcon, Copyright } from './FooterElements'
+import { FooterContainer, FooterWrap, Logo, SocialWrap, SocialIcon, Copyright, LogoImg } from './FooterElements'
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaSkype } from 'react-icons/fa'
 import { RiCopyrightLine } from 'react-icons/ri'
+import IvanLogo from '../../images/background/logo.svg'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -14,7 +15,9 @@ const Footer = () => {
     <>
       <FooterContainer>
         <FooterWrap>
-          <Logo onClick={scrollToTop}>ivan</Logo>
+          <Logo onClick={scrollToTop}>
+            <LogoImg src={IvanLogo} alt="logo" />
+          </Logo>
           <Copyright>
             <RiCopyrightLine style={{ marginRight: '4px' }} />
             {new Date().getFullYear()} Iván Gonzalez. All rights reserved.

@@ -6,7 +6,9 @@ import {
   CloseIcon,
   ModalContainer,
   ModalContentWrap,
+  ModalDescription,
   ModalOverlay,
+  ModalTitle,
   SkillCard, SkillGrid,
   SkillLevelBar, SkillLevelValue,
   SkillLevelWrap, SkillLogo,
@@ -82,7 +84,7 @@ const btnItem = {
   },
 }
 
-const ModalCard = ({ openModal, toggleModal }) => {
+const ModalCard = ({ openModal, toggleModal, data }) => {
   const ref = useRef()
   const modalVariants = {
     hidden: { opacity: 0, transform: 'translateY(-100%)' },
@@ -110,7 +112,8 @@ const ModalCard = ({ openModal, toggleModal }) => {
             initial='hidden' animate='visible' exit="exit">
             <CloseIcon onClick={toggleModal} />
             <ModalContentWrap>
-              Skill Modal (To be done)
+              <ModalTitle>{data.name}</ModalTitle>
+              <ModalDescription>Skill with level of {data.level}% (To be done) But now you can see some text on the modal, isn't it?</ModalDescription>
             </ModalContentWrap>
           </ModalContainer>
         </ModalOverlay>
@@ -119,7 +122,7 @@ const ModalCard = ({ openModal, toggleModal }) => {
   )
 }
 
-const Card = () => {
+const Card = ({ data }) => {
   const [openModal, setOpenModal] = useState(false)
 
   const toggleModal = () => {
@@ -128,20 +131,20 @@ const Card = () => {
 
   const skillBarValue = {
     initial: { width: '0%' },
-    animate: { width: '50%', transition: { duration: 1 } }
+    animate: { width: data.level + '%', transition: { duration: 1 } }
   }
 
   return (
     <>
-      <ModalCard openModal={openModal} toggleModal={toggleModal} />
+      <ModalCard openModal={openModal} toggleModal={toggleModal} data={data} />
       <SkillCard variants={card}>
         <SkillLogoWrap variants={cardItem}>
           <SkillLogo src={require('../../images/skills/git.svg').default} />
         </SkillLogoWrap>
-        <SkillName variants={cardItem}>Skill Name</SkillName>
+        <SkillName variants={cardItem}>{data.name}</SkillName>
         <SkillLevelWrap variants={skillBar}>
           <SkillLevelBar skill='50%' variants={skillBarValue} />
-          <SkillLevelValue variants={btnItem}>50%</SkillLevelValue>
+          <SkillLevelValue variants={btnItem}>{data.level}%</SkillLevelValue>
         </SkillLevelWrap>
         <CustomButton
           variants={btnItem}
@@ -153,7 +156,32 @@ const Card = () => {
   )
 }
 
-const cardList = [1, 2, 3, 4, 5, 6]
+const cardList = [
+  {
+    name: "Skill Name 1",
+    level: 35,
+  },
+  {
+    name: "Skill Name 2",
+    level: 43,
+  },
+  {
+    name: "Skill Name 3",
+    level: 79,
+  },
+  {
+    name: "Skill Name 4",
+    level: 54,
+  },
+  {
+    name: "Skill Name 5",
+    level: 75,
+  },
+  {
+    name: "Skill Name 6",
+    level: 55,
+  },
+]
 
 const Skills = ({ fastTransition }) => {
   return (
@@ -164,8 +192,8 @@ const Skills = ({ fastTransition }) => {
         variants={content(fastTransition)}>
         <SectionTitle variants={title} text={"Skills"} />
         <SkillGrid>
-          {cardList.map((value) => (
-            <Card key={value} />
+          {cardList.map((skill, index) => (
+            <Card key={index} data={skill} />
           ))}
         </SkillGrid>
       </SkillsContainer>

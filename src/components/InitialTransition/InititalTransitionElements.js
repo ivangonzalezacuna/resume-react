@@ -18,3 +18,8 @@ export const InitialTransitionContainer = styled(motion.div)`
 export const InitialTransitionText = styled(motion.h1)`
   color: ${props => props.theme.colors.white};
 `
+
+export const Logo = styled.img`
+  height: 23px;
+  width: auto;
+`

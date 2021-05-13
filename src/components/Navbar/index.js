@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { HamburgerMenu, LangItem, LangMenu, Logo, Nav, NavItem, NavMenu } from './NavbarElements'
+import { HamburgerMenu, LangItem, LangMenu, Logo, LogoImg, Nav, NavItem, NavMenu } from './NavbarElements'
 import Sidebar from '../Sidebar'
+import IvanLogo from '../../images/background/logo.svg'
 
 const Stroke = props => {
   return (
@@ -73,7 +74,9 @@ const Navbar = ({
   return (
     <>
       <Nav hideNav={hideNav}>
-        <Logo to="/" onClick={checkToggleSidebar}>ivan</Logo>
+        <Logo to="/" onClick={checkToggleSidebar}>
+          <LogoImg src={IvanLogo} alt="logo" />
+        </Logo>
         <NavMenu>
           <NavItem to="/"
             onClick={switchPage}>Home</NavItem>

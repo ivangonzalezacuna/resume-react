@@ -1,15 +1,17 @@
 import React from 'react'
 import {
   InitialTransitionContainer,
-  InitialTransitionText
+  InitialTransitionText,
+  Logo
 } from './InititalTransitionElements'
+import IvanLogo from '../../images/background/logo.svg'
 
 const blackBox = {
   initial: { height: '100vh' },
   animate: {
     height: 0,
     transition: {
-      delay: 1.25,
+      delay: 1.5,
       duration: 1,
       ease: [0.87, 0, 0.13, 1],
     },
@@ -17,12 +19,12 @@ const blackBox = {
 }
 
 const textContainer = {
-  initial: { opacity: 1, },
+  initial: { opacity: 1 },
   animate: {
     opacity: 0,
     transition: {
       delay: 1,
-      duration: 0.75,
+      duration: 0.5,
       ease: [0.87, 0, 0.13, 1],
     },
   },
@@ -34,7 +36,9 @@ const InitialTransition = () => {
       initial="initial"
       animate="animate"
       variants={blackBox}>
-      <InitialTransitionText variants={textContainer}>ivan</InitialTransitionText>
+      <InitialTransitionText variants={textContainer}>
+        <Logo src={IvanLogo} alt="logo" />
+      </InitialTransitionText>
     </InitialTransitionContainer>
   )
 }

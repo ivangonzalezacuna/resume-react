@@ -1,7 +1,8 @@
 import React from 'react'
-import { NotFoundAnimation, NotFoundContainer } from './NotFoundElements'
+import { Logo, LogoWrap, NotFoundAnimation, NotFoundContainer } from './NotFoundElements'
 import * as Animation from '../../images/lottie/404.json'
 import { LinkButton } from '../../molecules/Button'
+import IvanLogo from '../../images/background/logo.svg'
 
 const btnItem = {
   initial: { y: 20, opacity: 0 },
@@ -31,6 +32,9 @@ const NotFound = () => {
         initial="initial"
         animate="animate"
         variants={variants}>
+        <LogoWrap>
+          <Logo src={IvanLogo} alt="logo" />
+        </LogoWrap>
         <NotFoundAnimation
           loop play
           animationData={Animation.default} />

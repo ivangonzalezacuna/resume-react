@@ -19,3 +19,19 @@ export const NotFoundAnimation = styled(Lottie)`
   height: min(70vh, 70vw);
   width: min(70vh, 70vw);
 `
+
+export const LogoWrap = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Logo = styled.img`
+  height: 23px;
+  width: auto;
+`

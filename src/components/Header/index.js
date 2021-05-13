@@ -8,7 +8,7 @@ import {
   HeaderGoAbout, HeaderSocialWrap,
   SocialIcon
 } from './HeaderElements'
-import HeaderBg from '../../images/background/header1.svg'
+import HeaderBg from '../../images/background/header.svg'
 import {
   FaFacebookF, FaGithub, FaInstagram,
   FaLinkedinIn, FaSkype
@@ -17,7 +17,10 @@ import { LinkButton } from '../../molecules/Button'
 
 const content = (isFirstMount, fastTransition) => ({
   animate: {
-    transition: { staggerChildren: 0.07, delayChildren: isFirstMount ? 2.5 : fastTransition ? 0 : 0.5 },
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: isFirstMount ? 2.5 : fastTransition ? 0 : 1
+    },
   },
 })
 
@@ -40,7 +43,7 @@ const goAbout = (isFirstMount, fastTransition) => ({
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay: isFirstMount ? 2.8 : fastTransition ? 0.3 : 0.8,
+      delay: isFirstMount ? 2.8 : fastTransition ? 0.3 : 1.3,
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },

@@ -42,6 +42,11 @@ export const LinkBtn = styled(Link)`
   @media screen and (max-width: 500px) {
     padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
   }
+
+  @media screen and (max-height: 300px) {
+    padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
+    font-size: ${({ small }) => small ? '0.8rem' : '0.9rem'};
+  }
 `
 
 export const CustomBtn = styled(motion.div)`
@@ -70,6 +75,11 @@ export const CustomBtn = styled(motion.div)`
 
   @media screen and (max-width: 500px) {
     padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
+  }
+
+  @media screen and (max-height: 300px) {
+    padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
+    font-size: ${({ small }) => small ? '0.8rem' : '0.9rem'};
   }
 `
 
@@ -100,6 +110,11 @@ export const HrefBtn = styled.a`
   @media screen and (max-width: 500px) {
     padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
   }
+
+  @media screen and (max-height: 300px) {
+    padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
+    font-size: ${({ small }) => small ? '0.8rem' : '0.9rem'};
+  }
 `
 
 export const FormBtn = styled.button`
@@ -124,5 +139,9 @@ export const FormBtn = styled.button`
     border: ${({ dark, theme: { colors } }) => dark ?
     `3px solid ${colors.black}` :
     `3px solid ${colors.white}`};
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: ${({ small }) => small ? '6px 12px' : '8px 16px'};
   }
 `

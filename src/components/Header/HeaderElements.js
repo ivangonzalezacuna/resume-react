@@ -68,6 +68,10 @@ export const HeaderContent = styled.div`
   max-width: 1100px;
   width: calc(100% - 100px);
   color: ${props => props.theme.colors.white};
+
+  @media screen and (max-width: 500px) {
+    width: calc(100% - 60px);
+  }
 `
 
 export const HeaderName = styled(motion.h1)`
@@ -77,33 +81,19 @@ export const HeaderName = styled(motion.h1)`
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   text-align: left;
   margin-bottom: 0.8rem;
+
+  @media screen and (max-height: 300px) {
+    margin-bottom: 0.5rem;
+  }
 `
 
 export const HeaderDescription = styled(motion.p)`
   font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 1.2rem;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
-`
-
-export const HeaderContactBtnWrap = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-self: center;
-`
-
-export const HeaderContactBtn = styled(Link)`
-  padding: 12px 32px;
-  background: ${props => props.theme.colors.white};
-  border-radius: 50px;
-  color: ${props => props.theme.colors.black};
-  text-decoration: none;
-  transition: 0.4s;
-  cursor: pointer;
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
-
-  &:hover {
-    background: ${props => props.theme.colors.blue};
-    color: ${props => props.theme.colors.black};
+  
+  @media screen and (max-height: 300px) {
+    margin-bottom: 0.8rem;
   }
 `
 

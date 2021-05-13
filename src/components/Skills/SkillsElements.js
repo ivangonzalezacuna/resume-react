@@ -147,11 +147,23 @@ export const CloseIcon = styled(MdClose)`
 
 export const ModalContentWrap = styled.div`
   width: 100%;
-  height: 200px;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: ${props => props.theme.colors.white};
+`
+
+export const ModalTitle = styled.h1`
+  font-size: 1.5rem;
+  color: ${props => props.theme.colors.blue};
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+`
+
+export const ModalDescription = styled.p`
+  font-size: 1rem;
+  padding: 0 5px;
   color: ${props => props.theme.colors.white};
 `
 

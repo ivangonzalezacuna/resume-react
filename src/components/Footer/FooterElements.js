@@ -35,6 +35,11 @@ export const Logo = styled.div`
   margin: 8px 0;
 `
 
+export const LogoImg = styled.img`
+  height: 23px;
+  width: auto;
+`
+
 export const Copyright = styled.small`
   color: ${props => props.theme.colors.white};
   margin: 8px 0;
