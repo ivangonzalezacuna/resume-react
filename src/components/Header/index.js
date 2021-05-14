@@ -19,7 +19,7 @@ const content = (isFirstMount, fastTransition) => ({
   animate: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: isFirstMount ? 2.5 : fastTransition ? 0 : 1
+      delayChildren: isFirstMount ? 2.5 : fastTransition ? 0 : 0.5
     },
   },
 })
@@ -43,7 +43,7 @@ const goAbout = (isFirstMount, fastTransition) => ({
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay: isFirstMount ? 2.8 : fastTransition ? 0.3 : 1.3,
+      delay: isFirstMount ? 2.8 : fastTransition ? 0.3 : 0.8,
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },

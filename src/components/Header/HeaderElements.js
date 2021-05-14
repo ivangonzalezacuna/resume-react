@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.div`
 export const HeaderContainer = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background: ${props => props.theme.background.section};
+  background: ${props => props.theme.background.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,7 @@ export const HeaderBackground = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  background-color: ${props => props.theme.background.section};
+  background-color: ${props => props.theme.background.primary};
 `
 
 export const HeaderContent = styled.div`
@@ -67,7 +67,7 @@ export const HeaderContent = styled.div`
   flex-direction: column;
   max-width: 1100px;
   width: calc(100% - 100px);
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 
   @media screen and (max-width: 500px) {
     width: calc(100% - 60px);
@@ -115,12 +115,12 @@ export const HeaderGoAbout = styled(motion.div)`
 `
 
 export const HeaderGoAboutText = styled.p`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   
 `
 
 export const HeaderGoAboutIcon = styled(Icon)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 `
 
 export const HeaderSocialWrap = styled.div`
@@ -142,7 +142,7 @@ export const HeaderSocialWrap = styled.div`
 export const SocialIcon = styled.a`
   font-size: 24px;
   margin: 6px 8px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   cursor: pointer;
   display: flex;
   align-items: center;

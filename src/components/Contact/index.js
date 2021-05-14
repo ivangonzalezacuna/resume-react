@@ -25,11 +25,14 @@ import {
 import * as LoadingSpinner from '../../images/lottie/loading-spinner.json'
 import { FormButton } from '../../molecules/Button'
 
-const content = (fastTransition) => ({
+const transition = {
   animate: {
-    transition: { staggerChildren: 0.07, delayChildren: fastTransition ? 0 : 0.5 },
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0
+    },
   },
-})
+}
 
 const title = {
   initial: { y: 50, opacity: 0 },
@@ -106,7 +109,7 @@ const Loading = ({ isLoading }) => {
   )
 }
 
-const Contact = ({ fastTransition }) => {
+const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [sendError, setSendError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -155,7 +158,7 @@ const Contact = ({ fastTransition }) => {
       <ContactContainer
         initial="initial"
         animate="animate"
-        variants={content(fastTransition)}>
+        variants={transition}>
         <SectionTitle variants={title} submitted={isSubmitted ? true : false}
         >{!isSubmitted ? 'Contact Me' : 'Message Sent!'}</SectionTitle>
         <FormContainer variants={formContainer}>

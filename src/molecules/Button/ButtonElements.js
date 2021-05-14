@@ -20,10 +20,10 @@ export const LinkBtn = styled(Link)`
     '0.8rem' : 'clamp(0.9rem, 3vw, 1.1rem)'};
   padding: ${({ small }) => small ? '6px 14px' : '8px 20px'};
   background: ${props => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
+  color: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
   border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -32,11 +32,11 @@ export const LinkBtn = styled(Link)`
   cursor: pointer;
   
   &:hover {
-    background: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
-    color: ${({ dark, theme: { colors } }) => dark ? colors.white : colors.black};
+    background: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
+    color: ${({ dark, theme: { colors } }) => dark ? colors.primary : colors.secondary};
     border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -54,10 +54,10 @@ export const CustomBtn = styled(motion.div)`
     '0.8rem' : 'clamp(0.9rem, 3vw, 1.1rem)'};
   padding: ${({ small }) => small ? '6px 14px' : '8px 20px'};
   background: ${props => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
+  color: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
   border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -66,11 +66,11 @@ export const CustomBtn = styled(motion.div)`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
-    color: ${({ dark, theme: { colors } }) => dark ? colors.white : colors.black};
+    background: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
+    color: ${({ dark, theme: { colors } }) => dark ? colors.primary : colors.secondary};
     border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -88,10 +88,10 @@ export const HrefBtn = styled.a`
     '0.8rem' : 'clamp(0.9rem, 3vw, 1.1rem)'};
   padding: ${({ small }) => small ? '6px 14px' : '8px 20px'};
   background: ${props => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
+  color: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
   border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -100,11 +100,11 @@ export const HrefBtn = styled.a`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
-    color: ${({ dark, theme: { colors } }) => dark ? colors.white : colors.black};
+    background: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
+    color: ${({ dark, theme: { colors } }) => dark ? colors.primary : colors.secondary};
     border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -122,10 +122,10 @@ export const FormBtn = styled.button`
     '0.8rem' : 'clamp(0.9rem, 3vw, 1.1rem)'};
   padding: ${({ small }) => small ? '6px 14px' : '8px 20px'};
   background: ${props => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
+  color: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
   border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -134,11 +134,11 @@ export const FormBtn = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) => dark ? colors.black : colors.white};
-    color: ${({ dark, theme: { colors } }) => dark ? colors.white : colors.black};
+    background: ${({ dark, theme: { colors } }) => dark ? colors.secondary : colors.primary};
+    color: ${({ dark, theme: { colors } }) => dark ? colors.primary : colors.secondary};
     border: ${({ dark, theme: { colors } }) => dark ?
-    `3px solid ${colors.black}` :
-    `3px solid ${colors.white}`};
+    `3px solid ${colors.secondary}` :
+    `3px solid ${colors.primary}`};
   }
 
   @media screen and (max-width: 500px) {

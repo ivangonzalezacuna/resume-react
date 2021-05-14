@@ -53,36 +53,26 @@ const App = () => {
           currentLang={i18n.language}
           setSpanish={setSpanish}
           setEnglish={setEnglish} />
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter initial={false}>
           <Switch location={location} key={location.pathname}>
-            <Route path="/" exact
-              render={() => (
-                <HomePage
-                  isFirstMount={isFirstMount}
-                  fastTransition={fastTransition}
-                  updateFastTransition={updateFastTransition} />
-              )}
-            />
-            <Route path="/about"
-              render={() => (
-                <AboutPage fastTransition={fastTransition} />
-              )}
-            />
-            <Route path="/skills"
-              render={() => (
-                <SkillsPage fastTransition={fastTransition} />
-              )}
-            />
-            <Route path="/contact"
-              render={() => (
-                <ContactPage fastTransition={fastTransition} />
-              )}
-            />
-            <Route path="*"
-              render={() => (
-                <NotFoundPage />
-              )}
-            />
+            <Route path="/" exact>
+              <HomePage
+                isFirstMount={isFirstMount}
+                fastTransition={fastTransition}
+                updateFastTransition={updateFastTransition} />
+            </Route>
+            <Route path="/about">
+              <AboutPage />
+            </Route>
+            <Route path="/skills">
+              <SkillsPage fastTransition={fastTransition} />
+            </Route>
+            <Route path="/contact">
+              <ContactPage />
+            </Route>
+            <Route path="*">
+              <NotFoundPage />
+            </Route>
           </Switch>
         </AnimatePresence>
       </Theme>

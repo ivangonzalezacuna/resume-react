@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
+    background: #161616;
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;

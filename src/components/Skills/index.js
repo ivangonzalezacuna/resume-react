@@ -20,7 +20,7 @@ const content = (fastTransition) => ({
   animate: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: fastTransition ? 0 : 0.5
+      delayChildren: fastTransition ? 0 : 0.3
     },
   },
 })

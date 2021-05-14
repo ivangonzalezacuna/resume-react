@@ -1,12 +1,15 @@
 import React from 'react'
 import About from '../components/About'
 import Footer from '../components/Footer'
+import RouteTransition from '../RouteTransition'
 
-const AboutPage = ({ fastTransition }) => {
+const AboutPage = () => {
   return (
     <>
-      <About fastTransition={fastTransition} />
-      <Footer />
+      <RouteTransition>
+        <About />
+        <Footer />
+      </RouteTransition>
     </>
   )
 }

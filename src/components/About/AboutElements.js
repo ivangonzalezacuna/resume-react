@@ -5,7 +5,7 @@ export const AboutContainer = styled(motion.div)`
   width: 100vw;
   min-height: 100vh;
   height: auto;
-  background: ${props => props.theme.background.section};
+  background: ${props => props.theme.background.primary};
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -74,18 +74,18 @@ export const AboutWrap = styled.div`
 export const Name = styled(motion.h1)`
   margin-bottom: 20px;
   font-weight: 700;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   text-align: center;
 
   span {
     font-weight: 400;
     font-size: 85%;
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.primary};
   }
 `
 
 export const Description = styled(motion.span)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   font-size: 15px;
   padding: 10px;
   margin-bottom: 20px;
@@ -129,7 +129,7 @@ export const Timeline = styled.div`
     content: '';
     width: 3px;
     height: 100%;
-    background: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.primary};
     position: absolute;
     left: -118px;
     top: 0;
@@ -152,8 +152,8 @@ export const TimelineItem = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 3px solid ${props => props.theme.colors.white};
-    background: ${props => props.theme.background.section};
+    border: 3px solid ${props => props.theme.colors.primary};
+    background: ${props => props.theme.background.primary};
     position: absolute;
     left: -124px;
     top: 0px;
@@ -187,7 +187,7 @@ export const ItemTime = styled.div`
 
 export const TimeText = styled(motion.p)`
   font-size: 13px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 
   @media screen and (max-width: 500px) {
     font-size: clamp(13px, 5vw, 15px);
@@ -201,7 +201,7 @@ export const ItemContent = styled.div`
   align-items: flex-start;
   padding: 0 15px;
   margin-bottom: 40px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 
   @media screen and (max-width: 500px) {
     margin-bottom: 60px;
@@ -213,7 +213,7 @@ export const ItemTitle = styled(motion.h1)`
   font-size: clamp(1.2rem, 5vw, 1.4rem);
   letter-spacing: 1.5px;
   margin-bottom: 4px;
-  color: ${props => props.theme.colors.blue};
+  color: ${props => props.theme.colors.accent};
 `
 
 export const ItemSubtitle = styled(motion.h2)`

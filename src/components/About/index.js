@@ -13,14 +13,14 @@ import PdfResume from '../../images/pdf/resume-en.pdf'
 import { HrefButton } from '../../molecules/Button'
 import { SectionTitle } from '../../molecules/SectionTitle'
 
-const content = (fastTransition) => ({
+const transition = {
   animate: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: fastTransition ? 0 : 0.5
+      delayChildren: 0
     },
   },
-})
+}
 
 const title = {
   initial: { y: -20, opacity: 0 },
@@ -60,12 +60,12 @@ const aboutItem = {
   },
 }
 
-const About = ({ fastTransition }) => {
+const About = () => {
   return (
     <AboutContainer
       initial="initial"
       animate="animate"
-      variants={content(fastTransition)}>
+      variants={transition}>
       <SectionTitle variants={title} text={"About Me"} />
       <PersonalInfo />
       <SectionTitle variants={title} text={"Work Experience"} />

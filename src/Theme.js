@@ -3,27 +3,22 @@ import { ThemeProvider } from "styled-components"
 
 const theme = {
   background: {
-    navbar: "#161616",
-    sidebar: "#161616",
+    primary: "#161616",
+    secondary: "#f9f9f9",
     initial: "#121212",
-    section: "#161616",
-    footer1: "#032236",
-    footer2: "#063a5b",
-    card: "#f9f9f9",
-    error: "#101010",
-    gray: "#343434",
     transparent: "transparent",
+    error: "#101010",
+    accent: "#032236",
+    footer: "#063a5b"
   },
   colors: {
-    white: "#f9f9f9",
-    gray: "#808080",
-    placeholderGray: "#595959",
-    black: "#121212",
-    darkerBlue: "#005061",
-    darkBlue: "#00738b",
-    blue: "#00b5e1", //"#00a3cc"
-    lightBlue: "#32d7ff",
-    red: "#f00e0e",
+    primary: "#f9f9f9",
+    secondary: "#161616",
+    accent: "#00b5e1", //"#00a3cc"
+    accentDark: "#005061",
+    accentLight: "#32d7ff",
+    error: "#f00e0e",
+    placeholder: "#595959",
     transparent: "transparent",
   },
   fonts: ["sans-serif", "Roboto"],

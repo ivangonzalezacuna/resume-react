@@ -14,7 +14,7 @@ export const SectionTitleWrapper = styled.div`
 `
 
 export const Title = styled(motion.h1)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 2px;

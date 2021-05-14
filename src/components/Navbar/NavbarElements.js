@@ -10,7 +10,7 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ hideNav, theme: { background } }) => hideNav ? background.transparent : background.navbar};
+  background: ${({ hideNav, theme: { background } }) => hideNav ? background.transparent : background.primary};
   z-index: 15;
 `
 
@@ -36,7 +36,7 @@ export const NavMenu = styled.div`
 `
 
 export const NavItem = styled(Link)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   display: flex;
   align-items: center;
   margin: 0 0.8rem;
@@ -46,12 +46,12 @@ export const NavItem = styled(Link)`
   transition: 0.4s;
 
   &:hover {
-    color: ${props => props.theme.colors.blue};
+    color: ${props => props.theme.colors.accent};
   }
 `
 
 export const LangMenu = styled.div`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -68,11 +68,11 @@ export const LangItem = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 0 4px 0 4px;
-  color: ${({ current, theme: { colors } }) => current ? colors.blue : colors.white};
+  color: ${({ current, theme: { colors } }) => current ? colors.accent : colors.primary};
   transition: 0.4s;
 
   &:hover {
-    color: ${props => props.theme.colors.blue};
+    color: ${props => props.theme.colors.accent};
   }
 `
 

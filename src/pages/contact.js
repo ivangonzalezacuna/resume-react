@@ -1,12 +1,15 @@
 import React from 'react'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import RouteTransition from '../RouteTransition'
 
-const ContactPage = ({ fastTransition }) => {
+const ContactPage = () => {
   return (
     <>
-      <Contact fastTransition={fastTransition} />
-      <Footer />
+      <RouteTransition>
+        <Contact />
+        <Footer />
+      </RouteTransition>
     </>
   )
 }

@@ -9,7 +9,7 @@ export const SkillsContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: ${props => props.theme.background.section};
+  background: ${props => props.theme.background.primary};
 `
 
 export const SectionTitleWrap = styled.div`
@@ -24,7 +24,7 @@ export const SectionTitleWrap = styled.div`
 `
 
 export const SectionTitle = styled(motion.p)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   text-transform: uppercase;
   font-size: 18px;
   line-height: 16px;
@@ -49,7 +49,7 @@ export const SkillGrid = styled.div`
 `
 
 export const SkillCard = styled(motion.div)`
-  background: ${props => props.theme.background.card};
+  background: ${props => props.theme.background.secondary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@ export const SkillCard = styled(motion.div)`
 export const SkillName = styled(motion.h2)`
   font-weight: bold;
   font-size: 1.1rem;
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.secondary};
   margin: 10px 0;
 `
 
@@ -86,13 +86,13 @@ export const SkillLogo = styled.img`
 export const SkillLevelWrap = styled(motion.div)`
   width: 100%;
   height: 15px;
-  background: ${props => props.theme.background.section};
+  background: ${props => props.theme.background.primary};
   border-radius: 4px;
   margin: 10px 0 30px 0;
 `
 
 export const SkillLevelBar = styled(motion.div)`
-  background: ${props => props.theme.colors.blue};
+  background: ${props => props.theme.colors.accent};
   height: 100%;
   width: ${({ skill }) => skill ? skill : '0%'};
   border-radius: 4px;
@@ -123,7 +123,7 @@ export const ModalContainer = styled(motion.div)`
   padding: 28px 3px 3px 3px;
   width: 50vw;
   max-width: 400px;
-  background: ${props => props.theme.background.section};
+  background: ${props => props.theme.background.primary};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -139,7 +139,7 @@ export const CloseIcon = styled(MdClose)`
   position: absolute;
   top: 0;
   right: 0;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
   font-size: 1.5rem;
   margin: 4px;
   cursor: pointer;
@@ -150,12 +150,12 @@ export const ModalContentWrap = styled.div`
   padding: 10px 0;
   display: flex;
   flex-direction: column;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 `
 
 export const ModalTitle = styled.h1`
   font-size: 1.5rem;
-  color: ${props => props.theme.colors.blue};
+  color: ${props => props.theme.colors.accent};
   width: 100%;
   margin-bottom: 20px;
   text-align: center;
@@ -164,6 +164,6 @@ export const ModalTitle = styled.h1`
 export const ModalDescription = styled.p`
   font-size: 1rem;
   padding: 0 5px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.primary};
 `
 
