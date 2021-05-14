@@ -12,6 +12,7 @@ export const Nav = styled.div`
   justify-content: space-between;
   background: ${({ hideNav, theme: { background } }) => hideNav ? background.transparent : background.primary};
   z-index: 15;
+  transition: 0.3s;
 `
 
 export const Logo = styled(Link)`

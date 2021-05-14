@@ -1,14 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
-import InitialTransition from '../components/InitialTransition'
 import RouteTransition from '../RouteTransition'
 
-const HomePage = ({ isFirstMount, fastTransition, updateFastTransition }) => {
+const HomePage = ({ fastTransition, updateFastTransition }) => {
   return (
     <>
-      {isFirstMount && <InitialTransition />}
       <RouteTransition>
-        <Header isFirstMount={isFirstMount}
+        <Header
           fastTransition={fastTransition}
           updateFastTransition={updateFastTransition} />
       </RouteTransition>

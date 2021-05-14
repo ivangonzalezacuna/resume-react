@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar"
 import { useTranslation } from 'react-i18next'
 import Theme from "./Theme"
 import NotFoundPage from "./pages/404"
+import InitialTransition from "./components/InitialTransition"
 
 const App = () => {
   const [isFirstMount, setIsFirstMount] = useState(true)
@@ -45,6 +46,7 @@ const App = () => {
     <>
       <Theme>
         <GlobalStyle />
+        {isFirstMount && <InitialTransition isFirstMount={isFirstMount} />}
         <Navbar key='navbar'
           hideNav={(location.pathname === "/") ? true : false}
           isSidebarOpen={isSidebarOpen}
