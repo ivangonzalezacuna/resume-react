@@ -2,11 +2,12 @@ import React from 'react'
 import Header from '../components/Header'
 import RouteTransition from '../RouteTransition'
 
-const HomePage = ({ fastTransition, updateFastTransition }) => {
+const HomePage = ({ isFirstMount, fastTransition, updateFastTransition }) => {
   return (
     <>
       <RouteTransition>
         <Header
+          isFirstMount={isFirstMount}
           fastTransition={fastTransition}
           updateFastTransition={updateFastTransition} />
       </RouteTransition>

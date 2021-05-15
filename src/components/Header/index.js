@@ -15,11 +15,11 @@ import {
 } from 'react-icons/fa'
 import { LinkButton } from '../../molecules/Button'
 
-const content = (fastTransition) => ({
+const content = (isFirstMount, fastTransition) => ({
   animate: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: fastTransition ? 0 : 0.5,
+      delayChildren: isFirstMount ? 2 : fastTransition ? 0 : 0.5,
     },
   },
 })
@@ -36,14 +36,14 @@ const title = {
   },
 }
 
-const goAbout = (fastTransition) => ({
+const goAbout = (isFirstMount, fastTransition) => ({
   initial: { y: -20, opacity: 0 },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay: fastTransition ? 0.3 : 0.8,
+      delay: isFirstMount ? 2.3 : fastTransition ? 0.3 : 0.8,
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
@@ -57,7 +57,7 @@ const goAbout = (fastTransition) => ({
   }
 })
 
-const Header = ({ fastTransition, updateFastTransition }) => {
+const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
   return (
     <>
       <HeaderSection>
@@ -65,7 +65,7 @@ const Header = ({ fastTransition, updateFastTransition }) => {
           <HeaderContainer
             initial="initial"
             animate="animate"
-            variants={content(fastTransition)}>
+            variants={content(isFirstMount, fastTransition)}>
             <HeaderBackground src={HeaderBg} alt='header' />
             <HeaderContent>
               <HeaderName variants={title}>
@@ -86,7 +86,7 @@ const Header = ({ fastTransition, updateFastTransition }) => {
               initial="initial"
               animate="animate"
               whileHover="hover"
-              variants={goAbout(fastTransition)}>
+              variants={goAbout(isFirstMount, fastTransition)}>
               <HeaderGoAboutText>
                 About Me
             </HeaderGoAboutText>

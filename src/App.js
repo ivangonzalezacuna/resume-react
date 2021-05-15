@@ -48,14 +48,14 @@ const App = () => {
         <GlobalStyle />
         {isFirstMount && <InitialTransition isFirstMount={isFirstMount} />}
         <Navbar key='navbar'
-          hideNav={(location.pathname === "/") ? true : false}
+          hideNav={location.pathname === "/"}
           isSidebarOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
           updateFastTransition={updateFastTransition}
           currentLang={i18n.language}
           setSpanish={setSpanish}
           setEnglish={setEnglish} />
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route path="/" exact>
               <HomePage
