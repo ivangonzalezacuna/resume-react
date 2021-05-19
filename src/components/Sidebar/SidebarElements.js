@@ -38,7 +38,7 @@ export const SidebarLinkItem = styled(motion.div)`
 export const SidebarLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.colors.primary};
-  transition: 0.4s;
+  transition: all 0.4s;
 
   &:hover {
     color: ${props => props.theme.colors.accent};
@@ -61,7 +61,7 @@ export const LangItem = styled.div`
   cursor: pointer;
   margin: 0 4px 0 4px;
   color: ${({ current, theme: { colors } }) => current ? colors.accent : colors.primary};
-  transition: 0.4s;
+  transition: all 0.4s;
 
   &:hover {
     color: ${props => props.theme.colors.accent};

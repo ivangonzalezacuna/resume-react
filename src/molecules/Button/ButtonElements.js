@@ -27,7 +27,7 @@ export const LinkBtn = styled(Link)`
   border-radius: 50px;
   outline: none;
   text-decoration: none;
-  transition: 0.4s;
+  transition: all 0.4s;
   text-align: center;
   cursor: pointer;
   
@@ -61,7 +61,7 @@ export const CustomBtn = styled(motion.div)`
   border-radius: 50px;
   outline: none;
   text-decoration: none;
-  transition: 0.4s;
+  transition: all 0.4s;
   text-align: center;
   cursor: pointer;
 
@@ -95,7 +95,7 @@ export const HrefBtn = styled.a`
   border-radius: 50px;
   outline: none;
   text-decoration: none;
-  transition: 0.4s;
+  transition: all 0.4s;
   text-align: center;
   cursor: pointer;
 
@@ -129,7 +129,7 @@ export const FormBtn = styled.button`
   border-radius: 50px;
   outline: none;
   text-decoration: none;
-  transition: 0.4s;
+  transition: all 0.4s;
   text-align: center;
   cursor: pointer;
 

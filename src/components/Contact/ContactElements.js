@@ -217,7 +217,7 @@ export const SectionInfoData = styled.p`
   color: ${props => props.theme.colors.primary};
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
-  transition: all 0.3s;
+  transition: all 0.4s;
   cursor: pointer;
 
   &:hover {

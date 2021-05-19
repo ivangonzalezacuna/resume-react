@@ -97,6 +97,44 @@ export const HeaderDescription = styled(motion.p)`
   }
 `
 
+export const HeaderContact = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`
+
+export const HeaderSocialWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
+
+export const SocialIcon = styled(motion.a)`
+  font-size: 24px;
+  margin: 0 8px;
+  color: ${props => props.theme.colors.primary};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.4s;
+
+  &:hover {
+    color: #f9f9f9cc;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 20px 4px 0 4px;
+  }
+`
+
 export const HeaderGoAboutWrap = styled(Link)`
   text-decoration: none;
   z-index: 3;
@@ -116,36 +154,8 @@ export const HeaderGoAbout = styled(motion.div)`
 
 export const HeaderGoAboutText = styled.p`
   color: ${props => props.theme.colors.primary};
-  
 `
 
 export const HeaderGoAboutIcon = styled(Icon)`
   color: ${props => props.theme.colors.primary};
-`
-
-export const HeaderSocialWrap = styled.div`
-  position: fixed;
-  right: 0;
-  z-index: 3;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-export const SocialIcon = styled.a`
-  font-size: 24px;
-  margin: 6px 8px;
-  color: ${props => props.theme.colors.primary};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
 `

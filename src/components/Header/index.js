@@ -6,7 +6,8 @@ import {
   HeaderDescription, HeaderGoAboutWrap,
   HeaderGoAboutText, HeaderGoAboutIcon,
   HeaderGoAbout, HeaderSocialWrap,
-  SocialIcon
+  SocialIcon,
+  HeaderContact
 } from './HeaderElements'
 import HeaderBg from '../../images/background/header.svg'
 import {
@@ -34,6 +35,11 @@ const title = {
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
+}
+
+const icons = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, },
 }
 
 const goAbout = (isFirstMount, fastTransition) => ({
@@ -74,11 +80,20 @@ const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
               <HeaderDescription variants={title}>
                 I'm a software Developer
               </HeaderDescription>
-              <LinkButton
-                variants={title}
-                to='/contact'
-                onClick={() => updateFastTransition(true)}
-                text='Contact Me' />
+              <HeaderContact>
+                <LinkButton
+                  variants={title}
+                  to='/contact'
+                  onClick={() => updateFastTransition(true)}
+                  text='Contact Me' />
+                <HeaderSocialWrap>
+                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaFacebookF /></SocialIcon>
+                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaGithub /></SocialIcon>
+                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaInstagram /></SocialIcon>
+                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaLinkedinIn /></SocialIcon>
+                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaSkype /></SocialIcon>
+                </HeaderSocialWrap>
+              </HeaderContact>
             </HeaderContent>
           </HeaderContainer>
           <HeaderGoAboutWrap to="/about" onClick={() => updateFastTransition(true)}>
@@ -93,13 +108,6 @@ const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
               <HeaderGoAboutIcon />
             </HeaderGoAbout>
           </HeaderGoAboutWrap>
-          <HeaderSocialWrap>
-            <SocialIcon href={"http://www.google.es"} target="_blank"><FaFacebookF /></SocialIcon>
-            <SocialIcon href={"http://www.google.es"} target="_blank"><FaGithub /></SocialIcon>
-            <SocialIcon href={"http://www.google.es"} target="_blank"><FaInstagram /></SocialIcon>
-            <SocialIcon href={"http://www.google.es"} target="_blank"><FaLinkedinIn /></SocialIcon>
-            <SocialIcon href={"http://www.google.es"} target="_blank"><FaSkype /></SocialIcon>
-          </HeaderSocialWrap>
         </HeaderWrapper>
       </HeaderSection>
     </>

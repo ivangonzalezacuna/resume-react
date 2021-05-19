@@ -12,7 +12,7 @@ export const Nav = styled.div`
   justify-content: space-between;
   background: ${({ hideNav, theme: { background } }) => hideNav ? background.transparent : background.primary};
   z-index: 15;
-  transition: 0.3s;
+  transition: all 0.3s;
 `
 
 export const Logo = styled(Link)`
@@ -44,7 +44,7 @@ export const NavItem = styled(Link)`
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.4s;
+  transition: all 0.4s;
 
   &:hover {
     color: ${props => props.theme.colors.accent};
@@ -70,7 +70,7 @@ export const LangItem = styled.div`
   cursor: pointer;
   margin: 0 4px 0 4px;
   color: ${({ current, theme: { colors } }) => current ? colors.accent : colors.primary};
-  transition: 0.4s;
+  transition: all 0.4s;
 
   &:hover {
     color: ${props => props.theme.colors.accent};
