@@ -142,6 +142,11 @@ export const HeaderGoAboutWrap = styled(Link)`
   position: fixed;
   bottom: 0;
   margin: 6px;
+
+  @media screen and (max-height: 300px) {
+    right: 0;
+    margin: 12px;
+  }
 `
 
 export const HeaderGoAbout = styled(motion.div)`

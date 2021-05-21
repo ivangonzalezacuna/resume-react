@@ -82,8 +82,8 @@ const Navbar = ({
             onClick={switchPage}>Home</NavItem>
           <NavItem to="/about"
             onClick={switchPage}>About</NavItem>
-          <NavItem to="/skills"
-            onClick={switchPage}>Skills</NavItem>
+          {/*<NavItem to="/skills"
+            onClick={switchPage}>Skills</NavItem>*/}
           <NavItem to="/contact"
             onClick={switchPage}>Contact</NavItem>
         </NavMenu>

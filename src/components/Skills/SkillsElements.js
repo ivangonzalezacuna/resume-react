@@ -54,7 +54,6 @@ export const SkillCard = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  height: auto;
   padding: 20px;
   cursor: default;
 

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { MdClose } from 'react-icons/md'
 
 export const AboutContainer = styled(motion.div)`
   width: 100vw;
   min-height: 100vh;
+  margin-bottom: 100px;
   height: auto;
   background: ${props => props.theme.background.primary};
   display: flex;
@@ -89,24 +91,6 @@ export const Description = styled(motion.span)`
   font-size: 15px;
   padding: 10px;
   margin-bottom: 20px;
-`
-
-export const WorkContainer = styled(motion.div)`
-  width: 100%;
-  max-width: 1100px;
-  margin-top: 50px;
-`
-
-export const EducationContainer = styled(motion.div)`
-  width: 100%;
-  max-width: 1100px;
-  height: 300px;
-  margin-top: 50px;
-  margin-bottom: 150px;
-
-  @media screen and (max-width: 500px) {
-    margin-bottom: 250px;
-  }
 `
 
 export const TimelineWrap = styled.div`
@@ -227,4 +211,132 @@ export const ItemDescription = styled(motion.p)`
   font-size: clamp(0.8rem, 3vw, 0.9rem);
   margin-bottom: 15px;
   color: #f9f9f9bb;
+`
+
+export const SectionContainer = styled(motion.div)`
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 50px;
+`
+
+export const SkillWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 20px;
+
+  @media screen and (max-width: 400px) {
+    padding: 0 10px;
+  }
+`
+
+export const SkillTagWrap = styled(motion.div)``
+
+export const SkillTag = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f911;
+  color: ${props => props.theme.colors.accent};
+  border: 2px solid ${props => props.theme.colors.accentDark};
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: clamp(0.8rem, 4vw, 1rem);
+  margin: 5px;
+  cursor: pointer;
+
+  @media screen and (max-width: 400px) {
+    padding: 6px 12px;
+  }
+`
+
+export const SkillModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(30,30,30,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+`
+
+export const SkillModalContainer = styled(motion.div)`
+  height: auto;
+  padding: 28px 3px 3px 3px;
+  width: 80vw;
+  max-width: 400px;
+  background: ${props => props.theme.background.primary};
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //box-shadow: 1px 1px 1px ${props => props.theme.colors.accentDark};
+  border: 1px solid ${props => props.theme.colors.accentDark};
+`
+
+export const SkillCloseIcon = styled(MdClose)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: ${props => props.theme.colors.primary};
+  font-size: 1.5rem;
+  margin: 4px;
+  cursor: pointer;
+`
+
+export const SkillModalContentWrap = styled.div`
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.theme.colors.secondary};
+`
+
+export const SkillName = styled(motion.h2)`
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: ${props => props.theme.colors.accent};
+  margin: 10px 0;
+`
+
+export const SkillLogoWrap = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: ${props => props.theme.background.secondary};
+`
+
+export const SkillLogo = styled.img`
+  height: 80px;
+  width: 80px;
+`
+
+export const SkillLevelWrap = styled(motion.div)`
+  width: 80%;
+  height: 15px;
+  background: ${props => props.theme.background.secondary};
+  border-radius: 4px;
+  margin: 10px 0 20px 0;
+`
+
+export const SkillLevelBar = styled(motion.div)`
+  background: ${props => props.theme.colors.accent};
+  height: 100%;
+  border-radius: 4px;
+`
+
+export const SkillLevelValue = styled(motion.p)`
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: ${props => props.theme.colors.primary};
 `

@@ -24,7 +24,7 @@ const blackBox = {
     height: 0,
     opacity: 1,
     transition: {
-      delay: 0.5,
+      when: "afterChildren",
       staggerChildren: 0.05,
       staggerDirection: -1,
       duration: 0.5,
@@ -47,7 +47,7 @@ const sidebarMenu = {
   close: {
     display: 'none',
     transition: {
-      delay: 0.8,
+      when: "afterChildren",
       staggerChildren: 0.05,
       staggerDirection: -1,
       duration: 0.5,
@@ -64,8 +64,14 @@ const links = {
 
 const langs = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.5, delay: 0.5 } },
-  close: { opacity: 0, duration: 0.2 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.5 }
+  },
+  close: {
+    opacity: 0,
+    transition: { duration: 0.2 }
+  },
 }
 
 const Sidebar = ({
@@ -113,9 +119,9 @@ const Sidebar = ({
           <SidebarLinkItem variants={links}>
             <SidebarLink to='/about' onClick={switchPage}>About</SidebarLink>
           </SidebarLinkItem>
-          <SidebarLinkItem variants={links}>
+          {/*<SidebarLinkItem variants={links}>
             <SidebarLink to='/skills' onClick={switchPage}>Skills</SidebarLink>
-          </SidebarLinkItem>
+          </SidebarLinkItem>*/}
           <SidebarLinkItem variants={links}>
             <SidebarLink to='/contact' onClick={switchPage}>Contact</SidebarLink>
           </SidebarLinkItem>
