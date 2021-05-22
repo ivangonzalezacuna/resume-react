@@ -14,7 +14,7 @@ import {
   FaFacebookF, FaGithub, FaInstagram,
   FaLinkedinIn, FaSkype
 } from 'react-icons/fa'
-import { LinkButton } from '../../molecules/Button'
+import { LinkButton } from '../../atoms/Button'
 
 const content = (isFirstMount, fastTransition) => ({
   animate: {

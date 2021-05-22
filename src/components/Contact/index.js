@@ -23,7 +23,7 @@ import {
   SectionInfoData,
 } from './ContactElements'
 import * as LoadingSpinner from '../../images/lottie/loading-spinner.json'
-import { FormButton } from '../../molecules/Button'
+import { FormButton } from '../../atoms/Button'
 
 const transition = {
   animate: {

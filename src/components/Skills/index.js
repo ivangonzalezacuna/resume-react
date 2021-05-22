@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useState, useRef } from 'react'
-import { CustomButton } from '../../molecules/Button'
-import { SectionTitle } from '../../molecules/SectionTitle'
+import { CustomButton } from '../../atoms/Button'
+import { SectionTitle } from '../../atoms/SectionTitle'
 import {
   CloseIcon,
   ModalContainer,

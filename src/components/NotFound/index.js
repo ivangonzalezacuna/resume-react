@@ -1,7 +1,7 @@
 import React from 'react'
 import { Logo, LogoWrap, NotFoundAnimation, NotFoundContainer } from './NotFoundElements'
 import * as Animation from '../../images/lottie/404.json'
-import { LinkButton } from '../../molecules/Button'
+import { LinkButton } from '../../atoms/Button'
 import IvanLogo from '../../images/background/logo.svg'
 
 const btnItem = {
