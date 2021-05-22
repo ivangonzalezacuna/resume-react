@@ -1,8 +1,14 @@
 import React from 'react'
-import { FooterContainer, FooterWrap, Logo, SocialWrap, SocialIcon, Copyright, LogoImg } from './FooterElements'
-import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaSkype } from 'react-icons/fa'
+import {
+  FooterContainer,
+  FooterWrap,
+  Logo,
+  Copyright,
+  LogoImg
+} from './FooterElements'
 import { RiCopyrightLine } from 'react-icons/ri'
 import IvanLogo from '../../images/background/logo.svg'
+import SocialIcons from '../../molecules/SocialIcons'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -22,13 +28,7 @@ const Footer = () => {
             <RiCopyrightLine style={{ marginRight: '4px' }} />
             {new Date().getFullYear()} Iván Gonzalez. All rights reserved.
             </Copyright>
-          <SocialWrap>
-            <SocialIcon href={"http://www.facebook.com"} target="_blank"><FaFacebookF /></SocialIcon>
-            <SocialIcon href={"http://www.github.com"} target="_blank"><FaGithub /></SocialIcon>
-            <SocialIcon href={"http://www.instagram.com"} target="_blank"><FaInstagram /></SocialIcon>
-            <SocialIcon href={"http://www.linkedin.com"} target="_blank"><FaLinkedinIn /></SocialIcon>
-            <SocialIcon href={"http://www.skype.com"} target="_blank"><FaSkype /></SocialIcon>
-          </SocialWrap>
+          <SocialIcons row />
         </FooterWrap>
       </FooterContainer>
     </>

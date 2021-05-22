@@ -102,6 +102,7 @@ export const Logo = styled.img`
 
 export const Name = styled(motion.h2)`
   font-weight: bold;
+  text-align: center;
   font-size: 1.1rem;
   color: ${props => props.theme.colors.primary};
 `

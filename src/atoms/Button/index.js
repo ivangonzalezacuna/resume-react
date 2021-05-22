@@ -4,7 +4,10 @@ import { CustomBtn, LinkBtn, ButtonWrapper, FormBtn, HrefBtn, FormButtonWrapper 
 export const LinkButton = props => {
   return (
     <>
-      <ButtonWrapper variants={props.variants}>
+      <ButtonWrapper
+        variants={props.variants}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}>
         <LinkBtn
           to={props.to}
           onClick={props.onClick}
@@ -23,6 +26,8 @@ export const CustomButton = props => {
     <>
       <CustomBtn
         variants={props.variants}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
         onClick={props.onClick}
         small={props.small ? 1 : 0}
         dark={props.dark ? 1 : 0}>
@@ -35,7 +40,10 @@ export const CustomButton = props => {
 export const HrefButton = props => {
   return (
     <>
-      <ButtonWrapper variants={props.variants}>
+      <ButtonWrapper
+        variants={props.variants}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}>
         <HrefBtn
           href={props.href} target="_blank"
           small={props.small ? 1 : 0}
@@ -50,7 +58,10 @@ export const HrefButton = props => {
 export const FormButton = props => {
   return (
     <>
-      <FormButtonWrapper variants={props.variants}>
+      <FormButtonWrapper
+        variants={props.variants}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}>
         <FormBtn type="submit"
           small={props.small ? 1 : 0}
           dark={props.dark ? 1 : 0}>

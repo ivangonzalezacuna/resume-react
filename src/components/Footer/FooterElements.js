@@ -47,21 +47,3 @@ export const Copyright = styled.small`
   align-items: center;
   justify-content: center;
 `
-
-export const SocialWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 8px 0;
-`
-
-export const SocialIcon = styled.a`
-  font-size: 24px;
-  margin: 0 8px;
-  color: ${props => props.theme.colors.primary};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-`

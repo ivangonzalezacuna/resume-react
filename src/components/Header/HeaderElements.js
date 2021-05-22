@@ -113,25 +113,10 @@ export const HeaderSocialWrap = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`
-
-export const SocialIcon = styled(motion.a)`
-  font-size: 24px;
-  margin: 0 8px;
-  color: ${props => props.theme.colors.primary};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.4s;
-
-  &:hover {
-    color: #f9f9f9cc;
-  }
+  margin-left: 20px;
 
   @media screen and (max-width: 500px) {
-    margin: 20px 4px 0 4px;
+    margin-left: 0;
   }
 `
 

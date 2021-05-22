@@ -6,15 +6,11 @@ import {
   HeaderDescription, HeaderGoAboutWrap,
   HeaderGoAboutText, HeaderGoAboutIcon,
   HeaderGoAbout, HeaderSocialWrap,
-  SocialIcon,
   HeaderContact
 } from './HeaderElements'
 import HeaderBg from '../../images/background/header.svg'
-import {
-  FaFacebookF, FaGithub, FaInstagram,
-  FaLinkedinIn, FaSkype
-} from 'react-icons/fa'
 import { LinkButton } from '../../atoms/Button'
+import SocialIcons from '../../molecules/SocialIcons'
 
 const content = (isFirstMount, fastTransition) => ({
   animate: {
@@ -87,11 +83,7 @@ const Header = ({ isFirstMount, fastTransition, updateFastTransition }) => {
                   onClick={() => updateFastTransition(true)}
                   text='Contact Me' />
                 <HeaderSocialWrap>
-                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaFacebookF /></SocialIcon>
-                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaGithub /></SocialIcon>
-                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaInstagram /></SocialIcon>
-                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaLinkedinIn /></SocialIcon>
-                  <SocialIcon href={"http://www.google.es"} target="_blank" variants={icons}><FaSkype /></SocialIcon>
+                  <SocialIcons row header variants={icons} />
                 </HeaderSocialWrap>
               </HeaderContact>
             </HeaderContent>
