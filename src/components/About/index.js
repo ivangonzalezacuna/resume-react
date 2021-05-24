@@ -1,9 +1,9 @@
 import React from 'react'
 import { AboutContainer } from './AboutElements'
-import SkillsSection from '../../molecules/Skills'
-import WorkSection from '../../molecules/Work'
-import EducationSection from '../../molecules/Education'
-import AboutMeSection from '../../molecules/AboutMe'
+import SkillsSection from '../../organisms/Skills'
+import WorkSection from '../../organisms/Work'
+import EducationSection from '../../organisms/Education'
+import AboutMeSection from '../../organisms/AboutMe'
 
 const about = {
   animate: {

@@ -8,7 +8,7 @@ import {
 } from './FooterElements'
 import { RiCopyrightLine } from 'react-icons/ri'
 import IvanLogo from '../../images/background/logo.svg'
-import SocialIcons from '../../molecules/SocialIcons'
+import SocialIcons from '../../atoms/SocialIcons'
 
 const Footer = () => {
   const scrollToTop = () => {

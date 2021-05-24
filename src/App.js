@@ -4,11 +4,9 @@ import { AnimatePresence } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import GlobalStyle from "./globalStyles"
 import Theme from "./Theme"
-import InitialTransition from "./components/InitialTransition"
 import Navbar from "./components/Navbar"
 import HomePage from "./pages/home.js"
 import AboutPage from "./pages/about.js"
-import SkillsPage from "./pages/skills.js"
 import ContactPage from "./pages/contact.js"
 import NotFoundPage from "./pages/404"
 
@@ -46,7 +44,6 @@ const App = () => {
     <>
       <Theme>
         <GlobalStyle />
-        {isFirstMount && <InitialTransition isFirstMount={isFirstMount} />}
         <Navbar key='navbar'
           hideNav={location.pathname === "/"}
           isSidebarOpen={isSidebarOpen}
@@ -65,9 +62,6 @@ const App = () => {
             </Route>
             <Route path="/about">
               <AboutPage />
-            </Route>
-            <Route path="/skills">
-              <SkillsPage fastTransition={fastTransition} />
             </Route>
             <Route path="/contact">
               <ContactPage />

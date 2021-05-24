@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ContactContainer, SectionTitle } from './ContactElements'
-import ContactForm from '../../molecules/ContactForm'
-import ContactDetails from '../../molecules/ContactDetails'
+import ContactForm from '../../organisms/ContactForm'
+import ContactDetails from '../../organisms/ContactDetails'
 
 const contact = {
   animate: {

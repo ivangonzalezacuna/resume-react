@@ -11,6 +11,7 @@ import {
   Name,
   Description
 } from './AboutMeElements'
+import { aboutMe, item, title } from './animations'
 
 const data = {
   title: 'About Me',
@@ -23,44 +24,6 @@ const data = {
   resumeBtn: 'Download CV',
 }
 
-const title = {
-  initial: { y: -20, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-const aboutMe = {
-  initial: { y: -20, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-      staggerChildren: 0.1,
-      delayChildren: 0.4,
-    },
-  },
-}
-
-const aboutMeItem = {
-  initial: { y: -10, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
 const AboutMeSection = () => {
   return (
     <>
@@ -68,19 +31,19 @@ const AboutMeSection = () => {
       <AboutMeContainer variants={aboutMe}>
         <Grid>
           <ImgWrap>
-            <ImgAnimateWrap variants={aboutMeItem}>
+            <ImgAnimateWrap variants={item}>
               <Img src={data.profilePic} alt={data.profileAlt} />
             </ImgAnimateWrap>
           </ImgWrap>
           <ContentWrapper>
-            <Name variants={aboutMeItem}>
+            <Name variants={item}>
               {data.intro} <span>{data.name}</span>
             </Name>
-            <Description variants={aboutMeItem}>
+            <Description variants={item}>
               {data.description}
             </Description>
             <HrefButton
-              variants={aboutMeItem}
+              variants={item}
               href={data.resume}
               text={data.resumeBtn} />
           </ContentWrapper>

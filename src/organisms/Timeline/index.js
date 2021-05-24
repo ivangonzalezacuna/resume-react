@@ -10,39 +10,28 @@ import {
   Description,
   Content
 } from './TimelineElements'
-
-const timelineItem = {
-  initial: { y: -10, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
+import { item } from './animations'
 
 const TimelineSection = ({ items }) => {
   return (
     <TimelineWrapper>
       <TimelineContainer>
-        {items.map((item, index) => (
+        {items.map((data, index) => (
           <Item key={index}>
             <Time>
-              <TimeText variants={timelineItem}>
-                {item.date}
+              <TimeText variants={item}>
+                {data.date}
               </TimeText>
             </Time>
             <Content>
-              <Title variants={timelineItem}>
-                {item.place}
+              <Title variants={item}>
+                {data.place}
               </Title>
-              <Subtitle variants={timelineItem}>
-                {item.role}
+              <Subtitle variants={item}>
+                {data.role}
               </Subtitle>
-              <Description variants={timelineItem}>
-                {item.description}
+              <Description variants={item}>
+                {data.description}
               </Description>
             </Content>
           </Item>

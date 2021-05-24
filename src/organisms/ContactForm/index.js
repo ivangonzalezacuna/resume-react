@@ -14,32 +14,7 @@ import {
 } from './ContactFormElements'
 import Loading from '../Loading'
 import { FormButton } from '../../atoms/Button'
-
-const form = {
-  initial: { opacity: 0, y: 20 },
-  animate: {
-    opacity: 1, y: 0,
-    transition: {
-      duration: 1,
-      ease: [0.6, -0.05, 0.01, 0.99],
-      when: "beforeChildren",
-      staggerChildren: 0.025,
-    },
-  },
-}
-
-const item = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-}
-
-const buttonItem = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: { ease: [0.6, -0.05, 0.01, 0.99] },
-  },
-}
+import { btn, form, item } from './animations'
 
 const ContactForm = ({ setEmailSent }) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -147,7 +122,7 @@ const ContactForm = ({ setEmailSent }) => {
                 {errors.message && <p>{errors.message}</p>}
               </Item>
               <FormButton
-                variants={buttonItem}
+                variants={btn}
                 text={"Send Message"} />
               {sendError && <Error>{errors.send}</Error>}
             </Wrapper>
