@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Container,
   Background,
@@ -13,12 +14,10 @@ import { LinkButton } from '../../atoms/Button'
 import SocialIcons from '../../atoms/SocialIcons'
 import { container, icons, item } from './animations'
 
-const data = {
-  name: 'Ivan Gonzalez',
-  description: "I'm a software Developer"
-}
-
 const HeaderData = ({ isFirstMount, fastTransition, updateFastTransition }) => {
+  const [t] = useTranslation('data')
+  var data = t('home', { returnObjects: true })
+
   return (
     <>
       <Container
@@ -36,9 +35,10 @@ const HeaderData = ({ isFirstMount, fastTransition, updateFastTransition }) => {
           <Contact>
             <LinkButton
               variants={item}
-              to='/contact'
-              onClick={updateFastTransition(true)}
-              text='Contact Me' />
+              to={data.buttonLink}
+              onClick={updateFastTransition(true)}>
+              {data.buttonText}
+            </LinkButton>
             <Social>
               <SocialIcons row header variants={icons} />
             </Social>

@@ -1,31 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaSkype } from 'react-icons/fa'
 import { Icon, IconContainer } from './SocialIconsElements'
 
-const data = [
-  {
-    name: "linkedin",
-    link: "http://www.linkedin.com",
-  },
-  {
-    name: "github",
-    link: "http://www.github.com",
-  },
-  {
-    name: "skype",
-    link: "http://www.skype.com",
-  },
-  {
-    name: "facebook",
-    link: "http://www.facebook.com",
-  },
-  {
-    name: "instagram",
-    link: "http://www.instagram.com",
-  }
-]
-
 const SocialIcons = props => {
+  const [t] = useTranslation('data')
+  var data = t('social', { returnObjects: true })
+
   return (
     <>
       <IconContainer row={props.row}>

@@ -4,22 +4,14 @@ import SkillsSection from '../../organisms/Skills'
 import WorkSection from '../../organisms/Work'
 import EducationSection from '../../organisms/Education'
 import AboutMeSection from '../../organisms/AboutMe'
-
-const about = {
-  animate: {
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0,
-    },
-  },
-}
+import { container } from './animations'
 
 const About = () => {
   return (
     <AboutContainer
       initial="initial"
       animate="animate"
-      variants={about}>
+      variants={container}>
       <AboutMeSection />
       <SkillsSection />
       <WorkSection />

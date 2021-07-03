@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   FooterContainer,
   FooterWrap,
@@ -7,27 +8,28 @@ import {
   LogoImg
 } from './FooterElements'
 import { RiCopyrightLine } from 'react-icons/ri'
-import IvanLogo from '../../images/background/logo.svg'
 import SocialIcons from '../../atoms/SocialIcons'
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+      top: 0, behavior: "smooth"
+    })
   }
+  const [t] = useTranslation('data')
+  var data = t('footer', { returnObjects: true })
+
   return (
     <>
       <FooterContainer>
         <FooterWrap>
           <Logo onClick={scrollToTop}>
-            <LogoImg src={IvanLogo} alt="logo" />
+            <LogoImg src={data.logo} alt="logo" />
           </Logo>
           <Copyright>
             <RiCopyrightLine style={{ marginRight: '4px' }} />
-            {new Date().getFullYear()} Iván Gonzalez. All rights reserved.
-            </Copyright>
+            {new Date().getFullYear()} {data.text}
+          </Copyright>
           <SocialIcons row />
         </FooterWrap>
       </FooterContainer>

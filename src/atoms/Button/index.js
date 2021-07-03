@@ -8,71 +8,70 @@ import {
   FormButtonWrapper
 } from './ButtonElements'
 
-export const LinkButton = props => {
+export const LinkButton = ({ variants, to, onClick, small, dark, children }) => {
   return (
     <>
       <ButtonWrapper
-        variants={props.variants}
+        variants={variants}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}>
         <LinkBtn
-          to={props.to}
-          onClick={props.onClick}
-          small={props.small ? 1 : 0}
-          dark={props.dark ? 1 : 0}>
-          {props.text}
+          to={to}
+          onClick={onClick}
+          small={small ? 1 : 0}
+          dark={dark ? 1 : 0}>
+          {children}
         </LinkBtn>
       </ButtonWrapper>
     </>
   )
 }
 
-
-export const CustomButton = props => {
+export const CustomButton = ({ variants, onClick, small, dark, children }) => {
   return (
     <>
       <CustomBtn
-        variants={props.variants}
+        variants={variants}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        onClick={props.onClick}
-        small={props.small ? 1 : 0}
-        dark={props.dark ? 1 : 0}>
-        {props.text}
+        onClick={onClick}
+        small={small ? 1 : 0}
+        dark={dark ? 1 : 0}>
+        {children}
       </CustomBtn>
     </>
   )
 }
 
-export const HrefButton = props => {
+export const HrefButton = ({ variants, href, small, dark, children }) => {
   return (
     <>
       <ButtonWrapper
-        variants={props.variants}
+        variants={variants}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}>
         <HrefBtn
-          href={props.href} target="_blank"
-          small={props.small ? 1 : 0}
-          dark={props.dark ? 1 : 0}>
-          {props.text}
+          href={href} target="_blank"
+          small={small ? 1 : 0}
+          dark={dark ? 1 : 0}>
+          {children}
         </HrefBtn>
       </ButtonWrapper>
     </>
   )
 }
 
-export const FormButton = props => {
+export const FormButton = ({ variants, small, dark, children }) => {
   return (
     <>
       <FormButtonWrapper
-        variants={props.variants}
+        variants={variants}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}>
         <FormBtn type="submit"
-          small={props.small ? 1 : 0}
-          dark={props.dark ? 1 : 0}>
-          {props.text}
+          small={small ? 1 : 0}
+          dark={dark ? 1 : 0}>
+          {children}
         </FormBtn>
       </FormButtonWrapper>
     </>

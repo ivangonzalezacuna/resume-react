@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { HrefButton } from '../../atoms/Button'
 import { SectionTitle } from '../../atoms/SectionTitle'
 import {
@@ -13,21 +14,15 @@ import {
 } from './AboutMeElements'
 import { aboutMe, item, title } from './animations'
 
-const data = {
-  title: 'About Me',
-  profilePic: require('../../images/profile/ivan.png').default,
-  profileAlt: 'Profile Pic',
-  intro: "I'm",
-  name: 'Ivan Gonzalez',
-  description: "Lorem ipsum some text goes here with a nice description about me in a copuple of lines. Let's say from 5 to 6 would be nice, or even less if possible",
-  resume: require('../../images/pdf/resume-en.pdf').default,
-  resumeBtn: 'Download CV',
-}
-
 const AboutMeSection = () => {
+  const [t] = useTranslation('data')
+  var data = t('about', { returnObjects: true })
+
   return (
     <>
-      <SectionTitle variants={title} text={data.title} />
+      <SectionTitle variants={title}>
+        {data.title}
+      </SectionTitle>
       <AboutMeContainer variants={aboutMe}>
         <Grid>
           <ImgWrap>
@@ -42,10 +37,9 @@ const AboutMeSection = () => {
             <Description variants={item}>
               {data.description}
             </Description>
-            <HrefButton
-              variants={item}
-              href={data.resume}
-              text={data.resumeBtn} />
+            <HrefButton variants={item} href={data.resume}>
+              {data.resumeBtn}
+            </HrefButton>
           </ContentWrapper>
         </Grid>
       </AboutMeContainer>

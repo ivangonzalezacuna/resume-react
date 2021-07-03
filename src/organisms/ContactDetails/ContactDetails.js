@@ -94,10 +94,11 @@ export const Type = styled(motion.h1)`
   }
 `
 
-export const Data = styled(motion.p)`
+export const Data = styled(motion.a)`
   color: ${props => props.theme.colors.primary};
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
+  text-decoration: none;
   transition: all 0.4s;
   cursor: pointer;
   opacity: 1;

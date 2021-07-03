@@ -1,28 +1,9 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ContactContainer, SectionTitle } from './ContactElements'
 import ContactForm from '../../organisms/ContactForm'
 import ContactDetails from '../../organisms/ContactDetails'
-
-const contact = {
-  animate: {
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0
-    },
-  },
-}
-
-const title = {
-  initial: { y: 50, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
+import { container, title } from './animations'
 
 const Contact = () => {
   const [isEmailSent, setIsEmailSent] = useState(false)
@@ -30,17 +11,19 @@ const Contact = () => {
   const setEmailSent = () => {
     setIsEmailSent(true)
   }
+  const [t] = useTranslation('data')
+  var data = t('form', { returnObjects: true })
 
   return (
     <>
       <ContactContainer
         initial="initial"
         animate="animate"
-        variants={contact}>
+        variants={container}>
         <SectionTitle
           variants={title}
           submitted={isEmailSent}>
-          {!isEmailSent ? 'Contact Me' : 'Message Sent!'}
+          {!isEmailSent ? data.title : data.success}
         </SectionTitle>
         <ContactForm setEmailSent={setEmailSent} />
         <ContactDetails />

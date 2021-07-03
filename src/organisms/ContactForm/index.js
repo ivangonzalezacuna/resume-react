@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import validate from './validateInfo'
 import useForm from './useForm'
+import { useTranslation } from 'react-i18next'
 import {
   Container,
   Content,
@@ -56,6 +57,8 @@ const ContactForm = ({ setEmailSent }) => {
         setSendError(true)
       })
   }
+  const [t] = useTranslation('data')
+  var data = t('form', { returnObjects: true })
 
   return (
     <>
@@ -66,13 +69,13 @@ const ContactForm = ({ setEmailSent }) => {
             <Wrapper onSubmit={handleSubmit} noValidate>
               <Item>
                 <Label variants={item}>
-                  Name<span>*</span>
+                  {data.nameLabel}<span>*</span>
                 </Label>
                 <Input
                   variants={item}
                   type='text'
                   name='name'
-                  placeholder='Name'
+                  placeholder={data.namePlaceholder}
                   value={values.name}
                   onChange={handleChange}
                 />
@@ -80,13 +83,13 @@ const ContactForm = ({ setEmailSent }) => {
               </Item>
               <Item>
                 <Label variants={item}>
-                  Email<span>*</span>
+                  {data.emailLabel}<span>*</span>
                 </Label>
                 <Input
                   variants={item}
                   type='email'
                   name='email'
-                  placeholder='Email'
+                  placeholder={data.emailPlaceholder}
                   value={values.email}
                   onChange={handleChange}
                 />
@@ -94,13 +97,13 @@ const ContactForm = ({ setEmailSent }) => {
               </Item>
               <Item>
                 <Label variants={item}>
-                  Subject
-                  </Label>
+                  {data.subjectLabel}
+                </Label>
                 <Input
                   variants={item}
                   type='text'
                   name='subject'
-                  placeholder='Subject'
+                  placeholder={data.subjectPlaceholder}
                   value={values.subject}
                   onChange={handleChange}
                 />
@@ -108,12 +111,12 @@ const ContactForm = ({ setEmailSent }) => {
               </Item>
               <Item>
                 <Label variants={item}>
-                  Message<span>*</span>
+                  {data.messageLabel}<span>*</span>
                 </Label>
                 <TextArea
                   variants={item}
                   name='message'
-                  placeholder='Message'
+                  placeholder={data.messagePlaceholder}
                   value={values.message}
                   onChange={handleChange}
                   rows={5}
@@ -121,9 +124,9 @@ const ContactForm = ({ setEmailSent }) => {
                 />
                 {errors.message && <p>{errors.message}</p>}
               </Item>
-              <FormButton
-                variants={btn}
-                text={"Send Message"} />
+              <FormButton variants={btn}>
+                {data.sendBtn}
+              </FormButton>
               {sendError && <Error>{errors.send}</Error>}
             </Wrapper>
           </Content>

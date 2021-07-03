@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Container,
   TitleWrapper,
@@ -13,23 +14,10 @@ import {
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { card, container, icon, item } from './animations'
 
-const data = {
-  title: 'You can also reach me through:',
-  info: [
-    {
-      type: 'email',
-      title: 'Email',
-      value: 'ivangonzalezacuna@gmail.com',
-    },
-    {
-      type: 'phone',
-      title: 'Phone Number',
-      value: '(+34) 654 46 26 02',
-    },
-  ]
-}
-
 const ContactDetails = () => {
+  const [t] = useTranslation('data')
+  var data = t('contact', { returnObjects: true })
+
   return (
     <>
       <Container
@@ -48,7 +36,7 @@ const ContactDetails = () => {
               </IconWrapper>
               <Info>
                 <Type variants={item}>{info.title}</Type>
-                <Data variants={item}>{info.value}</Data>
+                <Data variants={item} href={info.link}>{info.value}</Data>
               </Info>
             </Item>
           ))}

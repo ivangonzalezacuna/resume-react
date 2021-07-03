@@ -1,172 +1,257 @@
 export const translation_ES = {
-  navBar: [
-    {
-      title: 'Trabajo',
-      link: 'work'
-    },
-    {
-      title: 'Educación',
-      link: 'education'
-    },
-    {
-      title: 'Skills',
-      link: 'skills'
-    },
-    {
-      title: 'Sobre Mi',
-      link: 'about'
-    }
-  ],
-  social: {
-    linkedinLabel: 'Linkedin',
-    linkedinLink: "https://www.linkedin.com/in/ivangonzalezacuna/",
-    githubLabel: 'Github',
-    githubLink: "https://github.com/ivangonzalezacuna",
-    skypeLabel: 'Skype',
-    skypeLink: "https://github.com/ivangonzalezacuna",
-    instagramLabel: 'Instagram',
-    instagramLink: "https://www.instagram.com/ivanglez98/",
-    facebookLabel: 'Facebook',
-    facebookLink: "https://www.facebook.com/ivan.gonzalezacuna/",
+  nav: {
+    logo: require('../../images/background/logo.svg').default,
+    info: [
+      {
+        title: 'Home',
+        link: '/'
+      },
+      {
+        title: 'Sobre Mí',
+        link: '/about'
+      },
+      {
+        title: 'Contacto',
+        link: '/contact'
+      },
+    ],
   },
-  contactForm: {
-    title: 'Ponte en contacto conmigo',
-    nameLabel: 'Nombre',
-    namePlaceholder: 'Indica tu nombre',
-    emailLabel: 'Correo electrónico',
-    emailPlaceholder: 'Indica tu correo',
-    subjectLabel: 'Asunto',
-    subjectPlaceholder: 'Indica el asunto',
-    messageLabel: 'Mensaje',
-    messagePlaceholder: 'Escribe el mensaje',
-    submit: 'Enviar',
-    successMsg: 'Tu petición ha sido recibida',
-    //successImg: require('../../images/success.svg').default,
-  },
-  header: {
+  home: {
     name: 'Ivan Gonzalez',
-    description: 'Desarrollador Software',
-    contactButton: 'Contactar'
+    description: "Desarrollador de software",
+    buttonLink: '/contact',
+    buttonText: 'Contactar',
+    goAboutLink: '/about',
+    goAboutText: 'Sobre Mí',
   },
   about: {
-    //img: require('../../images/profilepic.png').default,
-    name1: 'Soy',
-    name2: 'Ivan Gonzalez',
-    description: 'Buen trabajador en equipo. Eager to have new work experiences where I can have the opportunity to learn more in the technological field, grow personally and professionally, and thus be able to contribute positively to the achievement of the objectives',
-    resumeLink: 'https://drive.google.com/file/d/1boY9fP7aX6BPYJpG2h4W-wRK6ekz_THO/view?usp=sharing',
+    title: 'Sobre Mí',
+    profilePic: require('../../images/profile/ivan.png').default,
+    profileAlt: 'Profile Pic',
+    intro: "Soy",
+    name: 'Iván González',
+    description: "Lorem ipsum some text goes here with a Una descripción en unas pocas lineas sobre mi quedaria bien",
+    resume: require('../../images/pdf/resume-es.pdf').default,
     resumeBtn: 'Descargar CV',
-    contactTitle: 'Detalles de contacto',
-    phoneTitle: 'Teléfono',
-    phoneItem: '+34 654 46 26 02',
-    mailTitle: 'Correo',
-    mailItem: 'ivangonzalezacuna@gmail.com',
-    addressTitle: 'Dirección',
-    addressItem: 'Casal, Gulans nº 52',
-    contactBtn: 'Contactar'
+  },
+  contact: {
+    title: 'También me puedes contactar en:',
+    info: [
+      {
+        type: 'email',
+        title: 'Email',
+        link: 'mailto:ivangonzalezacuna@gmail.com',
+        value: 'ivangonzalezacuna@gmail.com',
+      },
+      {
+        type: 'phone',
+        title: 'Teléfono',
+        link: 'tel:+34654462602',
+        value: '(+34) 654 46 26 02',
+      },
+    ],
+  },
+  form: {
+    title: 'Contacto',
+    success: 'Mensaje enviado!',
+    nameLabel: 'Nombre',
+    namePlaceholder: 'Escriba su nombre',
+    emailLabel: 'Correo',
+    emailPlaceholder: 'Escriba su correo',
+    subjectLabel: 'Asunto',
+    subjectPlaceholder: 'Escriba el asunto',
+    messageLabel: 'Mensaje',
+    messagePlaceholder: 'Escriba el mensaje',
+    sendBtn: 'Enviar mensaje',
   },
   work: {
-    id: 'work',
-    lightBg: false,
-    lightText: true,
-    sectionTitle: 'Trabajo',
-    imgStart: false,
-    darkText: false,
-    icon: true,
-    data: [
+    title: 'Experiencia laboral',
+    info: [
       {
-        company: 'Universidad de Vigo',
-        jobTitle: 'I + D',
-        dates: 'Febrero 2020 - Actualidad',
-        description: 'Investigación y desarrollo usando Golang y Python.',
+        date: 'Feb 2020 - Actualidad',
+        place: 'Universidad de Vigo',
+        role: 'Investigación y Desarrollo',
+        description: 'Un texto descriptivo aquí',
       },
       {
-        company: 'Muutech Monitoring Solutions SL',
-        jobTitle: 'Prácticas de empresa',
-        dates: 'Junio 2019 - Julio 2019',
-        description: 'Investigación y desarrollo de un sistema de detección de anomalías industrial usando inteligencia artificial.'
-      }
-    ]
+        date: 'Jun 2019 - Jul 2019',
+        place: 'Muutech Monitoring Solutions SL',
+        role: 'Prácticas de empresa',
+        description: 'Un texto descriptivo aquí',
+      },
+    ],
   },
   education: {
-    id: 'education',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
-    sectionTitle: 'Educación',
-    imgStart: false,
-    darkText: true,
-    icon: false,
-    data: [
+    title: 'Estudios',
+    info: [
       {
-        company: 'Universidad de Vigo',
-        jobTitle: 'Grado de Teleco',
-        dates: 'Agosto 2016 - Junio 2020',
-        description: 'Especialidad de telemática, where I could learn not only a lot about programming, but also several communication protocols over Internet and other networks.'
+        date: 'Ago 2016 - Jul 2020',
+        place: 'Universidad de Vigo',
+        role: 'Grado en Ingeniería de Tecnologías de Telecomunicación',
+        description: 'Texto descriptivo en este hueco',
       },
       {
-        company: 'Oulu University of Applied Sciences',
-        jobTitle: 'Desarrollo de Software',
-        dates: 'Agosto 2019 - Diciembre 2019',
-        description: "Intercambio Erasmus+ during my last year's semester.Where I learned a lot about the MEAN Stack (MongoDB, Express, Angular8, Node.js), Android & iOS App Development and also improved my skills in Java, CSS or Javascript."
-      }
-    ]
-  },
-  skills: {
-    id: 'skills',
-    sectionTitle: 'Skills',
-    data: [
-      {
-        technology: 'Android',
-        //icon: require('../../images/skills/android.svg').default,
-        description: 'Android desciption Android desciption Android desciption',
-        level: '50%',
+        date: 'Ago 2019 - Dic 2019',
+        place: 'Oulu University of Applied Sciences',
+        role: 'Desarrollo de software',
+        description: 'Texto descriptivo en este hueco',
       },
-      {
-        technology: 'Golang',
-        //icon: require('../../images/skills/golang.svg').default,
-        description: 'Golang description Golang description Golang description',
-        level: '80%',
-      },
-      {
-        technology: 'Java',
-        //icon: require('../../images/skills/java.svg').default,
-        description: 'Java description Java description Java description Java description',
-        level: '86%',
-      },
-      {
-        technology: 'HTML5',
-        //icon: require('../../images/skills/html5.svg').default,
-        description: 'Golang description Golang description Golang description',
-        level: '25%',
-      },
-      {
-        technology: 'Javascript',
-        //icon: require('../../images/skills/javascript.svg').default,
-        description: 'Javascript description Golang description Golang description',
-        level: '22%',
-      },
-      {
-        technology: 'Swift',
-        //icon: require('../../images/skills/swift.svg').default,
-        description: 'Swift description Golang description Golang description',
-        level: '76%',
-      },
-      {
-        technology: 'Windows',
-        //icon: require('../../images/skills/windows.svg').default,
-        description: 'Windows description Golang description Golang description',
-        level: '55%',
-      },
-      {
-        technology: 'Linux',
-        //icon: require('../../images/skills/linux.svg').default,
-        description: 'Linux description Golang description Golang description',
-        level: '90%',
-      }
-    ]
+    ],
   },
   notFound: {
-    button: "Página Principal",
-    message: "Página No Encontrada"
-  }
+    text: 'Ir a Página Principal',
+    link: '/',
+    logo: require('../../images/background/logo.svg').default,
+  },
+  skills: {
+    title: 'Skills',
+    info: [
+      {
+        name: "React",
+        level: 35,
+        img: require('../../images/skills/react.svg').default,
+      },
+      {
+        name: "Golang",
+        level: 43,
+        img: require('../../images/skills/golang.svg').default,
+      },
+      {
+        name: "Javascript",
+        level: 79,
+        img: require('../../images/skills/javascript.svg').default,
+      },
+      {
+        name: "Linux",
+        level: 54,
+        img: require('../../images/skills/linux.svg').default,
+      },
+      {
+        name: "Python",
+        level: 75,
+        img: require('../../images/skills/python.svg').default,
+      },
+      {
+        name: "Git",
+        level: 55,
+        img: require('../../images/skills/git.svg').default,
+      },
+      {
+        name: "Java",
+        level: 55,
+        img: require('../../images/skills/java.svg').default,
+      },
+      {
+        name: "Android",
+        level: 55,
+        img: require('../../images/skills/android.svg').default,
+      },
+      {
+        name: "PostgreSQL",
+        level: 55,
+        img: require('../../images/skills/postgresql.svg').default,
+      },
+      {
+        name: "NodeJS",
+        level: 48,
+        img: require('../../images/skills/nodejs.svg').default,
+      },
+      {
+        name: "Docker",
+        level: 33,
+        img: require('../../images/skills/docker.svg').default,
+      },
+      {
+        name: "CSS",
+        level: 77,
+        img: require('../../images/skills/css3.svg').default,
+      },
+      {
+        name: "HTML",
+        level: 66,
+        img: require('../../images/skills/html5.svg').default,
+      },
+      {
+        name: "Swift",
+        level: 34,
+        img: require('../../images/skills/swift.svg').default,
+      },
+      {
+        name: "Windows",
+        level: 66,
+        img: require('../../images/skills/windows.svg').default,
+      },
+      {
+        name: "Angular",
+        level: 41,
+        img: require('../../images/skills/angularjs.svg').default,
+      },
+      {
+        name: "Bash",
+        level: 66,
+        img: require('../../images/skills/bash.svg').default,
+      },
+      {
+        name: "C",
+        level: 66,
+        img: require('../../images/skills/c-programming.svg').default,
+      },
+      {
+        name: "MongoDB",
+        level: 46,
+        img: require('../../images/skills/mongodb.svg').default,
+      },
+      {
+        name: "MySQL",
+        level: 77,
+        img: require('../../images/skills/mysql.svg').default,
+      },
+      {
+        name: "NPM",
+        level: 70,
+        img: require('../../images/skills/npm.svg').default,
+      },
+      {
+        name: "Typescript",
+        level: 35,
+        img: require('../../images/skills/typescript.svg').default,
+      },
+      {
+        name: "Visual Studio",
+        level: 85,
+        img: require('../../images/skills/visual-studio.svg').default,
+      },
+      {
+        name: "Yarn",
+        level: 56,
+        img: require('../../images/skills/yarn.svg').default,
+      },
+    ],
+  },
+  footer: {
+    logo: require('../../images/background/logo.svg').default,
+    text: 'Iván González. Todos los derechos reservados.',
+  },
+  social: [
+    {
+      name: "linkedin",
+      link: "https://www.linkedin.com/in/ivangonzalezacuna",
+    },
+    {
+      name: "github",
+      link: "https://github.com/ivangonzalezacuna",
+    },
+    {
+      name: "skype",
+      link: "https://join.skype.com/invite/cbwetKxu9kj9",
+    },
+    {
+      name: "facebook",
+      link: "https://www.facebook.com/ivan.gonzalezacuna/",
+    },
+    {
+      name: "instagram",
+      link: "https://www.instagram.com/ivanglez98/",
+    }
+  ],
 }

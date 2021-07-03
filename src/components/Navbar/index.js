@@ -1,8 +1,8 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { HamburgerMenu, LangItem, LangMenu, Logo, LogoImg, Nav, NavItem, NavMenu } from './NavbarElements'
 import Sidebar from '../Sidebar'
-import IvanLogo from '../../images/background/logo.svg'
 
 const Stroke = props => {
   return (
@@ -18,21 +18,21 @@ const Stroke = props => {
 const MenuBars = ({ isOpen }) => {
   const transition = { duration: 0.3 }
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28">
+    <svg width='28' height='28' viewBox='0 0 28 28'>
       <Stroke
-        stroke="#f9f9f9"
-        animate={isOpen ? "open" : "closed"}
+        stroke='#f9f9f9'
+        animate={isOpen ? 'open' : 'closed'}
         initial={false}
         variants={{
-          closed: { d: "M 2 6.5 L 26 6.5" },
-          open: { d: "M 5.5 22.5 L 22.5 5.5" },
+          closed: { d: 'M 2 6.5 L 26 6.5' },
+          open: { d: 'M 5.5 22.5 L 22.5 5.5' },
         }}
         transition={transition}
       />
       <Stroke
-        d="M 6 14 L 26 14"
-        stroke="#f9f9f9"
-        animate={isOpen ? "open" : "closed"}
+        d='M 6 14 L 26 14'
+        stroke='#f9f9f9'
+        animate={isOpen ? 'open' : 'closed'}
         initial={false}
         variants={{
           closed: { opacity: 1 },
@@ -41,12 +41,12 @@ const MenuBars = ({ isOpen }) => {
         transition={transition}
       />
       <Stroke
-        stroke="#f9f9f9"
-        animate={isOpen ? "open" : "closed"}
+        stroke='#f9f9f9'
+        animate={isOpen ? 'open' : 'closed'}
         initial={false}
         variants={{
-          closed: { d: "M 4 21.5 L 26 21.5" },
-          open: { d: "M 5.5 5.5 L 22.5 22.5" },
+          closed: { d: 'M 4 21.5 L 26 21.5' },
+          open: { d: 'M 5.5 5.5 L 22.5 22.5' },
         }}
         transition={transition}
       />
@@ -66,6 +66,8 @@ const Navbar = ({
       updateFastTransition(true)
     }
   }
+  const [t] = useTranslation('data')
+  var data = t('nav', { returnObjects: true })
 
   const switchPage = () => {
     updateFastTransition(true)
@@ -75,17 +77,13 @@ const Navbar = ({
     <>
       <Nav hideNav={hideNav}>
         <Logo to="/" onClick={checkToggleSidebar}>
-          <LogoImg src={IvanLogo} alt="logo" />
+          <LogoImg src={data.logo} alt="logo" />
         </Logo>
         <NavMenu>
-          <NavItem to="/"
-            onClick={switchPage}>Home</NavItem>
-          <NavItem to="/about"
-            onClick={switchPage}>About</NavItem>
-          {/*<NavItem to="/skills"
-            onClick={switchPage}>Skills</NavItem>*/}
-          <NavItem to="/contact"
-            onClick={switchPage}>Contact</NavItem>
+          {data.info.map((navData, index) => (
+            <NavItem key={index} to={navData.link}
+              onClick={switchPage}>{navData.title}</NavItem>
+          ))}
         </NavMenu>
         <LangMenu>
           <LangItem
@@ -107,7 +105,8 @@ const Navbar = ({
         updateFastTransition={updateFastTransition}
         currentLang={currentLang}
         setSpanish={setSpanish}
-        setEnglish={setEnglish} />
+        setEnglish={setEnglish}
+        data={data} />
     </>
   )
 }

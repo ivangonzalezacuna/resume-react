@@ -1,47 +1,29 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Logo, LogoWrap, NotFoundAnimation, NotFoundContainer } from './NotFoundElements'
 import * as Animation from '../../images/lottie/404.json'
 import { LinkButton } from '../../atoms/Button'
-import IvanLogo from '../../images/background/logo.svg'
-
-const btnItem = {
-  initial: { y: 20, opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-const variants = {
-  animate: {
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0
-    },
-  },
-}
+import { button, container } from './animations'
 
 const NotFound = () => {
+  const [t] = useTranslation('data')
+  var data = t('notFound', { returnObjects: true })
+
   return (
     <>
       <NotFoundContainer
         initial="initial"
         animate="animate"
-        variants={variants}>
+        variants={container}>
         <LogoWrap>
-          <Logo src={IvanLogo} alt="logo" />
+          <Logo src={data.logo} alt="logo" />
         </LogoWrap>
         <NotFoundAnimation
           loop play
           animationData={Animation.default} />
-        <LinkButton
-          to="/"
-          variants={btnItem}
-          text={"Go to Main Page"} />
+        <LinkButton to={data.link} variants={button}>
+          {data.text}
+        </LinkButton>
       </NotFoundContainer>
     </>
   )

@@ -1,12 +1,12 @@
 import React from 'react'
 import { SectionTitleWrapper, Title } from './SectionTitleElements'
 
-export const SectionTitle = props => {
+export const SectionTitle = ({ variants, children }) => {
   return (
     <>
       <SectionTitleWrapper>
-        <Title variants={props.variants}>
-          {props.text}
+        <Title variants={variants}>
+          {children}
         </Title>
       </SectionTitleWrapper>
     </>
