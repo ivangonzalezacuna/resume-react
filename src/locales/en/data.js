@@ -66,7 +66,13 @@ export const translation_EN = {
     title: 'Work experience',
     info: [
       {
-        date: 'Feb 2020 - Present',
+        date: 'Dec 2021 - Present',
+        place: 'Spread Group',
+        role: 'Software Engineer',
+        description: 'Some text as description here',
+      },
+      {
+        date: 'Feb 2020 - Nov 2021',
         place: 'University of Vigo',
         role: 'Research and Development',
         description: 'Some text as description here',

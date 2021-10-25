@@ -68,7 +68,13 @@ export const translation_ES = {
     title: 'Experiencia laboral',
     info: [
       {
-        date: 'Feb 2020 - Actualidad',
+        date: 'Dic 2021 - Actualidad',
+        place: 'Spread Group',
+        role: 'Ingeniero de software',
+        description: 'Some text as description here',
+      },
+      {
+        date: 'Feb 2020 - Nov 2021',
         place: 'Universidad de Vigo',
         role: 'Investigación y Desarrollo',
         description: 'Un texto descriptivo aquí',
