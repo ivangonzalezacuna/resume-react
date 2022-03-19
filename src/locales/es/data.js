@@ -46,8 +46,8 @@ export const translation_ES = {
       {
         type: 'phone',
         title: 'Teléfono',
-        link: 'tel:+34654462602',
-        value: '(+34) 654 46 26 02',
+        link: 'tel:+49017640132305',
+        value: '+49 0176 40132305',
       },
     ],
   },
@@ -190,7 +190,7 @@ export const translation_ES = {
       {
         name: "Angular",
         level: 41,
-        img: require('../../images/skills/angularjs.svg').default,
+        img: require('../../images/skills/angular.svg').default,
       },
       {
         name: "Bash",
@@ -223,14 +223,29 @@ export const translation_ES = {
         img: require('../../images/skills/typescript.svg').default,
       },
       {
-        name: "Visual Studio",
+        name: "VSCode",
         level: 85,
-        img: require('../../images/skills/visual-studio.svg').default,
+        img: require('../../images/skills/vs-code.svg').default,
       },
       {
         name: "Yarn",
         level: 56,
         img: require('../../images/skills/yarn.svg').default,
+      },
+      {
+        name: "Kubernetes",
+        level: 33,
+        img: require('../../images/skills/kubernetes.svg').default,
+      },
+      {
+        name: "Ubuntu",
+        level: 70,
+        img: require('../../images/skills/ubuntu.svg').default,
+      },
+      {
+        name: "Qt",
+        level: 50,
+        img: require('../../images/skills/qt.svg').default,
       },
     ],
   },

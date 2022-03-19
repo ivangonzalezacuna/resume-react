@@ -1,90 +1,34 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="23.008074mm"
-   height="8.5036802mm"
-   viewBox="0 0 23.008074 8.5036802"
-   version="1.1"
-   id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="ivan.svg"
-   inkscape:export-filename="D:\Personal\CV\Brand\Brand\test-ivan.png"
-   inkscape:export-xdpi="381.97031"
-   inkscape:export-ydpi="381.97031">
-  <defs
-     id="defs2" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="31.392088"
-     inkscape:cy="13.386975"
-     inkscape:document-units="mm"
-     inkscape:current-layer="g890"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:pagecheckerboard="true"
-     inkscape:window-width="1343"
-     inkscape:window-height="1019"
-     inkscape:window-x="64"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
-  <metadata
-     id="metadata5">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23.008mm" height="8.5037mm" version="1.1" viewBox="0 0 23.008 8.5037" xmlns="http://www.w3.org/2000/svg"
+  xmlnsCc="http://creativecommons.org/ns#" xmlnsDc="http://purl.org/dc/elements/1.1/"
+  xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <metadata>
+    <rdfRDF>
+      <ccWork rdfAbout="">
+        <dcFormat>image/svg+xml</dcFormat>
+        <dcType rdfResource="http://purl.org/dc/dcmitype/StillImage" />
+        <dcTitle />
+      </ccWork>
+    </rdfRDF>
   </metadata>
-  <g
-     inkscape:label="Capa 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-43.629035,-115.57834)">
-    <g
-       id="g890">
-      <g
-         id="g897">
-        <path
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:expanded;font-size:10.5833px;line-height:1.25;font-family:'Encode Sans Expanded';-inkscape-font-specification:'Encode Sans Expanded, Bold Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00b5e1;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           d="m 44.745573,117.35104 q -1.116538,0 -1.116538,-0.8837 0,-0.43392 0.275166,-0.66146 0.280457,-0.22754 0.841372,-0.22754 0.560915,0 0.836081,0.22754 0.280457,0.22754 0.280457,0.66146 0,0.8837 -1.116538,0.8837 z"
-           id="path883" />
-        <path
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:expanded;font-size:10.5833px;line-height:1.25;font-family:'Encode Sans Expanded';-inkscape-font-specification:'Encode Sans Expanded, Bold Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           d="m 43.830118,123.97619 v -5.78907 h 1.830911 v 5.78907 z"
-           id="path837" />
-        <path
-           d="m 51.677632,118.18712 h 1.788577 l -2.423575,5.78907 h -2.217202 l -2.418284,-5.78907 h 1.936744 l 1.66687,4.21216 z"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:expanded;font-size:10.5833px;line-height:1.25;font-family:'Encode Sans Expanded';-inkscape-font-specification:'Encode Sans Expanded, Bold Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           id="path839" />
-        <path
-           d="m 56.233727,118.09717 q 1.074205,0 1.725078,0.24341 0.656165,0.24342 0.968372,0.80433 0.317499,0.56092 0.317499,1.53458 v 3.2967 h -1.518704 l -0.121707,-0.54504 h -0.08996 q -0.306915,0.3175 -0.767289,0.48683 -0.455082,0.16404 -0.989538,0.16404 -0.687915,0 -1.169455,-0.21166 -0.48154,-0.21696 -0.724956,-0.59796 -0.243416,-0.381 -0.243416,-0.87841 0,-0.82021 0.645582,-1.27 0.645581,-0.44979 2.026701,-0.53975 l 1.158872,-0.09 q -0.01058,-0.41275 -0.164041,-0.64558 -0.153458,-0.23283 -0.481541,-0.33337 -0.32279,-0.10054 -0.883705,-0.10054 -0.396874,0 -0.878414,0.0688 -0.48154,0.0635 -0.904872,0.1905 v -1.30175 q 0.470957,-0.13758 1.02658,-0.20637 0.560915,-0.0688 1.068913,-0.0688 z m 0.08996,4.78894 q 0.301624,0 0.592665,-0.09 0.296332,-0.0952 0.534457,-0.28046 v -1.04245 l -0.99483,0.0794 q -0.550332,0.0476 -0.788456,0.21696 -0.232833,0.16933 -0.232833,0.47625 0,0.30162 0.222249,0.47096 0.22225,0.16933 0.666748,0.16933 z"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:expanded;font-size:10.5833px;line-height:1.25;font-family:'Encode Sans Expanded';-inkscape-font-specification:'Encode Sans Expanded, Bold Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           id="path841" />
-        <path
-           d="m 60.668123,118.18712 h 1.497537 l 0.116416,0.56621 h 0.08467 q 0.375708,-0.31221 0.878414,-0.48154 0.507999,-0.17462 1.074205,-0.17462 1.079497,0 1.69862,0.61912 0.619123,0.61383 0.619123,1.8997 v 3.3602 h -1.830911 v -3.27024 q 0,-0.58737 -0.248708,-0.83079 -0.248707,-0.24871 -0.751414,-0.24871 -0.365124,0 -0.714373,0.13229 -0.349248,0.13229 -0.592664,0.381 v 3.83645 h -1.830911 z"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:expanded;font-size:10.5833px;line-height:1.25;font-family:'Encode Sans Expanded';-inkscape-font-specification:'Encode Sans Expanded, Bold Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           id="path843" />
-      </g>
+  <g transform="translate(-43.629 -115.58)">
+    <g>
+      <path
+        d="m44.746 117.35q-1.1165 0-1.1165-0.8837 0-0.43392 0.27517-0.66146 0.28046-0.22754 0.84137-0.22754t0.83608 0.22754q0.28046 0.22754 0.28046 0.66146 0 0.8837-1.1165 0.8837z"
+        fill="#00b5e1"
+        style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+      <path d="m43.83 123.98v-5.7891h1.8309v5.7891z" fill="#fff"
+        style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+      <path d="m51.678 118.19h1.7886l-2.4236 5.7891h-2.2172l-2.4183-5.7891h1.9367l1.6669 4.2122z" fill="#fff"
+        style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+      <path
+        d="m56.234 118.1q1.0742 0 1.7251 0.24341 0.65616 0.24342 0.96837 0.80433 0.3175 0.56092 0.3175 1.5346v3.2967h-1.5187l-0.12171-0.54504h-0.08996q-0.30692 0.3175-0.76729 0.48683-0.45508 0.16404-0.98954 0.16404-0.68792 0-1.1695-0.21166-0.48154-0.21696-0.72496-0.59796t-0.24342-0.87841q0-0.82021 0.64558-1.27 0.64558-0.44979 2.0267-0.53975l1.1589-0.09q-0.01058-0.41275-0.16404-0.64558-0.15346-0.23283-0.48154-0.33337-0.32279-0.10054-0.8837-0.10054-0.39687 0-0.87841 0.0688-0.48154 0.0635-0.90487 0.1905v-1.3018q0.47096-0.13758 1.0266-0.20637 0.56092-0.0688 1.0689-0.0688zm0.08996 4.7889q0.30162 0 0.59266-0.09 0.29633-0.0952 0.53446-0.28046v-1.0424l-0.99483 0.0794q-0.55033 0.0476-0.78846 0.21696-0.23283 0.16933-0.23283 0.47625 0 0.30162 0.22225 0.47096 0.22225 0.16933 0.66675 0.16933z"
+        fill="#fff"
+        style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+      <path
+        d="m60.668 118.19h1.4975l0.11642 0.56621h0.08467q0.37571-0.31221 0.87841-0.48154 0.508-0.17462 1.0742-0.17462 1.0795 0 1.6986 0.61912 0.61912 0.61383 0.61912 1.8997v3.3602h-1.8309v-3.2702q0-0.58737-0.24871-0.83079-0.24871-0.24871-0.75141-0.24871-0.36512 0-0.71437 0.13229-0.34925 0.13229-0.59266 0.381v3.8364h-1.8309z"
+        fill="#fff"
+        style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
     </g>
   </g>
 </svg>

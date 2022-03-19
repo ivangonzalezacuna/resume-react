@@ -34,7 +34,7 @@ const ContactForm = ({ setEmailSent }) => {
       setIsLoading(false)
       window.scrollTo(0, 0)
       setEmailSent()
-    }, 1000)
+    }, 5000)
     //sendEmail()
   }
 

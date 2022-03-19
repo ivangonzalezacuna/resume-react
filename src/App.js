@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Switch, Route, useLocation, useHistory } from "react-router-dom"
+import { Route, useLocation, Routes } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import GlobalStyle from "./globalStyles"
@@ -13,7 +13,6 @@ import NotFoundPage from "./pages/404"
 const App = () => {
   const [isFirstMount, setIsFirstMount] = useState(true)
   const location = useLocation()
-  const history = useHistory()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [fastTransition, setFastTransition] = useState(false)
   const { i18n } = useTranslation('data')
@@ -27,11 +26,10 @@ const App = () => {
   }
 
   useEffect(() => {
-    const unlisten = history.listen(() => {
+    if (location.pathname !== "/") {
       isFirstMount && setIsFirstMount(false)
-    })
-    return unlisten
-  }, [history, isFirstMount])
+    }
+  }, [location, isFirstMount])
 
   const setSpanish = () => {
     i18n.changeLanguage('es')
@@ -53,23 +51,17 @@ const App = () => {
           setSpanish={setSpanish}
           setEnglish={setEnglish} />
         <AnimatePresence exitBeforeEnter>
-          <Switch location={location} key={location.pathname}>
-            <Route path="/" exact>
+          <Routes location={location} key={location.pathname}>
+            <Route exact path="/" element={
               <HomePage
                 isFirstMount={isFirstMount}
                 fastTransition={fastTransition}
                 updateFastTransition={updateFastTransition} />
-            </Route>
-            <Route path="/about">
-              <AboutPage />
-            </Route>
-            <Route path="/contact">
-              <ContactPage />
-            </Route>
-            <Route path="*">
-              <NotFoundPage />
-            </Route>
-          </Switch>
+            } />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
         </AnimatePresence>
       </Theme>
     </>
