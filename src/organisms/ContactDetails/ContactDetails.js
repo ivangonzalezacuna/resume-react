@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled(motion.div)`
   width: 100%;
@@ -7,7 +7,7 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-`
+`;
 
 export const TitleWrapper = styled.div`
   display: flex;
@@ -17,14 +17,14 @@ export const TitleWrapper = styled.div`
   margin-left: auto;
   padding: 50px;
   justify-content: start;
-`
+`;
 
 export const Title = styled(motion.p)`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1.4px;
-`
+`;
 
 export const Content = styled.div`
   width: 90%;
@@ -32,7 +32,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const Item = styled(motion.div)`
   width: 100%;
@@ -40,8 +40,8 @@ export const Item = styled(motion.div)`
   align-items: center;
   margin: 5px 0;
   padding: 14px;
-  border: 1px solid ${props => props.theme.colors.accentDark};
-  box-shadow: 1px 1px 1px ${props => props.theme.colors.accentDark};
+  border: 1px solid ${(props) => props.theme.colors.accentDark};
+  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
   border-radius: 6px;
 
   @media screen and (max-width: 440px) {
@@ -49,14 +49,14 @@ export const Item = styled(motion.div)`
     align-items: flex-start;
     padding: 14px 0;
   }
-`
+`;
 
 export const IconWrapper = styled(motion.div)`
   height: 50px;
   width: 50px;
-  border: 1px solid ${props => props.theme.colors.accentDark};
-  box-shadow: 1px 1px 1px ${props => props.theme.colors.accentDark};
-  color: ${props => props.theme.colors.primary};
+  border: 1px solid ${(props) => props.theme.colors.accentDark};
+  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
+  color: ${(props) => props.theme.colors.primary};
   font-size: 24px;
   margin-left: 10px;
   border-radius: 6px;
@@ -70,7 +70,7 @@ export const IconWrapper = styled(motion.div)`
     width: 45px;
     font-size: 22px;
   }
-`
+`;
 
 export const Info = styled.div`
   margin-left: 20px;
@@ -82,20 +82,20 @@ export const Info = styled.div`
   @media screen and (max-width: 440px) {
     margin-left: 10px;
   }
-`
+`;
 
 export const Type = styled(motion.h1)`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   font-size: clamp(16px, 4vw, 20px);
   margin-bottom: 14px;
 
   @media screen and (max-width: 440px) {
     margin-bottom: 8px;
   }
-`
+`;
 
 export const Data = styled(motion.a)`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
   text-decoration: none;
@@ -104,6 +104,6 @@ export const Data = styled(motion.a)`
   opacity: 1;
 
   &:hover {
-    color: ${props => props.theme.colors.accentLight};
+    color: ${(props) => props.theme.colors.accentLight};
   }
-`
+`;

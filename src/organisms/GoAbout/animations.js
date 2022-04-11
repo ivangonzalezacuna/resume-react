@@ -1,7 +1,8 @@
 export const container = (isFirstMount, fastTransition) => ({
   initial: { y: -20, opacity: 0 },
   animate: {
-    y: 0, opacity: 1,
+    y: 0,
+    opacity: 1,
     transition: {
       duration: 0.7,
       delay: isFirstMount ? 2.3 : fastTransition ? 0.3 : 0.8,
@@ -14,6 +15,6 @@ export const container = (isFirstMount, fastTransition) => ({
       repeat: 3,
       repeatType: "reverse",
       duration: 0.25,
-    }
-  }
-})
+    },
+  },
+});

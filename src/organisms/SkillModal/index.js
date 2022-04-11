@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
-import { AnimatePresence } from 'framer-motion'
-import { modal, item, barContainer, bar, value } from './animations'
+import React, { useRef } from "react";
+import { AnimatePresence } from "framer-motion";
+import { modal, item, barContainer, bar, value } from "./animations";
 import {
   ModalOverlay,
   ModalContainer,
@@ -11,23 +11,27 @@ import {
   Logo,
   LevelWrap,
   LevelBar,
-  LevelValue
-} from './SkillModalElements'
+  LevelValue,
+} from "./SkillModalElements";
 
 const SkillModal = ({ openModal, toggleModal, data }) => {
-  const ref = useRef()
-  const closeModal = e => {
+  const ref = useRef();
+  const closeModal = (e) => {
     if (ref.current === e.target) {
-      toggleModal()
+      toggleModal();
     }
-  }
+  };
 
   return (
     <AnimatePresence>
       {openModal && (
         <ModalOverlay ref={ref} onClick={closeModal}>
-          <ModalContainer variants={modal}
-            initial='hidden' animate='visible' exit="exit">
+          <ModalContainer
+            variants={modal}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
             <CloseIcon onClick={toggleModal} />
             <ModalContentWrap>
               <Name variants={item}>{data.name}</Name>
@@ -43,7 +47,7 @@ const SkillModal = ({ openModal, toggleModal, data }) => {
         </ModalOverlay>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default SkillModal
+export default SkillModal;

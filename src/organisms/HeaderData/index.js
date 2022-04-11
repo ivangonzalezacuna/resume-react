@@ -1,5 +1,5 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   Background,
@@ -7,36 +7,34 @@ import {
   Name,
   Description,
   Contact,
-  Social
-} from './HeaderDataElements'
-import HeaderBg from '../../images/background/header.svg'
-import { LinkButton } from '../../atoms/Button'
-import SocialIcons from '../../atoms/SocialIcons'
-import { container, icons, item } from './animations'
+  Social,
+} from "./HeaderDataElements";
+import HeaderBg from "../../images/background/header.svg";
+import { LinkButton } from "../../atoms/Button";
+import SocialIcons from "../../atoms/SocialIcons";
+import { container, icons, item } from "./animations";
 
 const HeaderData = ({ isFirstMount, fastTransition, updateFastTransition }) => {
-  const [t] = useTranslation('data')
-  var data = t('home', { returnObjects: true })
+  const [t] = useTranslation("data");
+  var data = t("home", { returnObjects: true });
 
   return (
     <>
       <Container
         initial="initial"
         animate="animate"
-        variants={container(isFirstMount, fastTransition)}>
-        <Background src={HeaderBg} alt='header' />
+        variants={container(isFirstMount, fastTransition)}
+      >
+        <Background src={HeaderBg} alt="header" />
         <Content>
-          <Name variants={item}>
-            {data.name}
-          </Name>
-          <Description variants={item}>
-            {data.description}
-          </Description>
+          <Name variants={item}>{data.name}</Name>
+          <Description variants={item}>{data.description}</Description>
           <Contact>
             <LinkButton
               variants={item}
               to={data.buttonLink}
-              onClick={updateFastTransition(true)}>
+              onClick={updateFastTransition(true)}
+            >
               {data.buttonText}
             </LinkButton>
             <Social>
@@ -46,7 +44,7 @@ const HeaderData = ({ isFirstMount, fastTransition, updateFastTransition }) => {
         </Content>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default HeaderData
+export default HeaderData;

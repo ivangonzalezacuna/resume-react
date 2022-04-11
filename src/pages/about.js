@@ -1,7 +1,7 @@
-import React from 'react'
-import About from '../components/About'
-import Footer from '../components/Footer'
-import RouteTransition from '../RouteTransition'
+import React from "react";
+import About from "../components/About";
+import Footer from "../components/Footer";
+import RouteTransition from "../RouteTransition";
 
 const AboutPage = () => {
   return (
@@ -11,7 +11,7 @@ const AboutPage = () => {
         <Footer />
       </RouteTransition>
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

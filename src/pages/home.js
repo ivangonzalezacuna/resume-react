@@ -1,7 +1,7 @@
-import React from 'react'
-import Header from '../components/Header'
-import InitialTransition from '../components/InitialTransition'
-import RouteTransition from '../RouteTransition'
+import React from "react";
+import Header from "../components/Header";
+import InitialTransition from "../components/InitialTransition";
+import RouteTransition from "../RouteTransition";
 
 const HomePage = ({ isFirstMount, fastTransition, updateFastTransition }) => {
   return (
@@ -11,10 +11,11 @@ const HomePage = ({ isFirstMount, fastTransition, updateFastTransition }) => {
         <Header
           isFirstMount={isFirstMount}
           fastTransition={fastTransition}
-          updateFastTransition={updateFastTransition} />
+          updateFastTransition={updateFastTransition}
+        />
       </RouteTransition>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

@@ -1,5 +1,5 @@
-import React from "react"
-import { ThemeProvider } from "styled-components"
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
 const theme = {
   background: {
@@ -9,7 +9,7 @@ const theme = {
     transparent: "transparent",
     error: "#101010",
     accent: "#032236",
-    footer: "#063a5b"
+    footer: "#063a5b",
   },
   colors: {
     primary: "#f9f9f9",
@@ -25,12 +25,12 @@ const theme = {
   fontSizes: {
     small: "1em",
     medium: "2em",
-    large: "3em"
-  }
-}
+    large: "3em",
+  },
+};
 
 const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
-)
+);
 
-export default Theme
+export default Theme;

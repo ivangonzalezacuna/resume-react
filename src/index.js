@@ -1,9 +1,9 @@
-import React, { Fragment, StrictMode } from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
-import App from './App'
-import ScrollToTop from './ScrollToTop'
-import './locales/i18n'
+import React, { Fragment, StrictMode } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import ScrollToTop from "./ScrollToTop";
+import "./locales/i18n";
 
 ReactDOM.render(
   <Fragment>
@@ -14,5 +14,5 @@ ReactDOM.render(
       </Router>
     </StrictMode>
   </Fragment>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

@@ -1,7 +1,7 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { HrefButton } from '../../atoms/Button'
-import { SectionTitle } from '../../atoms/SectionTitle'
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { HrefButton } from "../../atoms/Button";
+import { SectionTitle } from "../../atoms/SectionTitle";
 import {
   AboutMeContainer,
   Grid,
@@ -10,19 +10,17 @@ import {
   Img,
   ContentWrapper,
   Name,
-  Description
-} from './AboutMeElements'
-import { aboutMe, item, title } from './animations'
+  Description,
+} from "./AboutMeElements";
+import { aboutMe, item, title } from "./animations";
 
 const AboutMeSection = () => {
-  const [t] = useTranslation('data')
-  var data = t('about', { returnObjects: true })
+  const [t] = useTranslation("data");
+  var data = t("about", { returnObjects: true });
 
   return (
     <>
-      <SectionTitle variants={title}>
-        {data.title}
-      </SectionTitle>
+      <SectionTitle variants={title}>{data.title}</SectionTitle>
       <AboutMeContainer variants={aboutMe}>
         <Grid>
           <ImgWrap>
@@ -34,9 +32,7 @@ const AboutMeSection = () => {
             <Name variants={item}>
               {data.intro} <span>{data.name}</span>
             </Name>
-            <Description variants={item}>
-              {data.description}
-            </Description>
+            <Description variants={item}>{data.description}</Description>
             <HrefButton variants={item} href={data.resume}>
               {data.resumeBtn}
             </HrefButton>
@@ -44,7 +40,7 @@ const AboutMeSection = () => {
         </Grid>
       </AboutMeContainer>
     </>
-  )
-}
+  );
+};
 
-export default AboutMeSection
+export default AboutMeSection;

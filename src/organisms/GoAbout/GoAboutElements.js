@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import { NavLink as Link } from 'react-router-dom'
-import { HiOutlineChevronDoubleDown as IconArrow } from 'react-icons/hi'
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { NavLink as Link } from "react-router-dom";
+import { HiOutlineChevronDoubleDown as IconArrow } from "react-icons/hi";
 
 export const Container = styled(Link)`
   text-decoration: none;
@@ -15,7 +15,7 @@ export const Container = styled(Link)`
     right: 0;
     margin: 12px;
   }
-`
+`;
 
 export const Wrapper = styled(motion.div)`
   display: flex;
@@ -23,12 +23,12 @@ export const Wrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-`
+`;
 
 export const Text = styled.p`
-  color: ${props => props.theme.colors.primary};
-`
+  color: ${(props) => props.theme.colors.primary};
+`;
 
 export const Icon = styled(IconArrow)`
-  color: ${props => props.theme.colors.primary};
-`
+  color: ${(props) => props.theme.colors.primary};
+`;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   TimelineWrapper,
   TimelineContainer,
@@ -8,9 +8,9 @@ import {
   Title,
   Subtitle,
   Description,
-  Content
-} from './TimelineElements'
-import { item } from './animations'
+  Content,
+} from "./TimelineElements";
+import { item } from "./animations";
 
 const TimelineSection = ({ items }) => {
   return (
@@ -19,26 +19,18 @@ const TimelineSection = ({ items }) => {
         {items.map((data, index) => (
           <Item key={index}>
             <Time>
-              <TimeText variants={item}>
-                {data.date}
-              </TimeText>
+              <TimeText variants={item}>{data.date}</TimeText>
             </Time>
             <Content>
-              <Title variants={item}>
-                {data.place}
-              </Title>
-              <Subtitle variants={item}>
-                {data.role}
-              </Subtitle>
-              <Description variants={item}>
-                {data.description}
-              </Description>
+              <Title variants={item}>{data.place}</Title>
+              <Subtitle variants={item}>{data.role}</Subtitle>
+              <Description variants={item}>{data.description}</Description>
             </Content>
           </Item>
         ))}
       </TimelineContainer>
     </TimelineWrapper>
-  )
-}
+  );
+};
 
-export default TimelineSection
+export default TimelineSection;

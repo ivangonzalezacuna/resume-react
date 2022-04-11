@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const SectionTitleWrapper = styled.div`
   width: 100%;
@@ -11,11 +11,11 @@ export const SectionTitleWrapper = styled.div`
   @media screen and (max-width: 500px) {
     padding: 0 30px;
   }
-`
+`;
 
 export const Title = styled(motion.h1)`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 2px;
-`
+`;

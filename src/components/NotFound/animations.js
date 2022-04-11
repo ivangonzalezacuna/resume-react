@@ -8,13 +8,13 @@ export const button = {
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
-}
+};
 
 export const container = {
   animate: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: 0
+      delayChildren: 0,
     },
   },
-}
+};

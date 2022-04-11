@@ -1,37 +1,43 @@
 {
   "name": "ivangonzalez-resume",
-  "version": "0.1.1",
+  "version": "0.2.0",
+  "description": "Ivan Gonzalez Resume",
   "private": true,
-  "dependencies": {
-    "axios": "^0.26.1",
-    "eslint-config-react-app": "^7.0.0",
-    "framer-motion": "^6.2.8",
-    "i18next": "^21.6.14",
-    "i18next-browser-languagedetector": "^6.1.3",
-    "i18next-http-backend": "^1.4.0",
-    "i18next-localstorage-backend": "^3.1.3",
-    "netlify-cli": "^9.13.3",
-    "node-mailjet": "^3.3.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "^11.16.1",
-    "react-icons": "^4.3.1",
-    "react-lottie-player": "^1.4.1",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "^5.0.0",
-    "styled-components": "^5.3.3"
+  "repository": {
+    "url": "https://github.com/ivangonzalezacuna/resume-react",
+    "type": "git"
   },
+  "author": "Ivan Gonzalez <ivangonzalezacuna@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "netlify-dev": "netlify dev"
+    "lint": "eslint --ext .jsx --ext .js src/",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "framer-motion": "^6.2.9",
+    "i18next": "^21.6.16",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-http-backend": "^1.4.0",
+    "i18next-localstorage-backend": "^3.1.3",
+    "node-mailjet": "^3.3.7",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-i18next": "^11.16.5",
+    "react-icons": "^4.3.1",
+    "react-lottie-player": "^1.4.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.0",
+    "styled-components": "^5.3.5"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "eslint:recommended",
+      "plugin:react/recommended"
     ]
   },
   "browserslist": {
@@ -45,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.29.4"
   }
 }

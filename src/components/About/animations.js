@@ -5,4 +5,4 @@ export const container = {
       delayChildren: 0,
     },
   },
-}
+};

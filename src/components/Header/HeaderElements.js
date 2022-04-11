@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HeaderSection = styled.section`
   height: 100vh;
@@ -6,7 +6,7 @@ export const HeaderSection = styled.section`
   position: relative;
   overflow: hidden;
   cursor: default;
-`
+`;
 
 export const HeaderWrapper = styled.div`
   width: 100%;
@@ -16,4 +16,4 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   overflow: hidden;
   position: relative;
-`
+`;

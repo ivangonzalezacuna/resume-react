@@ -1,7 +1,7 @@
-const ease = [0.87, 0, 0.13, 1]
+const ease = [0.87, 0, 0.13, 1];
 
 export const container = {
-  initial: { height: '100vh' },
+  initial: { height: "100vh" },
   animate: {
     height: 0,
     transition: {
@@ -10,7 +10,7 @@ export const container = {
       ease: ease,
     },
   },
-}
+};
 
 export const text = {
   initial: { opacity: 1 },
@@ -22,4 +22,4 @@ export const text = {
       ease: ease,
     },
   },
-}
+};
