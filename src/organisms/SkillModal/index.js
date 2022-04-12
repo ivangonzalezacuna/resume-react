@@ -7,12 +7,11 @@ import {
   CloseIcon,
   ModalContentWrap,
   Name,
-  LogoWrap,
-  Logo,
   LevelWrap,
   LevelBar,
   LevelValue,
 } from "./SkillModalElements";
+import Icon from "../../atoms/Icon";
 
 const SkillModal = ({ openModal, toggleModal, data }) => {
   const ref = useRef();
@@ -35,9 +34,7 @@ const SkillModal = ({ openModal, toggleModal, data }) => {
             <CloseIcon onClick={toggleModal} />
             <ModalContentWrap>
               <Name variants={item}>{data.name}</Name>
-              <LogoWrap variants={item}>
-                <Logo src={data.img} />
-              </LogoWrap>
+              <Icon variants={item} icon={data.name} />
               <LevelWrap variants={barContainer}>
                 <LevelBar variants={bar(data.level)} />
                 <LevelValue variants={value}>{data.level}%</LevelValue>

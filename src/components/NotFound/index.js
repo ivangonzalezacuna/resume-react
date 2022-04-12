@@ -13,6 +13,7 @@ import { button, container } from "./animations";
 const NotFound = () => {
   const [t] = useTranslation("data");
   var data = t("notFound", { returnObjects: true });
+  var logo = t("logo");
 
   return (
     <>
@@ -22,7 +23,7 @@ const NotFound = () => {
         variants={container}
       >
         <LogoWrap>
-          <Logo src={data.logo} alt="logo" />
+          <Logo src={logo} alt="logo" />
         </LogoWrap>
         <NotFoundAnimation loop play animationData={Animation.default} />
         <LinkButton to={data.link} variants={button}>
