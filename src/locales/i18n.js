@@ -6,12 +6,13 @@ import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { translation_EN } from "./en/data";
 import { translation_ES } from "./es/data";
+import { common } from "./common/common";
 
 const resources = {
-  en: { data: translation_EN },
-  "en-US": { data: translation_EN },
-  es: { data: translation_ES },
-  "es-ES": { data: translation_ES },
+  en: { data: { ...translation_EN, ...common } },
+  "en-US": { data: { ...translation_EN, ...common } },
+  es: { data: { ...translation_ES, ...common } },
+  "es-ES": { data: { ...translation_ES, ...common } },
 };
 
 i18n

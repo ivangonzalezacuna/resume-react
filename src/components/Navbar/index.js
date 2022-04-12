@@ -82,6 +82,7 @@ const Navbar = ({
   };
   const [t] = useTranslation("data");
   var data = t("nav", { returnObjects: true });
+  var logo = t("logo");
 
   const switchPage = () => {
     updateFastTransition(true);
@@ -91,7 +92,7 @@ const Navbar = ({
     <>
       <Nav hideNav={hideNav}>
         <Logo to="/" onClick={checkToggleSidebar}>
-          <LogoImg src={data.logo} alt="logo" />
+          <LogoImg src={logo} alt="logo" />
         </Logo>
         <NavMenu>
           {data.info.map((navData, index) => (

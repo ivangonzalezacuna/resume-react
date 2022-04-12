@@ -19,13 +19,14 @@ const Footer = () => {
   };
   const [t] = useTranslation("data");
   var data = t("footer", { returnObjects: true });
+  var logo = t("logo");
 
   return (
     <>
       <FooterContainer>
         <FooterWrap>
           <Logo onClick={scrollToTop}>
-            <LogoImg src={data.logo} alt="logo" />
+            <LogoImg src={logo} alt="logo" />
           </Logo>
           <Copyright>
             <RiCopyrightLine style={{ marginRight: "4px" }} />
