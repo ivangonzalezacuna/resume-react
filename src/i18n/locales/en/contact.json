@@ -1,0 +1,30 @@
+{
+  "sectionTitle": "You can also reach me through:",
+  "info": [
+    {
+      "type": "email",
+      "text": "Email",
+      "value": "ivangonzalezacuna@gmail.com",
+      "href": "mailto:ivangonzalezacuna@gmail.com"
+    },
+    {
+      "type": "phone",
+      "text": "Phone Number",
+      "value": "+49 0176 40132305",
+      "href": "tel:+49017640132305"
+    }
+  ],
+  "form": {
+    "sectionTitle": "Contact Me",
+    "successMessage": "Message sent!",
+    "labelName": "Name",
+    "labelEmail": "Email",
+    "labelSubject": "Subject",
+    "labelMessage": "Message",
+    "placeholderName": "Insert your name",
+    "placeholderEmail": "Insert your email",
+    "placeholderSubject": "Insert a subject",
+    "placeholderMessage": "Insert a message",
+    "sendButton": "Send message"
+  }
+}

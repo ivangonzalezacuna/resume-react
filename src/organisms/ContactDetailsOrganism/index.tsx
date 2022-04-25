@@ -1,0 +1,1 @@
+export { ContactDetailsOrganism } from "./ContactDetailsOrganism";

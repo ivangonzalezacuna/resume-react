@@ -1,0 +1,1 @@
+export { SplashHeader } from "./SplashHeader";

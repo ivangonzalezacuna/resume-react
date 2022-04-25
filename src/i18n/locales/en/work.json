@@ -1,0 +1,26 @@
+{
+  "sectionTitle": "Work experience",
+  "info": [
+    {
+      "location": "Spread Group",
+      "responsibility": "Software Engineer",
+      "description": "Some text as description here",
+      "start": "Dec 2021",
+      "end": "Present"
+    },
+    {
+      "location": "University of Vigo",
+      "responsibility": "Research and Development",
+      "description": "Some text as description here",
+      "start": "Feb 2020",
+      "end": "Nov 2021"
+    },
+    {
+      "location": "Muutech Monitoring Solutions SL",
+      "responsibility": "Internship",
+      "description": "Some text as description here",
+      "start": "Jun 2019",
+      "end": "Jul 2019"
+    }
+  ]
+}

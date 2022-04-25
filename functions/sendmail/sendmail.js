@@ -1,12 +1,12 @@
-const mailjet = require("node-mailjet");
+import { connect } from "node-mailjet";
 
-exports.handler = function (event, context, callback) {
-  data = JSON.parse(event.body);
+export function handler(event, context, callback) {
+  const data = JSON.parse(event.body);
   if (data.subject === "") {
     data.subject = "Resume Contact Form";
   }
 
-  mailjetClient = mailjet.connect(
+  const mailjetClient = connect(
     process.env.MAILJET_APIKEY_PUBLIC,
     process.env.MAILJET_APIKEY_SECRET
   );
@@ -42,4 +42,4 @@ exports.handler = function (event, context, callback) {
         body: JSON.stringify({ message: err.message }),
       });
     });
-};
+}
