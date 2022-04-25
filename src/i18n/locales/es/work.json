@@ -1,0 +1,26 @@
+{
+  "sectionTitle": "Experiencia laboral",
+  "info": [
+    {
+      "location": "Spread Group",
+      "responsibility": "Ingeniero de software",
+      "description": "Texto descriptivo en este hueco",
+      "start": "Dic 2021",
+      "end": "Actualidad"
+    },
+    {
+      "location": "Univerdad de Vigo",
+      "responsibility": "Investigación y Desarrollo",
+      "description": "Texto descriptivo en este hueco",
+      "start": "Feb 2020",
+      "end": "Nov 2021"
+    },
+    {
+      "location": "Muutech Monitoring Solutions SL",
+      "responsibility": "Prácticas de empresa",
+      "description": "Texto descriptivo en este hueco",
+      "start": "Jun 2019",
+      "end": "Jul 2019"
+    }
+  ]
+}

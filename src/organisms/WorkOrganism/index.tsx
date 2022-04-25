@@ -1,0 +1,1 @@
+export { WorkOrganism } from "./WorkOrganism";

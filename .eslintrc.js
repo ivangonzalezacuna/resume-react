@@ -1,29 +1,35 @@
 module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "prettier", "react", "react-hooks"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+  ],
   env: {
-    commonjs: true,
-    node: true,
     browser: true,
-    es6: true,
-    jest: true,
+    amd: true,
+    node: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
-  globals: {},
-  //parser: "babel-eslint",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: "module",
+    ecmaVersion: 6,
   },
-  plugins: ["react", "import", "react-hooks"],
-  ignorePatterns: ["node_modules/"],
   rules: {
-    "react/prop-types": "off",
-  },
-  settings: {
-    react: {
-      version: "detect", // "detect" automatically picks the version you have installed.
-    },
+    "no-console": 1,
+    quotes: ["error", "double"],
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        extendDefaults: true,
+        types: {
+          "{}": false,
+        },
+      },
+    ],
   },
 };
