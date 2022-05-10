@@ -1,36 +1,86 @@
-name: "Main check"
+name: "Resume Actions"
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   lint:
+    name: Run ESLint
     runs-on: ubuntu-latest
-    name: Run eslint
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: "16.x"
       - run: yarn
       - run: yarn lint
+
   tsc:
+    name: Check TypeScript
     runs-on: ubuntu-latest
-    name: Check typescript
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: "16.x"
       - run: yarn
       - run: yarn tsc
+
   jest:
-    runs-on: ubuntu-latest
     name: Run tests
-    needs: [lint, tsc] # ensure tests are run only after eslint and tsc pass
+    runs-on: ubuntu-latest
+    needs: [lint, tsc]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: "16.x"
       - run: yarn
       - run: yarn test
+
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript", "typescript"]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      # Initializes the CodeQL tools for scanning.
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+        # If you wish to specify custom queries, you can do so here or in a config file.
+        # By default, queries listed here will override any specified in a config file.
+        # Prefix the list here with "+" to use these queries and those in the config file.
+        # queries: ./path/to/local/query, your-org/your-repo/queries@main
+
+      # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+      # If this step fails, then you should remove it and run the build manually (see below)
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        continue-on-error: true
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v1
+        continue-on-error: true
