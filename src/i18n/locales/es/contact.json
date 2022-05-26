@@ -1,0 +1,30 @@
+{
+  "sectionTitle": "También me puedes contactar en:",
+  "info": [
+    {
+      "type": "email",
+      "text": "Email",
+      "value": "ivangonzalezacuna@gmail.com",
+      "href": "mailto:ivangonzalezacuna@gmail.com"
+    },
+    {
+      "type": "phone",
+      "text": "Teléfono",
+      "value": "+49 0176 40132305",
+      "href": "tel:+49017640132305"
+    }
+  ],
+  "form": {
+    "sectionTitle": "Contacto",
+    "successMessage": "Mensaje enviado!",
+    "labelName": "Nombre",
+    "labelEmail": "Correo",
+    "labelSubject": "Asunto",
+    "labelMessage": "Mensaje",
+    "placeholderName": "Escriba su nombre",
+    "placeholderEmail": "Escriba su correo",
+    "placeholderSubject": "Escriba el asunto",
+    "placeholderMessage": "Escriba el mensaje",
+    "sendButton": "Enviar mensaje"
+  }
+}

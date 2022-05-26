@@ -1,0 +1,1 @@
+export { EducationOrganism } from "./EducationOrganism";

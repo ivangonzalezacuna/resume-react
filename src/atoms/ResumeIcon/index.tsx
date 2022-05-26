@@ -1,0 +1,1 @@
+export { ResumeIcon } from "./ResumeIcon";

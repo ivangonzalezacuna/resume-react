@@ -1,0 +1,19 @@
+{
+  "sectionTitle": "Estudios",
+  "info": [
+    {
+      "location": "Universidad de Vigo",
+      "responsibility": "Grado en Ingeniería de Tecnologías de Telecomunicación",
+      "description": "Texto descriptivo en este hueco",
+      "start": "Ago 2016",
+      "end": "Jul 2020"
+    },
+    {
+      "location": "Oulu University of Applied Sciences",
+      "responsibility": "Desarrollo de software",
+      "description": "Texto descriptivo en este hueco",
+      "start": "Ago 2019",
+      "end": "Dic 2019"
+    }
+  ]
+}

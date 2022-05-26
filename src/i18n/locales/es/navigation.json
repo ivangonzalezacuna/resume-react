@@ -1,0 +1,16 @@
+{
+  "info": [
+    {
+      "title": "Home",
+      "href": "/"
+    },
+    {
+      "title": "Sobre Mí",
+      "href": "/about"
+    },
+    {
+      "title": "Contacto",
+      "href": "/contact"
+    }
+  ]
+}
