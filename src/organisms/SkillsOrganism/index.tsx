@@ -1,0 +1,1 @@
+export { SkillsOrganism } from "./SkillsOrganism";

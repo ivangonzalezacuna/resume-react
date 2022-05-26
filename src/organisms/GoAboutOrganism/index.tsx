@@ -1,0 +1,1 @@
+export { GoAboutOrganism } from "./GoAboutOrganism";

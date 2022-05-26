@@ -1,0 +1,11 @@
+{
+  "sectionTitle": "Sobre Mí",
+  "profileAlt": "Profile Pic",
+  "info": {
+    "intro": "Soy",
+    "name": "Iván González",
+    "description": "Lorem ipsum some text goes here with a Una descripción en unas pocas lineas sobre mi quedaria bien"
+  },
+  "resumeLang": "es",
+  "resumeButton": "Descargar CV"
+}
