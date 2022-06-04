@@ -9,32 +9,20 @@ on:
       - master
 
 jobs:
-  lint:
-    name: Run ESLint
+  checks:
+    name: Run full code checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-      - run: yarn
-      - run: yarn lint
-
-  tsc:
-    name: Check TypeScript
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "16.x"
-      - run: yarn
-      - run: yarn tsc
+      - run: yarn check:full
 
   jest:
     name: Run tests
     runs-on: ubuntu-latest
-    needs: [lint, tsc]
+    needs: [checks]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
