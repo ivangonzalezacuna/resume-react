@@ -22,7 +22,7 @@ jobs:
   jest:
     name: Run tests
     runs-on: ubuntu-latest
-    needs: [lint, tsc]
+    needs: [checks]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
