@@ -24,7 +24,7 @@
     "check:full": "yarn install && yarn tsc && yarn lint && yarn prettier:check"
   },
   "dependencies": {
-    "@types/react": "^18.0.11",
+    "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.25",
