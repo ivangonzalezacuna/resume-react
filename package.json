@@ -33,10 +33,10 @@
     "i18next": "^21.8.9",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
-    "node-mailjet": "^4.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-i18next": "^11.17.1",
+    "node-mailjet": "^4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.17.2",
     "react-icons": "^4.4.0",
     "react-lottie-player": "^1.4.3",
     "react-router-dom": "^6.3.0",
@@ -53,9 +53,9 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "netlify-cli": "^10.5.1",
-    "prettier": "^2.6.2"
+    "prettier": "^2.7.0"
   },
   "eslintConfig": {
     "extends": [
