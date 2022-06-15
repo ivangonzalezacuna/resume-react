@@ -10715,10 +10715,10 @@ node-int64@^0.4.0:
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
 
-node-mailjet@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/node-mailjet/-/node-mailjet-4.0.0.tgz#aa5b47a576b056cc5b0c6451e5e5ed1634442a4a"
-  integrity sha512-kWebR7O3xHywzsesZ8cSf/9glnz2nXJvl+6ejXfzdu17plSt41dhW8tPRn4glwAUoS2Kk48mBB6KwTzYtJDPhg==
+node-mailjet@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/node-mailjet/-/node-mailjet-4.0.1.tgz#804a2ebcffad64c501266e5afcfd545db13b5a15"
+  integrity sha512-OJntDQdC+9VVZVaBv7uR6yQW9ar3nO9nq9/mFpoHr+05eMdEtE7uZ+w4HJvW6LXUcjQmr+kIazpFxQnQbdpIPQ==
   dependencies:
     json-bigint "^1.0.0"
     qs "^6.5.0"

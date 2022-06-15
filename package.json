@@ -33,7 +33,7 @@
     "i18next": "^21.8.9",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
-    "node-mailjet": "^4.0.0",
+    "node-mailjet": "^4.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^11.17.2",
