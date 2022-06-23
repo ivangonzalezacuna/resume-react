@@ -54,7 +54,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "netlify-cli": "^10.5.1",
+    "netlify-cli": "^10.6.1",
     "prettier": "^2.7.1"
   },
   "eslintConfig": {
