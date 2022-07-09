@@ -1,3 +1,7 @@
+![GitHub package.json version](https://img.shields.io/github/package-json/v/ivangonzalezacuna/resume-react)
+![GitHub](https://img.shields.io/github/license/ivangonzalezacuna/resume-react)
+[![Netlify Status Develop](https://api.netlify.com/api/v1/badges/f90f7c25-0283-4c9c-96b5-9aa8bb5014db/deploy-status)](https://app.netlify.com/sites/ivan-gonzalez/deploys)
+
 # Resume
 
 Resume built with React and Typescript and hosted in Netlify.
