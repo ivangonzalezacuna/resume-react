@@ -20,3 +20,10 @@ export type SidebarProps = {
 export type ContactFormOrganismProps = {
   setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export type ContactForm = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
