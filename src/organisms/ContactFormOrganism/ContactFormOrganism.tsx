@@ -10,20 +10,13 @@ import {
   Wrapper,
 } from "./styles";
 import { btn, form, item } from "./animations";
-import { ContactFormOrganismProps } from "../../types/types";
+import { ContactForm, ContactFormOrganismProps } from "../../types/types";
 import { ContactFormTranslation } from "../../i18n/types";
 import { useForm } from "./useForm";
 import { useState } from "react";
 import axios from "axios";
 import { FormButton } from "../../atoms";
 import { LoadingOrganism } from "../LoadingOrganism";
-
-interface ContactForm {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
 
 export const ContactFormOrganism = ({
   setEmailSent,
@@ -41,13 +34,13 @@ export const ContactFormOrganism = ({
       window.scrollTo(0, 0);
       setEmailSent(true);
     }, 5000);
-    //sendEmail()
+    // sendEmail();
   };
 
   // eslint-disable-next-line
   const sendEmail = () => {
     axios
-      .post("/api/sendmail", formData, {
+      .post(".netlify/functions/sendmail", formData, {
         timeout: 4000,
         headers: { "Content-Type": "application/json" },
       })
