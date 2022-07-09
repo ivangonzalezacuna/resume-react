@@ -8,7 +8,8 @@ Real link: https://i.postimg.cc/jSdWCnfR/logo192.png
 Delete link: https://postimg.cc/delete/Bkt8FcrD/1b119a53
 */
 
-const textPart = `You have received a new message from {{var:sender}} {{var:email}}>\n\n\nSender: {{var:sender}}\n\nMessage:\n{{var:message}}`;
+const textPart =
+  "You have received a new message from {{var:sender}} {{var:email}}>\n\n\nSender: {{var:sender}}\n\nMessage:\n{{var:message}}";
 const htmlPart = `
 <body style="font-family:verdana">
   <div style="background-color: #dbe5f0; margin: 30px;">
