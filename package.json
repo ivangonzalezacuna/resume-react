@@ -59,6 +59,11 @@
     "netlify-cli": "^10.11.0",
     "prettier": "^2.7.1"
   },
+  "resolutions": {
+    "nth-check": "^2.0.1",
+    "glob-parent": "^5.1.2",
+    "got": "^11.8.5"
+  },
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
