@@ -1,4 +1,4 @@
-import Mailjet from "node-mailjet";
+import Mailjet, { SendEmailV3_1 } from "node-mailjet";
 import { Handler, HandlerEvent } from "@netlify/functions";
 import { ContactForm } from "../../src/types/types";
 
@@ -24,19 +24,30 @@ const htmlPart = `
 </body>
 `;
 
+const missingEnvError = (envName: string) => ({
+  statusCode: 500,
+  body: `Missing environment variable on server: ${envName}`,
+});
+
 const handler: Handler = async (event: HandlerEvent) => {
+  if (!process.env.MAILJET_FROM) {
+    return missingEnvError("MAILJET_FROM");
+  } else if (!process.env.MAILJET_TO) {
+    return missingEnvError("MAILJET_TO");
+  }
+
   const mailjet = new Mailjet({
     apiKey: process.env.MAILJET_APIKEY_PUBLIC,
     apiSecret: process.env.MAILJET_APIKEY_SECRET,
   });
 
-  const data: ContactForm = JSON.parse(event.body ?? "");
-  const request = await mailjet.post("send", { version: "v3.1" }).request({
+  const contactData: ContactForm = JSON.parse(event.body ?? "");
+  const data: SendEmailV3_1.IBody = {
     Messages: [
       {
         From: {
           Email: process.env.MAILJET_FROM,
-          Name: data.name,
+          Name: contactData.name,
         },
         To: [
           {
@@ -45,22 +56,32 @@ const handler: Handler = async (event: HandlerEvent) => {
           },
         ],
         TemplateLanguage: true,
-        Subject: data.subject ?? "Resume Contact Form",
-        HtmlPart: htmlPart,
+        Subject: contactData.subject ?? "Resume Contact Form",
+        HTMLPart: htmlPart,
         TextPart: textPart,
         Variables: {
-          sender: data.name,
-          email: data.email,
-          message: data.message,
-          subject: data.subject,
+          sender: contactData.name,
+          email: contactData.email,
+          message: contactData.message,
+          subject: contactData.subject,
         },
       },
     ],
-  });
+  };
+  const request = await mailjet
+    .post("send", { version: "v3.1" })
+    .request<SendEmailV3_1.IResponse>(data);
+
+  if (request.body.Messages.length !== 1) {
+    return {
+      statusCode: 500,
+      body: "Unexpected response from mail sender",
+    };
+  }
 
   return {
     statusCode: request.response.status,
-    body: request.response.statusText,
+    body: request.body.Messages[0].Status,
   };
 };
 
