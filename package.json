@@ -31,7 +31,7 @@
     "@types/styled-components": "^5.1.25",
     "axios": "^0.27.2",
     "framer-motion": "^7.0.0",
-    "i18next": "^21.8.16",
+    "i18next": "^21.9.0",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
     "node-mailjet": "^5.1.1",
