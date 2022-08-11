@@ -21,7 +21,7 @@ const theme = {
     placeholder: "#595959",
     transparent: "transparent",
   },
-  fonts: ["sans-serif", "Roboto"],
+  fonts: ["sans-serif", "Dosis"],
   fontSizes: {
     small: "1em",
     medium: "2em",
