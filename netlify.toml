@@ -1,4 +1,5 @@
 [build]
+  command = "vite build"
   functions = "functions"
 
 [[redirects]]
