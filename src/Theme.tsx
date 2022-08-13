@@ -1,34 +1,73 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
-const theme = {
-  background: {
-    primary: "#161616",
-    secondary: "#f9f9f9",
-    initial: "#121212",
-    transparent: "transparent",
-    error: "#101010",
-    accent: "#032236",
+const themeNew: DefaultTheme = {
+  palette: {
+    primary: {
+      background: "#161616",
+      text: "#f9f9f9",
+    },
+    secondary: {
+      background: "#f9f9f9",
+      text: "#161616",
+    },
+    error: {
+      background: "#101010",
+      text: "#f00e0e",
+    },
+    accent: {
+      background: "#032236",
+      text: "#00b5e1", //"#00a3cc"
+      textLight: "#32d7ff",
+      textDark: "#005061",
+    },
     footer: "#063a5b",
-  },
-  colors: {
-    primary: "#f9f9f9",
-    secondary: "#161616",
-    accent: "#00b5e1", //"#00a3cc"
-    accentDark: "#005061",
-    accentLight: "#32d7ff",
-    error: "#f00e0e",
-    placeholder: "#595959",
     transparent: "transparent",
+    splashBg: "#121212",
   },
-  fonts: ["sans-serif", "Dosis"],
-  fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+  font: ["Dosis", "sans-serif"],
+  text: {
+    button: {
+      static: "0.8rem",
+      dynamic: "clamp(0.9rem, 3vw, 1.1rem)",
+    },
+    home: {
+      name: {
+        static: "",
+        dynamic: "clamp(2rem, 8vw, 5rem)",
+      },
+      desription: {
+        static: "",
+        dynamic: "clamp(1rem, 3vw, 1.4rem)",
+      },
+    },
+    skills: {
+      tag: {
+        static: "",
+        dynamic: "clamp(0.8rem, 4vw, 1rem)",
+      },
+    },
+    timeline: {
+      text: {
+        static: "",
+        dynamic: "clamp(13px, 5vw, 15px)",
+      },
+      title: {
+        static: "",
+        dynamic: "clamp(1.2rem, 5vw, 1.4rem)",
+      },
+      subtititle: {
+        static: "",
+        dynamic: "clamp(1rem, 4vw, 1.1rem)",
+      },
+      description: {
+        static: "",
+        dynamic: "clamp(0.8rem, 3vw, 0.9rem)",
+      },
+    },
   },
 };
 
 export const Theme = ({ children }: { children: React.ReactNode }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <ThemeProvider theme={themeNew}>{children}</ThemeProvider>
 );

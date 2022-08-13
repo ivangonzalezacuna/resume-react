@@ -22,11 +22,11 @@ export const Tag = styled(motion.div)`
   align-items: center;
   justify-content: center;
   background: #f9f9f911;
-  color: ${(props) => props.theme.colors.accent};
-  border: 2px solid ${(props) => props.theme.colors.accentDark};
+  color: ${({ theme }) => theme.palette.accent.text};
+  border: 2px solid ${({ theme }) => theme.palette.accent.textDark};
   border-radius: 4px;
   padding: 8px 16px;
-  font-size: clamp(0.8rem, 4vw, 1rem);
+  font-size: ${({ theme }) => theme.text.skills.tag.dynamic};
   margin: 5px;
   cursor: pointer;
 

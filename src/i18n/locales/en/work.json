@@ -4,21 +4,21 @@
     {
       "location": "Spread Group",
       "responsibility": "Software Engineer",
-      "description": "Some text as description here",
+      "description": ["Line 1", "Line 2"],
       "start": "Dec 2021",
       "end": "Present"
     },
     {
       "location": "University of Vigo",
       "responsibility": "Research and Development",
-      "description": "Some text as description here",
+      "description": ["Line 1", "Line 2"],
       "start": "Feb 2020",
       "end": "Nov 2021"
     },
     {
       "location": "Muutech Monitoring Solutions SL",
       "responsibility": "Internship",
-      "description": "Some text as description here",
+      "description": ["Line 1", "Line 2"],
       "start": "Jun 2019",
       "end": "Jul 2019"
     }

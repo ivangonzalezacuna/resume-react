@@ -20,10 +20,11 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Title = styled(motion.p)`
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 20px;
+  color: ${({ theme }) => theme.palette.primary.text};
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 1.4px;
+  letter-spacing: 2px;
+  font-variant: small-caps;
 `;
 
 export const Content = styled.div`
@@ -40,8 +41,8 @@ export const Item = styled(motion.div)`
   align-items: center;
   margin: 5px 0;
   padding: 14px;
-  border: 1px solid ${(props) => props.theme.colors.accentDark};
-  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
+  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
   border-radius: 6px;
 
   @media screen and (max-width: 440px) {
@@ -54,9 +55,9 @@ export const Item = styled(motion.div)`
 export const IconWrapper = styled(motion.div)`
   height: 50px;
   width: 50px;
-  border: 1px solid ${(props) => props.theme.colors.accentDark};
-  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
-  color: ${(props) => props.theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: 24px;
   margin-left: 10px;
   border-radius: 6px;
@@ -85,9 +86,10 @@ export const Info = styled.div`
 `;
 
 export const Type = styled(motion.h1)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: clamp(16px, 4vw, 20px);
   margin-bottom: 14px;
+  font-variant: small-caps;
 
   @media screen and (max-width: 440px) {
     margin-bottom: 8px;
@@ -95,7 +97,7 @@ export const Type = styled(motion.h1)`
 `;
 
 export const Data = styled(motion.a)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
   text-decoration: none;
@@ -104,6 +106,6 @@ export const Data = styled(motion.a)`
   opacity: 1;
 
   &:hover {
-    color: ${(props) => props.theme.colors.accentLight};
+    color: ${({ theme }) => theme.palette.accent.text};
   }
 `;

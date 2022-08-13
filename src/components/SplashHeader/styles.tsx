@@ -7,7 +7,7 @@ export const SplashContainer = styled(motion.div)`
   position: absolute;
   top: 0;
   right: 0;
-  background: ${(props) => props.theme.background.initial};
+  background: ${({ theme }) => theme.palette.splashBg};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ export const SplashContainer = styled(motion.div)`
 `;
 
 export const SplashText = styled(motion.h1)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 `;
 
 export const SplashLogo = styled.img`

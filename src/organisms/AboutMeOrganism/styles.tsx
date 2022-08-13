@@ -61,7 +61,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Name = styled(motion.h1)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   text-align: center;
   margin-bottom: 20px;
   font-weight: 400;
@@ -71,12 +71,12 @@ export const Name = styled(motion.h1)`
     font-weight: 700;
     font-size: 110%;
     margin-left: 5px;
-    color: ${(props) => props.theme.colors.accent};
+    color: ${({ theme }) => theme.palette.accent.text};
   }
 `;
 
 export const Description = styled(motion.span)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: 15px;
   padding: 10px;
   margin-bottom: 20px;
