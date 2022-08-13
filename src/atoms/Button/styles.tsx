@@ -21,14 +21,16 @@ export const FormButtonWrapper = styled(motion.div)`
 `;
 
 export const LinkBtn = styled(Link)<CustomProps>`
-  font-size: ${({ small }) =>
-    small ? "0.8rem" : "clamp(0.9rem, 3vw, 1.1rem)"};
+  font-size: ${({ small, theme }) =>
+    small ? theme.text.button.static : theme.text.button.dynamic};
   padding: ${({ small }) => (small ? "6px 14px" : "8px 20px")};
-  background: ${(props) => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) =>
-    dark ? colors.secondary : colors.primary};
-  border: ${({ dark, theme: { colors } }) =>
-    dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+  background: ${({ theme }) => theme.palette.transparent};
+  color: ${({ dark, theme }) =>
+    dark ? theme.palette.secondary.text : theme.palette.primary.text};
+  border: ${({ dark, theme }) =>
+    dark
+      ? `3px solid ${theme.palette.secondary.text}`
+      : `3px solid ${theme.palette.primary.text}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -37,12 +39,16 @@ export const LinkBtn = styled(Link)<CustomProps>`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) =>
-      dark ? colors.secondary : colors.primary};
-    color: ${({ dark, theme: { colors } }) =>
-      dark ? colors.primary : colors.secondary};
-    border: ${({ dark, theme: { colors } }) =>
-      dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+    background: ${({ dark, theme }) =>
+      dark
+        ? theme.palette.primary.background
+        : theme.palette.secondary.background};
+    color: ${({ dark, theme }) =>
+      dark ? theme.palette.primary.text : theme.palette.secondary.text};
+    border: ${({ dark, theme }) =>
+      dark
+        ? `3px solid ${theme.palette.primary.background}`
+        : `3px solid ${theme.palette.secondary.background}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -56,14 +62,16 @@ export const LinkBtn = styled(Link)<CustomProps>`
 `;
 
 export const CustomBtn = styled(motion.div)<CustomProps>`
-  font-size: ${({ small }) =>
-    small ? "0.8rem" : "clamp(0.9rem, 3vw, 1.1rem)"};
+  font-size: ${({ small, theme }) =>
+    small ? theme.text.button.static : theme.text.button.dynamic};
   padding: ${({ small }) => (small ? "6px 14px" : "8px 20px")};
-  background: ${(props) => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) =>
-    dark ? colors.secondary : colors.primary};
-  border: ${({ dark, theme: { colors } }) =>
-    dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+  background: ${({ theme }) => theme.palette.transparent};
+  color: ${({ dark, theme }) =>
+    dark ? theme.palette.secondary.text : theme.palette.primary.text};
+  border: ${({ dark, theme }) =>
+    dark
+      ? `3px solid ${theme.palette.secondary.text}`
+      : `3px solid ${theme.palette.primary.text}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -72,12 +80,16 @@ export const CustomBtn = styled(motion.div)<CustomProps>`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) =>
-      dark ? colors.secondary : colors.primary};
-    color: ${({ dark, theme: { colors } }) =>
-      dark ? colors.primary : colors.secondary};
-    border: ${({ dark, theme: { colors } }) =>
-      dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+    background: ${({ dark, theme }) =>
+      dark
+        ? theme.palette.primary.background
+        : theme.palette.secondary.background};
+    color: ${({ dark, theme }) =>
+      dark ? theme.palette.primary.text : theme.palette.secondary.text};
+    border: ${({ dark, theme }) =>
+      dark
+        ? `3px solid ${theme.palette.primary.background}`
+        : `3px solid ${theme.palette.secondary.background}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -91,14 +103,16 @@ export const CustomBtn = styled(motion.div)<CustomProps>`
 `;
 
 export const HrefBtn = styled.a<CustomProps>`
-  font-size: ${({ small }) =>
-    small ? "0.8rem" : "clamp(0.9rem, 3vw, 1.1rem)"};
+  font-size: ${({ small, theme }) =>
+    small ? theme.text.button.static : theme.text.button.dynamic};
   padding: ${({ small }) => (small ? "6px 14px" : "8px 20px")};
-  background: ${(props) => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) =>
-    dark ? colors.secondary : colors.primary};
-  border: ${({ dark, theme: { colors } }) =>
-    dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+  background: ${({ theme }) => theme.palette.transparent};
+  color: ${({ dark, theme }) =>
+    dark ? theme.palette.secondary.text : theme.palette.primary.text};
+  border: ${({ dark, theme }) =>
+    dark
+      ? `3px solid ${theme.palette.secondary.text}`
+      : `3px solid ${theme.palette.primary.text}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -107,12 +121,16 @@ export const HrefBtn = styled.a<CustomProps>`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) =>
-      dark ? colors.secondary : colors.primary};
-    color: ${({ dark, theme: { colors } }) =>
-      dark ? colors.primary : colors.secondary};
-    border: ${({ dark, theme: { colors } }) =>
-      dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+    background: ${({ dark, theme }) =>
+      dark
+        ? theme.palette.primary.background
+        : theme.palette.secondary.background};
+    color: ${({ dark, theme }) =>
+      dark ? theme.palette.primary.text : theme.palette.secondary.text};
+    border: ${({ dark, theme }) =>
+      dark
+        ? `3px solid ${theme.palette.primary.background}`
+        : `3px solid ${theme.palette.secondary.background}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -126,14 +144,16 @@ export const HrefBtn = styled.a<CustomProps>`
 `;
 
 export const FormBtn = styled.button<CustomProps>`
-  font-size: ${({ small }) =>
-    small ? "0.8rem" : "clamp(0.9rem, 3vw, 1.1rem)"};
+  font-size: ${({ small, theme }) =>
+    small ? theme.text.button.static : theme.text.button.dynamic};
   padding: ${({ small }) => (small ? "6px 14px" : "8px 20px")};
-  background: ${(props) => props.theme.colors.transparent};
-  color: ${({ dark, theme: { colors } }) =>
-    dark ? colors.secondary : colors.primary};
-  border: ${({ dark, theme: { colors } }) =>
-    dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+  background: ${({ theme }) => theme.palette.transparent};
+  color: ${({ dark, theme }) =>
+    dark ? theme.palette.secondary.text : theme.palette.primary.text};
+  border: ${({ dark, theme }) =>
+    dark
+      ? `3px solid ${theme.palette.secondary.text}`
+      : `3px solid ${theme.palette.primary.text}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -142,12 +162,16 @@ export const FormBtn = styled.button<CustomProps>`
   cursor: pointer;
 
   &:hover {
-    background: ${({ dark, theme: { colors } }) =>
-      dark ? colors.secondary : colors.primary};
-    color: ${({ dark, theme: { colors } }) =>
-      dark ? colors.primary : colors.secondary};
-    border: ${({ dark, theme: { colors } }) =>
-      dark ? `3px solid ${colors.secondary}` : `3px solid ${colors.primary}`};
+    background: ${({ dark, theme }) =>
+      dark
+        ? theme.palette.primary.background
+        : theme.palette.secondary.background};
+    color: ${({ dark, theme }) =>
+      dark ? theme.palette.primary.text : theme.palette.secondary.text};
+    border: ${({ dark, theme }) =>
+      dark
+        ? `3px solid ${theme.palette.primary.background}`
+        : `3px solid ${theme.palette.secondary.background}`};
   }
 
   @media screen and (max-width: 500px) {

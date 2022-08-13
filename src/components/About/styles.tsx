@@ -6,7 +6,7 @@ export const Container = styled(motion.div)`
   min-height: 100vh;
   margin-bottom: 100px;
   height: auto;
-  background: ${(props) => props.theme.background.primary};
+  background: ${({ theme }) => theme.palette.primary.background};
   display: flex;
   align-items: center;
   flex-direction: column;

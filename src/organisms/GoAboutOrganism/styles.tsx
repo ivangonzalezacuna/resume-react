@@ -26,9 +26,10 @@ export const Wrapper = styled(motion.div)`
 `;
 
 export const Text = styled.p`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
+  font-variant: small-caps;
 `;
 
 export const Icon = styled(IconArrow)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 `;

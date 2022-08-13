@@ -20,21 +20,21 @@ export const ModalContainer = styled(motion.div)`
   padding: 28px 3px 3px 3px;
   width: 80vw;
   max-width: 400px;
-  background: ${(props) => props.theme.background.primary};
+  background: ${({ theme }) => theme.palette.primary.background};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
-  border: 1px solid ${(props) => props.theme.colors.accentDark};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
+  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
 `;
 
 export const CloseIcon = styled(MdClose)`
   position: absolute;
   top: 0;
   right: 0;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: 1.5rem;
   margin: 4px;
   cursor: pointer;
@@ -53,13 +53,13 @@ export const Name = styled(motion.h2)`
   font-weight: bold;
   text-align: center;
   font-size: 1.1rem;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 `;
 
 export const LevelWrap = styled(motion.div)`
   width: 80%;
   height: 10px;
-  background: ${(props) => props.theme.background.secondary};
+  background: ${({ theme }) => theme.palette.secondary.background};
   border-radius: 50px;
   margin: 15px 0 20px 0;
   display: flex;
@@ -67,7 +67,7 @@ export const LevelWrap = styled(motion.div)`
 `;
 
 export const LevelBar = styled(motion.div)`
-  background: ${(props) => props.theme.colors.accent};
+  background: ${({ theme }) => theme.palette.accent.text};
   height: 100%;
   border-radius: 50px;
 `;
@@ -78,5 +78,5 @@ export const LevelValue = styled(motion.p)`
   top: 16px;
   transform: translateX(-50%);
   font-weight: bold;
-  color: ${(props) => props.theme.colors.accent};
+  color: ${({ theme }) => theme.palette.accent.text};
 `;

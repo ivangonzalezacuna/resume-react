@@ -4,7 +4,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   padding-top: 50px;
   padding-bottom: 30px;
-  background: ${(props) => props.theme.background.footer};
+  background: ${({ theme }) => theme.palette.footer};
   background: linear-gradient(
     0deg,
     rgba(6, 58, 91, 1) 80%,
@@ -28,7 +28,7 @@ export const FooterWrap = styled.div`
 `;
 
 export const Logo = styled.div`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
@@ -42,7 +42,7 @@ export const LogoImg = styled.img`
 `;
 
 export const Copyright = styled.small`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   margin: 8px 0;
   display: flex;
   align-items: center;

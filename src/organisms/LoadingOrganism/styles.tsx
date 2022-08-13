@@ -18,7 +18,7 @@ export const Overlay = styled.div`
 export const Popup = styled(motion.div)`
   width: 150px;
   height: 150px;
-  background: ${(props) => props.theme.colors.primary};
+  background: ${({ theme }) => theme.palette.secondary.background};
   border-radius: 10px;
   display: flex;
   align-items: center;

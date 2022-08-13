@@ -5,11 +5,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Dosis', sans-serif;
+    font-family: ${({ theme }) => theme.font.join(", ")} ;
   }
 
   html, body {
-    background: #161616;
+    background: ${({ theme }) => theme.palette.primary.background};
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
