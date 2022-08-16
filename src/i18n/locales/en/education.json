@@ -4,14 +4,14 @@
     {
       "location": "University of Vigo",
       "responsibility": "Degree in Engineering in Telecommunication Technologies",
-      "description": "Some text as description here",
+      "description": ["Line 1", "Line 2"],
       "start": "Aug 2016",
       "end": "Jul 2020"
     },
     {
       "location": "Oulu University of Applied Sciences",
       "responsibility": "Software Development",
-      "description": "Some text as description here",
+      "description": ["Line 1", "Line 2"],
       "start": "Aug 2019",
       "end": "Dec 2019"
     }

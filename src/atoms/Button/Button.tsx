@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { TargetAndTransition, Variants } from "framer-motion";
 import React from "react";
 import {
   CustomBtn,
@@ -18,6 +18,14 @@ export type LinkButtonProps = {
   children: React.ReactNode;
 };
 
+const buttonAnimations: {
+  whileHover: TargetAndTransition;
+  whileTap: TargetAndTransition;
+} = {
+  whileHover: { scale: 1.03 },
+  whileTap: { scale: 0.97 },
+};
+
 export const LinkButton = ({
   variants,
   to,
@@ -27,22 +35,16 @@ export const LinkButton = ({
   children,
 }: LinkButtonProps) => {
   return (
-    <>
-      <ButtonWrapper
-        variants={variants}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
+    <ButtonWrapper variants={variants} {...buttonAnimations}>
+      <LinkBtn
+        to={to}
+        onClick={onClick}
+        small={small ? 1 : 0}
+        dark={dark ? 1 : 0}
       >
-        <LinkBtn
-          to={to}
-          onClick={onClick}
-          small={small ? 1 : 0}
-          dark={dark ? 1 : 0}
-        >
-          {children}
-        </LinkBtn>
-      </ButtonWrapper>
-    </>
+        {children}
+      </LinkBtn>
+    </ButtonWrapper>
   );
 };
 
@@ -62,18 +64,15 @@ export const CustomButton = ({
   children,
 }: CustomButtonProps) => {
   return (
-    <>
-      <CustomBtn
-        variants={variants}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        onClick={onClick}
-        small={small ? 1 : 0}
-        dark={dark ? 1 : 0}
-      >
-        {children}
-      </CustomBtn>
-    </>
+    <CustomBtn
+      variants={variants}
+      onClick={onClick}
+      small={small ? 1 : 0}
+      dark={dark ? 1 : 0}
+      {...buttonAnimations}
+    >
+      {children}
+    </CustomBtn>
   );
 };
 
@@ -93,22 +92,16 @@ export const HrefButton = ({
   children,
 }: HrefButtonProps) => {
   return (
-    <>
-      <ButtonWrapper
-        variants={variants}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
+    <ButtonWrapper variants={variants} {...buttonAnimations}>
+      <HrefBtn
+        href={href}
+        target="_blank"
+        small={small ? 1 : 0}
+        dark={dark ? 1 : 0}
       >
-        <HrefBtn
-          href={href}
-          target="_blank"
-          small={small ? 1 : 0}
-          dark={dark ? 1 : 0}
-        >
-          {children}
-        </HrefBtn>
-      </ButtonWrapper>
-    </>
+        {children}
+      </HrefBtn>
+    </ButtonWrapper>
   );
 };
 
@@ -126,16 +119,10 @@ export const FormButton = ({
   children,
 }: FormButtonProps) => {
   return (
-    <>
-      <FormButtonWrapper
-        variants={variants}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-      >
-        <FormBtn type="submit" small={small ? 1 : 0} dark={dark ? 1 : 0}>
-          {children}
-        </FormBtn>
-      </FormButtonWrapper>
-    </>
+    <FormButtonWrapper variants={variants} {...buttonAnimations}>
+      <FormBtn type="submit" small={small ? 1 : 0} dark={dark ? 1 : 0}>
+        {children}
+      </FormBtn>
+    </FormButtonWrapper>
   );
 };

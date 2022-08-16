@@ -68,7 +68,7 @@ export interface ContactTranslation {
 export interface ExperienceTranslationInfo {
   location: string;
   responsibility: string;
-  description: string;
+  description: string[];
   start: string;
   end: string;
 }

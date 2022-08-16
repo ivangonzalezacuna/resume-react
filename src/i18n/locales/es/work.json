@@ -4,21 +4,21 @@
     {
       "location": "Spread Group",
       "responsibility": "Ingeniero de software",
-      "description": "Texto descriptivo en este hueco",
+      "description": ["Linea 1", "Linea 2"],
       "start": "Dic 2021",
       "end": "Actualidad"
     },
     {
       "location": "Univerdad de Vigo",
       "responsibility": "Investigación y Desarrollo",
-      "description": "Texto descriptivo en este hueco",
+      "description": ["Linea 1", "Linea 2"],
       "start": "Feb 2020",
       "end": "Nov 2021"
     },
     {
       "location": "Muutech Monitoring Solutions SL",
       "responsibility": "Prácticas de empresa",
-      "description": "Texto descriptivo en este hueco",
+      "description": ["Linea 1", "Linea 2"],
       "start": "Jun 2019",
       "end": "Jul 2019"
     }
