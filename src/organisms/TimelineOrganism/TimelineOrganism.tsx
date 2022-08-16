@@ -4,6 +4,8 @@ import {
   Container,
   Content,
   Description,
+  DescriptionWrapper,
+  Dot,
   Item,
   Subtitle,
   Time,
@@ -30,7 +32,12 @@ export const TimelineOrganism = ({
             <Content>
               <Title variants={item}>{data.location}</Title>
               <Subtitle variants={item}>{data.responsibility}</Subtitle>
-              <Description variants={item}>{data.description}</Description>
+              {data.description.map((line, id) => (
+                <DescriptionWrapper key={id} variants={item}>
+                  <Dot />
+                  <Description>{line}</Description>
+                </DescriptionWrapper>
+              ))}
             </Content>
           </Item>
         ))}

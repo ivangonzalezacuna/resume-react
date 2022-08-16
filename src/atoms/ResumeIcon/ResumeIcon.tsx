@@ -92,64 +92,66 @@ export const ResumeIcon = ({
 };
 
 const SvgIcon = ({ icon }: { icon: string }) => {
-  if (icon === "android") {
-    return <SkillIcon src={AndroidIcon.default} alt="android" />;
-  } else if (icon === "angular") {
-    return <SkillIcon src={AngularIcon.default} alt="angular" />;
-  } else if (icon === "bash") {
-    return <SkillIcon src={BashIcon.default} alt="bash" />;
-  } else if (icon === "c") {
-    return <SkillIcon src={CIcon.default} alt="c" />;
-  } else if (icon === "css") {
-    return <SkillIcon src={Css3Icon.default} alt="css" />;
-  } else if (icon === "docker") {
-    return <SkillIcon src={DockerIcon.default} alt="docker" />;
-  } else if (icon === "git") {
-    return <SkillIcon src={GitIcon.default} alt="git" />;
-  } else if (icon === "golang") {
-    return <SkillIcon src={GolangIcon.default} alt="golang" />;
-  } else if (icon === "html") {
-    return <SkillIcon src={Html5Icon.default} alt="html" />;
-  } else if (icon === "java") {
-    return <SkillIcon src={JavaIcon.default} alt="java" />;
-  } else if (icon === "javascript") {
-    return <SkillIcon src={JavascriptIcon.default} alt="javascript" />;
-  } else if (icon === "kubernetes") {
-    return <SkillIcon src={KubernetesIcon.default} alt="kubernetes" />;
-  } else if (icon === "linux") {
-    return <SkillIcon src={LinuxIcon.default} alt="linux" />;
-  } else if (icon === "mongodb") {
-    return <SkillIcon src={MongoDbIcon.default} alt="mongodb" />;
-  } else if (icon === "mysql") {
-    return <SkillIcon src={MySqlIcon.default} alt="mysql" />;
-  } else if (icon === "nodejs") {
-    return <SkillIcon src={NodeJSIcon.default} alt="nodejs" />;
-  } else if (icon === "npm") {
-    return <SkillIcon src={NpmIcon.default} alt="npm" />;
-  } else if (icon === "postgresql") {
-    return <SkillIcon src={PostgreSqlIcon.default} alt="postgresql" />;
-  } else if (icon === "python") {
-    return <SkillIcon src={PythonIcon.default} alt="python" />;
-  } else if (icon === "qt") {
-    return <SkillIcon src={QtIcon.default} alt="qt" />;
-  } else if (icon === "react") {
-    return <SkillIcon src={ReactIcon.default} alt="react" />;
-  } else if (icon === "swift") {
-    return <SkillIcon src={SwiftIcon.default} alt="swift" />;
-  } else if (icon === "typescript") {
-    return <SkillIcon src={TypescriptIcon.default} alt="typescript" />;
-  } else if (icon === "ubuntu") {
-    return <SkillIcon src={UbuntuIcon.default} alt="ubuntu" />;
-  } else if (icon === "vscode") {
-    return <SkillIcon src={VsCodeIcon.default} alt="vscode" />;
-  } else if (icon === "windows") {
-    return <SkillIcon src={WindowsIcon.default} alt="windows" />;
-  } else if (icon === "yarn") {
-    return <SkillIcon src={YarnIcon.default} alt="yarn" />;
+  switch (icon) {
+    case "android":
+      return <SkillIcon src={AndroidIcon.default} alt="android" />;
+    case "angular":
+      return <SkillIcon src={AngularIcon.default} alt="angular" />;
+    case "bash":
+      return <SkillIcon src={BashIcon.default} alt="bash" />;
+    case "c":
+      return <SkillIcon src={CIcon.default} alt="c" />;
+    case "css":
+      return <SkillIcon src={Css3Icon.default} alt="css" />;
+    case "docker":
+      return <SkillIcon src={DockerIcon.default} alt="docker" />;
+    case "git":
+      return <SkillIcon src={GitIcon.default} alt="git" />;
+    case "golang":
+      return <SkillIcon src={GolangIcon.default} alt="golang" />;
+    case "html":
+      return <SkillIcon src={Html5Icon.default} alt="html" />;
+    case "java":
+      return <SkillIcon src={JavaIcon.default} alt="java" />;
+    case "javascript":
+      return <SkillIcon src={JavascriptIcon.default} alt="javascript" />;
+    case "kubernetes":
+      return <SkillIcon src={KubernetesIcon.default} alt="kubernetes" />;
+    case "linux":
+      return <SkillIcon src={LinuxIcon.default} alt="linux" />;
+    case "mongodb":
+      return <SkillIcon src={MongoDbIcon.default} alt="mongodb" />;
+    case "mysql":
+      return <SkillIcon src={MySqlIcon.default} alt="mysql" />;
+    case "nodejs":
+      return <SkillIcon src={NodeJSIcon.default} alt="nodejs" />;
+    case "npm":
+      return <SkillIcon src={NpmIcon.default} alt="npm" />;
+    case "postgresql":
+      return <SkillIcon src={PostgreSqlIcon.default} alt="postgresql" />;
+    case "python":
+      return <SkillIcon src={PythonIcon.default} alt="python" />;
+    case "qt":
+      return <SkillIcon src={QtIcon.default} alt="qt" />;
+    case "react":
+      return <SkillIcon src={ReactIcon.default} alt="react" />;
+    case "swift":
+      return <SkillIcon src={SwiftIcon.default} alt="swift" />;
+    case "typescript":
+      return <SkillIcon src={TypescriptIcon.default} alt="typescript" />;
+    case "ubuntu":
+      return <SkillIcon src={UbuntuIcon.default} alt="ubuntu" />;
+    case "vscode":
+      return <SkillIcon src={VsCodeIcon.default} alt="vscode" />;
+    case "windows":
+      return <SkillIcon src={WindowsIcon.default} alt="windows" />;
+    case "yarn":
+      return <SkillIcon src={YarnIcon.default} alt="yarn" />;
+    default:
+      return (
+        <BsFillQuestionOctagonFill
+          style={{ width: 80, height: 80, color: "#f9f9f9" }}
+        />
+      );
   }
-  return (
-    <BsFillQuestionOctagonFill
-      style={{ width: 80, height: 80, color: "#f9f9f9" }}
-    />
-  );
 };

@@ -92,7 +92,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0 15px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: ${({ theme }) => theme.palette.primary.text};
 
   @media screen and (max-width: 500px) {
@@ -115,8 +115,25 @@ export const Subtitle = styled(motion.h2)`
   color: #f9f9f9dd;
 `;
 
-export const Description = styled(motion.p)`
+export const DescriptionWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: start;
   font-size: ${({ theme }) => theme.text.timeline.description.dynamic};
-  margin-bottom: 15px;
-  color: #f9f9f9bb;
+  color: ${({ theme }) => `${theme.palette.primary.text}bb}`};
+  margin: 2px 0;
+`;
+
+export const Description = styled.p`
+  font-size: ${({ theme }) => theme.text.timeline.description.dynamic};
+  white-space: pre-wrap;
+`;
+
+export const Dot = styled.div`
+  background-color: ${({ theme }) => `${theme.palette.primary.text}bb}`};
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
 `;
