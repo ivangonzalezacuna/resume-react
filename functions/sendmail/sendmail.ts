@@ -39,6 +39,9 @@ const handler: Handler = async (event: HandlerEvent) => {
   const mailjet = new Mailjet({
     apiKey: process.env.MAILJET_APIKEY_PUBLIC,
     apiSecret: process.env.MAILJET_APIKEY_SECRET,
+    options: {
+      timeout: 4000,
+    },
   });
 
   const contactData: ContactForm = JSON.parse(event.body ?? "");
