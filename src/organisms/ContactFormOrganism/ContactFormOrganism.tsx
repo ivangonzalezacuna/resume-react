@@ -14,9 +14,9 @@ import { ContactForm, ContactFormOrganismProps } from "../../types/types";
 import { ContactFormTranslation } from "../../i18n/types";
 import { useForm } from "./useForm";
 import { useState } from "react";
-import axios from "axios";
 import { FormButton } from "../../atoms";
 import { LoadingOrganism } from "../LoadingOrganism";
+import fetch from "cross-fetch";
 
 export const ContactFormOrganism = ({
   setEmailSent,
@@ -34,16 +34,16 @@ export const ContactFormOrganism = ({
       window.scrollTo(0, 0);
       setEmailSent(true);
     }, 5000);
-    // sendEmail();
+    // sendE  mail();
   };
 
   // eslint-disable-next-line
   const sendEmail = () => {
-    axios
-      .post(".netlify/functions/sendmail", formData, {
-        timeout: 4000,
-        headers: { "Content-Type": "application/json" },
-      })
+    fetch(".netlify/functions/sendmail", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    })
       .then(() => {
         setIsSubmitted(true);
         setEmailSent(true);
