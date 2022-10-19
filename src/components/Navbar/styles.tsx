@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface CustomProps {
   hideNav?: number;
@@ -21,7 +21,7 @@ export const Nav = styled.div<CustomProps>`
   transition: all 0.3s;
 `;
 
-export const Logo = styled(Link)`
+export const Logo = styled(NavLink)`
   justify-self: start;
   text-decoration: none;
   margin-left: 2rem;
@@ -42,7 +42,7 @@ export const NavMenu = styled.div`
   }
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled(NavLink)`
   color: ${({ theme }) => theme.palette.primary.text};
   display: flex;
   align-items: center;

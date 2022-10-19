@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface CustomProps {
   small: number;
@@ -20,7 +20,7 @@ export const FormButtonWrapper = styled(motion.div)`
   margin: 25px 0;
 `;
 
-export const LinkBtn = styled(Link)<CustomProps>`
+export const LinkBtn = styled(NavLink)<CustomProps>`
   font-size: ${({ small, theme }) =>
     small ? theme.text.button.static : theme.text.button.dynamic};
   padding: ${({ small }) => (small ? "6px 14px" : "8px 20px")};

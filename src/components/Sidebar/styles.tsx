@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface CustomProps {
   current?: number;
@@ -39,7 +39,7 @@ export const SidebarLinkItem = styled(motion.div)`
   }
 `;
 
-export const SidebarLink = styled(Link)`
+export const SidebarLink = styled(NavLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.palette.primary.text};
   transition: all 0.4s;
