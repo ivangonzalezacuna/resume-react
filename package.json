@@ -32,7 +32,7 @@
     "node-mailjet": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^11.18.6",
+    "react-i18next": "^12.0.0",
     "react-icons": "^4.6.0",
     "react-is": "^18.2.0",
     "react-lottie-player": "^1.5.0",
