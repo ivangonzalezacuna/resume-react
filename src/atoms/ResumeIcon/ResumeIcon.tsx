@@ -35,7 +35,6 @@ import {
   FaSkype,
 } from "react-icons/fa";
 import { SkillIcon, SkillWrapper, SocialIcon, SocialWrapper } from "./styles";
-import { SocialLink } from "../../i18n/types";
 import { Variants } from "framer-motion";
 
 export type ResumeIconProps = {
@@ -56,7 +55,7 @@ export const ResumeIcon = ({
   icon,
 }: ResumeIconProps) => {
   const [t] = useTranslation("social");
-  const icons = t<string, SocialLink[]>("links", { returnObjects: true }) || [];
+  const icons = t("links", { returnObjects: true }) || [];
 
   if (social) {
     return (

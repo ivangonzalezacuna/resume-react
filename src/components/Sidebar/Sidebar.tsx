@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { NavigationTranslationInfo } from "../../i18n/types";
-import { SidebarProps } from "../../types/types";
+import { SidebarProps } from "../../types";
 import { container, langs, links, menu } from "./animations";
 import {
   SidebarContainer,
@@ -25,9 +24,7 @@ export const Sidebar = ({
   };
 
   const [t, i18n] = useTranslation("nav");
-  const navs = t<string, NavigationTranslationInfo[]>("info", {
-    returnObjects: true,
-  });
+  const navs = t("info", { returnObjects: true });
 
   const switchPage = () => {
     setFastTransition(false);

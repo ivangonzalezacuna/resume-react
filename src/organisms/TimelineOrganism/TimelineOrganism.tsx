@@ -1,4 +1,4 @@
-import { ExperienceTranslationInfo } from "../../i18n/types";
+import { ExperienceInfo } from "../../types";
 import { item } from "./animations";
 import {
   Container,
@@ -14,11 +14,7 @@ import {
   Wrapper,
 } from "./styles";
 
-export const TimelineOrganism = ({
-  items,
-}: {
-  items: ExperienceTranslationInfo[];
-}) => {
+export const TimelineOrganism = ({ items }: { items: ExperienceInfo[] }) => {
   return (
     <Wrapper>
       <Container>

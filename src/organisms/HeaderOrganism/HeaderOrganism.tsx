@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { HeaderProps } from "../../types/types";
+import { HeaderProps } from "../../types";
 import { container, icons, item } from "./animations";
 import {
   Background,
@@ -18,7 +18,7 @@ export const HeaderOrganism = ({
   isFirstMount,
   setFastTransition,
 }: HeaderProps) => {
-  const [t] = useTranslation<string>("home");
+  const [t] = useTranslation("home");
 
   return (
     <>

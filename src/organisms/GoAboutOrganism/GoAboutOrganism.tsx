@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { HeaderProps } from "../../types/types";
+import { HeaderProps } from "../../types";
 import { container } from "./animations";
 import { Container, Icon, Text, Wrapper } from "./styles";
 

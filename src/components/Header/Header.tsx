@@ -1,5 +1,5 @@
 import { GoAboutOrganism, HeaderOrganism } from "../../organisms";
-import { HeaderProps } from "../../types/types";
+import { HeaderProps } from "../../types";
 import { HeaderSection, HeaderWrapper } from "./styles";
 
 export const Header = ({

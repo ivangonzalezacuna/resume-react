@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SectionTitle } from "../../atoms";
-import { SkillsTranslationInfo } from "../../i18n/types";
+import { SkillInfo } from "../../types";
 import { SkillModal } from "../SkillModal";
 import { title, container, tag } from "./animations";
 import { Container, Tag, Wrapper } from "./styles";
 
-const Skill = ({ skill }: { skill: SkillsTranslationInfo }) => {
+const Skill = ({ skill }: { skill: SkillInfo }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const toggleModal = () => {
@@ -34,13 +34,13 @@ const Skill = ({ skill }: { skill: SkillsTranslationInfo }) => {
 
 export const SkillsOrganism = () => {
   const [t] = useTranslation("skills");
-  const skills = t<string, SkillsTranslationInfo[]>("info", {
-    returnObjects: true,
-  }).sort((a, b) => a.name.localeCompare(b.name));
+  const skills = t("info", { returnObjects: true }).sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   return (
     <>
-      <SectionTitle variants={title}>{t("sectionTitle")}</SectionTitle>
+      <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={container}>
         <Wrapper>
           {skills.map((skill, key) => (
