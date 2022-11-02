@@ -28,7 +28,7 @@
     "framer-motion": "^7.6.2",
     "i18next": "^22.0.4",
     "i18next-browser-languagedetector": "^7.0.0",
-    "i18next-http-backend": "^2.0.0",
+    "i18next-http-backend": "^2.0.1",
     "node-mailjet": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

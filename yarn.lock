@@ -6825,12 +6825,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-http-backend@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "i18next-http-backend@npm:2.0.0"
+"i18next-http-backend@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "i18next-http-backend@npm:2.0.1"
   dependencies:
     cross-fetch: 3.1.5
-  checksum: 2e2c8f427880540ce82a37367f095a9e4b2c816602443d1729a64062b6cedbaeb503a013e3fe5df0aa077ed0c252eb490d3c87245ef2945dbf2a11abad9872fe
+  checksum: c7bacdafc0c758e60c96efcd9f5d2b052d361fc3eb7613144291ba724964ec1f718620613e8a63f0c1174e5ed5addbbded69ff024ae636f8a5430410c8c385c9
   languageName: node
   linkType: hard
 
@@ -7650,7 +7650,7 @@ __metadata:
     framer-motion: ^7.6.2
     i18next: ^22.0.4
     i18next-browser-languagedetector: ^7.0.0
-    i18next-http-backend: ^2.0.0
+    i18next-http-backend: ^2.0.1
     netlify-cli: ^12.0.11
     node-mailjet: ^5.1.1
     prettier: ^2.7.1
