@@ -7,7 +7,7 @@ export const Container = styled(motion.div)`
   width: 100%;
   position: fixed;
   top: 0;
-  background: ${(props) => props.theme.background.initial};
+  background: ${({ theme }) => theme.palette.splashBg};
   display: flex;
   flex-direction: column;
   align-items: center;

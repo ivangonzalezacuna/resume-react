@@ -11,13 +11,13 @@ import {
   LevelBar,
   LevelValue,
 } from "./styles";
-import { SkillsTranslationInfo } from "../../i18n/types";
 import { ResumeIcon } from "../../atoms";
+import { SkillInfo } from "../../types";
 
 export type SkillModalProps = {
   openModal: boolean;
   toggleModal: () => void;
-  skill: SkillsTranslationInfo;
+  skill: SkillInfo;
 };
 
 export const SkillModal = ({

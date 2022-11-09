@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled(motion.h1)`
-  color: ${(props) => props.theme.colors.primary};
-  text-transform: uppercase;
-  font-size: 18px;
+  color: ${({ theme }) => theme.palette.primary.text};
+  font-variant: small-caps;
+  font-size: 24px;
   letter-spacing: 2px;
 `;

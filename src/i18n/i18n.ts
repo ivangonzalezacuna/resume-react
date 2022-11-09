@@ -1,4 +1,4 @@
-import i18n, { Resource } from "i18next";
+import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -20,9 +20,8 @@ import footerEn from "./locales/en/footer.json";
 import notFoundEn from "./locales/en/404.json";
 import skills from "./locales/common/skills.json";
 import social from "./locales/common/social.json";
-import { Translation } from "./types";
 
-const es_resource: Translation | Resource = {
+const es_resource = {
   nav: navEs,
   home: homeEs,
   about: aboutEs,
@@ -35,7 +34,7 @@ const es_resource: Translation | Resource = {
   social: social,
 };
 
-const en_resource: Translation | Resource = {
+const en_resource = {
   nav: navEn,
   home: homeEn,
   about: aboutEn,
@@ -49,10 +48,10 @@ const en_resource: Translation | Resource = {
 };
 
 const resources = {
-  en: en_resource as Resource,
-  "en-US": en_resource as Resource,
-  es: es_resource as Resource,
-  "es-ES": es_resource as Resource,
+  en: en_resource,
+  "en-US": en_resource,
+  es: es_resource,
+  "es-ES": es_resource,
 };
 
 i18n

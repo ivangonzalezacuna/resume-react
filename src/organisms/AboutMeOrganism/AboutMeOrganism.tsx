@@ -29,7 +29,7 @@ export const AboutMeOrganism = () => {
 
   return (
     <>
-      <SectionTitle variants={title}>{t("sectionTitle")}</SectionTitle>
+      <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={aboutMe}>
         <Grid>
           <ImgWrap>

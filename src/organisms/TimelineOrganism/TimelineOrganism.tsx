@@ -1,9 +1,11 @@
-import { ExperienceTranslationInfo } from "../../i18n/types";
+import { ExperienceInfo } from "../../types";
 import { item } from "./animations";
 import {
   Container,
   Content,
   Description,
+  DescriptionWrapper,
+  Dot,
   Item,
   Subtitle,
   Time,
@@ -12,11 +14,7 @@ import {
   Wrapper,
 } from "./styles";
 
-export const TimelineOrganism = ({
-  items,
-}: {
-  items: ExperienceTranslationInfo[];
-}) => {
+export const TimelineOrganism = ({ items }: { items: ExperienceInfo[] }) => {
   return (
     <Wrapper>
       <Container>
@@ -30,7 +28,12 @@ export const TimelineOrganism = ({
             <Content>
               <Title variants={item}>{data.location}</Title>
               <Subtitle variants={item}>{data.responsibility}</Subtitle>
-              <Description variants={item}>{data.description}</Description>
+              {data.description.map((line, id) => (
+                <DescriptionWrapper key={id} variants={item}>
+                  <Dot />
+                  <Description>{line}</Description>
+                </DescriptionWrapper>
+              ))}
             </Content>
           </Item>
         ))}

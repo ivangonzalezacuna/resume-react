@@ -10,13 +10,12 @@ import {
   Wrapper,
 } from "./styles";
 import { btn, form, item } from "./animations";
-import { ContactForm, ContactFormOrganismProps } from "../../types/types";
-import { ContactFormTranslation } from "../../i18n/types";
+import { ContactForm, ContactFormOrganismProps } from "../../types";
 import { useForm } from "./useForm";
 import { useState } from "react";
-import axios from "axios";
 import { FormButton } from "../../atoms";
 import { LoadingOrganism } from "../LoadingOrganism";
+import fetch from "cross-fetch";
 
 export const ContactFormOrganism = ({
   setEmailSent,
@@ -34,16 +33,16 @@ export const ContactFormOrganism = ({
       window.scrollTo(0, 0);
       setEmailSent(true);
     }, 5000);
-    // sendEmail();
+    // sendE  mail();
   };
 
   // eslint-disable-next-line
   const sendEmail = () => {
-    axios
-      .post(".netlify/functions/sendmail", formData, {
-        timeout: 4000,
-        headers: { "Content-Type": "application/json" },
-      })
+    fetch(".netlify/functions/sendmail", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    })
       .then(() => {
         setIsSubmitted(true);
         setEmailSent(true);
@@ -90,9 +89,6 @@ export const ContactFormOrganism = ({
   });
 
   const [t] = useTranslation("contact");
-  const data = t<string, ContactFormTranslation>("form", {
-    returnObjects: true,
-  });
 
   return (
     <>
@@ -103,14 +99,14 @@ export const ContactFormOrganism = ({
             <Wrapper onSubmit={handleSubmit} noValidate>
               <Item>
                 <Label variants={item}>
-                  {data.labelName}
+                  {t("form.labelName")}
                   <span>*</span>
                 </Label>
                 <Input
                   variants={item}
                   type="text"
                   name="name"
-                  placeholder={data.placeholderName}
+                  placeholder={t("form.placeholderName")}
                   value={formData.name || ""}
                   onChange={handleChange("name")}
                 />
@@ -118,26 +114,26 @@ export const ContactFormOrganism = ({
               </Item>
               <Item>
                 <Label variants={item}>
-                  {data.labelEmail}
+                  {t("form.labelEmail")}
                   <span>*</span>
                 </Label>
                 <Input
                   variants={item}
                   type="email"
                   name="email"
-                  placeholder={data.placeholderEmail}
+                  placeholder={t("form.placeholderEmail")}
                   value={formData.email || ""}
                   onChange={handleChange("email")}
                 />
                 {errors.email && <p>{errors.email}</p>}
               </Item>
               <Item>
-                <Label variants={item}>{data.labelSubject}</Label>
+                <Label variants={item}>{t("form.labelSubject")}</Label>
                 <Input
                   variants={item}
                   type="text"
                   name="subject"
-                  placeholder={data.placeholderSubject}
+                  placeholder={t("form.placeholderSubject")}
                   value={formData.subject || ""}
                   onChange={handleChange("subject")}
                 />
@@ -145,13 +141,13 @@ export const ContactFormOrganism = ({
               </Item>
               <Item>
                 <Label variants={item}>
-                  {data.labelMessage}
+                  {t("form.labelMessage")}
                   <span>*</span>
                 </Label>
                 <TextArea
                   variants={item}
                   name="message"
-                  placeholder={data.placeholderMessage}
+                  placeholder={t("form.placeholderMessage")}
                   value={formData.message || ""}
                   onChange={handleChange("message")}
                   rows={5}
@@ -159,7 +155,7 @@ export const ContactFormOrganism = ({
                 />
                 {errors.message && <p>{errors.message}</p>}
               </Item>
-              <FormButton variants={btn}>{data.sendButton}</FormButton>
+              <FormButton variants={btn}>{t("form.sendButton")}</FormButton>
               {sendError && <Error>{sendError}</Error>}
             </Wrapper>
           </Content>

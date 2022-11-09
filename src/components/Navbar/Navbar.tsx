@@ -10,8 +10,7 @@ import {
   NavItem,
   NavMenu,
 } from "./styles";
-import { NavigationTranslationInfo } from "../../i18n/types";
-import { NavbarProps } from "../../types/types";
+import { NavbarProps } from "../../types";
 import LogoSvg from "../../images/background/logo.svg";
 import { Sidebar } from "../Sidebar/Sidebar";
 
@@ -73,9 +72,7 @@ export const Navbar = ({
     }
   };
   const [t, i18n] = useTranslation("nav");
-  const navs = t<string, NavigationTranslationInfo[]>("info", {
-    returnObjects: true,
-  });
+  const navs = t("info", { returnObjects: true });
 
   return (
     <>

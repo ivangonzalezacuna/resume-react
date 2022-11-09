@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import {
   Container,
@@ -13,13 +12,10 @@ import {
 } from "./styles";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { card, container, icon, item } from "./animations";
-import { ContactTranslationInfo } from "../../i18n/types";
 
 export const ContactDetailsOrganism = () => {
   const [t] = useTranslation("contact");
-  const contacts = t<string, ContactTranslationInfo[]>("info", {
-    returnObjects: true,
-  });
+  const contacts = t("info", { returnObjects: true });
 
   return (
     <>

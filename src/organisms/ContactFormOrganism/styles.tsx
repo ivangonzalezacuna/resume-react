@@ -17,7 +17,7 @@ export const Content = styled.div`
   position: block;
   width: 100%;
   height: 100%;
-  background: ${(props) => props.theme.background.primary};
+  background: ${({ theme }) => theme.palette.primary.background};
 `;
 
 export const Wrapper = styled.form`
@@ -32,7 +32,7 @@ export const Item = styled.div`
   p {
     font-size: 0.8rem;
     margin-top: 0.5rem;
-    color: ${(props) => props.theme.colors.error};
+    color: ${({ theme }) => theme.palette.error.text};
   }
 `;
 
@@ -40,10 +40,10 @@ export const Label = styled(motion.label)`
   display: inline-block;
   font-size: 0.8rem;
   margin-bottom: 6px;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 
   span {
-    color: ${(props) => props.theme.colors.accentLight};
+    color: ${({ theme }) => theme.palette.accent.textLight};
     font-weight: 700;
     margin-left: 5px;
   }
@@ -58,15 +58,16 @@ export const Input = styled(motion.input)`
   width: 100%;
   border: none;
   opacity: 0.7;
+  font-size: 14px;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.placeholder};
-    font-size: 12px;
+    color: ${({ theme }) => theme.palette.secondary.text};
+    font-size: 14px;
   }
 
   &:focus {
     opacity: 1;
-    border: 2px solid ${(props) => props.theme.colors.accentLight};
+    border: 2px solid ${({ theme }) => theme.palette.accent.textLight};
   }
 `;
 
@@ -79,21 +80,22 @@ export const TextArea = styled(motion.textarea)`
   border: none;
   opacity: 0.7;
   resize: vertical;
+  font-size: 14px;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.placeholder};
-    font-size: 12px;
+    color: ${({ theme }) => theme.palette.secondary.text};
+    font-size: 14px;
   }
 
   &:focus {
     opacity: 1;
-    border: 2px solid ${(props) => props.theme.colors.accentLight};
+    border: 2px solid ${({ theme }) => theme.palette.accent.textLight};
   }
 `;
 
 export const Error = styled.p`
-  color: ${(props) => props.theme.colors.error};
-  background: ${(props) => props.theme.background.error};
+  color: ${({ theme }) => theme.palette.error.text};
+  background: ${({ theme }) => theme.palette.error.background};
   border-radius: 2px;
   font-size: 0.8rem;
   margin: 0.5rem;

@@ -13,8 +13,8 @@ export const SkillWrapper = styled(motion.div)`
   margin: 10px 0 5px 0;
   padding: 10px;
   border-radius: 4px;
-  box-shadow: 1px 1px 1px ${(props) => props.theme.colors.accentDark};
-  border: 1px solid ${(props) => props.theme.colors.accentDark};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
+  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
   border-radius: 4px;
 `;
 
@@ -34,7 +34,7 @@ export const SocialWrapper = styled.div<CustomProps>`
 export const SocialIcon = styled(motion.a)<CustomProps>`
   font-size: 24px;
   margin: ${({ row }) => (row ? "0 8px" : "8px 0")};
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   cursor: pointer;
   display: flex;
   align-items: center;

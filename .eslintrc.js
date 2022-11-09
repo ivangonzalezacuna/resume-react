@@ -4,6 +4,9 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier", "react", "react-hooks"],
   extends: [
     "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
@@ -12,8 +15,10 @@ module.exports = {
     amd: true,
     node: true,
   },
-  parserOptions: {
-    ecmaVersion: 6,
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
   rules: {
     "no-console": 1,

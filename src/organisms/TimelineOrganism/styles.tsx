@@ -21,7 +21,7 @@ export const Container = styled.div`
     content: "";
     width: 3px;
     height: 100%;
-    background: ${(props) => props.theme.colors.primary};
+    background: ${({ theme }) => theme.palette.secondary.background};
     position: absolute;
     left: -118px;
     top: 0;
@@ -44,8 +44,8 @@ export const Item = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 3px solid ${(props) => props.theme.colors.primary};
-    background: ${(props) => props.theme.background.primary};
+    border: 3px solid ${({ theme }) => theme.palette.primary.text};
+    background: ${({ theme }) => theme.palette.primary.background};
     position: absolute;
     left: -124px;
     top: 0px;
@@ -79,10 +79,10 @@ export const Time = styled.div`
 
 export const TimeText = styled(motion.p)`
   font-size: 13px;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 
   @media screen and (max-width: 500px) {
-    font-size: clamp(13px, 5vw, 15px);
+    font-size: ${({ theme }) => theme.text.timeline.text.dynamic};
   }
 `;
 
@@ -92,8 +92,8 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0 15px;
-  margin-bottom: 40px;
-  color: ${(props) => props.theme.colors.primary};
+  margin-bottom: 50px;
+  color: ${({ theme }) => theme.palette.primary.text};
 
   @media screen and (max-width: 500px) {
     margin-bottom: 60px;
@@ -102,21 +102,38 @@ export const Content = styled.div`
 `;
 
 export const Title = styled(motion.h1)`
-  font-size: clamp(1.2rem, 5vw, 1.4rem);
+  font-size: ${({ theme }) => theme.text.timeline.title.dynamic};
   letter-spacing: 1.5px;
   margin-bottom: 4px;
-  color: ${(props) => props.theme.colors.accent};
+  color: ${({ theme }) => theme.palette.accent.text};
 `;
 
 export const Subtitle = styled(motion.h2)`
-  font-size: clamp(1rem, 4vw, 1.1rem);
+  font-size: ${({ theme }) => theme.text.timeline.subtititle.dynamic};
   margin-bottom: 15px;
   font-weight: 400;
   color: #f9f9f9dd;
 `;
 
-export const Description = styled(motion.p)`
-  font-size: clamp(0.8rem, 3vw, 0.9rem);
-  margin-bottom: 15px;
-  color: #f9f9f9bb;
+export const DescriptionWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: start;
+  font-size: ${({ theme }) => theme.text.timeline.description.dynamic};
+  color: ${({ theme }) => `${theme.palette.primary.text}bb}`};
+  margin: 2px 0;
+`;
+
+export const Description = styled.p`
+  font-size: ${({ theme }) => theme.text.timeline.description.dynamic};
+  white-space: pre-wrap;
+`;
+
+export const Dot = styled.div`
+  background-color: ${({ theme }) => `${theme.palette.primary.text}bb}`};
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
 `;

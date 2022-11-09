@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface CustomProps {
   hideNav?: number;
@@ -15,13 +15,13 @@ export const Nav = styled.div<CustomProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ hideNav, theme: { background } }) =>
-    hideNav ? background.transparent : background.primary};
+  background: ${({ hideNav, theme }) =>
+    hideNav ? theme.palette.transparent : theme.palette.primary.background};
   z-index: 15;
   transition: all 0.3s;
 `;
 
-export const Logo = styled(Link)`
+export const Logo = styled(NavLink)`
   justify-self: start;
   text-decoration: none;
   margin-left: 2rem;
@@ -42,8 +42,8 @@ export const NavMenu = styled.div`
   }
 `;
 
-export const NavItem = styled(Link)`
-  color: ${(props) => props.theme.colors.primary};
+export const NavItem = styled(NavLink)`
+  color: ${({ theme }) => theme.palette.primary.text};
   display: flex;
   align-items: center;
   margin: 0 0.8rem;
@@ -51,18 +51,19 @@ export const NavItem = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   transition: all 0.4s;
+  font-size: 18px;
+  font-variant: small-caps;
 
   &:hover {
-    color: ${(props) => props.theme.colors.accent};
+    color: ${({ theme }) => theme.palette.accent.text};
   }
 `;
 
 export const LangMenu = styled.div`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   display: flex;
   align-items: center;
-  padding: 0 1rem;
-  height: 100%;
+  margin: 0 1rem;
   cursor: pointer;
   text-decoration: none;
 
@@ -72,15 +73,16 @@ export const LangMenu = styled.div`
 `;
 
 export const LangItem = styled.div<CustomProps>`
-  font-size: 12px;
+  font-size: 14px;
+  font-variant: small-caps;
   cursor: pointer;
-  margin: 0 4px 0 4px;
-  color: ${({ current, theme: { colors } }) =>
-    current ? colors.accent : colors.primary};
+  margin: 0 4px;
+  color: ${({ current, theme }) =>
+    current ? theme.palette.accent.text : theme.palette.primary.text};
   transition: all 0.4s;
 
   &:hover {
-    color: ${(props) => props.theme.colors.accent};
+    color: ${({ theme }) => theme.palette.accent.textLight};
   }
 `;
 

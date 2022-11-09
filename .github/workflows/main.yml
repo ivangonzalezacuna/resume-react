@@ -13,23 +13,31 @@ jobs:
     name: Run full code checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup Node 16
+        uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
-      - run: yarn check:full
+          node-version: 16.x
+      - name: Run Checks
+        run: |
+          yarn install
+          yarn check:full
 
   jest:
     name: Run tests
     runs-on: ubuntu-latest
     needs: [checks]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup Node 16
+        uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
-      - run: yarn
-      - run: yarn test --passWithNoTests
+          node-version: 16.x
+      - run: |
+          yarn install
+          yarn test --passWithNoTests
 
   dependency-review:
     name: Dependency Review

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const Container = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background: ${(props) => props.theme.background.primary};
+  background: ${({ theme }) => theme.palette.primary.background};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +35,7 @@ export const Background = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  background-color: ${(props) => props.theme.background.primary};
+  background-color: ${({ theme }) => theme.palette.primary.background};
 `;
 
 export const Content = styled.div`
@@ -45,7 +45,7 @@ export const Content = styled.div`
   flex-direction: column;
   max-width: 1100px;
   width: calc(100% - 100px);
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
 
   @media screen and (max-width: 500px) {
     width: calc(100% - 60px);
@@ -53,9 +53,10 @@ export const Content = styled.div`
 `;
 
 export const Name = styled(motion.h1)`
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: ${({ theme }) => theme.text.home.name.dynamic};
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 4px;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   text-align: left;
   margin-bottom: 0.8rem;
@@ -66,9 +67,10 @@ export const Name = styled(motion.h1)`
 `;
 
 export const Description = styled(motion.p)`
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: ${({ theme }) => theme.text.home.desription.dynamic};
   margin-bottom: 1.2rem;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  font-variant: small-caps;
 
   @media screen and (max-height: 300px) {
     margin-bottom: 0.8rem;

@@ -3,15 +3,15 @@ import { Title, Wrapper } from "./styles";
 
 export const SectionTitle = ({
   variants,
-  children,
+  title,
 }: {
   variants: Variants;
-  children: JSX.Element;
+  title: string;
 }) => {
   return (
     <>
       <Wrapper>
-        <Title variants={variants}>{children}</Title>
+        <Title variants={variants}>{title}</Title>
       </Wrapper>
     </>
   );

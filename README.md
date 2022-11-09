@@ -6,7 +6,7 @@
 
 Resume built with React and Typescript and hosted in Netlify.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the template for `Typescript`.
+This project was bootstrapped with [Vite](https://vitejs.dev/) using the template for `Typescript`.
 
 ## Run locally
 

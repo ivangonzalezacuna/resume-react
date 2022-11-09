@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface CustomProps {
   current?: number;
@@ -17,7 +17,7 @@ export const SidebarContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.theme.background.primary};
+  background: ${({ theme }) => theme.palette.primary.background};
 `;
 
 export const SidebarMenu = styled(motion.div)`
@@ -39,13 +39,15 @@ export const SidebarLinkItem = styled(motion.div)`
   }
 `;
 
-export const SidebarLink = styled(Link)`
+export const SidebarLink = styled(NavLink)`
   text-decoration: none;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.palette.primary.text};
   transition: all 0.4s;
+  font-variant: small-caps;
+  font-size: 2.5rem;
 
   &:hover {
-    color: ${(props) => props.theme.colors.accent};
+    color: ${({ theme }) => theme.palette.accent.text};
   }
 `;
 
@@ -61,14 +63,15 @@ export const LangMenu = styled(motion.div)`
 `;
 
 export const LangItem = styled.div<CustomProps>`
-  font-size: 12px;
+  font-size: 14px;
+  font-variant: small-caps;
   cursor: pointer;
-  margin: 0 4px 0 4px;
-  color: ${({ current, theme: { colors } }) =>
-    current ? colors.accent : colors.primary};
+  margin: 0 4px;
+  color: ${({ current, theme }) =>
+    current ? theme.palette.accent.text : theme.palette.primary.text};
   transition: all 0.4s;
 
   &:hover {
-    color: ${(props) => props.theme.colors.accent};
+    color: ${({ theme }) => theme.palette.accent.textLight};
   }
 `;

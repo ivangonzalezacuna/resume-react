@@ -39,6 +39,9 @@ const handler: Handler = async (event: HandlerEvent) => {
   const mailjet = new Mailjet({
     apiKey: process.env.MAILJET_APIKEY_PUBLIC,
     apiSecret: process.env.MAILJET_APIKEY_SECRET,
+    options: {
+      timeout: 4000,
+    },
   });
 
   const contactData: ContactForm = JSON.parse(event.body ?? "");
@@ -70,9 +73,10 @@ const handler: Handler = async (event: HandlerEvent) => {
   };
   const request = await mailjet
     .post("send", { version: "v3.1" })
-    .request<SendEmailV3_1.IResponse>(data);
+    .request({ ...data });
+  const body = request.body as unknown as SendEmailV3_1.IResponse;
 
-  if (request.body.Messages.length !== 1) {
+  if (body.Messages.length !== 1) {
     return {
       statusCode: 500,
       body: "Unexpected response from mail sender",
@@ -81,7 +85,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 
   return {
     statusCode: request.response.status,
-    body: request.body.Messages[0].Status,
+    body: body.Messages[0].Status,
   };
 };
 
