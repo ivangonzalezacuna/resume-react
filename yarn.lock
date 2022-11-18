@@ -6863,12 +6863,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^22.0.4":
-  version: 22.0.4
-  resolution: "i18next@npm:22.0.4"
+"i18next@npm:^22.0.6":
+  version: 22.0.6
+  resolution: "i18next@npm:22.0.6"
   dependencies:
     "@babel/runtime": ^7.17.2
-  checksum: aa49e6e48583833ee673c0dd9568081a5e15fde9549aa3e47a99ad91d3fdb7469f8a315864fc45ec466b1e60caa00d5fc8371e47840068048b4ab79a69dc2b19
+  checksum: b9d20b8d6cdd16c38def15d4f1c5906418926412eafa7d582fbd8395618deb177e73bdc709559480de7e1a3281287b69665d6f7c2af8df791f10ea1dfd79cb79
   languageName: node
   linkType: hard
 
@@ -7691,7 +7691,7 @@ __metadata:
     eslint-plugin-react: ^7.31.10
     eslint-plugin-react-hooks: ^4.6.0
     framer-motion: ^7.6.5
-    i18next: ^22.0.4
+    i18next: ^22.0.6
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.0.1
     netlify-cli: ^12.1.0
