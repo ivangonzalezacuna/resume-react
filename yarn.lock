@@ -7738,7 +7738,7 @@ __metadata:
     react-i18next: ^12.1.1
     react-icons: ^4.7.1
     react-is: ^18.2.0
-    react-lottie-player: ^1.5.0
+    react-lottie-player: ^1.5.4
     react-router-dom: ^6.5.0
     styled-components: ^5.3.6
     typescript: ^4.9.4
@@ -10634,16 +10634,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-lottie-player@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "react-lottie-player@npm:1.5.0"
+"react-lottie-player@npm:^1.5.4":
+  version: 1.5.4
+  resolution: "react-lottie-player@npm:1.5.4"
   dependencies:
     fast-deep-equal: ^3.1.3
     lottie-web: ^5.7.6
     rfdc: ^1.3.0
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 6bf5cc55fd8a011a4dd9b7b698e971f33c669ac8e1a757ed6f32952b04104c531fed78fbd879eec5f1ed0d040e2ca8495b7b1879b2b0b62f4b1cc53ef8fca613
+  checksum: ef2f505ca81e2ccd8ef7dfa01c1ee204cea21c9e3fa8112ff83962085e0cea77a1f946b2b9bba5d8d83a6ad9b081620efccc94c3381607bce7e12b3b4ef7b82a
   languageName: node
   linkType: hard
 
