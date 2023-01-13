@@ -1,4 +1,4 @@
-import Mailjet, { SendEmailV3_1 } from "node-mailjet";
+import Mailjet, { LibraryResponse, SendEmailV3_1 } from "node-mailjet";
 import { Handler, HandlerEvent } from "@netlify/functions";
 import { ContactForm } from "../../src/types/types";
 
@@ -45,7 +45,7 @@ const handler: Handler = async (event: HandlerEvent) => {
   });
 
   const contactData: ContactForm = JSON.parse(event.body ?? "");
-  const data: SendEmailV3_1.IBody = {
+  const data: SendEmailV3_1.Body = {
     Messages: [
       {
         From: {
@@ -71,10 +71,9 @@ const handler: Handler = async (event: HandlerEvent) => {
       },
     ],
   };
-  const request = await mailjet
-    .post("send", { version: "v3.1" })
-    .request({ ...data });
-  const body = request.body as unknown as SendEmailV3_1.IResponse;
+
+  const { body, response }: LibraryResponse<SendEmailV3_1.Response> =
+    await mailjet.post("send", { version: "v3.1" }).request(data);
 
   if (body.Messages.length !== 1) {
     return {
@@ -84,7 +83,7 @@ const handler: Handler = async (event: HandlerEvent) => {
   }
 
   return {
-    statusCode: request.response.status,
+    statusCode: response.status,
     body: body.Messages[0].Status,
   };
 };
