@@ -33,7 +33,7 @@ export const ContactFormOrganism = ({
       window.scrollTo(0, 0);
       setEmailSent(true);
     }, 5000);
-    // sendE  mail();
+    // sendEmail();
   };
 
   // eslint-disable-next-line
