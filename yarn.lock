@@ -7969,7 +7969,7 @@ __metadata:
     i18next: ^22.4.9
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.1.1
-    netlify-cli: ^12.9.2
+    netlify-cli: ^12.10.0
     node-mailjet: ^6.0.1
     prettier: ^2.8.3
     react: ^18.2.0
@@ -9258,9 +9258,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:^12.9.2":
-  version: 12.9.2
-  resolution: "netlify-cli@npm:12.9.2"
+"netlify-cli@npm:^12.10.0":
+  version: 12.10.0
+  resolution: "netlify-cli@npm:12.10.0"
   dependencies:
     "@fastify/static": ^6.6.0
     "@netlify/build": ^29.5.2
@@ -9369,7 +9369,7 @@ __metadata:
   bin:
     netlify: bin/run.mjs
     ntl: bin/run.mjs
-  checksum: 51666a51b6a5fa3116585633183cf39ee49da1ca39c9968894aef5226522c2ec9e2dbf0354f26abd0a38641686598813ef129c5200a483642d00abbffb1f3b96
+  checksum: 4410476f0b9bacd748f27e271262b12550112afeb68787d9ff54fc5a051baaa6c5cac67d06dae26d8a93256b30f599454983e00e7e1cec2fcfd22abfa392f64e
   languageName: node
   linkType: hard
 
