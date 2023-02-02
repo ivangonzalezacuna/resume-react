@@ -7971,7 +7971,7 @@ __metadata:
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.1.1
     netlify-cli: ^12.10.0
-    node-mailjet: ^6.0.1
+    node-mailjet: ^6.0.2
     prettier: ^2.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -9498,14 +9498,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-mailjet@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "node-mailjet@npm:6.0.1"
+"node-mailjet@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "node-mailjet@npm:6.0.2"
   dependencies:
     axios: ^0.27.2
     json-bigint: ^1.0.0
     url-join: ^4.0.0
-  checksum: 2c278e9b7212ca425ddaa89c3da23afc9f39d036411a35d95d8686f7e4cdfa12251ae4fe1a06e9721895f03573c405ef03b3a40247967b09f744ab1c93cdcc85
+  checksum: 3fa2488dd1433d75c1d184a5357436af6825aa333db3ebdd894447888ba97c30838c3295331046add5978824e5a02f7b36d59c237f41657110aec7524e0b4b47
   languageName: node
   linkType: hard
 
