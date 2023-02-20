@@ -58,7 +58,7 @@
     "netlify-cli": "^12.10.0",
     "prettier": "^2.8.3",
     "typescript": "^4.9.5",
-    "vite": "^4.0.4"
+    "vite": "^4.1.2"
   },
   "resolutions": {
     "nth-check": "^2.1.1",
