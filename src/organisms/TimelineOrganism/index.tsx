@@ -1,1 +1,0 @@
-export { TimelineOrganism } from "./TimelineOrganism";
