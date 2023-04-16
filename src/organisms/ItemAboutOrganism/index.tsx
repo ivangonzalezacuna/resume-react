@@ -1,0 +1,1 @@
+export { ItemAboutOrganism } from "./ItemAboutOrganism";

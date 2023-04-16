@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { SectionTitle } from "../../atoms";
-import { TimelineOrganism } from "../TimelineOrganism";
+import { ListItemAboutOrganism } from "../ListItemAboutOrganism";
 import { title, work } from "./animations";
 import { Container } from "./styles";
 
@@ -12,7 +12,7 @@ export const WorkOrganism = () => {
     <>
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={work}>
-        <TimelineOrganism items={items} />
+        <ListItemAboutOrganism items={items} type="work" />
       </Container>
     </>
   );
