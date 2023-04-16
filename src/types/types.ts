@@ -35,6 +35,7 @@ export type SkillInfo = {
 
 export type ExperienceInfo = {
   location: string;
+  city: string;
   responsibility: string;
   description: string[];
   start: string;
