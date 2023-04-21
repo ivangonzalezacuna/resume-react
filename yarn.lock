@@ -1149,6 +1149,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@netlify/build-info@npm:^7.0.0-pre-20230418.0":
+  version: 7.0.0-pre-20230418.0
+  resolution: "@netlify/build-info@npm:7.0.0-pre-20230418.0"
+  dependencies:
+    "@bugsnag/js": ^7.20.0
+    "@netlify/framework-info": ^9.8.5
+    find-up: ^6.3.0
+    minimatch: ^6.2.0
+    read-pkg: ^7.1.0
+    semver: ^7.3.8
+    yaml: ^2.1.3
+    yargs: ^17.6.0
+  bin:
+    build-info: bin.js
+  checksum: 8bce23497c8e99dd8613a9ba3175cedbb7b590506964970b9e44039a68566fd484b4e5d939ae4e6a02f48c5ecf13b691f50c5969b29bdc583b7b3de2cd367d50
+  languageName: node
+  linkType: hard
+
 "@netlify/build@npm:^29.9.2":
   version: 29.9.2
   resolution: "@netlify/build@npm:29.9.2"
@@ -7947,7 +7965,7 @@ __metadata:
     i18next: ^22.4.15
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.2.0
-    netlify-cli: ^14.1.0
+    netlify-cli: ^14.2.1
     node-mailjet: ^6.0.2
     prettier: ^2.8.7
     react: ^18.2.0
@@ -8923,6 +8941,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "minimatch@npm:6.2.0"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: 0ffb77d05bd483fcc344ba3e64a501d569e658fa6c592d94e9716ffc7925de7a8c2ac294cafa822b160bd8b2cbf7e01012917e06ffb9a85cfa9604629b3f2c04
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^7.0.0":
   version: 7.4.6
   resolution: "minimatch@npm:7.4.6"
@@ -9193,13 +9220,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:^14.1.0":
-  version: 14.1.0
-  resolution: "netlify-cli@npm:14.1.0"
+"netlify-cli@npm:^14.2.1":
+  version: 14.2.1
+  resolution: "netlify-cli@npm:14.2.1"
   dependencies:
     "@bugsnag/js": ^7.20.0
     "@fastify/static": ^6.6.0
     "@netlify/build": ^29.9.2
+    "@netlify/build-info": ^7.0.0-pre-20230418.0
     "@netlify/config": ^20.3.7
     "@netlify/edge-bundler": ^8.13.2
     "@netlify/framework-info": ^9.8.5
@@ -9307,7 +9335,7 @@ __metadata:
   bin:
     netlify: bin/run.mjs
     ntl: bin/run.mjs
-  checksum: 26fed7660737167c84af4cf438898aa931d70261034c2eb7a72f9a9dcb9f48c62c5b249e10e133c4b7efdec0cc055b0dcc8ef9ef4dff83813ca4fbae95dbfde1
+  checksum: 3582d380ffb9c57a4ddcb7adf33c08525c631f3c16fd3931e3acee4a72405910139d37d56fc98a5188e3644f900baead0e223c85558b455a190fbeb0c325efb7
   languageName: node
   linkType: hard
 
@@ -13268,6 +13296,13 @@ __metadata:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 343617202af32df2a15a3be36a5a8c0c8545208f3d3dfbc6bb7c3e3b7e8c6f8e7485432e4f3b88da3031a6e20afa7c711eded32ddfb122896ac5d914e75848d5
+  languageName: node
+  linkType: hard
+
+"yaml@npm:^2.1.3":
+  version: 2.2.1
+  resolution: "yaml@npm:2.2.1"
+  checksum: 84f68cbe462d5da4e7ded4a8bded949ffa912bc264472e5a684c3d45b22d8f73a3019963a32164023bdf3d83cfb6f5b58ff7b2b10ef5b717c630f40bd6369a23
   languageName: node
   linkType: hard
 
