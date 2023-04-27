@@ -3,6 +3,7 @@
   "info": [
     {
       "location": "University of Vigo",
+      "city": "Vigo, Spain",
       "responsibility": "Degree in Engineering in Telecommunication Technologies",
       "description": ["Line 1", "Line 2"],
       "start": "Aug 2016",
@@ -10,6 +11,7 @@
     },
     {
       "location": "Oulu University of Applied Sciences",
+      "city": "Oulu, Finland",
       "responsibility": "Software Development",
       "description": ["Line 1", "Line 2"],
       "start": "Aug 2019",

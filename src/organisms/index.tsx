@@ -7,5 +7,6 @@ export { HeaderOrganism } from "./HeaderOrganism";
 export { LoadingOrganism } from "./LoadingOrganism";
 export { SkillModal } from "./SkillModal";
 export { SkillsOrganism } from "./SkillsOrganism";
-export { TimelineOrganism } from "./TimelineOrganism";
 export { WorkOrganism } from "./WorkOrganism";
+export { ListItemAboutOrganism } from "./ListItemAboutOrganism";
+export { ItemAboutOrganism } from "./ItemAboutOrganism";

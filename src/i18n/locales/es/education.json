@@ -3,6 +3,7 @@
   "info": [
     {
       "location": "Universidad de Vigo",
+      "city": "Vigo, España",
       "responsibility": "Grado en Ingeniería de Tecnologías de Telecomunicación",
       "description": ["Linea 1", "Linea 2", "Linea 3"],
       "start": "Ago 2016",
@@ -10,6 +11,7 @@
     },
     {
       "location": "Oulu University of Applied Sciences",
+      "city": "Oulu, Finlandia",
       "responsibility": "Desarrollo de software",
       "description": ["Linea 1", "Linea 2"],
       "start": "Ago 2019",
