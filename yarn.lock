@@ -1194,14 +1194,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/build@npm:29.11.5":
-  version: 29.11.5
-  resolution: "@netlify/build@npm:29.11.5"
+"@netlify/build@npm:29.11.6":
+  version: 29.11.6
+  resolution: "@netlify/build@npm:29.11.6"
   dependencies:
     "@bugsnag/js": ^7.0.0
     "@netlify/cache-utils": ^5.1.5
     "@netlify/config": ^20.4.3
-    "@netlify/edge-bundler": 8.14.2
+    "@netlify/edge-bundler": 8.15.0
     "@netlify/framework-info": ^9.8.7
     "@netlify/functions-utils": ^5.2.8
     "@netlify/git-utils": ^5.1.1
@@ -1253,7 +1253,7 @@ __metadata:
     yargs: ^17.6.0
   bin:
     netlify-build: bin.js
-  checksum: 734c5e4d4addc4cfa0210354373e45011059acf8708aaacb44a2b788cb6e65aad16bcf9dd7591b92356777c593bd2e4b45f196618ebd166dae882f5916ec9b72
+  checksum: 80b0415b6b22423ef617ae5212cea36e454a4c4fc46c7a7e0eeb83063a66391c21e791a5491bcba703f191028bd8c5b4bdd6f3daa9937448fd5f6ba35810e7b4
   languageName: node
   linkType: hard
 
@@ -1306,9 +1306,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/edge-bundler@npm:8.14.2":
-  version: 8.14.2
-  resolution: "@netlify/edge-bundler@npm:8.14.2"
+"@netlify/edge-bundler@npm:8.15.0":
+  version: 8.15.0
+  resolution: "@netlify/edge-bundler@npm:8.15.0"
   dependencies:
     "@import-maps/resolve": ^1.0.1
     ajv: ^8.11.2
@@ -1331,7 +1331,7 @@ __metadata:
     semver: ^7.3.5
     tmp-promise: ^3.0.3
     uuid: ^9.0.0
-  checksum: 41d5a22fa2464b9bb76a4a3d6a9518721db4e7a08cd788eb54a7660b49d34e0e1c677d54479316eada9ea35b1f988b042d8e8be06460a9e6857543b2c9ffef37
+  checksum: d21e9d9beb7ce71958ebb8a2348a47be04f951c33cf5128212b282cc3b244d9339701e0400a0fc7fe47a926ed862b51b0bef689ed8d53df0b4e4cc2984046afa
   languageName: node
   linkType: hard
 
@@ -1878,7 +1878,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/core@npm:^4.1.0":
+"@octokit/core@npm:^4.2.1":
   version: 4.2.1
   resolution: "@octokit/core@npm:4.2.1"
   dependencies:
@@ -1929,7 +1929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/plugin-paginate-rest@npm:^6.1.0":
+"@octokit/plugin-paginate-rest@npm:^6.1.2":
   version: 6.1.2
   resolution: "@octokit/plugin-paginate-rest@npm:6.1.2"
   dependencies:
@@ -1950,7 +1950,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/plugin-rest-endpoint-methods@npm:^7.1.0":
+"@octokit/plugin-rest-endpoint-methods@npm:^7.1.2":
   version: 7.1.2
   resolution: "@octokit/plugin-rest-endpoint-methods@npm:7.1.2"
   dependencies:
@@ -1987,15 +1987,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/rest@npm:19.0.8":
-  version: 19.0.8
-  resolution: "@octokit/rest@npm:19.0.8"
+"@octokit/rest@npm:19.0.11":
+  version: 19.0.11
+  resolution: "@octokit/rest@npm:19.0.11"
   dependencies:
-    "@octokit/core": ^4.1.0
-    "@octokit/plugin-paginate-rest": ^6.1.0
+    "@octokit/core": ^4.2.1
+    "@octokit/plugin-paginate-rest": ^6.1.2
     "@octokit/plugin-request-log": ^1.0.4
-    "@octokit/plugin-rest-endpoint-methods": ^7.1.0
-  checksum: 86276924a2458cb1cb672d496dee45752ea14c57ca146f148cc51160179600c4071e1d8c4fd593bb20a6b5ca51cc94451d6cb4457865c174090e3e3f9bae597c
+    "@octokit/plugin-rest-endpoint-methods": ^7.1.2
+  checksum: 147518ad51d214ead88adc717b5fdc4f33317949d58c124f4069bdf07d2e6b49fa66861036b9e233aed71fcb88ff367a6da0357653484e466175ab4fb7183b3b
   languageName: node
   linkType: hard
 
@@ -7752,7 +7752,7 @@ __metadata:
     i18next: ^22.5.0
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.2.1
-    netlify-cli: ^15.1.1
+    netlify-cli: ^15.2.0
     node-mailjet: ^6.0.2
     prettier: ^2.8.8
     react: ^18.2.0
@@ -8975,20 +8975,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:^15.1.1":
-  version: 15.1.1
-  resolution: "netlify-cli@npm:15.1.1"
+"netlify-cli@npm:^15.2.0":
+  version: 15.2.0
+  resolution: "netlify-cli@npm:15.2.0"
   dependencies:
     "@bugsnag/js": 7.20.2
     "@fastify/static": 6.10.1
-    "@netlify/build": 29.11.5
+    "@netlify/build": 29.11.6
     "@netlify/build-info": 7.0.2
     "@netlify/config": 20.4.3
-    "@netlify/edge-bundler": 8.14.2
+    "@netlify/edge-bundler": 8.15.0
     "@netlify/framework-info": 9.8.7
     "@netlify/local-functions-proxy": 1.1.1
     "@netlify/zip-it-and-ship-it": 9.6.0
-    "@octokit/rest": 19.0.8
+    "@octokit/rest": 19.0.11
     "@skn0tt/lambda-local": 2.0.3
     ansi-escapes: 6.2.0
     ansi-styles: 6.2.1
@@ -9089,7 +9089,7 @@ __metadata:
   bin:
     netlify: bin/run.mjs
     ntl: bin/run.mjs
-  checksum: aae9caff6b53b77a065b59d12519348f35b1f6f8a7365e0c3e241c582e70fc383e24a1ea82fd79e587e22a2bc8aefd9bd3168bea22237d2bd2a37224a8e243c0
+  checksum: 930a349fc8fa1110f260c2b4b542cb35b5110a1f98f36d234b9216a4fbb80af4c417c55a92288b144e8ea23797bc7f19af95f1b8799f49231d9c250b74c02810
   languageName: node
   linkType: hard
 
