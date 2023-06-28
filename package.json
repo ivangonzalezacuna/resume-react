@@ -37,7 +37,7 @@
     "react-is": "^18.2.0",
     "react-lottie-player": "^1.5.4",
     "react-router-dom": "^6.11.2",
-    "styled-components": "^5.3.10"
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
