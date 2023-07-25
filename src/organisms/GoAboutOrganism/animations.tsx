@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const container = (
   isFirstMount: boolean,
-  fastTransition: boolean
+  fastTransition: boolean,
 ): Variants => ({
   initial: { y: -20, opacity: 0 },
   animate: {

@@ -4,7 +4,7 @@ const ease = [0.6, -0.05, 0.01, 0.99];
 
 export const container = (
   isFirstMount: boolean,
-  fastTransition: boolean
+  fastTransition: boolean,
 ): Variants => ({
   animate: {
     transition: {
