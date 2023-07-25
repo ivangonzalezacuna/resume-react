@@ -35,7 +35,7 @@ const Skill = ({ skill }: { skill: SkillInfo }) => {
 export const SkillsOrganism = () => {
   const [t] = useTranslation("skills");
   const skills = t("info", { returnObjects: true }).sort((a, b) =>
-    a.name.localeCompare(b.name)
+    a.name.localeCompare(b.name),
   );
 
   return (
