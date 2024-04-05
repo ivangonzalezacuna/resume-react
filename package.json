@@ -23,7 +23,7 @@
     "check:full": "yarn install && yarn tsc && yarn lint && yarn prettier:check"
   },
   "dependencies": {
-    "@netlify/functions": "^1.6.0",
+    "@netlify/functions": "^2.6.0",
     "cross-fetch": "^4.0.0",
     "framer-motion": "^10.15.0",
     "i18next": "^23.4.1",

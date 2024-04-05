@@ -2635,12 +2635,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/functions@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@netlify/functions@npm:1.6.0"
+"@netlify/functions@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@netlify/functions@npm:2.6.0"
   dependencies:
-    is-promise: ^4.0.0
-  checksum: ecff9a1161b2df94d139431e7a2b42d9790cf4ec250ad3aec57935cc1b1e78beccfe855c6e5522311baefce84b91ed690904aedf02b2511eaaafdc8f6daab75e
+    "@netlify/serverless-functions-api": 1.14.0
+  checksum: 2bf73bfde8e54e0bd4566c7810fffd476b0ec5931117c81c8aeb2fb9f1a38990ce63babb12b5c630f671c8580f5578f52e1c9a2a8a0820ef0dfd2db34343ebee
   languageName: node
   linkType: hard
 
@@ -2846,6 +2846,16 @@ __metadata:
   dependencies:
     execa: ^6.0.0
   checksum: e94d6c04102b510c5d7cc24cb877927e7e19cce26a175802a60d1b3d90f0940c4d122e1d98c7786490e96e27e3513dedc37594a0518a71af148d27eaaa6f5e05
+  languageName: node
+  linkType: hard
+
+"@netlify/serverless-functions-api@npm:1.14.0":
+  version: 1.14.0
+  resolution: "@netlify/serverless-functions-api@npm:1.14.0"
+  dependencies:
+    "@netlify/node-cookies": ^0.1.0
+    urlpattern-polyfill: 8.0.2
+  checksum: 85351396980bf268eac91171483d63852c22c15c05a43d993d9570b69de5abed13e7fe02d870b6b8786e4ea48cda6ba242109f7989d778766e821b984c413aa2
   languageName: node
   linkType: hard
 
@@ -9166,13 +9176,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-promise@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "is-promise@npm:4.0.0"
-  checksum: 0b46517ad47b00b6358fd6553c83ec1f6ba9acd7ffb3d30a0bf519c5c69e7147c132430452351b8a9fc198f8dd6c4f76f8e6f5a7f100f8c77d57d9e0f4261a8a
-  languageName: node
-  linkType: hard
-
 "is-regex@npm:^1.1.4":
   version: 1.1.4
   resolution: "is-regex@npm:1.1.4"
@@ -9343,7 +9346,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ivangonzalez-resume@workspace:."
   dependencies:
-    "@netlify/functions": ^1.6.0
+    "@netlify/functions": ^2.6.0
     "@testing-library/jest-dom": ^6.4.2
     "@testing-library/react": ^14.2.2
     "@types/react": ^18.2.74
