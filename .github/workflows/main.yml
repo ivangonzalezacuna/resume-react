@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
-      - name: Setup Node 16
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
       - name: Run Checks
         run: |
           yarn install
@@ -30,11 +30,11 @@ jobs:
     needs: [checks]
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
-      - name: Setup Node 16
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
       - run: |
           yarn install
           yarn test --passWithNoTests
@@ -46,8 +46,8 @@ jobs:
       contents: read
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         continue-on-error: true
       - name: Dependency Review
-        uses: actions/dependency-review-action@v3
+        uses: actions/dependency-review-action@v4
         continue-on-error: true
