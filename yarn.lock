@@ -244,7 +244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.9.2":
   version: 7.24.6
   resolution: "@babel/runtime@npm:7.24.6"
   dependencies:
@@ -8197,7 +8197,7 @@ __metadata:
     prettier: ^3.2.5
     react: ^18.3.1
     react-dom: ^18.3.1
-    react-i18next: ^13.5.0
+    react-i18next: ^14.1.2
     react-icons: ^5.0.1
     react-is: ^18.2.0
     react-lottie-player: ^2.0.0
@@ -10953,11 +10953,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^13.5.0":
-  version: 13.5.0
-  resolution: "react-i18next@npm:13.5.0"
+"react-i18next@npm:^14.1.2":
+  version: 14.1.2
+  resolution: "react-i18next@npm:14.1.2"
   dependencies:
-    "@babel/runtime": ^7.22.5
+    "@babel/runtime": ^7.23.9
     html-parse-stringify: ^3.0.1
   peerDependencies:
     i18next: ">= 23.2.3"
@@ -10967,7 +10967,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 2f68ccd24daf72ddd2d11a526fb3c2b66c11ea4fcd2e24ac7aed42bf57ec7bffa7455ad1dc93679968ff629e9b1896465cdf6d1a61c29b92138ef88098e8dcba
+  checksum: 1e943bc1537136a0054801f2df8cd114e0789aa94dd7397e0b98e2848371a2bb5c7d855e99393ac9381fe5d8242bb4e2c27cc6d8e7f3a0e9c1b241ecd2d4bdab
   languageName: node
   linkType: hard
 
