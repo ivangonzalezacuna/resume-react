@@ -32,6 +32,7 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
+  FaRegEnvelope,
   FaSkype,
 } from "react-icons/fa";
 import { SkillIcon, SkillWrapper, SocialIcon, SocialWrapper } from "./styles";
@@ -76,6 +77,7 @@ export const ResumeIcon = ({
             {icon.name === "skype" && <FaSkype />}
             {icon.name === "facebook" && <FaFacebookF />}
             {icon.name === "instagram" && <FaInstagram />}
+            {icon.name === "email" && <FaRegEnvelope />}
           </SocialIcon>
         ))}
       </SocialWrapper>
