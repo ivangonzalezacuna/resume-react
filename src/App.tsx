@@ -10,8 +10,10 @@ import { AboutPage, ContactPage, HomePage, NotFoundPage } from "./pages";
 const App = () => {
   const location = useLocation();
 
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleIsOpen = () => setIsOpen(!isOpen);
+
   const [isFirstMount, setIsFirstMount] = useState(true);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [fastTransition, setFastTransition] = useState(false);
 
   useEffect(() => {
@@ -24,12 +26,7 @@ const App = () => {
     <>
       <Theme>
         <GlobalStyle />
-        <Navbar
-          hideNav={location.pathname === "/"}
-          isSidebarOpen={isSidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-          setFastTransition={setFastTransition}
-        />
+        <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route
