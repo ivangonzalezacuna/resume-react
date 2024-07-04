@@ -3,7 +3,6 @@ export { ContactDetailsOrganism } from "./ContactDetailsOrganism";
 export { ContactFormOrganism } from "./ContactFormOrganism";
 export { EducationOrganism } from "./EducationOrganism";
 export { GoAboutOrganism } from "./GoAboutOrganism";
-export { HeaderOrganism } from "./HeaderOrganism";
 export { LoadingOrganism } from "./LoadingOrganism";
 export { SkillModal } from "./SkillModal";
 export { SkillsOrganism } from "./SkillsOrganism";
