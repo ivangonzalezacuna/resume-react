@@ -8,6 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  touch-action: pan-y;
 
   background: ${({ theme }) =>
     `linear-gradient(-45deg, ${theme.palette.primary.background},${theme.palette.accent.background},${theme.palette.accent.textDark},${theme.palette.accent.text})`};

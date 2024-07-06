@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@netlify/functions": "^2.7.0",
+    "@use-gesture/react": "^10.3.1",
     "cross-fetch": "^4.0.0",
     "framer-motion": "^11.2.10",
     "i18next": "^23.11.5",
