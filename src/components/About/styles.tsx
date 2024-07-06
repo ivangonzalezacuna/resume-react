@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const Container = styled(motion.div)`
-  width: 100vw;
-  min-height: 100vh;
+export const Container = styled.div`
+  width: 100dvw;
+  min-height: 100dvh;
   margin-bottom: 100px;
   height: auto;
   background: ${({ theme }) => theme.palette.primary.background};
@@ -12,3 +12,5 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   cursor: default;
 `;
+
+export const AnimateWrapper = styled(motion.div)``;
