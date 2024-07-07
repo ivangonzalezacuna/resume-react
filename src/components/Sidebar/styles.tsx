@@ -58,23 +58,9 @@ export const MenuItemLink = styled(NavLink)`
   }
 `;
 
-export const Languages = styled(motion.div)`
+export const LanguagesWrapper = styled(motion.div)`
   margin: 20px 10px 10px 10px;
   display: flex;
   align-items: center;
   justify-content: end;
-`;
-
-export const Language = styled.div<CustomProps>`
-  font-size: 12px;
-  font-variant: small-caps;
-  cursor: pointer;
-  margin: 0 4px;
-  color: ${({ current, theme }) =>
-    current ? theme.palette.accent.text : theme.palette.primary.text};
-  transition: all 0.4s;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.accent.textLight};
-  }
 `;

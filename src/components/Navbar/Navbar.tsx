@@ -1,14 +1,14 @@
 import { motion, MotionProps } from "framer-motion";
 import {
   HamburgerMenu,
-  Language,
-  Languages,
+  LanguagesWrapper,
   LinkContainer,
   Nav,
   NavItem,
 } from "./styles";
 import { Sidebar } from "../Sidebar";
 import { Logo } from "../Logo";
+import { Languages } from "../../atoms";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
@@ -62,7 +62,7 @@ export const Navbar = (props: {
 }) => {
   const location = useLocation();
   const { isOpen, toggleIsOpen } = props;
-  const [t, i18n] = useTranslation("nav");
+  const [t] = useTranslation("nav");
   const navs = t("info", { returnObjects: true });
 
   const closeIfOpen = () => {
@@ -83,20 +83,9 @@ export const Navbar = (props: {
       <HamburgerMenu onClick={props.toggleIsOpen}>
         <MenuBars isOpen={props.isOpen} />
       </HamburgerMenu>
-      <Languages>
-        <Language
-          onClick={() => i18n.changeLanguage("en")}
-          current={["en", "en-US"].includes(i18n.language)}
-        >
-          EN
-        </Language>
-        <Language
-          onClick={() => i18n.changeLanguage("es")}
-          current={["es", "es-ES"].includes(i18n.language)}
-        >
-          ES
-        </Language>
-      </Languages>
+      <LanguagesWrapper>
+        <Languages />
+      </LanguagesWrapper>
       <Sidebar {...props} />
     </Nav>
   );
