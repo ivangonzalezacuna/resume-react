@@ -48,29 +48,14 @@ export const NavItem = styled(NavLink)`
   }
 `;
 
-export const Languages = styled.div`
+export const LanguagesWrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 0 1rem;
-  cursor: pointer;
   text-decoration: none;
 
   @media screen and (max-width: 480px) {
     display: none;
-  }
-`;
-
-export const Language = styled.div<CustomProps>`
-  font-size: 12px;
-  font-variant: small-caps;
-  cursor: pointer;
-  margin: 0 4px;
-  color: ${({ current, theme }) =>
-    current ? theme.palette.accent.text : theme.palette.primary.text};
-  transition: all 0.4s;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.accent.textLight};
   }
 `;
 

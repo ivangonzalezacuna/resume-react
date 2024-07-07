@@ -5,21 +5,17 @@ import {
   Menu,
   MenuItem,
   MenuItemLink,
-  Languages,
-  Language,
+  LanguagesWrapper,
 } from "./styles";
+import { Languages } from "../../atoms";
 
 export const Sidebar = (props: {
   isOpen: boolean;
   toggleIsOpen: () => void;
 }) => {
   const { isOpen, toggleIsOpen } = props;
-  const [t, i18n] = useTranslation("nav");
+  const [t] = useTranslation("nav");
   const navs = t("info", { returnObjects: true });
-
-  const switchPage = () => {
-    toggleIsOpen();
-  };
 
   return (
     <Container
@@ -30,36 +26,19 @@ export const Sidebar = (props: {
       <Menu variants={menu}>
         {navs.map((nav, key) => (
           <MenuItem key={key}>
-            <MenuItemLink to={nav.href} onClick={switchPage}>
+            <MenuItemLink to={nav.href} onClick={toggleIsOpen}>
               {nav.title}
             </MenuItemLink>
           </MenuItem>
         ))}
       </Menu>
-      <Languages
+      <LanguagesWrapper
         initial="initial"
         animate={isOpen ? "animate" : "close"}
         variants={langs}
       >
-        <Language
-          onClick={() => {
-            i18n.changeLanguage("en");
-            switchPage();
-          }}
-          current={["en", "en-US"].includes(i18n.language)}
-        >
-          EN
-        </Language>
-        <Language
-          onClick={() => {
-            i18n.changeLanguage("es");
-            switchPage();
-          }}
-          current={["es", "es-ES"].includes(i18n.language)}
-        >
-          ES
-        </Language>
-      </Languages>
+        <Languages onClick={toggleIsOpen} />
+      </LanguagesWrapper>
     </Container>
   );
 };
