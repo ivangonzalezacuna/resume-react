@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import {
+  Copyright,
   FooterContainer,
   FooterWrap,
   Logo,
-  Copyright,
   LogoImg,
 } from "./styles";
 import { RiCopyrightLine } from "react-icons/ri";
@@ -20,19 +20,17 @@ export const Footer = () => {
   const [t] = useTranslation("footer");
 
   return (
-    <>
-      <FooterContainer>
-        <FooterWrap>
-          <Logo onClick={scrollToTop}>
-            <LogoImg src={LogoSvg} alt="logo" />
-          </Logo>
-          <Copyright>
-            <RiCopyrightLine style={{ marginRight: "4px" }} />
-            {new Date().getFullYear()} {t("text")}
-          </Copyright>
-          <ResumeIcon social row />
-        </FooterWrap>
-      </FooterContainer>
-    </>
+    <FooterContainer>
+      <FooterWrap>
+        <Logo onClick={scrollToTop}>
+          <LogoImg src={LogoSvg} alt="logo" />
+        </Logo>
+        <Copyright>
+          <RiCopyrightLine style={{ marginRight: "4px" }} />
+          {new Date().getFullYear()} {t("text")}
+        </Copyright>
+        <ResumeIcon social row />
+      </FooterWrap>
+    </FooterContainer>
   );
 };
