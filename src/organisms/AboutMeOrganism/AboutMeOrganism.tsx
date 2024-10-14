@@ -1,13 +1,11 @@
 import { useTranslation } from "react-i18next";
 import {
   Container,
-  Grid,
-  ImgWrap,
-  ImgAnimateWrap,
-  Img,
-  ContentWrapper,
-  Name,
+  Content,
   Description,
+  Img,
+  ImgContainer,
+  Name,
 } from "./styles";
 import { aboutMe, item, title } from "./animations";
 import ProfilePic from "../../images/profile/ivan.png";
@@ -31,22 +29,18 @@ export const AboutMeOrganism = () => {
     <>
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={aboutMe}>
-        <Grid>
-          <ImgWrap>
-            <ImgAnimateWrap variants={item}>
-              <Img src={ProfilePic} alt={t("profileAlt")} />
-            </ImgAnimateWrap>
-          </ImgWrap>
-          <ContentWrapper>
-            <Name variants={item}>
-              {t("info.intro")} <span>{t("info.name")}</span>
-            </Name>
-            <Description variants={item}>{t("info.description")}</Description>
-            <HrefButton variants={item} href={resume()}>
-              {t("resumeButton")}
-            </HrefButton>
-          </ContentWrapper>
-        </Grid>
+        <ImgContainer>
+          <Img src={ProfilePic} alt={t("profileAlt")} />
+        </ImgContainer>
+        <Content>
+          <Name variants={item}>
+            {t("info.intro")} <span>{t("info.name")}</span>
+          </Name>
+          <Description variants={item}>{t("info.description")}</Description>
+          <HrefButton variants={item} href={resume()}>
+            {t("resumeButton")}
+          </HrefButton>
+        </Content>
       </Container>
     </>
   );
