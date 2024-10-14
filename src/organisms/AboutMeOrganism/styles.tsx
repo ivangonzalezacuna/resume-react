@@ -18,31 +18,25 @@ export const Grid = styled.div`
   }
 `;
 
-export const ImgWrap = styled.div`
+export const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
-  margin-left: 30px;
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  overflow: hidden;
 
   @media screen and (max-width: 800px) {
     margin-left: 0;
-    justify-content: center;
+    justify-self: center;
   }
 `;
 
-export const ImgAnimateWrap = styled(motion.div)`
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
-  overflow: hidden;
-`;
-
 export const Img = styled.img`
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
+  height: 100%;
+  width: 100%;
   transition: transform 0.8s ease;
-  overflow: hidden;
 
   &:hover {
     transform: scale(1.2);
