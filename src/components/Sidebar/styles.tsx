@@ -3,35 +3,42 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 interface CustomProps {
-  current?: number;
+  current?: boolean;
 }
 
-export const SidebarContainer = styled(motion.div)`
+export const Container = styled(motion.div)`
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: ${({ theme }) => theme.palette.primary.background};
+  top: 8px;
+  right: 8px;
+  width: max-content;
+  border-radius: 10px;
+  z-index: 5;
+  background: ${({ theme }) =>
+    `linear-gradient(-45deg, ${theme.palette.primary.background},${theme.palette.accent.background},${theme.palette.accent.textDark})`};
+  animation: gradient 3s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 30% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 30% 50%;
+    }
+  }
 `;
 
-export const SidebarMenu = styled(motion.div)`
-  margin: 60px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const Menu = styled(motion.div)`
+  margin: 50px 0 0 0;
 `;
 
-export const SidebarLinkItem = styled(motion.div)`
+export const MenuItem = styled.div`
   font-weight: 400;
-  margin: 15px;
-  font-size: clamp(1.3rem, 8vh, 1.7rem);
+  margin: 5px 25px;
   text-align: center;
 
   @media screen and (max-height: 300px) {
@@ -39,39 +46,21 @@ export const SidebarLinkItem = styled(motion.div)`
   }
 `;
 
-export const SidebarLink = styled(NavLink)`
+export const MenuItemLink = styled(NavLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.palette.primary.text};
   transition: all 0.4s;
   font-variant: small-caps;
-  font-size: 2.5rem;
+  font-size: 1.3rem;
 
   &:hover {
     color: ${({ theme }) => theme.palette.accent.text};
   }
 `;
 
-export const LangMenu = styled(motion.div)`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 40px;
+export const LanguagesWrapper = styled(motion.div)`
+  margin: 20px 10px 10px 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-`;
-
-export const LangItem = styled.div<CustomProps>`
-  font-size: 14px;
-  font-variant: small-caps;
-  cursor: pointer;
-  margin: 0 4px;
-  color: ${({ current, theme }) =>
-    current ? theme.palette.accent.text : theme.palette.primary.text};
-  transition: all 0.4s;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.accent.textLight};
-  }
+  justify-content: end;
 `;

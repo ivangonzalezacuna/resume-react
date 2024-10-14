@@ -1,18 +1,16 @@
-import { useTranslation } from "react-i18next";
 import { motion, MotionProps } from "framer-motion";
 import {
   HamburgerMenu,
-  LangItem,
-  LangMenu,
-  Logo,
-  LogoImg,
+  LanguagesWrapper,
+  LinkContainer,
   Nav,
   NavItem,
-  NavMenu,
 } from "./styles";
-import { NavbarProps } from "../../types";
-import LogoSvg from "../../images/background/logo.svg";
-import { Sidebar } from "../Sidebar/Sidebar";
+import { Sidebar } from "../Sidebar";
+import { Logo } from "../Logo";
+import { Languages } from "../../atoms";
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 const Stroke = (props: MotionProps) => {
   return (
@@ -58,62 +56,37 @@ const MenuBars = ({ isOpen }: { isOpen: boolean }) => {
   );
 };
 
-export const Navbar = ({
-  hideNav,
-  isSidebarOpen,
-  setSidebarOpen,
-  setFastTransition,
-}: NavbarProps) => {
-  const checkToggleSidebar = () => {
-    if (isSidebarOpen) {
-      setSidebarOpen(!isSidebarOpen);
-    } else {
-      setFastTransition(true);
-    }
-  };
-  const [t, i18n] = useTranslation("nav");
+export const Navbar = (props: {
+  isOpen: boolean;
+  toggleIsOpen: () => void;
+}) => {
+  const location = useLocation();
+  const { isOpen, toggleIsOpen } = props;
+  const [t] = useTranslation("nav");
   const navs = t("info", { returnObjects: true });
 
+  const closeIfOpen = () => {
+    if (isOpen) {
+      toggleIsOpen();
+    }
+  };
   return (
-    <>
-      <Nav hideNav={hideNav ? 1 : 0}>
-        <Logo to="/" onClick={checkToggleSidebar}>
-          <LogoImg src={LogoSvg} alt="logo" />
-        </Logo>
-        <NavMenu>
-          {navs.map((nav, key) => (
-            <NavItem
-              key={key}
-              to={nav.href}
-              onClick={() => setFastTransition(true)}
-            >
-              {nav.title}
-            </NavItem>
-          ))}
-        </NavMenu>
-        <LangMenu>
-          <LangItem
-            onClick={() => i18n.changeLanguage("en")}
-            current={["en", "en-US"].includes(i18n.language) ? 1 : 0}
-          >
-            EN
-          </LangItem>
-          <LangItem
-            onClick={() => i18n.changeLanguage("es")}
-            current={["es", "es-ES"].includes(i18n.language) ? 1 : 0}
-          >
-            ES
-          </LangItem>
-        </LangMenu>
-        <HamburgerMenu onClick={() => setSidebarOpen(!isSidebarOpen)}>
-          <MenuBars isOpen={isSidebarOpen} />
-        </HamburgerMenu>
-      </Nav>
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-        setFastTransition={setFastTransition}
-      />
-    </>
+    <Nav isRootPath={location.pathname === "/"}>
+      <Logo closeIfOpen={closeIfOpen} />
+      <LinkContainer>
+        {navs.map((val, key) => (
+          <NavItem key={key} to={val.href}>
+            {val.title}
+          </NavItem>
+        ))}
+      </LinkContainer>
+      <HamburgerMenu onClick={props.toggleIsOpen}>
+        <MenuBars isOpen={props.isOpen} />
+      </HamburgerMenu>
+      <LanguagesWrapper>
+        <Languages />
+      </LanguagesWrapper>
+      <Sidebar {...props} />
+    </Nav>
   );
 };

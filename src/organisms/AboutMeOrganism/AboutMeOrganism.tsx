@@ -1,13 +1,12 @@
 import { useTranslation } from "react-i18next";
 import {
   Container,
-  Grid,
-  ImgWrap,
-  ImgAnimateWrap,
-  Img,
   ContentWrapper,
-  Name,
   Description,
+  Grid,
+  Img,
+  ImgWrapper,
+  Name,
 } from "./styles";
 import { aboutMe, item, title } from "./animations";
 import ProfilePic from "../../images/profile/ivan.png";
@@ -32,11 +31,9 @@ export const AboutMeOrganism = () => {
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={aboutMe}>
         <Grid>
-          <ImgWrap>
-            <ImgAnimateWrap variants={item}>
-              <Img src={ProfilePic} alt={t("profileAlt")} />
-            </ImgAnimateWrap>
-          </ImgWrap>
+          <ImgWrapper>
+            <Img src={ProfilePic} alt={t("profileAlt")} />
+          </ImgWrapper>
           <ContentWrapper>
             <Name variants={item}>
               {t("info.intro")} <span>{t("info.name")}</span>

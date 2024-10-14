@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 interface CustomProps {
-  hideNav?: number;
-  current?: number;
+  current?: boolean;
+  isRootPath?: boolean;
 }
 
 export const Nav = styled.div<CustomProps>`
@@ -15,29 +15,18 @@ export const Nav = styled.div<CustomProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ hideNav, theme }) =>
-    hideNav ? theme.palette.transparent : theme.palette.primary.background};
-  z-index: 15;
-  transition: all 0.3s;
+  background: ${({ theme, isRootPath }) =>
+    isRootPath ? theme.palette.transparent : theme.palette.primary.background};
+  z-index: 1;
+  transition: ${({ isRootPath }) => (isRootPath ? "all 0.8s" : "all 2s")};
 `;
 
-export const Logo = styled(NavLink)`
-  justify-self: start;
-  text-decoration: none;
-  margin-left: 2rem;
-  cursor: pointer;
-`;
-
-export const LogoImg = styled.img`
-  height: 23px;
-  width: auto;
-`;
-
-export const NavMenu = styled.div`
+export const LinkContainer = styled.div`
+  justify-self: center;
   display: flex;
-  align-items: center;
+  flex-direction: row;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -59,42 +48,25 @@ export const NavItem = styled(NavLink)`
   }
 `;
 
-export const LangMenu = styled.div`
-  color: ${({ theme }) => theme.palette.primary.text};
+export const LanguagesWrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 0 1rem;
-  cursor: pointer;
   text-decoration: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 480px) {
     display: none;
-  }
-`;
-
-export const LangItem = styled.div<CustomProps>`
-  font-size: 14px;
-  font-variant: small-caps;
-  cursor: pointer;
-  margin: 0 4px;
-  color: ${({ current, theme }) =>
-    current ? theme.palette.accent.text : theme.palette.primary.text};
-  transition: all 0.4s;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.accent.textLight};
   }
 `;
 
 export const HamburgerMenu = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1rem;
+  @media screen and (max-width: 480px) {
+    display: block;
+    justify-self: end;
+    margin: 0 1rem 0 0;
+    z-index: 10;
     cursor: pointer;
-    text-decoration: none;
   }
 `;
