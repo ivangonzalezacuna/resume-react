@@ -4,6 +4,7 @@ import "styled-components";
 interface IPalette {
   background: string;
   text: string;
+  box: string;
 }
 
 interface IPaletteAccent {

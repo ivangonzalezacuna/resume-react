@@ -22,3 +22,15 @@ export type ExperienceInfo = {
   start: string;
   end: string;
 };
+
+export type WorkInfo = {
+  company: string;
+  location: string;
+  duration: string;
+  roles: {
+    title: string;
+    description: string[];
+    duration: string;
+  }[];
+  technologies: string[];
+};

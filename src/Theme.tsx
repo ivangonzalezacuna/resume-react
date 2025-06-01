@@ -6,14 +6,17 @@ const themeNew: DefaultTheme = {
     primary: {
       background: "#161616",
       text: "#f9f9f9",
+      box: "#1f2937",
     },
     secondary: {
       background: "#f9f9f9",
       text: "#161616",
+      box: "#1f2937",
     },
     error: {
       background: "#101010",
       text: "#f00e0e",
+      box: "#1f2937",
     },
     accent: {
       background: "#032236",
