@@ -1,0 +1,1 @@
+export { TechTag } from "./TechTag";

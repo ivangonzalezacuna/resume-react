@@ -100,12 +100,3 @@ export const TechContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
-
-export const Tech = styled(motion.div)`
-  padding: 4px 8px;
-  margin: 4px;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 20px;
-  background-color: ${({ theme }) => theme.palette.accent.textDark};
-`;

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { SectionTitle } from "../../atoms";
+import { SectionTitle, TechTag } from "../../atoms";
 import { education, title } from "./animations";
 import {
   Card,
@@ -13,7 +13,6 @@ import {
   DescriptionContainer,
   DescriptionItem,
   Separator,
-  Tech,
   TechContainer,
 } from "./styles";
 
@@ -46,15 +45,7 @@ export const EducationOrganism = () => {
                 <Separator width={50} />
                 <TechContainer>
                   {item.technologies.map((tech, techKey) => {
-                    return (
-                      <Tech
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.98 }}
-                        key={techKey}
-                      >
-                        {tech}
-                      </Tech>
-                    );
+                    return <TechTag key={techKey} name={tech} />;
                   })}
                 </TechContainer>
               </>
