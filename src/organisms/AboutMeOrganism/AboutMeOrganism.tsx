@@ -8,7 +8,7 @@ import {
   Name,
 } from "./styles";
 import { aboutMe, item, title } from "./animations";
-import ProfilePic from "../../images/profile/ivan.png";
+import ProfilePic from "../../images/profile/ivan.jpg";
 import PdfResumeEs from "../../images/pdf/resume-es.pdf";
 import PdfResumeEn from "../../images/pdf/resume-en.pdf";
 import { HrefButton, SectionTitle } from "../../atoms";

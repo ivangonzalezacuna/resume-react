@@ -7,7 +7,7 @@ import {
   Name,
   SocialWrapper,
 } from "./styles";
-import ProfilePic from "../../images/profile/ivan.png";
+import ProfilePic from "../../images/profile/ivan.jpg";
 import { useTranslation } from "react-i18next";
 import { ResumeIcon } from "../../atoms";
 import { GoAboutOrganism } from "../../organisms";
