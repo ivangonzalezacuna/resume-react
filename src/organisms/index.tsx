@@ -7,5 +7,4 @@ export { LoadingOrganism } from "./LoadingOrganism";
 export { SkillModal } from "./SkillModal";
 export { SkillsOrganism } from "./SkillsOrganism";
 export { WorkOrganism } from "./WorkOrganism";
-export { ListItemAboutOrganism } from "./ListItemAboutOrganism";
 export { ItemAboutOrganism } from "./ItemAboutOrganism";

@@ -15,12 +15,12 @@ export type SkillInfo = {
 };
 
 export type ExperienceInfo = {
+  college: string;
   location: string;
-  city: string;
-  responsibility: string;
+  degree: string;
   description: string[];
-  start: string;
-  end: string;
+  duration: string;
+  technologies: string[];
 };
 
 export type WorkInfo = {

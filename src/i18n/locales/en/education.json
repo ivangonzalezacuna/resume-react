@@ -2,20 +2,20 @@
   "sectionTitle": "Education",
   "info": [
     {
-      "location": "University of Vigo",
-      "city": "Vigo, Spain",
-      "responsibility": "Degree in Engineering in Telecommunication Technologies",
+      "college": "University of Vigo",
+      "location": "Vigo, Spain",
+      "degree": "Degree in Engineering in Telecommunication Technologies",
       "description": ["Line 1", "Line 2"],
-      "start": "Aug 2016",
-      "end": "Jul 2020"
+      "duration": "Aug 2016 - Jul 2020",
+      "technologies": ["Java", "C"]
     },
     {
-      "location": "Oulu University of Applied Sciences",
-      "city": "Oulu, Finland",
-      "responsibility": "Software Development",
+      "college": "Oulu University of Applied Sciences",
+      "location": "Oulu, Finland",
+      "degree": "Software Development",
       "description": ["Line 1", "Line 2"],
-      "start": "Aug 2019",
-      "end": "Dec 2019"
+      "duration": "Aug 2019 - Dec 2019",
+      "technologies": ["Java", "Android Studio", "Swift"]
     }
   ]
 }
