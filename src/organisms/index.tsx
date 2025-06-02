@@ -6,4 +6,3 @@ export { GoAboutOrganism } from "./GoAboutOrganism";
 export { LoadingOrganism } from "./LoadingOrganism";
 export { SkillsOrganism } from "./SkillsOrganism";
 export { WorkOrganism } from "./WorkOrganism";
-export { ItemAboutOrganism } from "./ItemAboutOrganism";

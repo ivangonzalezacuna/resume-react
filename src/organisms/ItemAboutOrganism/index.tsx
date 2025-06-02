@@ -1,1 +1,0 @@
-export { ItemAboutOrganism } from "./ItemAboutOrganism";
