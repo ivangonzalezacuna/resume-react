@@ -1,0 +1,36 @@
+{
+  "sectionTitle": "Skills",
+  "sections": [
+    {
+      "name": "Backend",
+      "technologies": ["Golang", "Python", "NodeJS"]
+    },
+    {
+      "name": "DevOps / Infrastructure",
+      "technologies": [
+        "Kubernetes",
+        "Grafana",
+        "Elasticsearch",
+        "Kibana",
+        "Logstash",
+        "Prometheus"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "technologies": ["React", "Javascript", "Typescript"]
+    },
+    {
+      "name": "Other Tools",
+      "technologies": [
+        "Docker",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Linux",
+        "Git",
+        "Jira"
+      ]
+    }
+  ]
+}

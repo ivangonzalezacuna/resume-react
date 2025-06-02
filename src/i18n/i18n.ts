@@ -10,6 +10,7 @@ import workEs from "./locales/es/work.json";
 import educationEs from "./locales/es/education.json";
 import footerEs from "./locales/es/footer.json";
 import notFoundEs from "./locales/es/404.json";
+import skillsEs from "./locales/es/skills.json";
 import navEn from "./locales/en/navigation.json";
 import homeEn from "./locales/en/home.json";
 import aboutEn from "./locales/en/about.json";
@@ -18,7 +19,7 @@ import workEn from "./locales/en/work.json";
 import educationEn from "./locales/en/education.json";
 import footerEn from "./locales/en/footer.json";
 import notFoundEn from "./locales/en/404.json";
-import skills from "./locales/common/skills.json";
+import skillsEn from "./locales/en/skills.json";
 import social from "./locales/common/social.json";
 
 const es_resource = {
@@ -30,7 +31,7 @@ const es_resource = {
   education: educationEs,
   footer: footerEs,
   notFound: notFoundEs,
-  skills: skills,
+  skills: skillsEs,
   social: social,
 };
 
@@ -43,7 +44,7 @@ const en_resource = {
   education: educationEn,
   footer: footerEn,
   notFound: notFoundEn,
-  skills: skills,
+  skills: skillsEn,
   social: social,
 };
 

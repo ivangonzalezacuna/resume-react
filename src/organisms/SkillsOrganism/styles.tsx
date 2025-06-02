@@ -6,10 +6,41 @@ export const Container = styled(motion.div)`
   max-width: 1100px;
   margin-top: 50px;
   display: flex;
-  flex-flow: row wrap;
-  padding: 0 20px;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px 10px 0px 10px;
+`;
 
-  @media screen and (max-width: 400px) {
-    padding: 0 10px;
+export const TechnologySection = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+`;
+
+export const TechnologyTitle = styled.div`
+  font-size: 18px;
+  color: ${({ theme }) => theme.palette.primary.text};
+`;
+
+export const Technologies = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 10px;
+  max-width: 60%;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 640px) {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
   }
 `;

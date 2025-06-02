@@ -1,20 +1,30 @@
 import { useTranslation } from "react-i18next";
-import { Chip, SectionTitle } from "../../atoms";
-import { title, container, tag } from "./animations";
-import { Container } from "./styles";
+import { SectionTitle, TechBox } from "../../atoms";
+import { container, title } from "./animations";
+import {
+  Container,
+  Technologies,
+  TechnologySection,
+  TechnologyTitle,
+} from "./styles";
 
 export const SkillsOrganism = () => {
   const [t] = useTranslation("skills");
-  const skills = t("info", { returnObjects: true }).sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  const sections = t("sections", { returnObjects: true });
 
   return (
     <>
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={container}>
-        {skills.map((skill, key) => (
-          <Chip key={key} title={skill.name} animation={tag} />
+        {sections.map((section) => (
+          <TechnologySection key={section.name}>
+            <TechnologyTitle>{section.name}</TechnologyTitle>
+            <Technologies>
+              {section.technologies.map((tech) => (
+                <TechBox key={tech} name={tech} />
+              ))}
+            </Technologies>
+          </TechnologySection>
         ))}
       </Container>
     </>
