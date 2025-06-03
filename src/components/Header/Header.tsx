@@ -40,7 +40,7 @@ export const Header = () => {
         <Name>{t("name")}</Name>
         <Description>{t("description")}</Description>
         <SocialWrapper>
-          <ResumeIcon social row header />
+          <ResumeIcon />
         </SocialWrapper>
         <ImgContainer>
           <Img src={ProfilePic} alt="profile" />

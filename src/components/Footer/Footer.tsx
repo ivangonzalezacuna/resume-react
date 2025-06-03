@@ -29,7 +29,7 @@ export const Footer = () => {
           <RiCopyrightLine style={{ marginRight: "4px" }} />
           {new Date().getFullYear()} {t("text")}
         </Copyright>
-        <ResumeIcon social row />
+        <ResumeIcon />
       </FooterWrap>
     </FooterContainer>
   );
