@@ -31,7 +31,7 @@ export const Header = () => {
         }
       },
     },
-    { drag: { filterTaps: true, pointer: { touch: true } } }
+    { drag: { filterTaps: true, pointer: { touch: true } } },
   );
 
   return (

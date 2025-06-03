@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
-interface CustomProps {
-  current?: boolean;
-}
-
 export const Container = styled(motion.div)`
   position: fixed;
   top: 8px;
