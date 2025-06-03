@@ -37,7 +37,7 @@ export const AboutMeOrganism = () => {
             {t("info.intro")} <span>{t("info.name")}</span>
           </Name>
           <Description variants={item}>{t("info.description")}</Description>
-          <HrefButton variants={item} href={resume()}>
+          <HrefButton variants={item} href={resume()} blankTarget>
             {t("resumeButton")}
           </HrefButton>
         </Content>

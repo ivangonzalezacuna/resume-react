@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { LinkButton } from "../../atoms";
+import { HrefButton } from "../../atoms";
 import LogoSvg from "../../images/background/logo.svg";
-import * as NotFoundAnimation from "../../images/lottie/404.json";
+import NotFoundAnimation from "../../images/lottie/404.json";
 import { button, container } from "./animations";
 import { Animation, Container, Logo, LogoWrap } from "./styles";
 
@@ -14,15 +14,9 @@ export const NotFound = () => {
         <Logo src={LogoSvg} alt="logo" />
       </LogoWrap>
       <Animation loop play animationData={NotFoundAnimation} />
-      <LinkButton
-        to={t("href")}
-        variants={button}
-        onClick={() => {
-          // do nothing.
-        }}
-      >
+      <HrefButton href={t("href")} variants={button}>
         {t("text")}
-      </LinkButton>
+      </HrefButton>
     </Container>
   );
 };

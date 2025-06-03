@@ -1,4 +1,4 @@
-export { CustomButton, FormButton, HrefButton, LinkButton } from "./Button";
+export { FormButton, HrefButton } from "./Button";
 export * from "./Chip";
 export { Languages } from "./Languages";
 export { ResumeIcon } from "./ResumeIcon";
