@@ -1,5 +1,4 @@
 import { TargetAndTransition, Variants } from "framer-motion";
-import React from "react";
 import { ButtonWrapper, FormBtn, HrefBtn, FormButtonWrapper } from "./styles";
 
 const buttonAnimations: {
@@ -25,7 +24,11 @@ export const HrefButton = ({
 }: HrefButtonProps) => {
   return (
     <ButtonWrapper variants={variants} {...buttonAnimations}>
-      <HrefBtn href={href} target={blankTarget ? "_blank" : undefined}>
+      <HrefBtn
+        href={href}
+        target={blankTarget ? "_blank" : undefined}
+        rel={blankTarget ? "noopener noreferrer" : undefined}
+      >
         {children}
       </HrefBtn>
     </ButtonWrapper>

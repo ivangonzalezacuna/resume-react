@@ -74,13 +74,18 @@ export const Navbar = (props: {
     <Nav isRootPath={location.pathname === "/"}>
       <Logo closeIfOpen={closeIfOpen} />
       <LinkContainer>
-        {navs.map((val, key) => (
-          <NavItem key={key} to={val.href}>
+        {navs.map((val) => (
+          <NavItem key={val.href} to={val.href}>
             {val.title}
           </NavItem>
         ))}
       </LinkContainer>
-      <HamburgerMenu onClick={props.toggleIsOpen}>
+      <HamburgerMenu
+        as="button"
+        onClick={props.toggleIsOpen}
+        aria-label={props.isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={props.isOpen}
+      >
         <MenuBars isOpen={props.isOpen} />
       </HamburgerMenu>
       <LanguagesWrapper>

@@ -24,8 +24,8 @@ export const Sidebar = (props: {
       variants={container}
     >
       <Menu variants={menu}>
-        {navs.map((nav, key) => (
-          <MenuItem key={key}>
+        {navs.map((nav) => (
+          <MenuItem key={nav.href}>
             <MenuItemLink to={nav.href} onClick={toggleIsOpen}>
               {nav.title}
             </MenuItemLink>

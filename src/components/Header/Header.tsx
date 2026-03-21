@@ -43,7 +43,7 @@ export const Header = () => {
           <ResumeIcon />
         </SocialWrapper>
         <ImgContainer>
-          <Img src={ProfilePic} alt="profile" />
+          <Img src={ProfilePic} alt={t("profileAlt")} />
         </ImgContainer>
       </Content>
       <GoAboutOrganism />

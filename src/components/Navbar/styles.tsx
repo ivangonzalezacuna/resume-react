@@ -18,7 +18,7 @@ export const Nav = styled.div<CustomProps>`
   background: ${({ theme, isRootPath }) =>
     isRootPath ? theme.palette.transparent : theme.palette.primary.background};
   z-index: 1;
-  transition: ${({ isRootPath }) => (isRootPath ? "all 0.8s" : "all 2s")};
+  transition: ${({ isRootPath }) => (isRootPath ? "all 0.5s" : "all 0.5s")};
 `;
 
 export const LinkContainer = styled.div`

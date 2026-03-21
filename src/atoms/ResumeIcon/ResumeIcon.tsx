@@ -37,11 +37,13 @@ export const ResumeIcon = ({ variants }: ResumeIconProps) => {
             key={icon.name}
             href={icon.href}
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit my ${icon.name} profile`}
             variants={variants}
             animate={{ opacity: 1 }}
             whileHover={{ opacity: 0.85, scale: 1.05 }}
           >
-            <IconValue />
+            <IconValue aria-hidden="true" />
           </SocialIcon>
         );
       })}
