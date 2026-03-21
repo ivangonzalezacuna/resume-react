@@ -24,8 +24,8 @@ export const EducationOrganism = () => {
     <>
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={education}>
-        {items.map((item, itemKey) => (
-          <Card key={itemKey}>
+        {items.map((item) => (
+          <Card key={item.degree}>
             <CardHeader>
               <CollegeWrapper>
                 <CollegeName>{item.college}</CollegeName>
@@ -36,17 +36,17 @@ export const EducationOrganism = () => {
             <Separator width={80} />
             <DegreeTitle>{item.degree}</DegreeTitle>
             <DescriptionContainer>
-              {item.description.map((desc, descKey) => (
-                <DescriptionItem key={descKey}>{desc}</DescriptionItem>
+              {item.description.map((desc) => (
+                <DescriptionItem key={desc}>{desc}</DescriptionItem>
               ))}
             </DescriptionContainer>
             {item.technologies.length > 0 && (
               <>
                 <Separator width={50} />
                 <TechContainer>
-                  {item.technologies.map((tech, techKey) => {
-                    return <TechTag key={techKey} name={tech} />;
-                  })}
+                  {item.technologies.map((tech) => (
+                    <TechTag key={tech} name={tech} />
+                  ))}
                 </TechContainer>
               </>
             )}

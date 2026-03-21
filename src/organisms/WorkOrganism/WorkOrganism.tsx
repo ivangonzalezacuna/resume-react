@@ -27,8 +27,8 @@ export const WorkOrganism = () => {
     <>
       <SectionTitle variants={title} title={t("sectionTitle")} />
       <Container variants={work}>
-        {items.map((item, itemKey) => (
-          <Card key={itemKey}>
+        {items.map((item) => (
+          <Card key={item.company}>
             <CardHeader>
               <CompanyWrapper>
                 <CompanyName>{item.company}</CompanyName>
@@ -36,18 +36,16 @@ export const WorkOrganism = () => {
               </CompanyWrapper>
               <CompanyDuration>{item.duration}</CompanyDuration>
             </CardHeader>
-            {item.roles.map((role, roleKey) => (
-              <RoleCard key={roleKey}>
+            {item.roles.map((role) => (
+              <RoleCard key={role.title}>
                 <Separator width={80} />
                 <RoleHeader>
                   <RoleTitle>{role.title}</RoleTitle>
                   <RoleDuration>{role.duration}</RoleDuration>
                 </RoleHeader>
                 <RoleDescriptionContainer>
-                  {role.description.map((desc, descKey) => (
-                    <RoleDescriptionItem key={descKey}>
-                      {desc}
-                    </RoleDescriptionItem>
+                  {role.description.map((desc) => (
+                    <RoleDescriptionItem key={desc}>{desc}</RoleDescriptionItem>
                   ))}
                 </RoleDescriptionContainer>
               </RoleCard>
@@ -56,9 +54,9 @@ export const WorkOrganism = () => {
               <>
                 <Separator width={50} />
                 <TechContainer>
-                  {item.technologies.map((tech, techKey) => {
-                    return <TechTag key={techKey} name={tech} />;
-                  })}
+                  {item.technologies.map((tech) => (
+                    <TechTag key={tech} name={tech} />
+                  ))}
                 </TechContainer>
               </>
             )}

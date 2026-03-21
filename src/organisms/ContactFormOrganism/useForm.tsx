@@ -17,9 +17,11 @@ interface Validation {
 
 type ErrorRecord<T> = Partial<Record<keyof T, string>>;
 
-type Validations<T extends {}> = Partial<Record<keyof T, Validation>>;
+type Validations<T extends object> = Partial<Record<keyof T, Validation>>;
 
-export const useForm = <T extends Record<keyof T, string> = {}>(options?: {
+export const useForm = <
+  T extends Record<keyof T, string> = Record<string, string>,
+>(options?: {
   validations?: Validations<T>;
   initialValues?: Partial<T>;
   onSubmit?: () => void;

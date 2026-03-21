@@ -65,7 +65,7 @@ export const Name = styled.div`
 `;
 
 export const Description = styled(motion.p)`
-  font-size: ${({ theme }) => theme.text.home.desription.dynamic};
+  font-size: ${({ theme }) => theme.text.home.description.dynamic};
   margin: 0.6rem 0;
   text-align: center;
 

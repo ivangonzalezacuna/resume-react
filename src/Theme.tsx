@@ -1,4 +1,3 @@
-import React from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const themeNew: DefaultTheme = {
@@ -39,7 +38,7 @@ const themeNew: DefaultTheme = {
         static: "",
         dynamic: "clamp(2rem, 8vw, 5rem)",
       },
-      desription: {
+      description: {
         static: "",
         dynamic: "clamp(1rem, 3vw, 1.4rem)",
       },
@@ -59,7 +58,7 @@ const themeNew: DefaultTheme = {
         static: "",
         dynamic: "clamp(1.2rem, 5vw, 1.4rem)",
       },
-      subtititle: {
+      subtitle: {
         static: "",
         dynamic: "clamp(1rem, 4vw, 1.1rem)",
       },

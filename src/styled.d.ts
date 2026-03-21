@@ -33,7 +33,7 @@ interface ThemeFontSize {
   button: FontValues;
   timeline: {
     title: FontValues;
-    subtititle: FontValues;
+    subtitle: FontValues;
     description: FontValues;
     text: FontValues;
   };
@@ -42,7 +42,7 @@ interface ThemeFontSize {
   };
   home: {
     name: FontValues;
-    desription: FontValues;
+    description: FontValues;
   };
 }
 
