@@ -1,69 +1,61 @@
 import { Variants } from "framer-motion";
 
-const ease = [0.76, 0, 0.24, 1];
-
 export const container: Variants = {
-  initial: { height: 0, opacity: 1 },
+  initial: { height: 0, width: 0, opacity: 0 },
   animate: {
-    height: "100vh",
+    height: "auto",
+    width: "auto",
     opacity: 1,
     transition: {
       staggerChildren: 0.05,
-      delayChildren: 0.5,
+      delayChildren: 0.3,
       duration: 0.5,
-      ease: ease,
+      ease: "backInOut",
     },
   },
   close: {
     height: 0,
-    opacity: 1,
+    width: 0,
+    opacity: 0,
     transition: {
-      when: "afterChildren",
       staggerChildren: 0.05,
       staggerDirection: -1,
       duration: 0.5,
-      ease: ease,
+      ease: "backIn",
     },
   },
 };
 
 export const menu: Variants = {
-  initial: { display: "none" },
+  initial: { opacity: 0 },
   animate: {
-    display: "block",
+    opacity: 1,
     transition: {
       staggerChildren: 0.05,
       delayChildren: 0,
       duration: 0.5,
-      ease: ease,
+      ease: "backOut",
     },
   },
   close: {
-    display: "none",
+    opacity: 0,
     transition: {
-      when: "afterChildren",
       staggerChildren: 0.05,
       staggerDirection: -1,
-      duration: 0.5,
-      ease: ease,
+      duration: 0.1,
+      ease: "backIn",
     },
   },
-};
-
-export const links: Variants = {
-  initial: { y: 10, opacity: 0 },
-  animate: { y: 0, opacity: 1 },
-  close: { y: 10, opacity: 0 },
 };
 
 export const langs: Variants = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition: { duration: 0.5, delay: 0.5 },
+    transition: { duration: 0.5, delay: 0.5, ase: "backOut" },
   },
   close: {
     opacity: 0,
-    transition: { duration: 0.2 },
+    transition: { duration: 0.1, ease: "backIn" },
   },
 };

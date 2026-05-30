@@ -24,15 +24,19 @@ export const ContactDetailsOrganism = () => {
           <Title variants={item}>{t("sectionTitle")}</Title>
         </TitleWrapper>
         <Content>
-          {contacts.map((contact, key) => (
-            <Item key={key} variants={card}>
+          {contacts.map((contact) => (
+            <Item key={contact.type} variants={card}>
               <IconWrapper variants={icon}>
-                {contact.type === "email" && <FaEnvelope />}
-                {contact.type === "phone" && <FaPhoneAlt />}
+                {contact.type === "email" && <FaEnvelope aria-hidden="true" />}
+                {contact.type === "phone" && <FaPhoneAlt aria-hidden="true" />}
               </IconWrapper>
               <Info>
                 <Type variants={item}>{contact.text}</Type>
-                <Data variants={item} href={contact.href}>
+                <Data
+                  variants={item}
+                  href={contact.href}
+                  aria-label={`${contact.text}: ${contact.value}`}
+                >
                   {contact.value}
                 </Data>
               </Info>

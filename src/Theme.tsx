@@ -1,4 +1,3 @@
-import React from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const themeNew: DefaultTheme = {
@@ -6,14 +5,17 @@ const themeNew: DefaultTheme = {
     primary: {
       background: "#161616",
       text: "#f9f9f9",
+      box: "#1f2937",
     },
     secondary: {
       background: "#f9f9f9",
       text: "#161616",
+      box: "#1f2937",
     },
     error: {
       background: "#101010",
       text: "#f00e0e",
+      box: "#1f2937",
     },
     accent: {
       background: "#032236",
@@ -36,7 +38,7 @@ const themeNew: DefaultTheme = {
         static: "",
         dynamic: "clamp(2rem, 8vw, 5rem)",
       },
-      desription: {
+      description: {
         static: "",
         dynamic: "clamp(1rem, 3vw, 1.4rem)",
       },
@@ -56,7 +58,7 @@ const themeNew: DefaultTheme = {
         static: "",
         dynamic: "clamp(1.2rem, 5vw, 1.4rem)",
       },
-      subtititle: {
+      subtitle: {
         static: "",
         dynamic: "clamp(1rem, 4vw, 1.1rem)",
       },

@@ -5,32 +5,42 @@ export const Container = styled(motion.div)`
   width: 100%;
   max-width: 1100px;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px 10px 0px 10px;
 `;
 
-export const Wrapper = styled.div`
+export const TechnologySection = styled.div`
   display: flex;
+  flex-direction: row;
   flex-flow: row wrap;
-  padding: 0 20px;
+  justify-content: space-between;
 
-  @media screen and (max-width: 400px) {
-    padding: 0 10px;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 `;
 
-export const Tag = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f9f9f911;
-  color: ${({ theme }) => theme.palette.accent.text};
-  border: 2px solid ${({ theme }) => theme.palette.accent.textDark};
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: ${({ theme }) => theme.text.skills.tag.dynamic};
-  margin: 5px;
-  cursor: pointer;
+export const TechnologyTitle = styled.div`
+  font-size: 18px;
+  color: ${({ theme }) => theme.palette.primary.text};
+`;
 
-  @media screen and (max-width: 400px) {
-    padding: 6px 12px;
+export const Technologies = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 10px;
+  max-width: 60%;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 640px) {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
   }
 `;

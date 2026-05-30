@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -10,38 +10,17 @@ import { AboutPage, ContactPage, HomePage, NotFoundPage } from "./pages";
 const App = () => {
   const location = useLocation();
 
-  const [isFirstMount, setIsFirstMount] = useState(true);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [fastTransition, setFastTransition] = useState(false);
-
-  useEffect(() => {
-    if (location.pathname != "/") {
-      isFirstMount && setIsFirstMount(false);
-    }
-  }, [location, isFirstMount]);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
     <>
       <Theme>
         <GlobalStyle />
-        <Navbar
-          hideNav={location.pathname === "/"}
-          isSidebarOpen={isSidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-          setFastTransition={setFastTransition}
-        />
+        <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <HomePage
-                  isFirstMount={isFirstMount}
-                  fastTransition={fastTransition}
-                  setFastTransition={setFastTransition}
-                />
-              }
-            />
+            <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />

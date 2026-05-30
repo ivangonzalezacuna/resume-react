@@ -1,1 +1,0 @@
-export { ListItemAboutOrganism } from "./ListItemAboutOrganism";

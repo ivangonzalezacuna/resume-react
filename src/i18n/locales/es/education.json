@@ -2,20 +2,20 @@
   "sectionTitle": "Estudios",
   "info": [
     {
-      "location": "Universidad de Vigo",
-      "city": "Vigo, España",
-      "responsibility": "Grado en Ingeniería de Tecnologías de Telecomunicación",
+      "college": "Universidad de Vigo",
+      "location": "Vigo, España",
+      "degree": "Grado en Ingeniería de Tecnologías de Telecomunicación",
       "description": ["Linea 1", "Linea 2", "Linea 3"],
-      "start": "Ago 2016",
-      "end": "Jul 2020"
+      "duration": "Ago 2016 - Jul 2020",
+      "technologies": ["Java", "C"]
     },
     {
-      "location": "Oulu University of Applied Sciences",
-      "city": "Oulu, Finlandia",
-      "responsibility": "Desarrollo de software",
+      "college": "Oulu University of Applied Sciences",
+      "location": "Oulu, Finlandia",
+      "degree": "Desarrollo de software",
       "description": ["Linea 1", "Linea 2"],
-      "start": "Ago 2019",
-      "end": "Dic 2019"
+      "duration": "Ago 2019 - Dic 2019",
+      "technologies": ["Java", "Android Studio", "Swift"]
     }
   ]
 }

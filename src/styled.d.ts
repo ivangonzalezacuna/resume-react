@@ -4,6 +4,7 @@ import "styled-components";
 interface IPalette {
   background: string;
   text: string;
+  box: string;
 }
 
 interface IPaletteAccent {
@@ -32,7 +33,7 @@ interface ThemeFontSize {
   button: FontValues;
   timeline: {
     title: FontValues;
-    subtititle: FontValues;
+    subtitle: FontValues;
     description: FontValues;
     text: FontValues;
   };
@@ -41,7 +42,7 @@ interface ThemeFontSize {
   };
   home: {
     name: FontValues;
-    desription: FontValues;
+    description: FontValues;
   };
 }
 

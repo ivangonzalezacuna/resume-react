@@ -9,10 +9,8 @@ export const SectionTitle = ({
   title: string;
 }) => {
   return (
-    <>
-      <Wrapper>
-        <Title variants={variants}>{title}</Title>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Title variants={variants}>{title}</Title>
+    </Wrapper>
   );
 };

@@ -5,4 +5,3 @@ export { Header } from "./Header";
 export { Navbar } from "./Navbar";
 export { NotFound } from "./NotFound";
 export { Sidebar } from "./Sidebar";
-export { SplashHeader } from "./SplashHeader";
