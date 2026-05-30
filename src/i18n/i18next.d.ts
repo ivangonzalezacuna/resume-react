@@ -9,7 +9,7 @@ import work from "./locales/en/work.json";
 import education from "./locales/en/education.json";
 import footer from "./locales/en/footer.json";
 import notFound from "./locales/en/404.json";
-import skills from "./locales/common/skills.json";
+import skills from "./locales/en/skills.json";
 import social from "./locales/common/social.json";
 
 declare module "i18next" {

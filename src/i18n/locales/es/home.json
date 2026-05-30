@@ -4,5 +4,6 @@
   "contactHref": "/contact",
   "contactButton": "Contactar",
   "aboutHref": "/about",
-  "aboutButton": "Sobre Mí"
+  "aboutButton": "Sobre Mí",
+  "profileAlt": "Profile Pic"
 }

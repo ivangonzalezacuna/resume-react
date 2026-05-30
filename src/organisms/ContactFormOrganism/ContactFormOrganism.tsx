@@ -15,7 +15,6 @@ import { useForm } from "./useForm";
 import { useState } from "react";
 import { FormButton } from "../../atoms";
 import { LoadingOrganism } from "../LoadingOrganism";
-import fetch from "cross-fetch";
 
 export const ContactFormOrganism = ({
   setEmailSent,
@@ -98,65 +97,90 @@ export const ContactFormOrganism = ({
           <Content>
             <Wrapper onSubmit={handleSubmit} noValidate>
               <Item>
-                <Label variants={item}>
+                <Label variants={item} htmlFor="name">
                   {t("form.labelName")}
-                  <span>*</span>
+                  <span aria-hidden="true">*</span>
                 </Label>
                 <Input
                   variants={item}
+                  id="name"
                   type="text"
                   name="name"
                   placeholder={t("form.placeholderName")}
                   value={formData.name || ""}
                   onChange={handleChange("name")}
+                  aria-required="true"
+                  aria-describedby={errors.name ? "name-error" : undefined}
                 />
-                {errors.name && <p>{errors.name}</p>}
+                {errors.name && (
+                  <p id="name-error" role="alert">
+                    {errors.name}
+                  </p>
+                )}
               </Item>
               <Item>
-                <Label variants={item}>
+                <Label variants={item} htmlFor="email">
                   {t("form.labelEmail")}
-                  <span>*</span>
+                  <span aria-hidden="true">*</span>
                 </Label>
                 <Input
                   variants={item}
+                  id="email"
                   type="email"
                   name="email"
                   placeholder={t("form.placeholderEmail")}
                   value={formData.email || ""}
                   onChange={handleChange("email")}
+                  aria-required="true"
+                  aria-describedby={errors.email ? "email-error" : undefined}
                 />
-                {errors.email && <p>{errors.email}</p>}
+                {errors.email && (
+                  <p id="email-error" role="alert">
+                    {errors.email}
+                  </p>
+                )}
               </Item>
               <Item>
-                <Label variants={item}>{t("form.labelSubject")}</Label>
+                <Label variants={item} htmlFor="subject">
+                  {t("form.labelSubject")}
+                </Label>
                 <Input
                   variants={item}
+                  id="subject"
                   type="text"
                   name="subject"
                   placeholder={t("form.placeholderSubject")}
                   value={formData.subject || ""}
                   onChange={handleChange("subject")}
                 />
-                {errors.subject && <p>{errors.subject}</p>}
               </Item>
               <Item>
-                <Label variants={item}>
+                <Label variants={item} htmlFor="message">
                   {t("form.labelMessage")}
-                  <span>*</span>
+                  <span aria-hidden="true">*</span>
                 </Label>
                 <TextArea
                   variants={item}
+                  id="message"
                   name="message"
                   placeholder={t("form.placeholderMessage")}
                   value={formData.message || ""}
                   onChange={handleChange("message")}
                   rows={5}
                   wrap="hard"
+                  aria-required="true"
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
                 />
-                {errors.message && <p>{errors.message}</p>}
+                {errors.message && (
+                  <p id="message-error" role="alert">
+                    {errors.message}
+                  </p>
+                )}
               </Item>
               <FormButton variants={btn}>{t("form.sendButton")}</FormButton>
-              {sendError && <Error>{sendError}</Error>}
+              {sendError && <Error role="alert">{sendError}</Error>}
             </Wrapper>
           </Content>
         </Container>

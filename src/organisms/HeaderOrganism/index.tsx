@@ -1,1 +1,0 @@
-export { HeaderOrganism } from "./HeaderOrganism";

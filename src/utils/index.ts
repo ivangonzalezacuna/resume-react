@@ -1,0 +1,1 @@
+export { toSvgIcon } from "./skill";

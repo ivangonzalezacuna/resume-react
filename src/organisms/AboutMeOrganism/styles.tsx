@@ -5,9 +5,7 @@ export const Container = styled(motion.div)`
   width: 100%;
   max-width: 1100px;
   margin-top: 50px;
-`;
 
-export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 16px;
@@ -18,59 +16,46 @@ export const Grid = styled.div`
   }
 `;
 
-export const ImgWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  margin-left: 30px;
+export const ImgContainer = styled.div`
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
 
   @media screen and (max-width: 800px) {
     margin-left: 0;
-    justify-content: center;
+    justify-self: center;
   }
-`;
-
-export const ImgAnimateWrap = styled(motion.div)`
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
-  overflow: hidden;
 `;
 
 export const Img = styled.img`
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
+  height: 100%;
+  width: 100%;
   transition: transform 0.8s ease;
-  overflow: hidden;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
-export const ContentWrapper = styled.div`
-  min-height: 200px;
-  width: 100%;
-  height: 100%;
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
   padding: 10px;
+  width: 100%;
 `;
 
 export const Name = styled(motion.h1)`
   color: ${({ theme }) => theme.palette.primary.text};
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 400;
   font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0.4rem 0;
 
   span {
     font-weight: 700;
     font-size: 110%;
-    margin-left: 5px;
     color: ${({ theme }) => theme.palette.accent.text};
   }
 `;
@@ -79,5 +64,5 @@ export const Description = styled(motion.span)`
   color: ${({ theme }) => theme.palette.primary.text};
   font-size: 15px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 0.4rem 0;
 `;

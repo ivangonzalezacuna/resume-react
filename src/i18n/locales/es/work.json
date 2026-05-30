@@ -1,29 +1,49 @@
 {
-  "sectionTitle": "Experiencia laboral",
+  "sectionTitle": "Work Experience",
   "info": [
     {
-      "location": "Spread Group",
-      "city": "Leipzig, Alemania",
-      "responsibility": "Ingeniero de software",
-      "description": ["Linea 1", "Linea 2"],
-      "start": "Dic 2021",
-      "end": "Actualidad"
+      "company": "Spreadgroup",
+      "location": "Leipzig, Germany",
+      "duration": "Dec 2021 - Present",
+      "roles": [
+        {
+          "title": "Software Engineer",
+          "description": ["Description"],
+          "duration": "April 2023 - Present"
+        },
+        {
+          "title": "Junior Software Engineer",
+          "description": ["Description"],
+          "duration": "April 2023 - Present"
+        }
+      ],
+      "technologies": []
     },
     {
-      "location": "Univerdad de Vigo",
-      "city": "Vigo, España",
-      "responsibility": "Investigación y Desarrollo",
-      "description": ["Linea 1", "Linea 2"],
-      "start": "Feb 2020",
-      "end": "Nov 2021"
+      "company": "University of Vigo",
+      "location": "Vigo, Spain",
+      "duration": "Feb 2020 - Nov 2021",
+      "roles": [
+        {
+          "title": "Research and Development",
+          "description": ["Description"],
+          "duration": "Feb 2020 - Oct 2021"
+        }
+      ],
+      "technologies": []
     },
     {
-      "location": "Muutech Monitoring Solutions SL",
-      "city": "Nigrán, España",
-      "responsibility": "Prácticas de empresa",
-      "description": ["Linea 1", "Linea 2"],
-      "start": "Jun 2019",
-      "end": "Jul 2019"
+      "company": "Muutech Monitoring Solutions SL",
+      "location": "Nigrán, Spain",
+      "duration": "Feb 2020 - Oct 2021",
+      "roles": [
+        {
+          "title": "Internship",
+          "description": ["Description"],
+          "duration": "Jun 2019 - Jul 2019"
+        }
+      ],
+      "technologies": []
     }
   ]
 }

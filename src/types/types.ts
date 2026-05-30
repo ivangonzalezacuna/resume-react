@@ -1,22 +1,3 @@
-export type HeaderProps = {
-  isFirstMount: boolean;
-  fastTransition: boolean;
-  setFastTransition: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export type NavbarProps = {
-  hideNav: boolean;
-  isSidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setFastTransition: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export type SidebarProps = {
-  isSidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setFastTransition: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
 export type ContactFormOrganismProps = {
   setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -34,10 +15,22 @@ export type SkillInfo = {
 };
 
 export type ExperienceInfo = {
+  college: string;
   location: string;
-  city: string;
-  responsibility: string;
+  degree: string;
   description: string[];
-  start: string;
-  end: string;
+  duration: string;
+  technologies: string[];
+};
+
+export type WorkInfo = {
+  company: string;
+  location: string;
+  duration: string;
+  roles: {
+    title: string;
+    description: string[];
+    duration: string;
+  }[];
+  technologies: string[];
 };
