@@ -49,17 +49,5 @@
     "typescript-eslint": "^8.60.1",
     "vite": "^8.0.16"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "packageManager": "yarn@3.2.3"
 }

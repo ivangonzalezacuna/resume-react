@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { HrefBtn } from "./styles";
 
 export type HrefButtonProps = {
@@ -5,7 +6,7 @@ export type HrefButtonProps = {
   blankTarget?: boolean;
   download?: boolean;
   variant?: "primary" | "secondary";
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const HrefButton = ({

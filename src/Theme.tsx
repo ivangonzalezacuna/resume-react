@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const theme: DefaultTheme = {
@@ -38,6 +39,6 @@ const theme: DefaultTheme = {
   },
 };
 
-export const Theme = ({ children }: { children: React.ReactNode }) => (
+export const Theme = ({ children }: { children: ReactNode }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );

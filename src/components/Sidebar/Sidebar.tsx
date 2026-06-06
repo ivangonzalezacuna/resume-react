@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { SectionId } from "../../hooks/useActiveSection";
 import {
   SidebarContainer,
@@ -21,10 +22,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
-  const handleClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: SectionId,
-  ) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     close();

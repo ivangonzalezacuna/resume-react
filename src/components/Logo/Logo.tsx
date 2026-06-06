@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import {
   LogoAnchor,
   LogoWord,
@@ -7,7 +8,7 @@ import {
 } from "./styles";
 
 export const Logo = () => {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
   };
