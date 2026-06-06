@@ -14,13 +14,14 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "dev": "yarn install && netlify dev",
+    "dev": "netlify dev",
     "tsc": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier:fix": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "check:full": "yarn install && yarn tsc && yarn lint && yarn prettier:check"
+    "check:full": "yarn tsc && yarn lint && yarn prettier:check",
+    "test": "echo 'No tests'"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",
