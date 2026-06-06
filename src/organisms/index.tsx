@@ -1,5 +1,5 @@
 export { About } from "./About";
-export { ContactDetailsOrganism } from "./ContactDetailsOrganism";
+export { Contact } from "./Contact";
 export { EducationOrganism } from "./EducationOrganism";
 export { Experience } from "./Experience";
 export { Projects } from "./Projects";

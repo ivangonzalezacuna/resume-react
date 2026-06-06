@@ -8,24 +8,11 @@ import { Experience } from "./organisms/Experience";
 import { Projects } from "./organisms/Projects";
 import { Skills } from "./organisms/Skills";
 import { About } from "./organisms/About";
+import { Contact } from "./organisms/Contact";
 
 const PageMain = styled.main`
   width: 100%;
   min-height: 100vh;
-`;
-
-const Section = styled.section`
-  width: 100%;
-  padding: 96px 24px;
-  box-sizing: border-box;
-
-  @media (min-width: 768px) {
-    padding: 96px 48px;
-  }
-
-  @media (min-width: 1280px) {
-    padding: 120px 80px;
-  }
 `;
 
 const App = () => {
@@ -39,7 +26,7 @@ const App = () => {
         <Projects />
         <Skills />
         <About />
-        <Section id="contact" />
+        <Contact />
       </PageMain>
       <Footer />
     </Theme>
