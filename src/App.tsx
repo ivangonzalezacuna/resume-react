@@ -5,6 +5,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Experience } from "./organisms/Experience";
+import { Projects } from "./organisms/Projects";
 
 const PageMain = styled.main`
   width: 100%;
@@ -33,7 +34,7 @@ const App = () => {
       <PageMain>
         <Hero />
         <Experience />
-        <Section id="projects" />
+        <Projects />
         <Section id="skills" />
         <Section id="about" />
         <Section id="contact" />
