@@ -47,11 +47,18 @@ export const LinkItem = styled(motion.li)`
   }
 `;
 
+export const ChannelRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 28px 0;
+`;
+
 export const ChannelAnchor = styled.a`
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 28px 0;
   text-decoration: none;
   cursor: pointer;
   color: ${({ theme }) => theme.text.primary};
@@ -85,5 +92,29 @@ export const ChannelMeta = styled.span`
 
   ${ChannelAnchor}:hover & {
     color: ${({ theme }) => theme.accent.cyan};
+  }
+`;
+
+export const CopyButton = styled.button<{ $copied: boolean }>`
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 12px;
+  flex-shrink: 0;
+  color: ${({ theme, $copied }) =>
+    $copied ? theme.accent.cyan : theme.text.muted};
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent.cyan};
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme }) => theme.accent.cyan};
+    outline-offset: 2px;
   }
 `;
