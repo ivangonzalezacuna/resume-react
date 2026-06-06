@@ -4,13 +4,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   padding-top: 50px;
   padding-bottom: 30px;
-  background: ${({ theme }) => theme.palette.footer};
-  background: linear-gradient(
-    0deg,
-    rgba(6, 58, 91, 1) 80%,
-    rgba(3, 34, 54, 1) 90%,
-    rgba(22, 22, 22, 1) 100%
-  );
+  background: ${({ theme }) => theme.surface.low};
   display: flex;
   justify-content: center;
 `;
@@ -28,7 +22,7 @@ export const FooterWrap = styled.div`
 `;
 
 export const Logo = styled.div`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
@@ -42,7 +36,7 @@ export const LogoImg = styled.img`
 `;
 
 export const Copyright = styled.small`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   margin: 8px 0;
   display: flex;
   align-items: center;

@@ -15,11 +15,11 @@ export const FormButtonWrapper = styled(motion.div)`
 `;
 
 export const HrefBtn = styled.a`
-  font-size: ${({ theme }) => theme.text.button.dynamic};
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   padding: 8px 20px;
-  background: ${({ theme }) => theme.palette.transparent};
-  color: ${({ theme }) => theme.palette.primary.text};
-  border: ${({ theme }) => `3px solid ${theme.palette.primary.text}`};
+  background: transparent;
+  color: ${({ theme }) => theme.text.primary};
+  border: ${({ theme }) => `3px solid ${theme.text.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -28,9 +28,9 @@ export const HrefBtn = styled.a`
   cursor: pointer;
 
   &:hover {
-    background: ${({ theme }) => theme.palette.secondary.background};
-    color: ${({ theme }) => theme.palette.secondary.text};
-    border: ${({ theme }) => `3px solid ${theme.palette.secondary.background}`};
+    background: ${({ theme }) => theme.surface.mid};
+    color: ${({ theme }) => theme.text.primary};
+    border: ${({ theme }) => `3px solid ${theme.surface.mid}`};
   }
 
   @media screen and (max-width: 500px) {
@@ -44,11 +44,11 @@ export const HrefBtn = styled.a`
 `;
 
 export const FormBtn = styled.button`
-  font-size: ${({ theme }) => theme.text.button.dynamic};
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   padding: 8px 20px;
-  background: ${({ theme }) => theme.palette.transparent};
-  color: ${({ theme }) => theme.palette.primary.text};
-  border: ${({ theme }) => `3px solid ${theme.palette.primary.text}`};
+  background: transparent;
+  color: ${({ theme }) => theme.text.primary};
+  border: ${({ theme }) => `3px solid ${theme.text.primary}`};
   border-radius: 50px;
   outline: none;
   text-decoration: none;
@@ -57,9 +57,9 @@ export const FormBtn = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: ${({ theme }) => theme.palette.secondary.background};
-    color: ${({ theme }) => theme.palette.secondary.text};
-    border: ${({ theme }) => `3px solid ${theme.palette.secondary.background}`};
+    background: ${({ theme }) => theme.surface.mid};
+    color: ${({ theme }) => theme.text.primary};
+    border: ${({ theme }) => `3px solid ${theme.surface.mid}`};
   }
 
   @media screen and (max-width: 500px) {

@@ -27,7 +27,7 @@ export const TechnologySection = styled.div`
 
 export const TechnologyTitle = styled.div`
   font-size: 18px;
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
 `;
 
 export const Technologies = styled.div`

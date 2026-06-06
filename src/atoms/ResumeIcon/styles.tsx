@@ -12,7 +12,7 @@ export const SocialWrapper = styled.div`
 export const SocialIcon = styled(motion.a)`
   font-size: 24px;
   margin: 0 8px;
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   cursor: pointer;
   display: flex;
   align-items: center;

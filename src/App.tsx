@@ -5,7 +5,7 @@ const App = () => {
   return (
     <Theme>
       <GlobalStyle />
-      <div>Redesign Init</div>
+      <div>Design Tokens Init</div>
     </Theme>
   );
 };

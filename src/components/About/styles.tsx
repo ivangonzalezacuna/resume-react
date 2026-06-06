@@ -6,7 +6,7 @@ export const Container = styled.div`
   min-height: 100dvh;
   margin-bottom: 100px;
   height: auto;
-  background: ${({ theme }) => theme.palette.primary.background};
+  background: ${({ theme }) => theme.surface.base};
   display: flex;
   align-items: center;
   flex-direction: column;

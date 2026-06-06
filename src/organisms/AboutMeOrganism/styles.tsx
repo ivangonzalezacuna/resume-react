@@ -47,7 +47,7 @@ export const Content = styled.div`
 `;
 
 export const Name = styled(motion.h1)`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: clamp(1.6rem, 6vw, 2.2rem);
   font-weight: 400;
   text-align: center;
@@ -56,12 +56,12 @@ export const Name = styled(motion.h1)`
   span {
     font-weight: 700;
     font-size: 110%;
-    color: ${({ theme }) => theme.palette.accent.text};
+    color: ${({ theme }) => theme.accent.cyan};
   }
 `;
 
 export const Description = styled(motion.span)`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: 15px;
   padding: 10px;
   margin: 0.4rem 0;

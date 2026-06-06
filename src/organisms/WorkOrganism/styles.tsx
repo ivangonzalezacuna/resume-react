@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 export const Container = styled(motion.div)`
   width: 100%;
   padding: 30px 10px 0px 10px;
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
 `;
 
 export const Card = styled.div`
   padding: 1rem;
   margin: 20px 0px;
-  border: ${({ theme }) => `1px solid ${theme.palette.accent.textDark}`};
-  border-radius: 0.5rem;
-  background-color: ${({ theme }) => theme.palette.primary.box};
+  border: ${({ theme }) => `1px solid ${theme.accent.slate}`};
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.surface.low};
 `;
 
 export const CardHeader = styled.div`
@@ -58,7 +58,7 @@ interface SeparatorProps {
 
 export const Separator = styled.div<SeparatorProps>`
   margin: 16px auto;
-  border-bottom: ${({ theme }) => `1px solid ${theme.palette.primary.text}`};
+  border-bottom: ${({ theme }) => `1px solid ${theme.text.primary}`};
   width: ${({ width }) => `${width}%`};
   opacity: 30%;
 `;

@@ -13,14 +13,14 @@ export const Container = styled(motion.div)`
 
   padding: 8px 4px;
 
-  background-color: ${({ theme }) => theme.palette.accent.textDark};
+  background-color: ${({ theme }) => theme.surface.low};
 
   border-radius: 4px;
 `;
 
 export const TechName = styled.div`
   font-size: 16px;
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
 `;
 
 export const TechIcon = styled.img`
@@ -29,6 +29,5 @@ export const TechIcon = styled.img`
   svg {
     width: 100%;
     height: 100%;
-    /* fill: ${({ theme }) => theme.palette.primary.text}; */
   }
 `;

@@ -1,27 +1,44 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  * {
+  *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: ${({ theme }) => theme.font.join(", ")} ;
   }
 
-  html, body {
-    background: ${({ theme }) => theme.palette.primary.background};
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: ${({ theme }) => theme.surface.base};
+    background-image: radial-gradient(circle, #ffffff05 1px, transparent 1px);
+    background-size: 8px 8px;
+    color: ${({ theme }) => theme.text.primary};
+    font-family: ${({ theme }) => theme.font.narrative};
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-      scrollbar-width: 0px;
-    }
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }

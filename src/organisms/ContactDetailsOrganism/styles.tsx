@@ -20,7 +20,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Title = styled(motion.p)`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -41,8 +41,8 @@ export const Item = styled(motion.div)`
   align-items: center;
   margin: 5px 0;
   padding: 14px;
-  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
-  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
+  border: 1px solid ${({ theme }) => theme.accent.slate};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.accent.slate};
   border-radius: 6px;
 
   @media screen and (max-width: 440px) {
@@ -55,9 +55,9 @@ export const Item = styled(motion.div)`
 export const IconWrapper = styled(motion.div)`
   height: 50px;
   width: 50px;
-  border: 1px solid ${({ theme }) => theme.palette.accent.textDark};
-  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.accent.textDark};
-  color: ${({ theme }) => theme.palette.primary.text};
+  border: 1px solid ${({ theme }) => theme.accent.slate};
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.accent.slate};
+  color: ${({ theme }) => theme.text.primary};
   font-size: 24px;
   margin-left: 10px;
   border-radius: 6px;
@@ -86,7 +86,7 @@ export const Info = styled.div`
 `;
 
 export const Type = styled(motion.h1)`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: clamp(16px, 4vw, 20px);
   margin-bottom: 14px;
   font-variant: small-caps;
@@ -97,7 +97,7 @@ export const Type = styled(motion.h1)`
 `;
 
 export const Data = styled(motion.a)`
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 400;
   text-decoration: none;
@@ -106,6 +106,6 @@ export const Data = styled(motion.a)`
   opacity: 1;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.accent.text};
+    color: ${({ theme }) => theme.accent.cyan};
   }
 `;

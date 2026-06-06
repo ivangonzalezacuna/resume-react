@@ -11,7 +11,7 @@ export const Container = styled.div`
   touch-action: pan-y;
 
   background: ${({ theme }) =>
-    `linear-gradient(-45deg, ${theme.palette.primary.background},${theme.palette.accent.background},${theme.palette.accent.textDark},${theme.palette.accent.text})`};
+    `linear-gradient(-45deg, ${theme.surface.base},${theme.surface.low},${theme.surface.low},${theme.accent.cyan})`};
 
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -37,7 +37,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 60dvw;
-  color: ${({ theme }) => theme.palette.primary.text};
+  color: ${({ theme }) => theme.text.primary};
 
   @media screen and (max-width: 760px) {
     width: 70dvw;
@@ -49,8 +49,8 @@ export const Content = styled.div`
 `;
 
 export const Name = styled.div`
-  color: ${({ theme }) => theme.palette.accent.text};
-  font-size: ${({ theme }) => theme.text.home.name.dynamic};
+  color: ${({ theme }) => theme.accent.cyan};
+  font-size: clamp(2rem, 8vw, 5rem);
   font-weight: 400;
   text-align: center;
   margin: 0.4rem 0;
@@ -65,7 +65,7 @@ export const Name = styled.div`
 `;
 
 export const Description = styled(motion.p)`
-  font-size: ${({ theme }) => theme.text.home.description.dynamic};
+  font-size: clamp(1rem, 3vw, 1.4rem);
   margin: 0.6rem 0;
   text-align: center;
 

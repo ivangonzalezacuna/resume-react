@@ -13,14 +13,14 @@ export const Container = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: ${({ theme }) => theme.palette.primary.background};
+  background: ${({ theme }) => theme.surface.base};
   cursor: default;
 `;
 
 export const SectionTitle = styled(motion.h1)<CustomProps>`
   font-size: clamp(1.7rem, 8vw, 3rem);
   letter-spacing: 4px;
-  color: ${({ theme }) => `${theme.palette.primary.text}4a`};
+  color: ${({ theme }) => `${theme.text.primary}4a`};
   text-align: center;
   font-variant: small-caps;
   padding: ${({ submitted }) =>

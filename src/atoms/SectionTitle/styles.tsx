@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled(motion.h1)`
-  color: ${({ theme }) => theme.palette.primary.text};
+export const Title = styled(motion.h2)`
+  color: ${({ theme }) => theme.text.primary};
   font-variant: small-caps;
   font-size: 24px;
   letter-spacing: 2px;
