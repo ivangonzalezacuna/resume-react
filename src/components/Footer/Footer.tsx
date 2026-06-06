@@ -1,6 +1,13 @@
 import portfolio from "../../content/portfolio";
 import { Logo } from "../Logo";
-import { FooterContainer, FooterInner, FooterLeft, FooterRight, CopyrightText, FooterLink } from "./styles";
+import {
+  FooterContainer,
+  FooterInner,
+  FooterLeft,
+  FooterRight,
+  CopyrightText,
+  FooterLink,
+} from "./styles";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export const Footer = () => {
@@ -30,7 +37,10 @@ export const Footer = () => {
           >
             <FiLinkedin size={18} />
           </FooterLink>
-          <FooterLink href={`mailto:${portfolio.social.email}`} aria-label="Send email">
+          <FooterLink
+            href={`mailto:${portfolio.social.email}`}
+            aria-label="Send email"
+          >
             <FiMail size={18} />
           </FooterLink>
         </FooterRight>

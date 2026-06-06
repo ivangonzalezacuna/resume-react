@@ -3,7 +3,15 @@ import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
 import portfolio from "../../content/portfolio";
-import { Nav, NavInner, NavLinks, NavItem, SocialLinks, SocialLink, HamburgerButton } from "./styles";
+import {
+  Nav,
+  NavInner,
+  NavLinks,
+  NavItem,
+  SocialLinks,
+  SocialLink,
+  HamburgerButton,
+} from "./styles";
 import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 
 const NAV_LINKS: { label: string; id: SectionId }[] = [
@@ -25,7 +33,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: SectionId) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: SectionId,
+  ) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };

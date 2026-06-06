@@ -5,17 +5,17 @@ export const HeroSection = styled.section`
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
-  padding: 120px 80px 80px;
+  padding: 88px 24px 48px;
 
-  @media (max-width: 1024px) {
+  @media (min-width: 768px) {
     padding: 100px 48px 60px;
+    align-items: center;
   }
 
-  @media (max-width: 768px) {
-    padding: 88px 24px 48px;
-    align-items: flex-start;
+  @media (min-width: 1280px) {
+    padding: 120px 80px 80px;
   }
 `;
 
@@ -24,13 +24,13 @@ export const HeroInner = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 40px;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
   }
 `;
 
@@ -81,23 +81,24 @@ export const RightBlock = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  order: -1;
 
-  @media (max-width: 768px) {
-    order: -1;
+  @media (min-width: 768px) {
+    order: 0;
   }
 `;
 
 export const ProfileImageWrapper = styled.div`
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid ${({ theme }) => theme.border.subtle};
   flex-shrink: 0;
 
-  @media (max-width: 480px) {
-    width: 200px;
-    height: 200px;
+  @media (min-width: 768px) {
+    width: 280px;
+    height: 280px;
   }
 `;
 

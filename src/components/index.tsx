@@ -1,6 +1,10 @@
 export { About } from "./About";
 export { Contact } from "./Contact";
+export { Experience } from "./Experience";
 export { Footer } from "./Footer";
 export { Hero } from "./Hero";
+export { Logo } from "./Logo";
 export { Navbar } from "./Navbar";
+export { Projects } from "./Projects";
 export { Sidebar } from "./Sidebar";
+export { Skills } from "./Skills";

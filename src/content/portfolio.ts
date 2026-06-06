@@ -162,11 +162,24 @@ const portfolio = {
     },
     {
       category: "Platform & DX",
-      technologies: ["Kubernetes", "Backstage", "ArgoCD", "Vault", "Docker", "Linux"],
+      technologies: [
+        "Kubernetes",
+        "Backstage",
+        "ArgoCD",
+        "Vault",
+        "Docker",
+        "Linux",
+      ],
     },
     {
       category: "Observability",
-      technologies: ["Datadog", "Grafana", "Prometheus", "Elasticsearch", "Kibana"],
+      technologies: [
+        "Datadog",
+        "Grafana",
+        "Prometheus",
+        "Elasticsearch",
+        "Kibana",
+      ],
     },
     {
       category: "Data",
@@ -180,7 +193,10 @@ const portfolio = {
 
   languages: [
     { language: "Spanish", proficiency: "Native" },
-    { language: "English", proficiency: "C1 — Professional working proficiency" },
+    {
+      language: "English",
+      proficiency: "C1 — Professional working proficiency",
+    },
     { language: "German", proficiency: "B2 — Upper intermediate" },
   ],
 

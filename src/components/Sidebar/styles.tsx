@@ -4,7 +4,7 @@ export const SidebarOverlay = styled.div`
   position: fixed;
   inset: 0;
   z-index: 98;
-  background: rgba(10, 12, 13, 0.6);
+  background: ${({ theme }) => theme.surface.overlay};
 `;
 
 export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
@@ -39,8 +39,9 @@ export const SidebarItem = styled.a<{ $active: boolean }>`
   font-size: 18px;
   font-weight: 500;
   padding: 16px 0;
-  color: ${({ $active, theme }) => ($active ? theme.accent.cyan : theme.text.muted)};
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: ${({ $active, theme }) =>
+    $active ? theme.accent.cyan : theme.text.muted};
+  border-bottom: 1px solid ${({ theme }) => theme.border.subtle};
   transition: color 0.2s ease;
 
   &:hover {

@@ -4,11 +4,11 @@ import { GlobalStyle } from "./globalStyles";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import { Experience } from "./organisms/Experience";
-import { Projects } from "./organisms/Projects";
-import { Skills } from "./organisms/Skills";
-import { About } from "./organisms/About";
-import { Contact } from "./organisms/Contact";
+import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
+import { Skills } from "./components/Skills";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
 
 const PageMain = styled.main`
   width: 100%;

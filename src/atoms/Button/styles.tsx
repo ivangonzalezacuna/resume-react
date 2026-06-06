@@ -12,7 +12,9 @@ export const HrefBtn = styled.a<{ $variant?: BtnVariant }>`
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
   white-space: nowrap;
 
   ${({ $variant = "secondary", theme }) =>
@@ -22,7 +24,7 @@ export const HrefBtn = styled.a<{ $variant?: BtnVariant }>`
           border: 1px solid ${theme.accent.cyan};
           background: transparent;
           &:hover {
-            background: rgba(47, 217, 244, 0.08);
+            background: ${theme.accent.cyanAlpha};
           }
         `
       : css`
@@ -30,7 +32,7 @@ export const HrefBtn = styled.a<{ $variant?: BtnVariant }>`
           border: 1px solid ${theme.accent.slate};
           background: transparent;
           &:hover {
-            background: rgba(68, 71, 72, 0.3);
+            background: ${theme.accent.slateAlpha};
             color: ${theme.text.primary};
           }
         `}

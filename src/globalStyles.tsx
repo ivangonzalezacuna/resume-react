@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.surface.base};
-    background-image: radial-gradient(circle, #ffffff05 1px, transparent 1px);
+    background-image: radial-gradient(circle, ${({ theme }) => theme.border.dotGrid} 1px, transparent 1px);
     background-size: 8px 8px;
     color: ${({ theme }) => theme.text.primary};
     font-family: ${({ theme }) => theme.font.narrative};
@@ -33,6 +33,12 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid ${({ theme }) => theme.accent.cyan};
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   @media (prefers-reduced-motion: reduce) {

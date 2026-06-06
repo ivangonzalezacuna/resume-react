@@ -36,18 +36,10 @@ export const Hero = () => {
             <HrefButton href="#projects" variant="secondary">
               View Projects
             </HrefButton>
-            <HrefButton
-              href={social.github}
-              blankTarget
-              variant="secondary"
-            >
+            <HrefButton href={social.github} blankTarget variant="secondary">
               GitHub
             </HrefButton>
-            <HrefButton
-              href={social.linkedin}
-              blankTarget
-              variant="secondary"
-            >
+            <HrefButton href={social.linkedin} blankTarget variant="secondary">
               LinkedIn
             </HrefButton>
             <HrefButton href={cv} variant="secondary" download>

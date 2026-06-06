@@ -55,7 +55,8 @@ export const NavItem = styled.a<{ $active: boolean }>`
   font-family: ${({ theme }) => theme.font.narrative};
   font-size: 14px;
   font-weight: 500;
-  color: ${({ $active, theme }) => ($active ? theme.accent.cyan : theme.text.muted)};
+  color: ${({ $active, theme }) =>
+    $active ? theme.accent.cyan : theme.text.muted};
   transition: color 0.2s ease;
   cursor: pointer;
 

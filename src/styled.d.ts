@@ -7,16 +7,23 @@ declare module "styled-components" {
       low: string;
       mid: string;
       high: string;
+      overlay: string;
     };
     accent: {
       cyan: string;
       violet: string;
       teal: string;
       slate: string;
+      cyanAlpha: string;
+      slateAlpha: string;
     };
     text: {
       primary: string;
       muted: string;
+    };
+    border: {
+      subtle: string;
+      dotGrid: string;
     };
     space: {
       xs: string;

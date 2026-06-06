@@ -8,20 +8,20 @@ export const FooterContainer = styled.footer`
 
 export const FooterInner = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 24px;
 
   @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
     padding: 32px 48px;
-  }
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
   }
 `;
 
@@ -29,16 +29,22 @@ export const FooterLeft = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center;
 
-  @media (max-width: 480px) {
-    align-items: center;
+  @media (min-width: 768px) {
+    align-items: flex-start;
   }
 `;
 
 export const FooterRight = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
 `;
 
 export const CopyrightText = styled.small`
@@ -52,6 +58,7 @@ export const FooterLink = styled.a`
   display: flex;
   align-items: center;
   transition: color 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.accent.cyan};

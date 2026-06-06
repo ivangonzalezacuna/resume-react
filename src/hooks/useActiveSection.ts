@@ -38,7 +38,7 @@ export const useActiveSection = (): SectionId => {
         });
         updateActive();
       },
-      { threshold: thresholds }
+      { threshold: thresholds },
     );
 
     SECTIONS.forEach((id) => {

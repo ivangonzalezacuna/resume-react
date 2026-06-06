@@ -1,4 +1,10 @@
-import { LogoAnchor, LogoWord, Bracket, IvanText, LogoUnderline } from "./styles";
+import {
+  LogoAnchor,
+  LogoWord,
+  Bracket,
+  IvanText,
+  LogoUnderline,
+} from "./styles";
 
 export const Logo = () => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

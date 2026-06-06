@@ -1,5 +1,10 @@
 import { SectionId } from "../../hooks/useActiveSection";
-import { SidebarContainer, SidebarOverlay, SidebarNav, SidebarItem } from "./styles";
+import {
+  SidebarContainer,
+  SidebarOverlay,
+  SidebarNav,
+  SidebarItem,
+} from "./styles";
 
 const NAV_LINKS: { label: string; id: SectionId }[] = [
   { label: "Experience", id: "experience" },
@@ -16,7 +21,10 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: SectionId) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: SectionId,
+  ) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     close();
