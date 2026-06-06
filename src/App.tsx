@@ -3,6 +3,7 @@ import { Theme } from "./Theme";
 import { GlobalStyle } from "./globalStyles";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { Hero } from "./components/Hero";
 
 const PageMain = styled.main`
   width: 100%;
@@ -29,7 +30,7 @@ const App = () => {
       <GlobalStyle />
       <Navbar />
       <PageMain>
-        <Section id="hero" />
+        <Hero />
         <Section id="experience" />
         <Section id="projects" />
         <Section id="skills" />
