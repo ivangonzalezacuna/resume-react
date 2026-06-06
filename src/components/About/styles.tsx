@@ -70,11 +70,15 @@ export const Card = styled(motion.div)`
 
 export const CardHeader = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
   margin-bottom: 12px;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
 `;
 
 export const DegreeName = styled.h4`
@@ -89,9 +93,13 @@ export const DegreeName = styled.h4`
 export const MetaColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 4px;
   flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    align-items: flex-end;
+  }
 `;
 
 export const MonoTag = styled.span`
