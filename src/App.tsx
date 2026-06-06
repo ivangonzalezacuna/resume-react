@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Theme } from "./Theme";
 import { GlobalStyle } from "./globalStyles";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 const PageMain = styled.main`
   width: 100%;
@@ -25,6 +27,7 @@ const App = () => {
   return (
     <Theme>
       <GlobalStyle />
+      <Navbar />
       <PageMain>
         <Section id="hero" />
         <Section id="experience" />
@@ -33,6 +36,7 @@ const App = () => {
         <Section id="about" />
         <Section id="contact" />
       </PageMain>
+      <Footer />
     </Theme>
   );
 };

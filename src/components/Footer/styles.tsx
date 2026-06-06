@@ -2,43 +2,58 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  background: ${({ theme }) => theme.surface.low};
-  display: flex;
-  justify-content: center;
+  background-color: ${({ theme }) => theme.surface.low};
+  border-top: 1px solid ${({ theme }) => theme.accent.slate};
 `;
 
-export const FooterWrap = styled.div`
+export const FooterInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1100px;
-  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
 
-  @media screen and (max-width: 820px) {
+  @media (min-width: 768px) {
+    padding: 32px 48px;
+  }
+
+  @media (max-width: 480px) {
     flex-direction: column;
+    gap: 24px;
+    text-align: center;
   }
 `;
 
-export const Logo = styled.div`
-  color: ${({ theme }) => theme.text.primary};
-  font-size: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 8px 0;
+export const FooterLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (max-width: 480px) {
+    align-items: center;
+  }
 `;
 
-export const LogoImg = styled.img`
-  height: 23px;
-  width: auto;
-`;
-
-export const Copyright = styled.small`
-  color: ${({ theme }) => theme.text.primary};
-  margin: 8px 0;
+export const FooterRight = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 16px;
+`;
+
+export const CopyrightText = styled.small`
+  color: ${({ theme }) => theme.text.muted};
+  font-family: ${({ theme }) => theme.font.technical};
+  font-size: 12px;
+`;
+
+export const FooterLink = styled.a`
+  color: ${({ theme }) => theme.text.muted};
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent.cyan};
+  }
 `;

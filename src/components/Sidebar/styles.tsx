@@ -1,33 +1,49 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-export const Container = styled(motion.div)`
+export const SidebarOverlay = styled.div`
   position: fixed;
-  top: 8px;
-  right: 8px;
-  width: max-content;
-  border-radius: 10px;
-  z-index: 5;
+  inset: 0;
+  z-index: 98;
+  background: rgba(10, 12, 13, 0.6);
 `;
 
-export const Menu = styled(motion.div)`
-  margin: 50px 0 0 0;
-`;
-
-export const MenuItem = styled.div`
-  font-weight: 400;
-  margin: 5px 25px;
-  text-align: center;
-`;
-
-export const MenuItemLink = styled.a`
-  text-decoration: none;
-  font-size: 1.3rem;
-`;
-
-export const LanguagesWrapper = styled(motion.div)`
-  margin: 20px 10px 10px 10px;
+export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.surface.low};
+  border-left: 1px solid ${({ theme }) => theme.accent.slate};
+  z-index: 99;
   display: flex;
-  align-items: center;
-  justify-content: end;
+  flex-direction: column;
+  padding: 80px 24px 40px;
+  transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
+  transition: transform 0.3s ease;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SidebarNav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+`;
+
+export const SidebarItem = styled.a<{ $active: boolean }>`
+  text-decoration: none;
+  font-family: ${({ theme }) => theme.font.narrative};
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 0;
+  color: ${({ $active, theme }) => ($active ? theme.accent.cyan : theme.text.muted)};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.text.primary};
+  }
 `;

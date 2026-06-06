@@ -1,10 +1,19 @@
-import { Wrapper, Image } from "./styles";
-import LogoSvg from "../../images/background/logo.svg";
+import { LogoAnchor, LogoWord, Bracket, IvanText, LogoUnderline } from "./styles";
 
-export const Logo = (_props: { closeIfOpen?: () => void }) => {
+export const Logo = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <Wrapper href="#hero">
-      <Image src={LogoSvg} alt="logo" />
-    </Wrapper>
+    <LogoAnchor href="#hero" onClick={handleClick} aria-label="Back to top">
+      <LogoWord>
+        <Bracket>{"{"}</Bracket>
+        <IvanText>ivan</IvanText>
+        <Bracket>{"}"}</Bracket>
+      </LogoWord>
+      <LogoUnderline />
+    </LogoAnchor>
   );
 };
