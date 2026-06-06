@@ -1,1 +1,0 @@
-export { GoAboutOrganism } from "./GoAboutOrganism";

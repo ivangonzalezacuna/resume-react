@@ -1,62 +1,50 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
 
-export const Container = styled(motion.div)`
+export const SidebarOverlay = styled.div`
   position: fixed;
-  top: 8px;
-  right: 8px;
-  width: max-content;
-  border-radius: 10px;
-  z-index: 5;
-  background: ${({ theme }) =>
-    `linear-gradient(-45deg, ${theme.palette.primary.background},${theme.palette.accent.background},${theme.palette.accent.textDark})`};
-  animation: gradient 3s ease infinite;
+  inset: 0;
+  z-index: 98;
+  background: ${({ theme }) => theme.surface.overlay};
+`;
 
-  @keyframes gradient {
-    0% {
-      background-position: 30% 50%;
-    }
+export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.surface.low};
+  border-left: 1px solid ${({ theme }) => theme.accent.slate};
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 24px 40px;
+  transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
+  transition: transform 0.3s ease;
 
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 30% 50%;
-    }
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
-export const Menu = styled(motion.div)`
-  margin: 50px 0 0 0;
+export const SidebarNav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 `;
 
-export const MenuItem = styled.div`
-  font-weight: 400;
-  margin: 5px 25px;
-  text-align: center;
-
-  @media screen and (max-height: 300px) {
-    margin: 6px;
-  }
-`;
-
-export const MenuItemLink = styled(NavLink)`
+export const SidebarItem = styled.a<{ $active: boolean }>`
   text-decoration: none;
-  color: ${({ theme }) => theme.palette.primary.text};
-  transition: all 0.4s;
-  font-variant: small-caps;
-  font-size: 1.3rem;
+  font-family: ${({ theme }) => theme.font.narrative};
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 0;
+  color: ${({ $active, theme }) =>
+    $active ? theme.accent.cyan : theme.text.muted};
+  border-bottom: 1px solid ${({ theme }) => theme.border.subtle};
+  transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.accent.text};
+    color: ${({ theme }) => theme.text.primary};
   }
-`;
-
-export const LanguagesWrapper = styled(motion.div)`
-  margin: 20px 10px 10px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: end;
 `;

@@ -1,1 +1,0 @@
-export { TechBox } from "./TechBox";

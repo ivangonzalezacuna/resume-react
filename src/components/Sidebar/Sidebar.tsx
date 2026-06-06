@@ -1,44 +1,50 @@
-import { useTranslation } from "react-i18next";
-import { container, langs, menu } from "./animations";
+import type { MouseEvent } from "react";
+import { SectionId } from "../../hooks/useActiveSection";
 import {
-  Container,
-  Menu,
-  MenuItem,
-  MenuItemLink,
-  LanguagesWrapper,
+  SidebarContainer,
+  SidebarOverlay,
+  SidebarNav,
+  SidebarItem,
 } from "./styles";
-import { Languages } from "../../atoms";
 
-export const Sidebar = (props: {
+const NAV_LINKS: { label: string; id: SectionId }[] = [
+  { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
+  { label: "Skills", id: "skills" },
+  { label: "About", id: "about" },
+  { label: "Contact", id: "contact" },
+];
+
+interface SidebarProps {
   isOpen: boolean;
-  toggleIsOpen: () => void;
-}) => {
-  const { isOpen, toggleIsOpen } = props;
-  const [t] = useTranslation("nav");
-  const navs = t("info", { returnObjects: true });
+  close: () => void;
+  activeSection: SectionId;
+}
+
+export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    close();
+  };
 
   return (
-    <Container
-      initial="initial"
-      animate={isOpen ? "animate" : "close"}
-      variants={container}
-    >
-      <Menu variants={menu}>
-        {navs.map((nav) => (
-          <MenuItem key={nav.href}>
-            <MenuItemLink to={nav.href} onClick={toggleIsOpen}>
-              {nav.title}
-            </MenuItemLink>
-          </MenuItem>
-        ))}
-      </Menu>
-      <LanguagesWrapper
-        initial="initial"
-        animate={isOpen ? "animate" : "close"}
-        variants={langs}
-      >
-        <Languages onClick={toggleIsOpen} />
-      </LanguagesWrapper>
-    </Container>
+    <>
+      {isOpen && <SidebarOverlay onClick={close} />}
+      <SidebarContainer $isOpen={isOpen}>
+        <SidebarNav>
+          {NAV_LINKS.map(({ label, id }) => (
+            <SidebarItem
+              key={id}
+              href={`#${id}`}
+              $active={activeSection === id}
+              onClick={(e) => handleClick(e, id)}
+            >
+              {label}
+            </SidebarItem>
+          ))}
+        </SidebarNav>
+      </SidebarContainer>
+    </>
   );
 };

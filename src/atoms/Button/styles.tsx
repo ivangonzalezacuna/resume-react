@@ -1,68 +1,39 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled, { css } from "styled-components";
 
-export const ButtonWrapper = styled(motion.div)`
-  display: flex;
+type BtnVariant = "primary" | "secondary";
+
+export const HrefBtn = styled.a<{ $variant?: BtnVariant }>`
+  display: inline-flex;
   align-items: center;
-  justify-self: center;
-`;
-
-export const FormButtonWrapper = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 25px 0;
-`;
-
-export const HrefBtn = styled.a`
-  font-size: ${({ theme }) => theme.text.button.dynamic};
-  padding: 8px 20px;
-  background: ${({ theme }) => theme.palette.transparent};
-  color: ${({ theme }) => theme.palette.primary.text};
-  border: ${({ theme }) => `3px solid ${theme.palette.primary.text}`};
-  border-radius: 50px;
-  outline: none;
+  font-family: ${({ theme }) => theme.font.narrative};
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 4px;
   text-decoration: none;
-  transition: all 0.4s;
-  text-align: center;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
 
-  &:hover {
-    background: ${({ theme }) => theme.palette.secondary.background};
-    color: ${({ theme }) => theme.palette.secondary.text};
-    border: ${({ theme }) => `3px solid ${theme.palette.secondary.background}`};
-  }
-
-  @media screen and (max-width: 500px) {
-    padding: 8px 16px;
-  }
-
-  @media screen and (max-height: 300px) {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-`;
-
-export const FormBtn = styled.button`
-  font-size: ${({ theme }) => theme.text.button.dynamic};
-  padding: 8px 20px;
-  background: ${({ theme }) => theme.palette.transparent};
-  color: ${({ theme }) => theme.palette.primary.text};
-  border: ${({ theme }) => `3px solid ${theme.palette.primary.text}`};
-  border-radius: 50px;
-  outline: none;
-  text-decoration: none;
-  transition: all 0.4s;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ theme }) => theme.palette.secondary.background};
-    color: ${({ theme }) => theme.palette.secondary.text};
-    border: ${({ theme }) => `3px solid ${theme.palette.secondary.background}`};
-  }
-
-  @media screen and (max-width: 500px) {
-    padding: 8px 16px;
-  }
+  ${({ $variant = "secondary", theme }) =>
+    $variant === "primary"
+      ? css`
+          color: ${theme.accent.cyan};
+          border: 1px solid ${theme.accent.cyan};
+          background: transparent;
+          &:hover {
+            background: ${theme.accent.cyanAlpha};
+          }
+        `
+      : css`
+          color: ${theme.text.muted};
+          border: 1px solid ${theme.accent.slate};
+          background: transparent;
+          &:hover {
+            background: ${theme.accent.slateAlpha};
+            color: ${theme.text.primary};
+          }
+        `}
 `;

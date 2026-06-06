@@ -1,97 +1,95 @@
-import { motion, MotionProps } from "framer-motion";
-import {
-  HamburgerMenu,
-  LanguagesWrapper,
-  LinkContainer,
-  Nav,
-  NavItem,
-} from "./styles";
-import { Sidebar } from "../Sidebar";
+import { useState, useEffect } from "react";
 import { Logo } from "../Logo";
-import { Languages } from "../../atoms";
-import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { Sidebar } from "../Sidebar";
+import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
+import portfolio from "../../content/portfolio";
+import {
+  Nav,
+  NavInner,
+  NavLinks,
+  NavItem,
+  SocialLinks,
+  SocialLink,
+  HamburgerButton,
+} from "./styles";
+import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 
-const Stroke = (props: MotionProps) => {
-  return (
-    <motion.path
-      stroke="#f9f9f9"
-      fill="transparent"
-      strokeLinecap="round"
-      strokeWidth="3.5"
-      transition={{ duration: 0.3 }}
-      {...props}
-    />
-  );
-};
+const NAV_LINKS: { label: string; id: SectionId }[] = [
+  { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
+  { label: "Skills", id: "skills" },
+  { label: "About", id: "about" },
+  { label: "Contact", id: "contact" },
+];
 
-const MenuBars = ({ isOpen }: { isOpen: boolean }) => {
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <Stroke
-        animate={isOpen ? "open" : "closed"}
-        initial={false}
-        variants={{
-          closed: { d: "M 2 6.5 L 26 6.5" },
-          open: { d: "M 5.5 22.5 L 22.5 5.5" },
-        }}
-      />
-      <Stroke
-        animate={isOpen ? "open" : "closed"}
-        initial={false}
-        variants={{
-          closed: { opacity: 1, d: "M 6 14 L 26 14" },
-          open: { opacity: 0 },
-        }}
-      />
-      <Stroke
-        animate={isOpen ? "open" : "closed"}
-        initial={false}
-        variants={{
-          closed: { d: "M 4 21.5 L 26 21.5" },
-          open: { d: "M 5.5 5.5 L 22.5 22.5" },
-        }}
-      />
-    </svg>
-  );
-};
+export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const activeSection = useActiveSection();
 
-export const Navbar = (props: {
-  isOpen: boolean;
-  toggleIsOpen: () => void;
-}) => {
-  const location = useLocation();
-  const { isOpen, toggleIsOpen } = props;
-  const [t] = useTranslation("nav");
-  const navs = t("info", { returnObjects: true });
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const closeIfOpen = () => {
-    if (isOpen) {
-      toggleIsOpen();
-    }
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: SectionId,
+  ) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
-    <Nav isRootPath={location.pathname === "/"}>
-      <Logo closeIfOpen={closeIfOpen} />
-      <LinkContainer>
-        {navs.map((val) => (
-          <NavItem key={val.href} to={val.href}>
-            {val.title}
-          </NavItem>
-        ))}
-      </LinkContainer>
-      <HamburgerMenu
-        as="button"
-        onClick={props.toggleIsOpen}
-        aria-label={props.isOpen ? "Close menu" : "Open menu"}
-        aria-expanded={props.isOpen}
-      >
-        <MenuBars isOpen={props.isOpen} />
-      </HamburgerMenu>
-      <LanguagesWrapper>
-        <Languages />
-      </LanguagesWrapper>
-      <Sidebar {...props} />
-    </Nav>
+    <>
+      <Nav $scrolled={scrolled}>
+        <NavInner>
+          <Logo />
+          <NavLinks>
+            {NAV_LINKS.map(({ label, id }) => (
+              <NavItem
+                key={id}
+                href={`#${id}`}
+                $active={activeSection === id}
+                onClick={(e) => handleNavClick(e, id)}
+              >
+                {label}
+              </NavItem>
+            ))}
+          </NavLinks>
+          <SocialLinks>
+            <SocialLink
+              href={portfolio.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+            >
+              <FiGithub size={18} />
+            </SocialLink>
+            <SocialLink
+              href={portfolio.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <FiLinkedin size={18} />
+            </SocialLink>
+          </SocialLinks>
+          <HamburgerButton
+            aria-label={sidebarOpen ? "Close menu" : "Open menu"}
+            aria-expanded={sidebarOpen}
+            onClick={() => setSidebarOpen((v) => !v)}
+          >
+            {sidebarOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+          </HamburgerButton>
+        </NavInner>
+      </Nav>
+      <Sidebar
+        isOpen={sidebarOpen}
+        close={() => setSidebarOpen(false)}
+        activeSection={activeSection}
+      />
+    </>
   );
 };

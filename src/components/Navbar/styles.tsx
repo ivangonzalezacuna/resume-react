@@ -1,72 +1,102 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled, { css } from "styled-components";
 
-interface CustomProps {
-  current?: boolean;
-  isRootPath?: boolean;
-}
-
-export const Nav = styled.div<CustomProps>`
+export const Nav = styled.nav<{ $scrolled: boolean }>`
   position: fixed;
   top: 0;
+  left: 0;
   right: 0;
-  width: 100vw;
-  height: 60px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  ${({ $scrolled, theme }) =>
+    $scrolled
+      ? css`
+          background-color: ${theme.surface.low};
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid ${theme.accent.slate};
+        `
+      : css`
+          background-color: transparent;
+          border-bottom: 1px solid transparent;
+        `}
+`;
+
+export const NavInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme, isRootPath }) =>
-    isRootPath ? theme.palette.transparent : theme.palette.primary.background};
-  z-index: 1;
-  transition: ${({ isRootPath }) => (isRootPath ? "all 0.5s" : "all 0.5s")};
-`;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
 
-export const LinkContainer = styled.div`
-  justify-self: center;
-  display: flex;
-  flex-direction: row;
-
-  @media screen and (max-width: 480px) {
-    display: none;
+  @media (min-width: 768px) {
+    padding: 0 48px;
   }
 `;
 
-export const NavItem = styled(NavLink)`
-  color: ${({ theme }) => theme.palette.primary.text};
-  display: flex;
-  align-items: center;
-  margin: 0 0.8rem;
-  height: 100%;
-  cursor: pointer;
+export const NavLinks = styled.div`
+  display: none;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const NavItem = styled.a<{ $active: boolean }>`
   text-decoration: none;
-  transition: all 0.4s;
-  font-size: 18px;
-  font-variant: small-caps;
+  font-family: ${({ theme }) => theme.font.narrative};
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ $active, theme }) =>
+    $active ? theme.accent.cyan : theme.text.muted};
+  transition: color 0.2s ease;
+  cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.accent.text};
+    color: ${({ theme }) => theme.text.primary};
   }
 `;
 
-export const LanguagesWrapper = styled.div`
+export const SocialLinks = styled.div`
+  display: none;
+  gap: 16px;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const SocialLink = styled.a`
+  color: ${({ theme }) => theme.text.muted};
   display: flex;
   align-items: center;
-  margin: 0 1rem;
-  text-decoration: none;
+  transition: color 0.2s ease;
 
-  @media screen and (max-width: 480px) {
-    display: none;
+  &:hover {
+    color: ${({ theme }) => theme.accent.cyan};
   }
 `;
 
-export const HamburgerMenu = styled.div`
-  display: none;
+export const HamburgerButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: ${({ theme }) => theme.text.primary};
+  padding: 4px;
 
-  @media screen and (max-width: 480px) {
-    display: block;
-    justify-self: end;
-    margin: 0 1rem 0 0;
-    z-index: 10;
-    cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
   }
 `;

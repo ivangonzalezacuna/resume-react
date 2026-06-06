@@ -1,36 +1,50 @@
-import { useTranslation } from "react-i18next";
+import portfolio from "../../content/portfolio";
+import { Logo } from "../Logo";
 import {
-  Copyright,
   FooterContainer,
-  FooterWrap,
-  Logo,
-  LogoImg,
+  FooterInner,
+  FooterLeft,
+  FooterRight,
+  CopyrightText,
+  FooterLink,
 } from "./styles";
-import { RiCopyrightLine } from "react-icons/ri";
-import LogoSvg from "../../images/background/logo.svg";
-import { ResumeIcon } from "../../atoms";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-  const [t] = useTranslation("footer");
+  const year = new Date().getFullYear();
 
   return (
     <FooterContainer>
-      <FooterWrap>
-        <Logo onClick={scrollToTop}>
-          <LogoImg src={LogoSvg} alt="logo" />
-        </Logo>
-        <Copyright>
-          <RiCopyrightLine style={{ marginRight: "4px" }} />
-          {new Date().getFullYear()} {t("text")}
-        </Copyright>
-        <ResumeIcon />
-      </FooterWrap>
+      <FooterInner>
+        <FooterLeft>
+          <Logo />
+          <CopyrightText>&copy; {year} Iván González Acuña</CopyrightText>
+        </FooterLeft>
+        <FooterRight>
+          <FooterLink
+            href={portfolio.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <FiGithub size={18} />
+          </FooterLink>
+          <FooterLink
+            href={portfolio.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FiLinkedin size={18} />
+          </FooterLink>
+          <FooterLink
+            href={`mailto:${portfolio.social.email}`}
+            aria-label="Send email"
+          >
+            <FiMail size={18} />
+          </FooterLink>
+        </FooterRight>
+      </FooterInner>
     </FooterContainer>
   );
 };

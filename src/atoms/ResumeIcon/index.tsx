@@ -1,1 +1,0 @@
-export { ResumeIcon } from "./ResumeIcon";
