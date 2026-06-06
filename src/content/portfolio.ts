@@ -17,7 +17,7 @@ const portfolio = {
     email: "ivangonzalezacuna@gmail.com",
   },
 
-  cv: "/pdf/resume.pdf",
+  cv: "/pdf/CV_IvanGonzalezAcuna.pdf",
 
   experience: [
     {
