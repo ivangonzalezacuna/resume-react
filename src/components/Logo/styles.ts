@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled(NavLink)`
+export const Wrapper = styled.a`
   text-decoration: none;
   cursor: pointer;
   justify-self: start;

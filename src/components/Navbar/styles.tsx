@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 
-interface CustomProps {
-  current?: boolean;
-  isRootPath?: boolean;
-}
-
-export const Nav = styled.div<CustomProps>`
+export const Nav = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -15,10 +9,7 @@ export const Nav = styled.div<CustomProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme, isRootPath }) =>
-    isRootPath ? theme.palette.transparent : theme.palette.primary.background};
   z-index: 1;
-  transition: ${({ isRootPath }) => (isRootPath ? "all 0.5s" : "all 0.5s")};
 `;
 
 export const LinkContainer = styled.div`
@@ -31,21 +22,14 @@ export const LinkContainer = styled.div`
   }
 `;
 
-export const NavItem = styled(NavLink)`
-  color: ${({ theme }) => theme.palette.primary.text};
+export const NavItem = styled.a`
   display: flex;
   align-items: center;
   margin: 0 0.8rem;
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.4s;
   font-size: 18px;
-  font-variant: small-caps;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.accent.text};
-  }
 `;
 
 export const LanguagesWrapper = styled.div`

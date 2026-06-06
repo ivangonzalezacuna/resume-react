@@ -1,9 +1,9 @@
-import { Image, Wrapper } from "./styles";
+import { Wrapper, Image } from "./styles";
 import LogoSvg from "../../images/background/logo.svg";
 
-export const Logo = ({ closeIfOpen }: { closeIfOpen: () => void }) => {
+export const Logo = (_props: { closeIfOpen?: () => void }) => {
   return (
-    <Wrapper to="/" onClick={closeIfOpen}>
+    <Wrapper href="#hero">
       <Image src={LogoSvg} alt="logo" />
     </Wrapper>
   );

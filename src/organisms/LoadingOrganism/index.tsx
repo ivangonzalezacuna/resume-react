@@ -1,1 +1,0 @@
-export { LoadingOrganism } from "./LoadingOrganism";

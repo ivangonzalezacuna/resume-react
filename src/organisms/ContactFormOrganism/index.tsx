@@ -1,1 +1,0 @@
-export { ContactFormOrganism } from "./ContactFormOrganism";
