@@ -4,11 +4,11 @@ const portfolio = {
     title: "Software Engineer",
     location: "Leipzig, Germany",
     summary:
-      "Software Engineer with 6+ years of experience building backend systems (Go, Python) " +
-      "and web applications (TypeScript, React). Focused on platform engineering, developer " +
-      "experience, and internal tooling. With a track record of simplifying infrastructure, " +
-      "accelerating developer workflows, and shipping production-grade systems across the " +
-      "full stack.",
+      "Software Engineer with 6+ years building the tools and platforms that engineering " +
+      "teams depend on. Specialised in platform engineering and developer experience — " +
+      "Go backends, Kubernetes infrastructure, CI/CD workflows, and internal tooling. " +
+      "Track record of shipping production systems that reduce friction, accelerate delivery, " +
+      "and raise the engineering floor for the teams around me.",
   },
 
   social: {
@@ -30,10 +30,20 @@ const portfolio = {
           duration: "Jan 2026 – Present",
           description: [
             "Part of the Engineering Enablement team within the Platform tribe, focused on developer tooling and platform infrastructure.",
+            "Implemented feature flags infrastructure, enabling safe and incremental rollout of new capabilities across engineering teams.",
+            "Built the infrastructure and tooling to integrate load testing as a standard part of the developers' workflow.",
+            "Adopted Claude Code into my personal development workflow, using AI-assisted iteration to accelerate problem-solving and code delivery.",
           ],
         },
       ],
-      technologies: ["Go", "CI/CD", "ArgoCD", "Kubernetes", "Datadog"],
+      technologies: [
+        "Go",
+        "CI/CD",
+        "ArgoCD",
+        "Kubernetes",
+        "Datadog",
+        "Claude Code",
+      ],
     },
     {
       company: "Spreadgroup",
@@ -123,31 +133,32 @@ const portfolio = {
       url: "",
     },
     {
-      title: "Platform Engineering CLI Tooling",
+      title: "QA Platform Modernisation",
       summary:
-        "Designed and built Go CLI tools that abstracted complex Kubernetes and Vault interactions, " +
-        "reducing cognitive load for development teams and standardising infrastructure workflows.",
+        "Led the migration of Spreadgroup's QA infrastructure from a legacy Angular+Java service to a " +
+        "Backstage-based frontend and a purpose-built Go backend, unlocking developer self-service " +
+        "and dramatically improving platform reliability.",
       highlights: [
-        "Standardised infrastructure interactions across multiple teams through opinionated, convention-driven defaults",
-        "Reduced manual configuration steps and eliminated a class of environment provisioning errors",
-        "Integrated with CI/CD pipelines to enable automated, repeatable environment setup",
+        "Reduced average machine error rate from ~30% to ~3% through automated stability testing on provisioned environments",
+        "Enabled developers to self-service: provision machines, deploy and auto-update services, and test features with work-in-progress code",
+        "Built Go tooling to manage application deployments into Kubernetes clusters via ArgoCD, handling lifecycle operations end-to-end",
+        "Improved modularity and long-term maintainability by splitting the system into a dedicated Backstage frontend and Go backend",
       ],
-      technologies: ["Go", "Kubernetes", "Vault", "Docker", "ArgoCD"],
+      technologies: ["Go", "Backstage", "ArgoCD", "Kubernetes"],
       url: "",
     },
     {
-      title: "IoT Anomaly Detection System",
+      title: "Personal Portfolio Website",
       summary:
-        "Developed an anomaly detection algorithm for industrial IoT monitoring during an internship " +
-        "at Muutech, applying statistical and ML techniques to identify irregular patterns in " +
-        "real-time sensor data streams.",
+        "Designed and built this portfolio site from scratch with React and TypeScript, featuring " +
+        "smooth animations, a responsive layout, and AI-assisted content refinement.",
       highlights: [
-        "Designed time-series analysis pipeline in Python and R for continuous sensor data",
-        "Integrated output with existing monitoring infrastructure for real-time alerting",
-        "Delivered as part of a university–industry research collaboration",
+        "Built with React, TypeScript, Vite, and Framer Motion for a polished, performant experience",
+        "Deployed on Netlify with CI/CD integration and automated previews on every pull request",
+        "Leveraged Claude (Anthropic) to assist with copy writing and iterative content refinement",
       ],
-      technologies: ["Python", "R"],
-      url: "",
+      technologies: ["React", "TypeScript", "Vite", "Netlify", "Claude Code"],
+      url: "https://github.com/ivangonzalezacuna/resume-react",
     },
   ],
 
@@ -166,9 +177,9 @@ const portfolio = {
         "Kubernetes",
         "Backstage",
         "ArgoCD",
-        "Vault",
         "Docker",
         "Linux",
+        "Vault",
       ],
     },
     {
@@ -187,7 +198,7 @@ const portfolio = {
     },
     {
       category: "Tools",
-      technologies: ["Git", "Jira"],
+      technologies: ["Git", "Claude Code", "Linear", "Jira"],
     },
   ],
 
