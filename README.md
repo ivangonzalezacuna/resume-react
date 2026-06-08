@@ -1,23 +1,53 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ivangonzalezacuna/resume-react)
-![GitHub](https://img.shields.io/github/license/ivangonzalezacuna/resume-react)
-[![Netlify Status Develop](https://api.netlify.com/api/v1/badges/f90f7c25-0283-4c9c-96b5-9aa8bb5014db/deploy-status)](https://app.netlify.com/sites/ivan-gonzalez/deploys)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f90f7c25-0283-4c9c-96b5-9aa8bb5014db/deploy-status)](https://app.netlify.com/sites/ivan-gonzalez/deploys)
 
-# Resume
+# Iván González Acuña — Personal Portfolio
 
-Resume built with React and Typescript and hosted in Netlify.
+Personal portfolio and resume site built with React 19 and TypeScript, hosted on Netlify.
 
-This project was bootstrapped with [Vite](https://vitejs.dev/) using the template for `Typescript`.
+**Live site:** [ivangonzalezacuna.com](https://ivangonzalezacuna.com)
+
+## Tech stack
+
+- **React 19** + **TypeScript** — component framework
+- **Vite** — build tooling and dev server
+- **styled-components** — CSS-in-JS styling
+- **framer-motion** — animations and transitions
+- **Netlify** — hosting and continuous deployment
 
 ## Run locally
 
-To run the code locally, first clone the repo, the execute `yarn install` and finally `yarn start`.
+Clone the repo, install dependencies, then start the dev server:
 
-Another option is executing `yarn build:serve`, which will first build the project and the serve it.
+```bash
+yarn install
+yarn start
+```
 
-## Interesting scripts
+To preview a production build locally:
 
-- `yarn build:serve`: Builds the app and serves it. The final URLs where the website is accesible will be printed in the terminal.
-- `yarn dev`: In case you have a Netlify account, you can connect it and then deploy it using Netlify.
-- `yarn lint:fix`: Checks all the linting errors and tries to fix all of them.
-- `yarn prettier:fix`: Similar, but in this case it fixes all the prettier format errors found.
-- `yarn check:full`: Simulates the pipeline executed on every commit. It checks the typing, the linting and the code format.
+```bash
+yarn build
+yarn preview
+```
+
+## Scripts
+
+| Script | Description |
+|---|---|
+| `yarn start` | Start the Vite dev server |
+| `yarn build` | Type-check and build for production |
+| `yarn preview` | Serve the production build locally |
+| `yarn dev` | Run via Netlify CLI (respects `_redirects` and Netlify config) |
+| `yarn lint:fix` | Fix ESLint errors automatically |
+| `yarn prettier:fix` | Fix Prettier formatting issues |
+| `yarn check:full` | Full CI check — type-check, lint, and format |
+
+## Features
+
+- SEO optimised — canonical URL, Open Graph, Twitter Card meta tags
+- Sitemap and `robots.txt` for search engine indexing
+- PWA-ready — web app manifest and full favicon set
+- Downloadable CV (`/pdf/CV_IvanGonzalezAcuna.pdf`)
+- Responsive layout with smooth scroll navigation
