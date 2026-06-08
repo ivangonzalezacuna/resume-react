@@ -34,15 +34,15 @@ yarn preview
 
 ## Scripts
 
-| Script | Description |
-|---|---|
-| `yarn start` | Start the Vite dev server |
-| `yarn build` | Type-check and build for production |
-| `yarn preview` | Serve the production build locally |
-| `yarn dev` | Run via Netlify CLI (respects `_redirects` and Netlify config) |
-| `yarn lint:fix` | Fix ESLint errors automatically |
-| `yarn prettier:fix` | Fix Prettier formatting issues |
-| `yarn check:full` | Full CI check — type-check, lint, and format |
+| Script              | Description                                                    |
+| ------------------- | -------------------------------------------------------------- |
+| `yarn start`        | Start the Vite dev server                                      |
+| `yarn build`        | Type-check and build for production                            |
+| `yarn preview`      | Serve the production build locally                             |
+| `yarn dev`          | Run via Netlify CLI (respects `_redirects` and Netlify config) |
+| `yarn lint:fix`     | Fix ESLint errors automatically                                |
+| `yarn prettier:fix` | Fix Prettier formatting issues                                 |
+| `yarn check:full`   | Full CI check — type-check, lint, and format                   |
 
 ## Features
 
