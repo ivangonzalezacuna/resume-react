@@ -1,5 +1,5 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ivangonzalezacuna/resume-react)
-![GitHub](https://img.shields.io/github/license/ivangonzalezacuna/resume-react)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f90f7c25-0283-4c9c-96b5-9aa8bb5014db/deploy-status)](https://app.netlify.com/sites/ivan-gonzalez/deploys)
 
 # Iván González Acuña — Personal Portfolio
