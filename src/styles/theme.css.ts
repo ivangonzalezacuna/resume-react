@@ -15,6 +15,7 @@ export const themeContract = createThemeContract({
     slate: null,
     cyanAlpha: null,
     slateAlpha: null,
+    tealAlpha: null,
   },
   text: {
     primary: null,

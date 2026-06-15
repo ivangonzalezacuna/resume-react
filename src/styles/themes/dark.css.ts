@@ -17,6 +17,7 @@ export const darkTheme = createTheme(themeContract, {
     slate: "#444748",
     cyanAlpha: "rgba(47,217,244,0.08)",
     slateAlpha: "rgba(68,71,72,0.3)",
+    tealAlpha: "rgba(13,148,136,0.082)",
   },
   text: {
     primary: "#E6EDF3",

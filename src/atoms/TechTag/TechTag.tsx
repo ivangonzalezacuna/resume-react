@@ -1,3 +1,5 @@
-import { Tech } from "./styles";
+import { techTagStyle } from "./TechTag.css";
 
-export const TechTag = ({ name }: { name: string }) => <Tech>{name}</Tech>;
+export const TechTag = ({ name }: { name: string }) => (
+  <span className={techTagStyle}>{name}</span>
+);

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { HrefBtn } from "./styles";
+import { hrefBtnStyle } from "./Button.css";
 
 export type HrefButtonProps = {
   href: string;
@@ -17,14 +17,14 @@ export const HrefButton = ({
   children,
 }: HrefButtonProps) => {
   return (
-    <HrefBtn
+    <a
       href={href}
-      $variant={variant}
+      className={hrefBtnStyle[variant]}
       target={blankTarget ? "_blank" : undefined}
       rel={blankTarget ? "noopener noreferrer" : undefined}
       download={download ? true : undefined}
     >
       {children}
-    </HrefBtn>
+    </a>
   );
 };

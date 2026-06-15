@@ -1,16 +1,18 @@
-import { Title, Wrapper } from "./styles";
+import { m } from "framer-motion";
+import { titleStyle, wrapperStyle } from "./SectionTitle.css";
 
 export const SectionTitle = ({ title }: { title: string }) => {
   return (
-    <Wrapper>
-      <Title
+    <div className={wrapperStyle}>
+      <m.h2
+        className={titleStyle}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {title}
-      </Title>
-    </Wrapper>
+      </m.h2>
+    </div>
   );
 };
