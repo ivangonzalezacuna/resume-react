@@ -1,66 +1,70 @@
+import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
 import {
-  ExperienceSection,
-  SectionInner,
-  Card,
-  CardHeader,
-  CompanyName,
-  MetaRow,
-  MonoTag,
-  RoleDivider,
-  RoleBlock,
-  RoleHeader,
-  RoleTitle,
-  RoleDuration,
-  DescriptionList,
-  DescriptionItem,
-  TagRow,
-} from "./styles";
+  experienceSection,
+  sectionInner,
+  card,
+  cardHeader,
+  companyName,
+  metaRow,
+  monoTag,
+  roleDivider,
+  roleBlock,
+  roleHeader,
+  roleTitle,
+  roleDuration,
+  descriptionList,
+  descriptionItem,
+  tagRow,
+} from "./Experience.css";
 
 export const Experience = () => {
   return (
-    <ExperienceSection id="experience">
-      <SectionInner>
+    <section id="experience" className={experienceSection}>
+      <div className={sectionInner}>
         <SectionTitle title="Experience" />
         {portfolio.experience.map((entry) => (
-          <Card
+          <m.div
             key={entry.company}
+            className={card}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <CardHeader>
-              <CompanyName>{entry.company}</CompanyName>
-              <MetaRow>
-                <MonoTag>{entry.location}</MonoTag>
-                <MonoTag>{entry.duration}</MonoTag>
-              </MetaRow>
-            </CardHeader>
+            <div className={cardHeader}>
+              <h3 className={companyName}>{entry.company}</h3>
+              <div className={metaRow}>
+                <span className={monoTag}>{entry.location}</span>
+                <span className={monoTag}>{entry.duration}</span>
+              </div>
+            </div>
             {entry.roles.map((role, i) => (
-              <RoleBlock key={role.title}>
-                {i > 0 && <RoleDivider />}
-                <RoleHeader>
-                  <RoleTitle>{role.title}</RoleTitle>
-                  <RoleDuration>{role.duration}</RoleDuration>
-                </RoleHeader>
-                <DescriptionList>
+              <div key={role.title} className={roleBlock}>
+                {i > 0 && <hr className={roleDivider} />}
+                <div className={roleHeader}>
+                  <span className={roleTitle}>{role.title}</span>
+                  <span className={roleDuration}>{role.duration}</span>
+                </div>
+                <ul className={descriptionList}>
                   {role.description.map((line) => (
-                    <DescriptionItem key={line}>{line}</DescriptionItem>
+                    <li key={line} className={descriptionItem}>
+                      {line}
+                    </li>
                   ))}
-                </DescriptionList>
-              </RoleBlock>
+                </ul>
+              </div>
             ))}
-            <TagRow>
+            <div className={tagRow}>
               {entry.technologies.map((tech) => (
                 <TechTag key={tech} name={tech} />
               ))}
-            </TagRow>
-          </Card>
+            </div>
+          </m.div>
         ))}
-      </SectionInner>
-    </ExperienceSection>
+      </div>
+    </section>
   );
 };

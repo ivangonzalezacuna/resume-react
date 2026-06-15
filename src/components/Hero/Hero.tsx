@@ -1,17 +1,18 @@
+import { m } from "framer-motion";
 import portfolio from "../../content/portfolio";
 import { HrefButton } from "../../atoms/Button";
 import {
-  HeroSection,
-  HeroInner,
-  LeftBlock,
-  HeroName,
-  HeroRole,
-  HeroSummary,
-  CTARow,
-  RightBlock,
-  ProfileImageWrapper,
-  ProfileImage,
-} from "./styles";
+  heroSection,
+  heroInner,
+  leftBlock,
+  heroName,
+  heroRole,
+  heroSummary,
+  ctaRow,
+  rightBlock,
+  profileImageWrapper,
+  profileImage,
+} from "./Hero.css";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -23,13 +24,13 @@ export const Hero = () => {
   const { personal, social, cv } = portfolio;
 
   return (
-    <HeroSection id="hero">
-      <HeroInner>
-        <LeftBlock {...fadeUp}>
-          <HeroRole>{personal.title}</HeroRole>
-          <HeroName>{personal.name}</HeroName>
-          <HeroSummary>{personal.summary}</HeroSummary>
-          <CTARow>
+    <section id="hero" className={heroSection}>
+      <div className={heroInner}>
+        <m.div className={leftBlock} {...fadeUp}>
+          <p className={heroRole}>{personal.title}</p>
+          <h1 className={heroName}>{personal.name}</h1>
+          <p className={heroSummary}>{personal.summary}</p>
+          <div className={ctaRow}>
             <HrefButton href="#experience" variant="primary">
               View Experience
             </HrefButton>
@@ -45,24 +46,26 @@ export const Hero = () => {
             <HrefButton href={cv} variant="secondary" download>
               Download CV
             </HrefButton>
-          </CTARow>
-        </LeftBlock>
+          </div>
+        </m.div>
 
-        <RightBlock
+        <m.div
+          className={rightBlock}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
         >
-          <ProfileImageWrapper>
-            <ProfileImage
+          <div className={profileImageWrapper}>
+            <img
+              className={profileImage}
               src="/images/profile/ivan.jpg"
               alt="Iván González Acuña — Software Engineer"
               width={560}
               height={560}
             />
-          </ProfileImageWrapper>
-        </RightBlock>
-      </HeroInner>
-    </HeroSection>
+          </div>
+        </m.div>
+      </div>
+    </section>
   );
 };
