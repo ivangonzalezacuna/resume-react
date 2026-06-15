@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { themeContract } from "../../styles/theme.css";
 
 export const contactSection = style({
@@ -91,29 +91,4 @@ export const channelMeta = style({
       color: themeContract.accent.cyan,
     },
   },
-});
-
-const copyButtonBase = style({
-  background: "none",
-  border: "none",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "8px",
-  marginLeft: "12px",
-  flexShrink: 0,
-  transition: "color 0.2s ease",
-  ":hover": {
-    color: themeContract.accent.cyan,
-  },
-  ":focus-visible": {
-    outline: `1px solid ${themeContract.accent.cyan}`,
-    outlineOffset: "2px",
-  },
-});
-
-export const copyButton = styleVariants({
-  default: [copyButtonBase, { color: themeContract.text.muted }],
-  copied: [copyButtonBase, { color: themeContract.accent.cyan }],
 });
