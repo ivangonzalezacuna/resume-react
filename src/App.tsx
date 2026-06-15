@@ -1,5 +1,4 @@
 import { LazyMotion, domAnimation } from "framer-motion";
-import { Theme } from "./Theme";
 import { darkTheme } from "./styles/themes/dark.css";
 import "./styles/global.css";
 import { Navbar } from "./components/Navbar";
@@ -14,20 +13,18 @@ import { Contact } from "./components/Contact";
 const App = () => {
   return (
     <div className={darkTheme}>
-      <Theme>
-        <LazyMotion features={domAnimation}>
-          <Navbar />
-          <main style={{ width: "100%", minHeight: "100vh" }}>
-            <Hero />
-            <Experience />
-            <Projects />
-            <Skills />
-            <About />
-            <Contact />
-          </main>
-          <Footer />
-        </LazyMotion>
-      </Theme>
+      <LazyMotion features={domAnimation}>
+        <Navbar />
+        <main style={{ width: "100%", minHeight: "100vh" }}>
+          <Hero />
+          <Experience />
+          <Projects />
+          <Skills />
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+      </LazyMotion>
     </div>
   );
 };
