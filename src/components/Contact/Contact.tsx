@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { m } from "framer-motion";
-import { FiCopy, FiCheck } from "react-icons/fi";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
 import {
@@ -13,14 +11,12 @@ import {
   channelAnchor,
   channelName,
   channelMeta,
-  copyButton,
 } from "./Contact.css";
 
 type Channel = {
   label: string;
   meta: string;
   href: string;
-  copyValue?: string;
 };
 
 const channels: Channel[] = [
@@ -28,7 +24,6 @@ const channels: Channel[] = [
     label: "Email",
     meta: "Direct message — preferred for first contact",
     href: `mailto:${portfolio.social.email}`,
-    copyValue: portfolio.social.email,
   },
   {
     label: "LinkedIn",
@@ -43,15 +38,6 @@ const channels: Channel[] = [
 ];
 
 export const Contact = () => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = (value: string) => {
-    navigator.clipboard.writeText(value).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    });
-  };
-
   return (
     <section id="contact" className={contactSection}>
       <div className={sectionInner}>
@@ -89,15 +75,7 @@ export const Contact = () => {
                     <span className={channelName}>{channel.label}</span>
                     <span className={channelMeta}>{channel.meta}</span>
                   </a>
-                  {channel.copyValue && (
-                    <button
-                      className={copyButton[copied ? "copied" : "default"]}
-                      onClick={() => handleCopy(channel.copyValue!)}
-                      aria-label="Copy email address"
-                    >
-                      {copied ? <FiCheck size={16} /> : <FiCopy size={16} />}
-                    </button>
-                  )}
+
                 </div>
               </m.li>
             );
