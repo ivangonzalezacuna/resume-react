@@ -5,7 +5,10 @@ import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import { darkTheme } from "./styles/themes/dark.css";
 import App from "./App";
+
+document.documentElement.classList.add(darkTheme);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,

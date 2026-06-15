@@ -1,7 +1,5 @@
-import styled from "styled-components";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Theme } from "./Theme";
-import { GlobalStyle } from "./globalStyles";
 import { darkTheme } from "./styles/themes/dark.css";
 import "./styles/global.css";
 import { Navbar } from "./components/Navbar";
@@ -13,26 +11,20 @@ import { Skills } from "./components/Skills";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 
-const PageMain = styled.main`
-  width: 100%;
-  min-height: 100vh;
-`;
-
 const App = () => {
   return (
     <div className={darkTheme}>
       <Theme>
-        <GlobalStyle />
         <LazyMotion features={domAnimation}>
           <Navbar />
-          <PageMain>
+          <main style={{ width: "100%", minHeight: "100vh" }}>
             <Hero />
             <Experience />
             <Projects />
             <Skills />
             <About />
             <Contact />
-          </PageMain>
+          </main>
           <Footer />
         </LazyMotion>
       </Theme>
