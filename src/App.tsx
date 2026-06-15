@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { Theme } from "./Theme";
 import { GlobalStyle } from "./globalStyles";
 import { Navbar } from "./components/Navbar";
@@ -19,16 +20,18 @@ const App = () => {
   return (
     <Theme>
       <GlobalStyle />
-      <Navbar />
-      <PageMain>
-        <Hero />
-        <Experience />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
-      </PageMain>
-      <Footer />
+      <LazyMotion features={domAnimation}>
+        <Navbar />
+        <PageMain>
+          <Hero />
+          <Experience />
+          <Projects />
+          <Skills />
+          <About />
+          <Contact />
+        </PageMain>
+        <Footer />
+      </LazyMotion>
     </Theme>
   );
 };

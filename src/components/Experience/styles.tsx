@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const ExperienceSection = styled.section`
   width: 100%;
@@ -20,7 +20,7 @@ export const SectionInner = styled.div`
   margin: 0 auto;
 `;
 
-export const Card = styled(motion.div)`
+export const Card = styled(m.div)`
   padding: 1.5rem;
   margin-top: 1.5rem;
   border: 1px solid ${({ theme }) => theme.accent.slate};

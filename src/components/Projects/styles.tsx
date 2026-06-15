@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const ProjectsSection = styled.section`
   width: 100%;
@@ -31,7 +31,7 @@ export const ProjectGrid = styled.div`
   }
 `;
 
-export const Card = styled(motion.div)`
+export const Card = styled(m.div)`
   padding: 1.5rem;
   border: 1px solid ${({ theme }) => theme.accent.slate};
   border-radius: 4px;

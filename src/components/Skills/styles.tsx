@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const SkillsSection = styled.section`
   width: 100%;
@@ -35,7 +35,7 @@ export const SkillsGrid = styled.div`
   }
 `;
 
-export const CategoryColumn = styled(motion.div)`
+export const CategoryColumn = styled(m.div)`
   padding: 1rem;
   border: 1px solid ${({ theme }) => theme.accent.slate};
   border-radius: 4px;

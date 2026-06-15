@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const HeroSection = styled.section`
   width: 100%;
@@ -34,7 +34,7 @@ export const HeroInner = styled.div`
   }
 `;
 
-export const LeftBlock = styled(motion.div)`
+export const LeftBlock = styled(m.div)`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -77,7 +77,7 @@ export const CTARow = styled.div`
   margin-top: 8px;
 `;
 
-export const RightBlock = styled(motion.div)`
+export const RightBlock = styled(m.div)`
   display: flex;
   justify-content: center;
   align-items: center;

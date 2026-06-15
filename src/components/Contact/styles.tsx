@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const ContactSection = styled.section`
   width: 100%;
@@ -21,7 +21,7 @@ export const SectionInner = styled.div`
   margin: 0 auto;
 `;
 
-export const Callout = styled(motion.p)`
+export const Callout = styled(m.p)`
   font-family: ${({ theme }) => theme.font.narrative};
   font-size: 1.125rem;
   color: ${({ theme }) => theme.text.muted};
@@ -39,7 +39,7 @@ export const LinkList = styled.ul`
   gap: 0;
 `;
 
-export const LinkItem = styled(motion.li)`
+export const LinkItem = styled(m.li)`
   border-bottom: 1px solid ${({ theme }) => theme.border.subtle};
 
   &:first-child {

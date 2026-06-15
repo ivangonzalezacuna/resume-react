@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const Wrapper = styled.div`
   margin-bottom: 32px;
 `;
 
-export const Title = styled(motion.h2)`
+export const Title = styled(m.h2)`
   font-family: ${({ theme }) => theme.font.narrative};
   font-size: 28px;
   font-weight: 700;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const AboutSection = styled.section`
   width: 100%;
@@ -56,7 +56,7 @@ export const SubHeading = styled.h3`
   border-bottom: 1px solid ${({ theme }) => theme.accent.slate};
 `;
 
-export const Card = styled(motion.div)`
+export const Card = styled(m.div)`
   padding: 1.25rem;
   margin-top: 12px;
   border: 1px solid ${({ theme }) => theme.accent.slate};
@@ -140,7 +140,7 @@ export const LanguageList = styled.div`
   gap: 0;
 `;
 
-export const LanguageItem = styled(motion.div)`
+export const LanguageItem = styled(m.div)`
   display: flex;
   flex-direction: column;
   gap: 4px;
