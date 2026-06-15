@@ -75,7 +75,6 @@ export const Contact = () => {
                     <span className={channelName}>{channel.label}</span>
                     <span className={channelMeta}>{channel.meta}</span>
                   </a>
-
                 </div>
               </m.li>
             );
