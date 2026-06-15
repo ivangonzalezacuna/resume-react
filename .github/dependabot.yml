@@ -5,17 +5,35 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
     target-branch: "master"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    groups:
+      eslint:
+        patterns:
+          - "eslint"
+          - "eslint-*"
+          - "@eslint/*"
+          - "@typescript-eslint/*"
+          - "typescript-eslint"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+          - "react-icons"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "@vanilla-extract/*"
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the
-    # default location of `.github/workflows`
     directory: "/"
     schedule:
       interval: "weekly"
