@@ -1,11 +1,11 @@
 import type { MouseEvent } from "react";
 import { SectionId } from "../../hooks/useActiveSection";
 import {
-  SidebarContainer,
-  SidebarOverlay,
-  SidebarNav,
-  SidebarItem,
-} from "./styles";
+  sidebarContainer,
+  sidebarOverlay,
+  sidebarNav,
+  sidebarItem,
+} from "./Sidebar.css";
 
 const NAV_LINKS: { label: string; id: SectionId }[] = [
   { label: "Experience", id: "experience" },
@@ -30,21 +30,23 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
 
   return (
     <>
-      {isOpen && <SidebarOverlay onClick={close} />}
-      <SidebarContainer $isOpen={isOpen}>
-        <SidebarNav>
+      {isOpen && <div className={sidebarOverlay} onClick={close} />}
+      <div className={sidebarContainer[isOpen ? "open" : "closed"]}>
+        <nav className={sidebarNav}>
           {NAV_LINKS.map(({ label, id }) => (
-            <SidebarItem
+            <a
               key={id}
               href={`#${id}`}
-              $active={activeSection === id}
+              className={
+                sidebarItem[activeSection === id ? "active" : "inactive"]
+              }
               onClick={(e) => handleClick(e, id)}
             >
               {label}
-            </SidebarItem>
+            </a>
           ))}
-        </SidebarNav>
-      </SidebarContainer>
+        </nav>
+      </div>
     </>
   );
 };

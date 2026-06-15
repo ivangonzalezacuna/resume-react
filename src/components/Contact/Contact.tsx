@@ -1,19 +1,20 @@
 import { useState } from "react";
+import { m } from "framer-motion";
 import { FiCopy, FiCheck } from "react-icons/fi";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
 import {
-  ContactSection,
-  SectionInner,
-  Callout,
-  LinkList,
-  LinkItem,
-  ChannelRow,
-  ChannelAnchor,
-  ChannelName,
-  ChannelMeta,
-  CopyButton,
-} from "./styles";
+  contactSection,
+  sectionInner,
+  callout,
+  linkList,
+  linkItem,
+  channelRow,
+  channelAnchor,
+  channelName,
+  channelMeta,
+  copyButton,
+} from "./Contact.css";
 
 type Channel = {
   label: string;
@@ -52,10 +53,11 @@ export const Contact = () => {
   };
 
   return (
-    <ContactSection id="contact">
-      <SectionInner>
+    <section id="contact" className={contactSection}>
+      <div className={sectionInner}>
         <SectionTitle title="Contact" />
-        <Callout
+        <m.p
+          className={callout}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -63,43 +65,45 @@ export const Contact = () => {
         >
           Seeking platform engineering challenges or internal tool design
           opportunities. Drop a direct message across preferred channels.
-        </Callout>
-        <LinkList>
+        </m.p>
+        <ul className={linkList}>
           {channels.map((channel, i) => {
             const isExternal = !channel.href.startsWith("mailto:");
             return (
-              <LinkItem
+              <m.li
                 key={channel.label}
+                className={linkItem}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
               >
-                <ChannelRow>
-                  <ChannelAnchor
+                <div className={channelRow}>
+                  <a
+                    className={channelAnchor}
                     href={channel.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     aria-label={channel.label}
                   >
-                    <ChannelName>{channel.label}</ChannelName>
-                    <ChannelMeta>{channel.meta}</ChannelMeta>
-                  </ChannelAnchor>
+                    <span className={channelName}>{channel.label}</span>
+                    <span className={channelMeta}>{channel.meta}</span>
+                  </a>
                   {channel.copyValue && (
-                    <CopyButton
+                    <button
+                      className={copyButton[copied ? "copied" : "default"]}
                       onClick={() => handleCopy(channel.copyValue!)}
                       aria-label="Copy email address"
-                      $copied={copied}
                     >
                       {copied ? <FiCheck size={16} /> : <FiCopy size={16} />}
-                    </CopyButton>
+                    </button>
                   )}
-                </ChannelRow>
-              </LinkItem>
+                </div>
+              </m.li>
             );
           })}
-        </LinkList>
-      </SectionInner>
-    </ContactSection>
+        </ul>
+      </div>
+    </section>
   );
 };

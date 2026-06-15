@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { createTheme } from "@vanilla-extract/css";
+import { themeContract } from "../theme.css";
 
-const theme: DefaultTheme = {
+export const darkTheme = createTheme(themeContract, {
   surface: {
     base: "#0A0C0D",
     low: "#141819",
@@ -11,12 +11,13 @@ const theme: DefaultTheme = {
   },
   accent: {
     cyan: "#2FD9F4",
-    // accent.violet is reserved exclusively for the {ivan} logo brackets and {i} favicon — do not use elsewhere
+    // reserved exclusively for the {ivan} logo brackets and {i} favicon — do not use elsewhere
     violet: "#8B5CF6",
     teal: "#0D9488",
     slate: "#444748",
     cyanAlpha: "rgba(47,217,244,0.08)",
     slateAlpha: "rgba(68,71,72,0.3)",
+    tealAlpha: "rgba(13,148,136,0.082)",
   },
   text: {
     primary: "#E6EDF3",
@@ -37,8 +38,4 @@ const theme: DefaultTheme = {
     narrative: "'Plus Jakarta Sans', sans-serif",
     technical: "'JetBrains Mono', monospace",
   },
-};
-
-export const Theme = ({ children }: { children: ReactNode }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
+});

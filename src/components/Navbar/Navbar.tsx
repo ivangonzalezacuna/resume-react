@@ -4,14 +4,14 @@ import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
 import portfolio from "../../content/portfolio";
 import {
-  Nav,
-  NavInner,
-  NavLinks,
-  NavItem,
-  SocialLinks,
-  SocialLink,
-  HamburgerButton,
-} from "./styles";
+  nav,
+  navInner,
+  navLinks,
+  navItem,
+  socialLinks,
+  socialLink,
+  hamburgerButton,
+} from "./Navbar.css";
 import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 
 const NAV_LINKS: { label: string; id: SectionId }[] = [
@@ -43,48 +43,51 @@ export const Navbar = () => {
 
   return (
     <>
-      <Nav $scrolled={scrolled}>
-        <NavInner>
+      <nav className={nav[scrolled ? "scrolled" : "default"]}>
+        <div className={navInner}>
           <Logo />
-          <NavLinks>
+          <div className={navLinks}>
             {NAV_LINKS.map(({ label, id }) => (
-              <NavItem
+              <a
                 key={id}
                 href={`#${id}`}
-                $active={activeSection === id}
+                className={navItem[activeSection === id ? "active" : "default"]}
                 onClick={(e) => handleNavClick(e, id)}
               >
                 {label}
-              </NavItem>
+              </a>
             ))}
-          </NavLinks>
-          <SocialLinks>
-            <SocialLink
+          </div>
+          <div className={socialLinks}>
+            <a
+              className={socialLink}
               href={portfolio.social.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
             >
               <FiGithub size={18} />
-            </SocialLink>
-            <SocialLink
+            </a>
+            <a
+              className={socialLink}
               href={portfolio.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
             >
               <FiLinkedin size={18} />
-            </SocialLink>
-          </SocialLinks>
-          <HamburgerButton
+            </a>
+          </div>
+          <button
+            className={hamburgerButton}
             aria-label={sidebarOpen ? "Close menu" : "Open menu"}
             aria-expanded={sidebarOpen}
             onClick={() => setSidebarOpen((v) => !v)}
           >
             {sidebarOpen ? <FiX size={22} /> : <FiMenu size={22} />}
-          </HamburgerButton>
-        </NavInner>
-      </Nav>
+          </button>
+        </div>
+      </nav>
       <Sidebar
         isOpen={sidebarOpen}
         close={() => setSidebarOpen(false)}

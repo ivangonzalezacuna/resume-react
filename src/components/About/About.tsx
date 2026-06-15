@@ -1,86 +1,91 @@
+import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
 import {
-  AboutSection,
-  SectionInner,
-  BioBlock,
-  BioParagraph,
-  DossierGrid,
-  SubHeading,
-  Card,
-  CardHeader,
-  DegreeName,
-  MetaColumn,
-  MonoTag,
-  DescriptionList,
-  DescriptionItem,
-  TagRow,
-  LanguageList,
-  LanguageItem,
-  LanguageName,
-  ProficiencyTag,
-} from "./styles";
+  aboutSection,
+  sectionInner,
+  bioBlock,
+  bioParagraph,
+  dossierGrid,
+  subHeading,
+  card,
+  cardHeader,
+  degreeName,
+  metaColumn,
+  monoTag,
+  descriptionList,
+  descriptionItem,
+  tagRow,
+  languageList,
+  languageItem,
+  languageName,
+  proficiencyTag,
+} from "./About.css";
 
 export const About = () => {
   return (
-    <AboutSection id="about">
-      <SectionInner>
+    <section id="about" className={aboutSection}>
+      <div className={sectionInner}>
         <SectionTitle title="About" />
-        <BioBlock>
-          <BioParagraph>{portfolio.personal.summary}</BioParagraph>
-        </BioBlock>
-        <DossierGrid>
+        <div className={bioBlock}>
+          <p className={bioParagraph}>{portfolio.personal.summary}</p>
+        </div>
+        <div className={dossierGrid}>
           <div>
-            <SubHeading>Education</SubHeading>
+            <h3 className={subHeading}>Education</h3>
             {portfolio.education.map((entry) => (
-              <Card
+              <m.div
                 key={entry.college}
+                className={card}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <CardHeader>
-                  <DegreeName>{entry.degree}</DegreeName>
-                  <MetaColumn>
-                    <MonoTag>{entry.college}</MonoTag>
-                    <MonoTag>{entry.location}</MonoTag>
-                    <MonoTag>{entry.duration}</MonoTag>
-                  </MetaColumn>
-                </CardHeader>
-                <DescriptionList>
+                <div className={cardHeader}>
+                  <h4 className={degreeName}>{entry.degree}</h4>
+                  <div className={metaColumn}>
+                    <span className={monoTag}>{entry.college}</span>
+                    <span className={monoTag}>{entry.location}</span>
+                    <span className={monoTag}>{entry.duration}</span>
+                  </div>
+                </div>
+                <ul className={descriptionList}>
                   {entry.description.map((line) => (
-                    <DescriptionItem key={line}>{line}</DescriptionItem>
+                    <li key={line} className={descriptionItem}>
+                      {line}
+                    </li>
                   ))}
-                </DescriptionList>
-                <TagRow>
+                </ul>
+                <div className={tagRow}>
                   {entry.technologies.map((tech) => (
                     <TechTag key={tech} name={tech} />
                   ))}
-                </TagRow>
-              </Card>
+                </div>
+              </m.div>
             ))}
           </div>
           <div>
-            <SubHeading>Languages</SubHeading>
-            <LanguageList>
+            <h3 className={subHeading}>Languages</h3>
+            <div className={languageList}>
               {portfolio.languages.map((entry) => (
-                <LanguageItem
+                <m.div
                   key={entry.language}
+                  className={languageItem}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <LanguageName>{entry.language}</LanguageName>
-                  <ProficiencyTag>{entry.proficiency}</ProficiencyTag>
-                </LanguageItem>
+                  <span className={languageName}>{entry.language}</span>
+                  <span className={proficiencyTag}>{entry.proficiency}</span>
+                </m.div>
               ))}
-            </LanguageList>
+            </div>
           </div>
-        </DossierGrid>
-      </SectionInner>
-    </AboutSection>
+        </div>
+      </div>
+    </section>
   );
 };

@@ -1,38 +1,41 @@
+import { m } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
 import {
-  ProjectsSection,
-  SectionInner,
-  ProjectGrid,
-  Card,
-  CardHeader,
-  ProjectTitle,
-  ProjectTitleLink,
-  Summary,
-  HighlightList,
-  HighlightItem,
-  TagRow,
-} from "./styles";
+  projectsSection,
+  sectionInner,
+  projectGrid,
+  card,
+  cardHeader,
+  projectTitle,
+  projectTitleLink,
+  summary,
+  highlightList,
+  highlightItem,
+  tagRow,
+} from "./Projects.css";
 
 export const Projects = () => {
   return (
-    <ProjectsSection id="projects">
-      <SectionInner>
+    <section id="projects" className={projectsSection}>
+      <div className={sectionInner}>
         <SectionTitle title="Projects" />
-        <ProjectGrid>
+        <div className={projectGrid}>
           {portfolio.projects.map((project) => (
-            <Card
+            <m.div
               key={project.title}
+              className={card}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <CardHeader>
+              <div className={cardHeader}>
                 {project.url ? (
-                  <ProjectTitleLink
+                  <a
+                    className={projectTitleLink}
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -40,26 +43,28 @@ export const Projects = () => {
                   >
                     {project.title}
                     <FiExternalLink aria-hidden="true" />
-                  </ProjectTitleLink>
+                  </a>
                 ) : (
-                  <ProjectTitle>{project.title}</ProjectTitle>
+                  <h3 className={projectTitle}>{project.title}</h3>
                 )}
-              </CardHeader>
-              <Summary>{project.summary}</Summary>
-              <HighlightList>
+              </div>
+              <p className={summary}>{project.summary}</p>
+              <ul className={highlightList}>
                 {project.highlights.map((point) => (
-                  <HighlightItem key={point}>{point}</HighlightItem>
+                  <li key={point} className={highlightItem}>
+                    {point}
+                  </li>
                 ))}
-              </HighlightList>
-              <TagRow>
+              </ul>
+              <div className={tagRow}>
                 {project.technologies.map((tech) => (
                   <TechTag key={tech} name={tech} />
                 ))}
-              </TagRow>
-            </Card>
+              </div>
+            </m.div>
           ))}
-        </ProjectGrid>
-      </SectionInner>
-    </ProjectsSection>
+        </div>
+      </div>
+    </section>
   );
 };
