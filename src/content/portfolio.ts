@@ -8,7 +8,8 @@ const portfolio = {
       "teams depend on. Specialised in platform engineering and developer experience — " +
       "Go backends, Kubernetes infrastructure, CI/CD workflows, and internal tooling. " +
       "Track record of shipping production systems that reduce friction, accelerate delivery, " +
-      "and raise the engineering floor for the teams around me.",
+      "and raise the engineering floor for the teams around me, owning solutions end to end " +
+      "from design through production operations.",
   },
 
   social: {
@@ -29,10 +30,9 @@ const portfolio = {
           title: "Software Engineer — Engineering Enablement",
           duration: "Jan 2026 – Present",
           description: [
-            "Part of the Engineering Enablement team within the Platform tribe, focused on developer tooling and platform infrastructure.",
-            "Implemented feature flags infrastructure, enabling safe and incremental rollout of new capabilities across engineering teams.",
-            "Built the infrastructure and tooling to integrate load testing as a standard part of the developers' workflow.",
-            "Adopted Claude Code into my personal development workflow, using AI-assisted iteration to accelerate problem-solving and code delivery.",
+            "Implemented feature-flag infrastructure enabling safe, incremental rollout of new capabilities, reducing incident mitigation time from hours to ~10 minutes when a flagged feature needs to be rolled back.",
+            "Built the infrastructure and tooling to make load testing a standard part of the developer workflow.",
+            "Integrated Claude Code into the daily development workflow, accelerating problem-solving and delivery.",
           ],
         },
       ],
@@ -54,18 +54,16 @@ const portfolio = {
           title: "Software Engineer",
           duration: "Apr 2024 – Dec 2025",
           description: [
-            "Built and maintained internal developer tools in Go, simplifying complex Kubernetes and Vault interactions and reducing manual configuration steps across engineering teams.",
-            "Led the design and implementation of an internal software catalog using Backstage, serving ~100 engineers as a unified source for service discovery, ownership, and runbooks.",
-            "Developed custom Backstage plugins and contributed open-source improvements adopted by teams outside the company.",
-            "Optimised CI/CD workflows with Kubernetes and ArgoCD, improving pipeline reliability and reducing deployment friction in collaboration with platform teams.",
+            "Built internal developer tools in Go, simplifying complex infrastructure interactions across engineering teams, such as Kubernetes, ArgoCD or Vault.",
+            "Owned the design and maintainability of an internal Backstage software catalog serving ~100 engineers, establishing it as the source of truth for service ownership, dependencies, and relationships across the org; published custom plugins and open-source contributions adopted by external teams.",
+            "Migrated release processes from manual deployments to a fully automated GitOps setup with Kubernetes and ArgoCD, eliminating manual steps from the release pipeline and improving reliability.",
           ],
         },
         {
           title: "Junior Software Engineer",
           duration: "Dec 2021 – Apr 2024",
           description: [
-            "Worked across the full stack on internal tooling and platform engineering workflows, contributing to Go backends and infrastructure automation.",
-            "Promoted to Software Engineer in April 2024 based on demonstrated ownership and engineering impact.",
+            "Initiated the internal Backstage implementation, delivered improvements across existing tooling, and contributed to migrating QA systems, resulting in a 10x more stable on-demand testing environment for engineering teams. Promoted to Software Engineer in April 2024.",
           ],
         },
       ],
@@ -92,9 +90,8 @@ const portfolio = {
           title: "Software Developer — Research & Development",
           duration: "Feb 2020 – Nov 2021",
           description: [
-            "Migrated internal applications to hexagonal architecture in Go, improving modularity, testability, and long-term maintainability.",
-            "Implemented a Voice Assistant connected to internal applications, deployed for use aboard a Navy vessel.",
-            "Implemented signal processing pipelines in Python for academic and industry research projects.",
+            "Migrated internal applications to hexagonal architecture in Go, improving modularity, testability, and maintainability.",
+            "Built signal-processing pipelines in Python and shipped a voice assistant deployed aboard a Navy vessel.",
           ],
         },
       ],
@@ -109,8 +106,7 @@ const portfolio = {
           title: "Software Developer Intern",
           duration: "Jun 2019 – Jul 2019",
           description: [
-            "Researched and prototyped anomaly detection algorithms for industrial IoT sensor streams using Python and R.",
-            "Applied statistical and machine learning techniques to improve predictive maintenance accuracy.",
+            "Prototyped anomaly-detection algorithms for industrial IoT sensor streams using Python and R.",
           ],
         },
       ],
