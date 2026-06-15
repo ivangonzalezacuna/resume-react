@@ -28,7 +28,7 @@ updates:
           - "@types/react"
           - "@types/react-dom"
           - "react-icons"
-      vite:
+      build-tools:
         patterns:
           - "vite"
           - "@vitejs/*"
