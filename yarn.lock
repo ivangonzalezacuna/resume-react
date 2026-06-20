@@ -6713,8 +6713,8 @@ __metadata:
   linkType: hard
 
 "http-proxy-middleware@npm:^3.0.5":
-  version: 3.0.6
-  resolution: "http-proxy-middleware@npm:3.0.6"
+  version: 3.0.7
+  resolution: "http-proxy-middleware@npm:3.0.7"
   dependencies:
     "@types/http-proxy": ^1.17.15
     debug: ^4.3.6
@@ -6722,7 +6722,7 @@ __metadata:
     is-glob: ^4.0.3
     is-plain-object: ^5.0.0
     micromatch: ^4.0.8
-  checksum: ad15cb73d30d3049569aef7118c87dcd13a7779e3b7c45b211653d38510261b6cdd624170ff54bb00388730bc67cd53039e26ffc2897f14e4ab891ce15ebf5da
+  checksum: 1192f3e167350c0fe88fd44d8bae73b1fc1ae8480a416c9ad33a74d3d1c81e0e858e4ffd205d63d6d176ffc40c90154ecd85c725b02e5c2d2cc79d5c48af8c02
   languageName: node
   linkType: hard
 
