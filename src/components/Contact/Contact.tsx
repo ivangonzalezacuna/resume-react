@@ -70,7 +70,11 @@ export const Contact = () => {
                     href={channel.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    aria-label={channel.label}
+                    aria-label={
+                      isExternal
+                        ? `${channel.label} (opens in new tab)`
+                        : channel.label
+                    }
                   >
                     <span className={channelName}>{channel.label}</span>
                     <span className={channelMeta}>{channel.meta}</span>
