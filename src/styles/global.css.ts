@@ -50,3 +50,28 @@ globalStyle("*, *::before, *::after", {
     },
   },
 });
+
+globalStyle(".skip-nav", {
+  position: "absolute",
+  left: "-9999px",
+  top: "auto",
+  width: "1px",
+  height: "1px",
+  overflow: "hidden",
+  zIndex: 1000,
+  padding: "8px 16px",
+  backgroundColor: themeContract.surface.low,
+  color: themeContract.accent.cyan,
+  fontFamily: themeContract.font.narrative,
+  fontSize: "14px",
+  textDecoration: "none",
+  borderRadius: "4px",
+});
+
+globalStyle(".skip-nav:focus", {
+  position: "fixed",
+  top: "8px",
+  left: "8px",
+  width: "auto",
+  height: "auto",
+});

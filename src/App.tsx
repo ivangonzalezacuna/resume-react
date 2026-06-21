@@ -13,9 +13,12 @@ import { Contact } from "./components/Contact";
 const App = () => {
   return (
     <div className={darkTheme}>
+      <a className="skip-nav" href="#main-content">
+        Skip to main content
+      </a>
       <LazyMotion features={domAnimation}>
         <Navbar />
-        <main style={{ width: "100%", minHeight: "100vh" }}>
+        <main id="main-content" style={{ width: "100%", minHeight: "100vh" }}>
           <Hero />
           <Experience />
           <Projects />
