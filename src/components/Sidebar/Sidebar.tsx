@@ -1,5 +1,5 @@
 import type { MouseEvent, KeyboardEvent } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { SectionId } from "../../hooks/useActiveSection";
 import {
   sidebarContainer,
@@ -23,8 +23,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
-  const panelRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
@@ -60,7 +58,6 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
         />
       )}
       <div
-        ref={panelRef}
         className={sidebarContainer[isOpen ? "open" : "closed"]}
         role="dialog"
         aria-modal={isOpen}
