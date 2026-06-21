@@ -59,9 +59,10 @@ export const Hero = () => {
             <img
               className={profileImage}
               src="/images/profile/ivan.jpg"
-              alt="Iván González Acuña — Software Engineer"
+              alt={`Profile photo of ${personal.name}`}
               width={560}
               height={560}
+              fetchPriority="high"
             />
           </div>
         </m.div>

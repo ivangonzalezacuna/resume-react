@@ -15,7 +15,7 @@ const App = () => {
     <div className={darkTheme}>
       <LazyMotion features={domAnimation}>
         <Navbar />
-        <main style={{ width: "100%", minHeight: "100vh" }}>
+        <main id="main-content" style={{ width: "100%", minHeight: "100vh" }}>
           <Hero />
           <Experience />
           <Projects />

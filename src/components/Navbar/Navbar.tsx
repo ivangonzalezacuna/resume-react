@@ -43,7 +43,10 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={nav[scrolled ? "scrolled" : "default"]}>
+      <nav
+        className={nav[scrolled ? "scrolled" : "default"]}
+        aria-label="Primary navigation"
+      >
         <div className={navInner}>
           <Logo />
           <div className={navLinks}>

@@ -34,16 +34,18 @@ export const Projects = () => {
             >
               <div className={cardHeader}>
                 {project.url ? (
-                  <a
-                    className={projectTitleLink}
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.title} — external link`}
-                  >
-                    {project.title}
-                    <FiExternalLink aria-hidden="true" />
-                  </a>
+                  <h3 className={projectTitle}>
+                    <a
+                      className={projectTitleLink}
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} — external link`}
+                    >
+                      {project.title}
+                      <FiExternalLink aria-hidden="true" />
+                    </a>
+                  </h3>
                 ) : (
                   <h3 className={projectTitle}>{project.title}</h3>
                 )}
