@@ -14,7 +14,7 @@
 /coverage
 
 # production
-/build
+/dist
 
 # environment file
 .env
