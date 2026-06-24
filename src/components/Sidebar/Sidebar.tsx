@@ -25,11 +25,15 @@ interface SidebarProps {
 export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
   useEffect(() => {
     if (!isOpen) return;
+    document.body.style.overflow = "hidden";
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === "Escape") close();
     };
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
   }, [isOpen, close]);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
@@ -60,7 +64,9 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
       <div
         className={sidebarContainer[isOpen ? "open" : "closed"]}
         role="dialog"
-        aria-modal={isOpen}
+        aria-modal="true"
+        aria-hidden={!isOpen}
+        inert={!isOpen || undefined}
         aria-label="Navigation menu"
       >
         <nav className={sidebarNav} aria-label="Mobile navigation">

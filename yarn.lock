@@ -3046,15 +3046,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/recipes@npm:^0.5.7":
-  version: 0.5.7
-  resolution: "@vanilla-extract/recipes@npm:0.5.7"
-  peerDependencies:
-    "@vanilla-extract/css": ^1.0.0
-  checksum: cc57caea9f4072b718d91948e4072f6afbebc406f426c4c6c231234a4dc9d8e09863c9bcf40a734d9bc77b3752d3a6dc46ae28696a855dd2bbf4274d9b085ddc
-  languageName: node
-  linkType: hard
-
 "@vanilla-extract/vite-plugin@npm:^5.2.2":
   version: 5.2.2
   resolution: "@vanilla-extract/vite-plugin@npm:5.2.2"
@@ -7459,7 +7450,6 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^8.61.1
     "@typescript-eslint/parser": ^8.61.1
     "@vanilla-extract/css": ^1.20.1
-    "@vanilla-extract/recipes": ^0.5.7
     "@vanilla-extract/vite-plugin": ^5.2.2
     "@vitejs/plugin-react": ^6.0.2
     eslint: ^10.5.0
@@ -7477,6 +7467,7 @@ __metadata:
     typescript: ^6.0.3
     typescript-eslint: ^8.61.1
     vite: ^8.0.16
+    vite-plugin-sitemap: ^0.8.2
   languageName: unknown
   linkType: soft
 
@@ -11801,6 +11792,13 @@ __metadata:
   bin:
     vite-node: dist/cli.mjs
   checksum: cc1fd0672502f5efd663713cd139bcf3aab2e9cf817c86a0cb7a0a97fc4211d9820baac666cdf2a324552d46ad394e3b466faacdf2f010103a1776cfc3fbe855
+  languageName: node
+  linkType: hard
+
+"vite-plugin-sitemap@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "vite-plugin-sitemap@npm:0.8.2"
+  checksum: 8c11e8e1f0bed17c4f4916e1b5487b75eade0133336204b3cac8306b398043d62be835d27b7514a174b9b3ea2bb9f6b1fe69426a2d9c1afdf9d06acfbedd3526
   languageName: node
   linkType: hard
 

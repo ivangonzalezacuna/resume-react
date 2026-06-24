@@ -27,7 +27,6 @@
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/plus-jakarta-sans": "^5.2.8",
     "@vanilla-extract/css": "^1.20.1",
-    "@vanilla-extract/recipes": "^0.5.7",
     "framer-motion": "^12.40.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
@@ -51,7 +50,8 @@
     "prettier": "^3.8.4",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.61.1",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "vite-plugin-sitemap": "^0.8.2"
   },
   "packageManager": "yarn@3.2.3"
 }
