@@ -30,7 +30,7 @@ export const Footer = () => {
             rel="noopener noreferrer"
             aria-label="GitHub profile"
           >
-            <FiGithub size={18} />
+            <FiGithub size={18} aria-hidden="true" />
           </a>
           <a
             className={footerLink}
@@ -39,14 +39,14 @@ export const Footer = () => {
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
           >
-            <FiLinkedin size={18} />
+            <FiLinkedin size={18} aria-hidden="true" />
           </a>
           <a
             className={footerLink}
             href={`mailto:${portfolio.social.email}`}
             aria-label="Send email"
           >
-            <FiMail size={18} />
+            <FiMail size={18} aria-hidden="true" />
           </a>
         </div>
       </div>

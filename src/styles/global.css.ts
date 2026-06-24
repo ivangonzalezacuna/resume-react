@@ -9,6 +9,7 @@ globalStyle("*, *::before, *::after", {
 
 globalStyle("html", {
   scrollBehavior: "smooth",
+  scrollPaddingTop: "64px",
   fontSize: "16px",
 });
 
@@ -49,4 +50,31 @@ globalStyle("*, *::before, *::after", {
       transitionDuration: "0.01ms",
     },
   },
+});
+
+globalStyle(".skip-nav", {
+  position: "absolute",
+  left: "-9999px",
+  top: "auto",
+  width: "1px",
+  height: "1px",
+  overflow: "hidden",
+});
+
+globalStyle(".skip-nav:focus", {
+  position: "fixed",
+  top: "12px",
+  left: "12px",
+  width: "auto",
+  height: "auto",
+  overflow: "visible",
+  padding: "8px 16px",
+  backgroundColor: themeContract.surface.base,
+  color: themeContract.accent.cyan,
+  border: `1px solid ${themeContract.accent.cyan}`,
+  borderRadius: "4px",
+  fontSize: "14px",
+  fontWeight: 500,
+  zIndex: 9999,
+  outline: "2px solid transparent",
 });

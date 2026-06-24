@@ -69,7 +69,7 @@ export const Navbar = () => {
               rel="noopener noreferrer"
               aria-label="GitHub profile"
             >
-              <FiGithub size={18} />
+              <FiGithub size={18} aria-hidden="true" />
             </a>
             <a
               className={socialLink}
@@ -78,7 +78,7 @@ export const Navbar = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
             >
-              <FiLinkedin size={18} />
+              <FiLinkedin size={18} aria-hidden="true" />
             </a>
           </div>
           <button
@@ -87,7 +87,11 @@ export const Navbar = () => {
             aria-expanded={sidebarOpen}
             onClick={() => setSidebarOpen((v) => !v)}
           >
-            {sidebarOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+            {sidebarOpen ? (
+              <FiX size={22} aria-hidden="true" />
+            ) : (
+              <FiMenu size={22} aria-hidden="true" />
+            )}
           </button>
         </div>
       </nav>

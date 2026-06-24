@@ -4,7 +4,7 @@ import { hrefBtnStyle } from "./Button.css";
 export type HrefButtonProps = {
   href: string;
   blankTarget?: boolean;
-  download?: boolean;
+  download?: boolean | string;
   variant?: "primary" | "secondary";
   children: ReactNode;
 };
@@ -22,7 +22,7 @@ export const HrefButton = ({
       className={hrefBtnStyle[variant]}
       target={blankTarget ? "_blank" : undefined}
       rel={blankTarget ? "noopener noreferrer" : undefined}
-      download={download ? true : undefined}
+      download={download ?? undefined}
     >
       {children}
     </a>
