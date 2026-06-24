@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect x="-1" y="-1" width="34" height="34" rx="8" fill="#191c1e"/>
+  <text x="16" y="23" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="26">
+    <tspan fill="#8B5CF6">{</tspan><tspan dx="1" fill="#2FD9F4">i</tspan><tspan dx="1" fill="#8B5CF6">}</tspan>
+  </text>
+</svg>

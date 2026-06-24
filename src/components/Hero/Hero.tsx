@@ -43,7 +43,11 @@ export const Hero = () => {
             <HrefButton href={social.linkedin} blankTarget variant="secondary">
               LinkedIn
             </HrefButton>
-            <HrefButton href={cv} variant="secondary" download>
+            <HrefButton
+              href={cv}
+              variant="secondary"
+              download="CV_IvanGonzalezAcuna.pdf"
+            >
               Download CV
             </HrefButton>
           </div>
