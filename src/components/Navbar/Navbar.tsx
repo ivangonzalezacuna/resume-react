@@ -48,7 +48,7 @@ export const Navbar = () => {
         aria-label="Primary navigation"
       >
         <div className={navInner}>
-          <Logo />
+          <Logo onClose={() => setSidebarOpen(false)} />
           <div className={navLinks}>
             {NAV_LINKS.map(({ label, id }) => (
               <a
