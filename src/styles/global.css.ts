@@ -76,5 +76,5 @@ globalStyle(".skip-nav:focus", {
   fontSize: "14px",
   fontWeight: 500,
   zIndex: 9999,
-  outline: "none",
+  outline: "2px solid transparent",
 });
