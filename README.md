@@ -12,7 +12,7 @@ Personal portfolio and resume site built with React 19 and TypeScript, hosted on
 
 - **React 19** + **TypeScript** — component framework
 - **Vite** — build tooling and dev server
-- **styled-components** — CSS-in-JS styling
+- **Vanilla Extract** — CSS-in-JS styling (zero-runtime, type-safe)
 - **framer-motion** — animations and transitions
 - **Netlify** — hosting and continuous deployment
 

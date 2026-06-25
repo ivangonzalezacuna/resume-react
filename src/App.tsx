@@ -18,7 +18,10 @@ const App = () => {
       <LazyMotion features={domAnimation}>
         <MotionConfig reducedMotion="user">
           <Navbar />
-          <main id="main-content" style={{ width: "100%", minHeight: "100vh" }}>
+          <main
+            id="main-content"
+            style={{ width: "100%", minHeight: "100dvh" }}
+          >
             <Hero />
             <Experience />
             <Projects />
