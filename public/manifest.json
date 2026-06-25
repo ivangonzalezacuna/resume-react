@@ -4,7 +4,6 @@
   "description": "Software Engineer specialising in platform engineering, developer tooling, and Go backend systems.",
   "lang": "en",
   "id": "/",
-  "display_override": ["standalone"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -35,10 +34,17 @@
       "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "android-chrome-512x512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#0A0C0D",
   "background_color": "#0A0C0D"
