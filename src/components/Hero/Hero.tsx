@@ -67,6 +67,7 @@ export const Hero = () => {
               width={560}
               height={560}
               fetchPriority="high"
+              decoding="async"
             />
           </div>
         </m.div>
