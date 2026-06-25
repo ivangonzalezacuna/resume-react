@@ -63,6 +63,8 @@ export const Hero = () => {
             <img
               className={profileImage}
               src="/images/profile/ivan.jpg"
+              srcSet="/images/profile/ivan-280.jpg 280w, /images/profile/ivan.jpg 560w"
+              sizes="(min-width: 768px) 280px, 200px"
               alt={`Profile photo of ${personal.name}`}
               width={560}
               height={560}
