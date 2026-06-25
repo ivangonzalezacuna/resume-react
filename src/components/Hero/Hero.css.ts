@@ -4,6 +4,11 @@ import { themeContract } from "../../styles/theme.css";
 export const heroSection = style({
   width: "100%",
   minHeight: "100vh",
+  "@supports": {
+    "(min-height: 100dvh)": {
+      minHeight: "100dvh",
+    },
+  },
   display: "flex",
   alignItems: "flex-start",
   boxSizing: "border-box",
