@@ -4,7 +4,6 @@
   "description": "Software Engineer specialising in platform engineering, developer tooling, and Go backend systems.",
   "lang": "en",
   "id": "/",
-  "display_override": ["standalone"],
   "icons": [
     {
       "src": "favicon.ico",
