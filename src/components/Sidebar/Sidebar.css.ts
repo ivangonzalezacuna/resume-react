@@ -14,6 +14,11 @@ const sidebarContainerBase = style({
   right: 0,
   width: "240px",
   height: "100vh",
+  "@supports": {
+    "(height: 100dvh)": {
+      height: "100dvh",
+    },
+  },
   backgroundColor: themeContract.surface.low,
   borderLeft: `1px solid ${themeContract.accent.slate}`,
   zIndex: 99,
