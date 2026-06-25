@@ -24,7 +24,7 @@ export const Hero = () => {
   const { personal, social, cv } = portfolio;
 
   return (
-    <section id="hero" className={heroSection}>
+    <section id="hero" className={heroSection} aria-label="Hero">
       <div className={heroInner}>
         <m.div className={leftBlock} {...fadeUp}>
           <p className={heroRole}>{personal.title}</p>

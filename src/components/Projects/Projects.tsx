@@ -19,9 +19,13 @@ import {
 
 export const Projects = () => {
   return (
-    <section id="projects" className={projectsSection}>
+    <section
+      id="projects"
+      className={projectsSection}
+      aria-labelledby="projects-heading"
+    >
       <div className={sectionInner}>
-        <SectionTitle title="Projects" />
+        <SectionTitle title="Projects" id="projects-heading" />
         <div className={projectGrid}>
           {portfolio.projects.map((project) => (
             <m.div
