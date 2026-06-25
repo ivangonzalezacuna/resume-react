@@ -22,9 +22,13 @@ import {
 
 export const Experience = () => {
   return (
-    <section id="experience" className={experienceSection}>
+    <section
+      id="experience"
+      className={experienceSection}
+      aria-labelledby="experience-heading"
+    >
       <div className={sectionInner}>
-        <SectionTitle title="Experience" />
+        <SectionTitle title="Experience" id="experience-heading" />
         {portfolio.experience.map((entry) => (
           <m.div
             key={entry.company}

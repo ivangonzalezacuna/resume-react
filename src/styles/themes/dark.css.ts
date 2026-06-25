@@ -5,6 +5,7 @@ export const darkTheme = createTheme(themeContract, {
   surface: {
     base: "#0A0C0D",
     low: "#141819",
+    // Reserved — not yet consumed
     mid: "#1D2224",
     high: "#2B3134",
     overlay: "rgba(10,12,13,0.6)",
@@ -27,6 +28,7 @@ export const darkTheme = createTheme(themeContract, {
     subtle: "rgba(255,255,255,0.08)",
     dotGrid: "#ffffff05",
   },
+  // Reserved — not yet consumed
   space: {
     xs: "4px",
     sm: "8px",

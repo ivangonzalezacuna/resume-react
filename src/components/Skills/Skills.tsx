@@ -13,9 +13,13 @@ import {
 
 export const Skills = () => {
   return (
-    <section id="skills" className={skillsSection}>
+    <section
+      id="skills"
+      className={skillsSection}
+      aria-labelledby="skills-heading"
+    >
       <div className={sectionInner}>
-        <SectionTitle title="Skills" />
+        <SectionTitle title="Skills" id="skills-heading" />
         <div className={skillsGrid}>
           {portfolio.skills.map((group) => (
             <m.div

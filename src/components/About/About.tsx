@@ -25,9 +25,13 @@ import {
 
 export const About = () => {
   return (
-    <section id="about" className={aboutSection}>
+    <section
+      id="about"
+      className={aboutSection}
+      aria-labelledby="about-heading"
+    >
       <div className={sectionInner}>
-        <SectionTitle title="About" />
+        <SectionTitle title="About" id="about-heading" />
         <div className={bioBlock}>
           <p className={bioParagraph}>{portfolio.personal.summary}</p>
         </div>

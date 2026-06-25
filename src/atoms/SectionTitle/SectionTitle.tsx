@@ -1,10 +1,11 @@
 import { m } from "framer-motion";
 import { titleStyle, wrapperStyle } from "./SectionTitle.css";
 
-export const SectionTitle = ({ title }: { title: string }) => {
+export const SectionTitle = ({ title, id }: { title: string; id?: string }) => {
   return (
     <div className={wrapperStyle}>
       <m.h2
+        id={id}
         className={titleStyle}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

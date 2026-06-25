@@ -4,6 +4,7 @@ export const themeContract = createThemeContract({
   surface: {
     base: null,
     low: null,
+    // Reserved — not yet consumed
     mid: null,
     high: null,
     overlay: null,
@@ -25,6 +26,7 @@ export const themeContract = createThemeContract({
     subtle: null,
     dotGrid: null,
   },
+  // Reserved — not yet consumed
   space: {
     xs: null,
     sm: null,

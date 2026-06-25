@@ -131,7 +131,6 @@ export const tagRow = style({
   marginTop: "12px",
   paddingTop: "10px",
   borderTop: `1px solid ${themeContract.accent.slate}`,
-  opacity: 0.75,
 });
 
 export const languageList = style({

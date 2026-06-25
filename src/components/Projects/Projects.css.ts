@@ -103,5 +103,4 @@ export const tagRow = style({
   marginTop: "16px",
   paddingTop: "12px",
   borderTop: `1px solid ${themeContract.accent.slate}`,
-  opacity: 0.75,
 });

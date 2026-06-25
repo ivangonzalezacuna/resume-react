@@ -39,9 +39,13 @@ const channels: Channel[] = [
 
 export const Contact = () => {
   return (
-    <section id="contact" className={contactSection}>
+    <section
+      id="contact"
+      className={contactSection}
+      aria-labelledby="contact-heading"
+    >
       <div className={sectionInner}>
-        <SectionTitle title="Contact" />
+        <SectionTitle title="Contact" id="contact-heading" />
         <m.p
           className={callout}
           initial={{ opacity: 0, y: 20 }}
