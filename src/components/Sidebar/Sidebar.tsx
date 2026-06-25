@@ -65,7 +65,6 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
         className={sidebarContainer[isOpen ? "open" : "closed"]}
         role="dialog"
         aria-modal="true"
-        aria-hidden={!isOpen || undefined}
         inert={!isOpen || undefined}
         aria-label="Navigation menu"
       >
