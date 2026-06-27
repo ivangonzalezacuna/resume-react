@@ -1,31 +1,33 @@
-name: "Resume Actions"
+name: "CI"
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   checks:
-    name: Run full code checks
+    name: Lint, type-check, format & build
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v7
-      - name: Setup Node 24
+      - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24.x
+          node-version-file: ".nvmrc"
           cache: "yarn"
-      - name: Run Checks
-        run: |
-          yarn install
-          yarn check:full
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Run CI checks
+        run: yarn ci
 
   dependency-review:
     name: Dependency Review
@@ -34,7 +36,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v7
       - name: Dependency Review
         uses: actions/dependency-review-action@v5
