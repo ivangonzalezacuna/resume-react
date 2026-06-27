@@ -3,6 +3,7 @@
   publish = "dist"
 
 [dev]
+  command = "yarn dev"
   targetPort = 5173
   framework = "vite"
 

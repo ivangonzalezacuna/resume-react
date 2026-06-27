@@ -22,7 +22,7 @@ Clone the repo, install dependencies, then start the dev server:
 
 ```bash
 yarn install
-yarn start
+yarn dev
 ```
 
 To preview a production build locally:
@@ -34,15 +34,16 @@ yarn preview
 
 ## Scripts
 
-| Script              | Description                                                    |
-| ------------------- | -------------------------------------------------------------- |
-| `yarn start`        | Start the Vite dev server                                      |
-| `yarn build`        | Type-check and build for production                            |
-| `yarn preview`      | Serve the production build locally                             |
-| `yarn dev`          | Run via Netlify CLI (respects `_redirects` and Netlify config) |
-| `yarn lint:fix`     | Fix ESLint errors automatically                                |
-| `yarn prettier:fix` | Fix Prettier formatting issues                                 |
-| `yarn check:full`   | Full CI check — type-check, lint, and format                   |
+| Script             | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `yarn dev`         | Start the Vite dev server                                      |
+| `yarn dev:netlify` | Run via Netlify CLI (applies `netlify.toml` redirects/headers) |
+| `yarn build`       | Type-check and build for production                            |
+| `yarn preview`     | Serve the production build locally                             |
+| `yarn check`       | Type-check, lint, and format-check (no build)                  |
+| `yarn ci`          | Full gate — `check` plus a production build                    |
+| `yarn lint:fix`    | Auto-fix ESLint issues                                         |
+| `yarn format`      | Auto-format with Prettier                                      |
 
 ## Features
 
