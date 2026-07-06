@@ -116,6 +116,20 @@ const portfolio = {
 
   projects: [
     {
+      title: "Wealth Tracker",
+      summary:
+        "Personal ETF portfolio and net worth tracker. A client-only PWA that syncs to " +
+        "Google Sheets as a backend, keeping all data in the user's own account.",
+      highlights: [
+        "Built with Vite and vanilla TypeScript for zero framework overhead and instant load times",
+        "Uses Google Sheets as the database via OAuth2, no server or third-party data storage",
+        "Installable PWA with offline support for viewing dashboards and historical snapshots",
+        "Leveraged Claude to assist with architecture decisions, implementation, and iterative refinement",
+      ],
+      technologies: ["TypeScript", "Vite", "Chart.js", "Claude Code"],
+      url: "https://github.com/ivangonzalezacuna/wealth-tracker",
+    },
+    {
       title: "Internal Developer Catalog (Backstage)",
       summary:
         "Led the design and implementation of an internal software catalog at Spreadgroup, " +
