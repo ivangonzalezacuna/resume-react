@@ -146,15 +146,15 @@ const portfolio = {
     {
       title: "Wealth Tracker",
       summary:
-        "Personal ETF portfolio and net worth tracker. A client-only PWA that syncs to " +
-        "Google Sheets as a backend, keeping all data in the user's own account.",
+        "Personal ETF portfolio and net worth tracker. A client-only PWA with an in-browser " +
+        "SQLite database, syncing to Google Drive for backup and cross-device access.",
       highlights: [
         "Built with Vite and vanilla TypeScript for zero framework overhead and instant load times",
-        "Uses Google Sheets as the database via OAuth2, no server or third-party data storage",
+        "Runs a full SQLite database in-browser via WASM, backed up to Google Drive AppData for cross-device sync",
         "Installable PWA with offline support for viewing dashboards and historical snapshots",
         "Leveraged Claude to assist with architecture decisions, implementation, and iterative refinement",
       ],
-      technologies: ["TypeScript", "Vite", "Chart.js", "Claude Code"],
+      technologies: ["TypeScript", "Vite", "SQLite", "Chart.js", "Claude Code"],
       url: "https://github.com/ivangonzalezacuna/wealth-tracker",
     },
     {
