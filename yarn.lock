@@ -9128,14 +9128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process-warning@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "process-warning@npm:5.0.0"
-  checksum: 99bce32133a67d45f3efff1202d0895548da3464501ad2acf6ad6d5f6a879b246868f2f382ff8a5872e2bb17b0d800dc1961885947ea9b3344db9cb91405cd88
-  languageName: node
-  linkType: hard
-
-"process-warning@npm:^5.1.0":
+"process-warning@npm:^5.0.0, process-warning@npm:^5.1.0":
   version: 5.1.0
   resolution: "process-warning@npm:5.1.0"
   checksum: 392043dbbc8f311f1223db8d4953b30c87602496a6cbe5160cbac6f8253a177b14ae802db03380b813dee8f6d619bfe440b71685f781bea07b0be7544dacef19
@@ -11673,16 +11666,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yauzl@npm:^3.3.1":
-  version: 3.3.2
-  resolution: "yauzl@npm:3.3.2"
-  dependencies:
-    pend: ~1.2.0
-  checksum: 602d162abc30b0ecb7e0b2596c970a27b2fba6b2dfef240d0aca19430b2e1eee58e66a3bc1517d3695d019fa989d8d44a727e976d6e2903e63c6ea1d3fe3e180
-  languageName: node
-  linkType: hard
-
-"yauzl@npm:^3.4.0":
+"yauzl@npm:^3.3.1, yauzl@npm:^3.4.0":
   version: 3.4.0
   resolution: "yauzl@npm:3.4.0"
   dependencies:
