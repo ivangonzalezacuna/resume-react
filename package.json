@@ -50,7 +50,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.7.0",
-    "netlify-cli": "^26.1.0",
+    "netlify-cli": "^27.8.0",
     "prettier": "^3.8.5",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0",
