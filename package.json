@@ -31,7 +31,7 @@
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/plus-jakarta-sans": "^5.2.8",
     "@vanilla-extract/css": "^1.21.2",
-    "framer-motion": "^12.42.0",
+    "framer-motion": "^13.4.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-icons": "^5.7.0"
