@@ -717,10 +717,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/jetbrains-mono@npm:^5.2.8":
-  version: 5.2.8
-  resolution: "@fontsource/jetbrains-mono@npm:5.2.8"
-  checksum: 26f1baa841889f78e09d4b8147cfd519a08efe0041fdf09ca98794b6b8f8bc4e496a512845de7937168aed3e69ef3040022fe53be6e96b067253473affd72d38
+"@fontsource/jetbrains-mono@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/jetbrains-mono@npm:5.3.0"
+  checksum: c72611db6c771c2ce98453f8a61808e0aad5256c741935fd3075cdce995a39060d60b34bd4abadbb5cbce732278fda87825be7ce949557a00e3e48c6374f1c98
   languageName: node
   linkType: hard
 
@@ -7036,7 +7036,7 @@ __metadata:
   resolution: "ivangonzalez-resume@workspace:."
   dependencies:
     "@eslint/js": ^10.0.1
-    "@fontsource/jetbrains-mono": ^5.2.8
+    "@fontsource/jetbrains-mono": ^5.3.0
     "@fontsource/plus-jakarta-sans": ^5.2.8
     "@types/react": ^19.3.0
     "@types/react-dom": ^19.3.0
