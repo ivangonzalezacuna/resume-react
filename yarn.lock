@@ -5557,8 +5557,8 @@ __metadata:
   linkType: hard
 
 "fastify@npm:^5.8.5":
-  version: 5.12.1
-  resolution: "fastify@npm:5.12.1"
+  version: 5.12.5
+  resolution: "fastify@npm:5.12.5"
   dependencies:
     "@fastify/ajv-compiler": ^4.0.5
     "@fastify/error": ^4.0.0
@@ -5575,7 +5575,7 @@ __metadata:
     secure-json-parse: ^4.0.0
     semver: ^7.6.0
     toad-cache: ^3.7.0
-  checksum: 1a0a369eca95b048ee54e9884a8d54724f76560b716d9df942edd15a000f633addbfa7846a31d7361486932e974466728265578b9f4a052949fa50698a8cdf8c
+  checksum: ee17a8829efe5e3b6e9d333b6062331b964b3f5c0e4d636ee6ea882861593711a23af7f42f62fffc9938854a7662168273a81a411534f5e269f38dd0f168de4f
   languageName: node
   linkType: hard
 
