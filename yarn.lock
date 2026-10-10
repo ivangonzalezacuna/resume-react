@@ -1387,7 +1387,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/blobs@npm:11.1.4, @netlify/blobs@npm:^11.1.3, @netlify/blobs@npm:^11.1.4":
+"@netlify/blobs@npm:11.1.4, @netlify/blobs@npm:^11.0.3, @netlify/blobs@npm:^11.1.3, @netlify/blobs@npm:^11.1.4":
   version: 11.1.4
   resolution: "@netlify/blobs@npm:11.1.4"
   dependencies:
@@ -1395,17 +1395,6 @@ __metadata:
     "@netlify/otel": ^7.0.4
     "@netlify/runtime-utils": 3.0.0
   checksum: 89968dd2d9c7f6022e1b5b295f2ff77373eb8ffebb3818b6e068d16604353216d8cc2e4bda985aeb33050039cf727c5514f33a2dbd1f6f50eb070c8b300e466d
-  languageName: node
-  linkType: hard
-
-"@netlify/blobs@npm:^11.0.3":
-  version: 11.1.0
-  resolution: "@netlify/blobs@npm:11.1.0"
-  dependencies:
-    "@netlify/dev-utils": 6.0.1
-    "@netlify/otel": ^7.0.2
-    "@netlify/runtime-utils": 3.0.0
-  checksum: a2906859c10a8ca87a559304adb27877c99921a439a2268965e0f18d75c6af1dd3de6ed99e89248a82b370d4d519c0dc12852102a228c8dcbc026e0d08b7da21
   languageName: node
   linkType: hard
 
@@ -1550,25 +1539,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/dev-utils@npm:6.0.1":
-  version: 6.0.1
-  resolution: "@netlify/dev-utils@npm:6.0.1"
-  dependencies:
-    "@whatwg-node/server": ^0.11.0
-    ansis: ^4.1.0
-    atomically: ^2.0.3
-    chokidar: ^5.0.0
-    decache: ^4.6.2
-    dettle: ^1.0.5
-    dot-prop: 9.0.0
-    empathic: ^2.0.0
-    env-paths: ^3.0.0
-    parse-gitignore: ^2.0.0
-    semver: ^7.7.2
-  checksum: 9a82db9b2a87a5d40459d6f313a4ccc62da7a32141cba54cd5a85696f7461383afd90669071fbcc5abf7c41eeefa81e07c92b87bfd2161098029bd064856e6f9
-  languageName: node
-  linkType: hard
-
 "@netlify/dev-utils@npm:6.0.3, @netlify/dev-utils@npm:^6.0.3":
   version: 6.0.3
   resolution: "@netlify/dev-utils@npm:6.0.3"
@@ -1610,7 +1580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/edge-bundler@npm:16.1.3, @netlify/edge-bundler@npm:^16.1.2":
+"@netlify/edge-bundler@npm:16.1.3, @netlify/edge-bundler@npm:^16.0.3, @netlify/edge-bundler@npm:^16.1.2":
   version: 16.1.3
   resolution: "@netlify/edge-bundler@npm:16.1.3"
   dependencies:
@@ -1630,30 +1600,6 @@ __metadata:
     tar: ^7.5.12
     urlpattern-polyfill: 8.0.2
   checksum: eb846859b8ee8b060766d937d1c0b7e677fc1c51f67920e65f59f342e881fb59109d11bb4b1fb1afa13e6831e2de11cb018e8c23dc0cab6f141059678fbca03d
-  languageName: node
-  linkType: hard
-
-"@netlify/edge-bundler@npm:^16.0.3":
-  version: 16.1.1
-  resolution: "@netlify/edge-bundler@npm:16.1.1"
-  dependencies:
-    "@import-maps/resolve": ^2.0.0
-    acorn: ^8.15.0
-    ajv: ^8.11.2
-    ajv-errors: ^3.0.0
-    better-ajv-errors: ^1.2.0
-    common-path-prefix: ^3.0.0
-    esbuild: 0.28.1
-    execa: ^8.0.0
-    find-up: ^7.0.0
-    node-stream-zip: ^1.15.0
-    p-retry: ^6.0.0
-    parse-imports: ^2.2.1
-    semver: ^7.3.8
-    tar: ^7.5.12
-    tmp-promise: ^3.0.3
-    urlpattern-polyfill: 8.0.2
-  checksum: 7663d0e666f6bb61c2df7df20ad5f9679237b5e56fc2929630124e02148b880c2568cddb3a78e86e60c7d8c724fd6cedb4be6a72273528f5bf8cf96ae3149d43
   languageName: node
   linkType: hard
 
@@ -1942,19 +1888,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/otel@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@netlify/otel@npm:7.0.2"
-  dependencies:
-    "@opentelemetry/api": 1.9.1
-    "@opentelemetry/core": 2.10.0
-    "@opentelemetry/instrumentation": ^0.221.0
-    "@opentelemetry/resources": 2.10.0
-    "@opentelemetry/sdk-trace-node": 2.10.0
-  checksum: 7650ba5c46e52cef62aa5a4040d607dd11551b131c2fd53e526c79ba25e7fa8eb71c5ceb3b869b8605bf5f25a34ce2368aaa50d9ed078b352c3c725f3542a36e
-  languageName: node
-  linkType: hard
-
 "@netlify/otel@npm:^7.0.4":
   version: 7.0.4
   resolution: "@netlify/otel@npm:7.0.4"
@@ -2044,30 +1977,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/serverless-functions-api@npm:2.18.0":
-  version: 2.18.0
-  resolution: "@netlify/serverless-functions-api@npm:2.18.0"
-  dependencies:
-    "@netlify/types": ^2.8.0
-  checksum: b609dcd0a9486a44648088fc988914fdb76d3a401afc3223a1025abda51fbd11bd127d2d8879b31ecf74912578c14aae33200288e456602e6bac4bff9c489974
-  languageName: node
-  linkType: hard
-
-"@netlify/serverless-functions-api@npm:2.24.0":
+"@netlify/serverless-functions-api@npm:2.24.0, @netlify/serverless-functions-api@npm:^2.21.2":
   version: 2.24.0
   resolution: "@netlify/serverless-functions-api@npm:2.24.0"
   dependencies:
     "@netlify/types": ^2.8.0
   checksum: 93068e65b5ccc05acdb1c2f509b5cef2ae3425e58669bd70f36db1ad54211400393656617267bc2262c559fe293c43f1fcac6c71d3ee2919545d22216d48b494
-  languageName: node
-  linkType: hard
-
-"@netlify/serverless-functions-api@npm:^2.21.2":
-  version: 2.23.0
-  resolution: "@netlify/serverless-functions-api@npm:2.23.0"
-  dependencies:
-    "@netlify/types": ^2.8.0
-  checksum: 9faba3981d2a6f7cfa2979fcca5c4da860cd21e14a3f553e6f6200db290bb266a0769fedf40bf72dcde1d64f0c9b92c69851455fc0c32804c57baf830b8c33d5
   languageName: node
   linkType: hard
 
@@ -2094,7 +2009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/zip-it-and-ship-it@npm:16.3.0, @netlify/zip-it-and-ship-it@npm:^16.3.0":
+"@netlify/zip-it-and-ship-it@npm:16.3.0, @netlify/zip-it-and-ship-it@npm:^16.0.0, @netlify/zip-it-and-ship-it@npm:^16.3.0":
   version: 16.3.0
   resolution: "@netlify/zip-it-and-ship-it@npm:16.3.0"
   dependencies:
@@ -2134,49 +2049,6 @@ __metadata:
   bin:
     zip-it-and-ship-it: bin.js
   checksum: 6e2a9faaf0ceababeb0fef9b50e015db7c086929d71a6eba77481084c9c4c0d5c6b05bf576d21820699362c07832c1ef0a7b371e5714646ff6de324a29247717
-  languageName: node
-  linkType: hard
-
-"@netlify/zip-it-and-ship-it@npm:^16.0.0":
-  version: 16.2.3
-  resolution: "@netlify/zip-it-and-ship-it@npm:16.2.3"
-  dependencies:
-    "@babel/parser": ^7.22.5
-    "@babel/types": ^7.28.5
-    "@netlify/binary-info": ^1.0.0
-    "@netlify/serverless-functions-api": 2.18.0
-    "@opentelemetry/api": ~1.9.0
-    "@vercel/nft": 1.3.1
-    archiver: ^8.0.0
-    common-path-prefix: ^3.0.0
-    copy-file: ^11.0.0
-    es-module-lexer: ^1.0.0
-    esbuild: 0.28.1
-    execa: ^8.0.0
-    fast-glob: ^3.3.3
-    filter-obj: ^6.0.0
-    find-up: ^7.0.0
-    is-path-inside: ^4.0.0
-    junk: ^4.0.0
-    locate-path: ^7.0.0
-    merge-options: ^3.0.4
-    minimatch: ^10.2.4
-    normalize-path: ^3.0.0
-    p-map: ^7.0.0
-    path-exists: ^5.0.0
-    precinct: ^12.0.0
-    require-package-name: ^2.0.1
-    resolve: ^2.0.0-next.1
-    semver: ^7.3.8
-    tmp-promise: ^3.0.2
-    toml: ^4.2.0
-    unixify: ^1.0.0
-    urlpattern-polyfill: 8.0.2
-    yargs: ^17.0.0
-    zod: ^4.0.5
-  bin:
-    zip-it-and-ship-it: bin.js
-  checksum: 1cccf7f2b4ddf0cbfefb6d5a137a0a14f4fe036f1bfb125f978a0124a150484c2559c88cfe09c2ad7d9ad7746fb0dfb143a94b907651e7981b1df7149f93c860
   languageName: node
   linkType: hard
 
@@ -2818,19 +2690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/project-service@npm:8.71.0":
-  version: 8.71.0
-  resolution: "@typescript-eslint/project-service@npm:8.71.0"
-  dependencies:
-    "@typescript-eslint/tsconfig-utils": ^8.71.0
-    "@typescript-eslint/types": ^8.71.0
-    debug: ^4.4.3
-  peerDependencies:
-    typescript: ">=4.8.4 <6.1.0"
-  checksum: c4a5d424265146a636785801a3bab1096792c15330bbb752073f1215da11938f17b735c131db66f0bb63a282816e08a4923be5ee236a51b8c50f18e6924f760c
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/project-service@npm:8.71.1":
   version: 8.71.1
   resolution: "@typescript-eslint/project-service@npm:8.71.1"
@@ -2851,15 +2710,6 @@ __metadata:
     "@typescript-eslint/types": 8.71.1
     "@typescript-eslint/visitor-keys": 8.71.1
   checksum: b3a8e332dd042a7d170c4a5ce729004406f2b11c3bb4a67c7bbd4773f8748db7906546bff80587f8be5fe6b2b8054355a04d2ab0a0a7aa7c05e02fb42165db1e
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/tsconfig-utils@npm:8.71.0, @typescript-eslint/tsconfig-utils@npm:^8.71.0":
-  version: 8.71.0
-  resolution: "@typescript-eslint/tsconfig-utils@npm:8.71.0"
-  peerDependencies:
-    typescript: ">=4.8.4 <6.1.0"
-  checksum: a3466eb2ed678e633c7972b92ad41237d2688e32f8267b602a823a35f9aabd2fdc164e556087527147ef3176ab3548dd346634bdb6f46f3561e65b9857876aec
   languageName: node
   linkType: hard
 
@@ -2888,13 +2738,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:8.71.0, @typescript-eslint/types@npm:^8.71.0":
-  version: 8.71.0
-  resolution: "@typescript-eslint/types@npm:8.71.0"
-  checksum: 730e4c8a0f04c2b3d91dacccf3b9d8756f5ee739df4dc31076a705bc27d42c34c7cb155620e15e821279eb6350f4379f32a070b6d1b2f6a83effc4805ae74b24
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/types@npm:8.71.1, @typescript-eslint/types@npm:^8.71.1":
   version: 8.71.1
   resolution: "@typescript-eslint/types@npm:8.71.1"
@@ -2902,7 +2745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:8.71.1":
+"@typescript-eslint/typescript-estree@npm:8.71.1, @typescript-eslint/typescript-estree@npm:^8.58.2":
   version: 8.71.1
   resolution: "@typescript-eslint/typescript-estree@npm:8.71.1"
   dependencies:
@@ -2921,25 +2764,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:^8.58.2":
-  version: 8.71.0
-  resolution: "@typescript-eslint/typescript-estree@npm:8.71.0"
-  dependencies:
-    "@typescript-eslint/project-service": 8.71.0
-    "@typescript-eslint/tsconfig-utils": 8.71.0
-    "@typescript-eslint/types": 8.71.0
-    "@typescript-eslint/visitor-keys": 8.71.0
-    debug: ^4.4.3
-    minimatch: ^10.2.2
-    semver: ^7.7.3
-    tinyglobby: ^0.2.15
-    ts-api-utils: ^2.5.0
-  peerDependencies:
-    typescript: ">=4.8.4 <6.1.0"
-  checksum: 631e6cae4c11bc1ca4e76887d9d8079c2c650b3b46b506dba54b6b18c0052f99aecbe3857c8375edc6a9ac1a30bad7944ef6c902ce55c04281a290e5480f1f14
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/utils@npm:8.71.1":
   version: 8.71.1
   resolution: "@typescript-eslint/utils@npm:8.71.1"
@@ -2952,16 +2776,6 @@ __metadata:
     eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
     typescript: ">=4.8.4 <6.1.0"
   checksum: 2070620b9d435dfbbdec4abcf3cdd109113f0436742221b8a592ccb75d1645cb76dd635c6cce85f51a6371fa3a324527176ee2941b51c31e655bcde9e1491dcf
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/visitor-keys@npm:8.71.0":
-  version: 8.71.0
-  resolution: "@typescript-eslint/visitor-keys@npm:8.71.0"
-  dependencies:
-    "@typescript-eslint/types": 8.71.0
-    eslint-visitor-keys: ^5.0.0
-  checksum: ba61164b005dab853f73cd38475c5784d0eb4867907883c61a5fc85805d8d6f262de435e3bad090441f67b2731f94648a788658ace63e6456451a64d980be1ab
   languageName: node
   linkType: hard
 
@@ -6541,16 +6355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iconv-lite@npm:^0.7.0, iconv-lite@npm:~0.7.0":
-  version: 0.7.2
-  resolution: "iconv-lite@npm:0.7.2"
-  dependencies:
-    safer-buffer: ">= 2.1.2 < 3.0.0"
-  checksum: faf884c1f631a5d676e3e64054bed891c7c5f616b790082d99ccfbfd017c661a39db8009160268fd65fae57c9154d4d491ebc9c301f3446a078460ef114dc4b8
-  languageName: node
-  linkType: hard
-
-"iconv-lite@npm:^0.7.2":
+"iconv-lite@npm:^0.7.0, iconv-lite@npm:^0.7.2, iconv-lite@npm:~0.7.0":
   version: 0.7.3
   resolution: "iconv-lite@npm:0.7.3"
   dependencies:
@@ -10761,7 +10566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp-promise@npm:^3.0.2, tmp-promise@npm:^3.0.3":
+"tmp-promise@npm:^3.0.2":
   version: 3.0.3
   resolution: "tmp-promise@npm:3.0.3"
   dependencies:
