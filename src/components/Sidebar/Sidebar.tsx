@@ -1,5 +1,5 @@
-import type { MouseEvent, KeyboardEvent } from "react";
-import { useEffect } from "react";
+import type { MouseEvent } from "react";
+import { useEffect, useRef } from "react";
 import { SectionId } from "../../hooks/useActiveSection";
 import {
   sidebarContainer,
@@ -23,16 +23,40 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!isOpen) return;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const dialog = dialogRef.current;
+    const links = dialog?.querySelectorAll<HTMLElement>("a[href]");
+    links?.[0]?.focus();
     document.body.style.overflow = "hidden";
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+
+      if (e.key !== "Tab" || !dialog || !links?.length) return;
+
+      const first = links[0];
+      const last = links[links.length - 1];
+      const focusIsOutsideDialog = !dialog.contains(document.activeElement);
+
+      if (e.shiftKey && (document.activeElement === first || focusIsOutsideDialog)) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (document.activeElement === last || focusIsOutsideDialog)) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+      previouslyFocused?.focus();
     };
   }, [isOpen, close]);
 
@@ -42,26 +66,18 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
     close();
   };
 
-  const handleOverlayKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      close();
-    }
-  };
-
   return (
     <>
       {isOpen && (
         <div
           className={sidebarOverlay}
           onClick={close}
-          onKeyDown={handleOverlayKeyDown}
-          role="button"
-          tabIndex={0}
-          aria-label="Close menu"
+          aria-hidden="true"
         />
       )}
       <div
+        id="mobile-navigation"
+        ref={dialogRef}
         className={sidebarContainer[isOpen ? "open" : "closed"]}
         role="dialog"
         aria-modal="true"

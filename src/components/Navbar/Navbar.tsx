@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
@@ -26,6 +26,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const activeSection = useActiveSection();
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -85,6 +86,7 @@ export const Navbar = () => {
             className={hamburgerButton}
             aria-label={sidebarOpen ? "Close menu" : "Open menu"}
             aria-expanded={sidebarOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setSidebarOpen((v) => !v)}
           >
             {sidebarOpen ? (
@@ -97,7 +99,7 @@ export const Navbar = () => {
       </nav>
       <Sidebar
         isOpen={sidebarOpen}
-        close={() => setSidebarOpen(false)}
+        close={closeSidebar}
         activeSection={activeSection}
       />
     </>
