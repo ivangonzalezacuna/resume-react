@@ -39,7 +39,8 @@ yarn preview
 | `yarn dev:netlify` | Run via Netlify CLI (applies `netlify.toml` redirects/headers) |
 | `yarn build`       | Type-check and build for production                            |
 | `yarn preview`     | Serve the production build locally                             |
-| `yarn check`       | Type-check, lint, and format-check (no build)                  |
+| `yarn check`       | Type-check, lint, format-check, and run tests (no build)       |
+| `yarn test`        | Run the automated test suite                                   |
 | `yarn ci`          | Full gate — `check` plus a production build                    |
 | `yarn lint:fix`    | Auto-fix ESLint issues                                         |
 | `yarn format`      | Auto-format with Prettier                                      |
