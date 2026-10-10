@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
@@ -27,6 +27,11 @@ export const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const activeSection = useActiveSection();
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+  const firstDesktopNavLink = useRef<HTMLAnchorElement>(null);
+  const closeSidebarForDesktop = useCallback(() => {
+    closeSidebar();
+    window.requestAnimationFrame(() => firstDesktopNavLink.current?.focus());
+  }, [closeSidebar]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -54,6 +59,7 @@ export const Navbar = () => {
             {NAV_LINKS.map(({ label, id }) => (
               <a
                 key={id}
+                ref={id === "experience" ? firstDesktopNavLink : undefined}
                 href={`#${id}`}
                 className={navItem[activeSection === id ? "active" : "default"]}
                 onClick={(e) => handleNavClick(e, id)}
@@ -100,6 +106,7 @@ export const Navbar = () => {
       <Sidebar
         isOpen={sidebarOpen}
         close={closeSidebar}
+        closeForDesktop={closeSidebarForDesktop}
         activeSection={activeSection}
       />
     </>

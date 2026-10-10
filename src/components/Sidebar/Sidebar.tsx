@@ -19,19 +19,30 @@ const NAV_LINKS: { label: string; id: SectionId }[] = [
 interface SidebarProps {
   isOpen: boolean;
   close: () => void;
+  closeForDesktop: () => void;
   activeSection: SectionId;
 }
 
-export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
+export const Sidebar = ({
+  isOpen,
+  close,
+  closeForDesktop,
+  activeSection,
+}: SidebarProps) => {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
     const previouslyFocused = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
     const dialog = dialogRef.current;
     const links = dialog?.querySelectorAll<HTMLElement>("a[href]");
     links?.[0]?.focus();
     document.body.style.overflow = "hidden";
+    const desktopMediaQuery = window.matchMedia("(min-width: 768px)");
+    const handleViewportChange = (event: MediaQueryListEvent) => {
+      if (event.matches) closeForDesktop();
+    };
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === "Escape") {
         close();
@@ -53,12 +64,14 @@ export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
       }
     };
     document.addEventListener("keydown", handleKeyDown);
+    desktopMediaQuery.addEventListener("change", handleViewportChange);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-      previouslyFocused?.focus();
+      desktopMediaQuery.removeEventListener("change", handleViewportChange);
+      document.body.style.overflow = previousOverflow;
+      if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
     };
-  }, [isOpen, close]);
+  }, [isOpen, close, closeForDesktop]);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
     e.preventDefault();
