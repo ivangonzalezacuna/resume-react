@@ -1,6 +1,7 @@
-import type { MouseEvent, KeyboardEvent } from "react";
-import { useEffect } from "react";
-import { SectionId } from "../../hooks/useActiveSection";
+import type { MouseEvent } from "react";
+import { useEffect, useRef } from "react";
+import { NAV_LINKS, type SectionId } from "../../content/sections";
+import { scrollToSection } from "../../utils/scrollToSection";
 import {
   sidebarContainer,
   sidebarOverlay,
@@ -8,60 +9,83 @@ import {
   sidebarItem,
 } from "./Sidebar.css";
 
-const NAV_LINKS: { label: string; id: SectionId }[] = [
-  { label: "Experience", id: "experience" },
-  { label: "Projects", id: "projects" },
-  { label: "Skills", id: "skills" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "contact" },
-];
-
 interface SidebarProps {
   isOpen: boolean;
   close: () => void;
+  closeForDesktop: () => void;
   activeSection: SectionId;
 }
 
-export const Sidebar = ({ isOpen, close, activeSection }: SidebarProps) => {
+export const Sidebar = ({
+  isOpen,
+  close,
+  closeForDesktop,
+  activeSection,
+}: SidebarProps) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!isOpen) return;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    const dialog = dialogRef.current;
+    const links = dialog?.querySelectorAll<HTMLElement>("a[href]");
+    links?.[0]?.focus();
     document.body.style.overflow = "hidden";
+    const desktopMediaQuery = window.matchMedia("(min-width: 768px)");
+    const handleViewportChange = (event: MediaQueryListEvent) => {
+      if (event.matches) closeForDesktop();
+    };
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+
+      if (e.key !== "Tab" || !dialog || !links?.length) return;
+
+      const first = links[0];
+      const last = links[links.length - 1];
+      const focusIsOutsideDialog = !dialog.contains(document.activeElement);
+
+      if (
+        e.shiftKey &&
+        (document.activeElement === first || focusIsOutsideDialog)
+      ) {
+        e.preventDefault();
+        last.focus();
+      } else if (
+        !e.shiftKey &&
+        (document.activeElement === last || focusIsOutsideDialog)
+      ) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
+    desktopMediaQuery.addEventListener("change", handleViewportChange);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
+      desktopMediaQuery.removeEventListener("change", handleViewportChange);
+      document.body.style.overflow = previousOverflow;
+      if (previouslyFocused?.getClientRects().length) previouslyFocused.focus();
     };
-  }, [isOpen, close]);
+  }, [isOpen, close, closeForDesktop]);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
     close();
-  };
-
-  const handleOverlayKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      close();
-    }
   };
 
   return (
     <>
       {isOpen && (
-        <div
-          className={sidebarOverlay}
-          onClick={close}
-          onKeyDown={handleOverlayKeyDown}
-          role="button"
-          tabIndex={0}
-          aria-label="Close menu"
-        />
+        <div className={sidebarOverlay} onClick={close} aria-hidden="true" />
       )}
       <div
+        id="mobile-navigation"
+        ref={dialogRef}
         className={sidebarContainer[isOpen ? "open" : "closed"]}
         role="dialog"
         aria-modal="true"

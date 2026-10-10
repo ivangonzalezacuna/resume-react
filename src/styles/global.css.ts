@@ -11,6 +11,11 @@ globalStyle("html", {
   scrollBehavior: "smooth",
   scrollPaddingTop: "64px",
   fontSize: "16px",
+  "@media": {
+    "(prefers-reduced-motion: reduce)": {
+      scrollBehavior: "auto",
+    },
+  },
 });
 
 globalStyle("body", {

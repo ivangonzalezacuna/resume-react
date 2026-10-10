@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
-import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
+import { useActiveSection } from "../../hooks/useActiveSection";
+import { NAV_LINKS } from "../../content/sections";
+import type { SectionId } from "../../content/sections";
+import { scrollToSection } from "../../utils/scrollToSection";
 import portfolio from "../../content/portfolio";
 import {
   nav,
@@ -14,18 +17,16 @@ import {
 } from "./Navbar.css";
 import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 
-const NAV_LINKS: { label: string; id: SectionId }[] = [
-  { label: "Experience", id: "experience" },
-  { label: "Projects", id: "projects" },
-  { label: "Skills", id: "skills" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "contact" },
-];
-
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const activeSection = useActiveSection();
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+  const firstDesktopNavLink = useRef<HTMLAnchorElement>(null);
+  const closeSidebarForDesktop = useCallback(() => {
+    closeSidebar();
+    window.requestAnimationFrame(() => firstDesktopNavLink.current?.focus());
+  }, [closeSidebar]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -38,7 +39,7 @@ export const Navbar = () => {
     id: SectionId,
   ) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
   };
 
   return (
@@ -53,6 +54,7 @@ export const Navbar = () => {
             {NAV_LINKS.map(({ label, id }) => (
               <a
                 key={id}
+                ref={id === "experience" ? firstDesktopNavLink : undefined}
                 href={`#${id}`}
                 className={navItem[activeSection === id ? "active" : "default"]}
                 onClick={(e) => handleNavClick(e, id)}
@@ -85,6 +87,7 @@ export const Navbar = () => {
             className={hamburgerButton}
             aria-label={sidebarOpen ? "Close menu" : "Open menu"}
             aria-expanded={sidebarOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setSidebarOpen((v) => !v)}
           >
             {sidebarOpen ? (
@@ -97,7 +100,8 @@ export const Navbar = () => {
       </nav>
       <Sidebar
         isOpen={sidebarOpen}
-        close={() => setSidebarOpen(false)}
+        close={closeSidebar}
+        closeForDesktop={closeSidebarForDesktop}
         activeSection={activeSection}
       />
     </>

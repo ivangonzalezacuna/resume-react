@@ -1,21 +1,13 @@
 import { useState, useEffect } from "react";
-
-const SECTIONS = [
-  "hero",
-  "experience",
-  "projects",
-  "skills",
-  "about",
-  "contact",
-] as const;
-
-export type SectionId = (typeof SECTIONS)[number];
+import { SECTIONS, type SectionId } from "../content/sections";
 
 export const useActiveSection = (): SectionId => {
   const [active, setActive] = useState<SectionId>("hero");
 
   useEffect(() => {
-    const ratios = new Map<string, number>(SECTIONS.map((id) => [id, 0]));
+    const ratios = new Map<SectionId, number>(
+      SECTIONS.map((id) => [id, 0] as const),
+    );
 
     const updateActive = () => {
       let best: SectionId = "hero";
@@ -23,7 +15,7 @@ export const useActiveSection = (): SectionId => {
       ratios.forEach((ratio, id) => {
         if (ratio > bestRatio) {
           bestRatio = ratio;
-          best = id as SectionId;
+          best = id;
         }
       });
       setActive(best);
@@ -34,7 +26,10 @@ export const useActiveSection = (): SectionId => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          ratios.set(entry.target.id, entry.intersectionRatio);
+          const id = SECTIONS.find(
+            (sectionId) => sectionId === entry.target.id,
+          );
+          if (id) ratios.set(id, entry.intersectionRatio);
         });
         updateActive();
       },
