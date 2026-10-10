@@ -1,6 +1,5 @@
 import { m } from "framer-motion";
 import { SectionTitle } from "../../atoms/SectionTitle";
-import { staggerContainer, staggerItem } from "../../styles/motion";
 import portfolio from "../../content/portfolio";
 import {
   contactSection,
@@ -57,20 +56,17 @@ export const Contact = () => {
           Seeking platform engineering challenges or internal tool design
           opportunities. Drop a direct message across preferred channels.
         </m.p>
-        <m.ul
-          className={linkList}
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {channels.map((channel) => {
+        <ul className={linkList}>
+          {channels.map((channel, i) => {
             const isExternal = !channel.href.startsWith("mailto:");
             return (
               <m.li
                 key={channel.label}
                 className={linkItem}
-                variants={staggerItem}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
               >
                 <div className={channelRow}>
                   <a
@@ -91,7 +87,7 @@ export const Contact = () => {
               </m.li>
             );
           })}
-        </m.ul>
+        </ul>
       </div>
     </section>
   );

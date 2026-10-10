@@ -1,7 +1,6 @@
 import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
-import { staggerContainer, staggerItem } from "../../styles/motion";
 import portfolio from "../../content/portfolio";
 import {
   experienceSection,
@@ -28,16 +27,17 @@ export const Experience = () => {
       className={experienceSection}
       aria-labelledby="experience-heading"
     >
-      <m.div
-        className={sectionInner}
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <div className={sectionInner}>
         <SectionTitle title="Experience" id="experience-heading" />
         {portfolio.experience.map((entry) => (
-          <m.div key={entry.company} className={card} variants={staggerItem}>
+          <m.div
+            key={entry.company}
+            className={card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <div className={cardHeader}>
               <h3 className={companyName}>{entry.company}</h3>
               <div className={metaRow}>
@@ -68,7 +68,7 @@ export const Experience = () => {
             </div>
           </m.div>
         ))}
-      </m.div>
+      </div>
     </section>
   );
 };
