@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
+import { scrollToSection } from "../../utils/scrollToSection";
 import portfolio from "../../content/portfolio";
 import {
   nav,
@@ -44,7 +45,7 @@ export const Navbar = () => {
     id: SectionId,
   ) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
   };
 
   return (

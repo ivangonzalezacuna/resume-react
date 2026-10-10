@@ -1,6 +1,7 @@
 import type { MouseEvent } from "react";
 import { useEffect, useRef } from "react";
 import { SectionId } from "../../hooks/useActiveSection";
+import { scrollToSection } from "../../utils/scrollToSection";
 import {
   sidebarContainer,
   sidebarOverlay,
@@ -75,7 +76,7 @@ export const Sidebar = ({
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: SectionId) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
     close();
   };
 

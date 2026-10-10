@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import { scrollToSection } from "../../utils/scrollToSection";
 import {
   bracketStyle,
   ivanTextStyle,
@@ -14,7 +15,7 @@ interface LogoProps {
 export const Logo = ({ onClose }: LogoProps) => {
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection("hero");
     onClose?.();
   };
 
