@@ -1,15 +1,5 @@
 import { useState, useEffect } from "react";
-
-const SECTIONS = [
-  "hero",
-  "experience",
-  "projects",
-  "skills",
-  "about",
-  "contact",
-] as const;
-
-export type SectionId = (typeof SECTIONS)[number];
+import { SECTIONS, type SectionId } from "../content/sections";
 
 export const useActiveSection = (): SectionId => {
   const [active, setActive] = useState<SectionId>("hero");

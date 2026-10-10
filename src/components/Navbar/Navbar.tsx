@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
-import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
+import { useActiveSection } from "../../hooks/useActiveSection";
+import { NAV_LINKS } from "../../content/sections";
+import type { SectionId } from "../../content/sections";
 import { scrollToSection } from "../../utils/scrollToSection";
 import portfolio from "../../content/portfolio";
 import {
@@ -14,14 +16,6 @@ import {
   hamburgerButton,
 } from "./Navbar.css";
 import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
-
-const NAV_LINKS: { label: string; id: SectionId }[] = [
-  { label: "Experience", id: "experience" },
-  { label: "Projects", id: "projects" },
-  { label: "Skills", id: "skills" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "contact" },
-];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

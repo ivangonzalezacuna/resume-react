@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 import { useEffect, useRef } from "react";
-import { SectionId } from "../../hooks/useActiveSection";
+import { NAV_LINKS, type SectionId } from "../../content/sections";
 import { scrollToSection } from "../../utils/scrollToSection";
 import {
   sidebarContainer,
@@ -8,14 +8,6 @@ import {
   sidebarNav,
   sidebarItem,
 } from "./Sidebar.css";
-
-const NAV_LINKS: { label: string; id: SectionId }[] = [
-  { label: "Experience", id: "experience" },
-  { label: "Projects", id: "projects" },
-  { label: "Skills", id: "skills" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "contact" },
-];
 
 interface SidebarProps {
   isOpen: boolean;
