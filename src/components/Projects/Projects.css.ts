@@ -1,20 +1,12 @@
 import { style, globalStyle } from "@vanilla-extract/css";
 import { themeContract } from "../../styles/theme.css";
+import {
+  section as sectionStyle,
+  sectionInner,
+} from "../../styles/section.css";
 
-export const projectsSection = style({
-  width: "100%",
-  padding: "96px 24px",
-  boxSizing: "border-box",
-  "@media": {
-    "(min-width: 768px)": { padding: "96px 48px" },
-    "(min-width: 1280px)": { padding: "120px 80px" },
-  },
-});
-
-export const sectionInner = style({
-  maxWidth: "960px",
-  margin: "0 auto",
-});
+export { sectionInner };
+export const projectsSection = sectionStyle;
 
 export const projectGrid = style({
   display: "grid",

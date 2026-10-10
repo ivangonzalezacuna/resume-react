@@ -1,21 +1,15 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../../styles/theme.css";
+import {
+  section as sectionStyle,
+  sectionInner,
+} from "../../styles/section.css";
 
-export const contactSection = style({
-  width: "100%",
-  padding: "96px 24px",
-  boxSizing: "border-box",
-  background: themeContract.surface.base,
-  "@media": {
-    "(min-width: 768px)": { padding: "96px 48px" },
-    "(min-width: 1280px)": { padding: "120px 80px" },
-  },
-});
-
-export const sectionInner = style({
-  maxWidth: "960px",
-  margin: "0 auto",
-});
+export { sectionInner };
+export const contactSection = style([
+  sectionStyle,
+  { background: themeContract.surface.base },
+]);
 
 export const callout = style({
   fontFamily: themeContract.font.narrative,
