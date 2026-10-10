@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import react from "@vitejs/plugin-react";
 import sitemap from "vite-plugin-sitemap";
@@ -14,4 +14,8 @@ export default defineConfig({
       generateRobotsTxt: false,
     }),
   ],
+  test: {
+    environment: "jsdom",
+    restoreMocks: true,
+  },
 });
