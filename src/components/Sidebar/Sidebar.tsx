@@ -56,10 +56,16 @@ export const Sidebar = ({
       const last = links[links.length - 1];
       const focusIsOutsideDialog = !dialog.contains(document.activeElement);
 
-      if (e.shiftKey && (document.activeElement === first || focusIsOutsideDialog)) {
+      if (
+        e.shiftKey &&
+        (document.activeElement === first || focusIsOutsideDialog)
+      ) {
         e.preventDefault();
         last.focus();
-      } else if (!e.shiftKey && (document.activeElement === last || focusIsOutsideDialog)) {
+      } else if (
+        !e.shiftKey &&
+        (document.activeElement === last || focusIsOutsideDialog)
+      ) {
         e.preventDefault();
         first.focus();
       }
@@ -83,11 +89,7 @@ export const Sidebar = ({
   return (
     <>
       {isOpen && (
-        <div
-          className={sidebarOverlay}
-          onClick={close}
-          aria-hidden="true"
-        />
+        <div className={sidebarOverlay} onClick={close} aria-hidden="true" />
       )}
       <div
         id="mobile-navigation"
