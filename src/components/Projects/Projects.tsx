@@ -2,6 +2,7 @@ import { m } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
+import { staggerContainer, staggerItem } from "../../styles/motion";
 import portfolio from "../../content/portfolio";
 import {
   projectsSection,
@@ -26,16 +27,15 @@ export const Projects = () => {
     >
       <div className={sectionInner}>
         <SectionTitle title="Projects" id="projects-heading" />
-        <div className={projectGrid}>
+        <m.div
+          className={projectGrid}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {portfolio.projects.map((project) => (
-            <m.div
-              key={project.title}
-              className={card}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
+            <m.div key={project.title} className={card} variants={staggerItem}>
               <div className={cardHeader}>
                 {project.url ? (
                   <h3 className={projectTitle}>
@@ -69,7 +69,7 @@ export const Projects = () => {
               </div>
             </m.div>
           ))}
-        </div>
+        </m.div>
       </div>
     </section>
   );

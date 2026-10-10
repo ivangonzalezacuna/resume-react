@@ -1,6 +1,7 @@
 import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
+import { staggerContainer, staggerItem } from "../../styles/motion";
 import portfolio from "../../content/portfolio";
 import {
   skillsSection,
@@ -20,15 +21,18 @@ export const Skills = () => {
     >
       <div className={sectionInner}>
         <SectionTitle title="Skills" id="skills-heading" />
-        <div className={skillsGrid}>
+        <m.div
+          className={skillsGrid}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {portfolio.skills.map((group) => (
             <m.div
               key={group.category}
               className={categoryColumn}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              variants={staggerItem}
             >
               <h3 className={categoryHeader}>{group.category}</h3>
               <div className={tagRow}>
@@ -38,7 +42,7 @@ export const Skills = () => {
               </div>
             </m.div>
           ))}
-        </div>
+        </m.div>
       </div>
     </section>
   );
