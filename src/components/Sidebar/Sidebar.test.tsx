@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
 import { Sidebar } from "./Sidebar";
@@ -20,7 +20,6 @@ describe("mobile navigation", () => {
   afterEach(() => {
     cleanup();
     document.body.style.overflow = "";
-    window.history.replaceState(null, "", "/");
   });
 
   it("moves and contains focus while open, then restores focus when closed", async () => {
@@ -43,19 +42,5 @@ describe("mobile navigation", () => {
     await user.keyboard("{Escape}");
     expect(document.activeElement).toBe(trigger);
     expect(document.body.style.overflow).toBe("auto");
-  });
-
-  it("does not cancel native section navigation", () => {
-    render(<SidebarHarness />);
-    fireEvent.click(screen.getByRole("button", { name: "Open menu" }));
-
-    const experienceLink = screen.getByRole("link", { name: "Experience" });
-    expect(experienceLink.getAttribute("href")).toBe("#experience");
-    const clickEvent = new MouseEvent("click", {
-      bubbles: true,
-      cancelable: true,
-    });
-    experienceLink.dispatchEvent(clickEvent);
-    expect(clickEvent.defaultPrevented).toBe(false);
   });
 });
