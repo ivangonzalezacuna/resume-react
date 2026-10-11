@@ -20,6 +20,7 @@ const App = () => {
           <Navbar />
           <main
             id="main-content"
+            tabIndex={-1}
             style={{ width: "100%", minHeight: "100dvh" }}
           >
             <Hero />

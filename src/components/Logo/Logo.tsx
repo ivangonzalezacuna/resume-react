@@ -1,4 +1,3 @@
-import type { MouseEvent } from "react";
 import {
   bracketStyle,
   ivanTextStyle,
@@ -12,16 +11,10 @@ interface LogoProps {
 }
 
 export const Logo = ({ onClose }: LogoProps) => {
-  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
-    onClose?.();
-  };
-
   return (
     <a
       href="#hero"
-      onClick={handleClick}
+      onClick={onClose}
       aria-label="Back to top"
       className={logoAnchorStyle}
     >

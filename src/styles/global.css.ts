@@ -13,6 +13,14 @@ globalStyle("html", {
   fontSize: "16px",
 });
 
+globalStyle("html", {
+  "@media": {
+    "(prefers-reduced-motion: reduce)": {
+      scrollBehavior: "auto",
+    },
+  },
+});
+
 globalStyle("body", {
   backgroundColor: themeContract.surface.base,
   backgroundImage: `radial-gradient(circle, ${themeContract.border.dotGrid} 1px, transparent 1px)`,

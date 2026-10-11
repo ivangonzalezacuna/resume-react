@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Logo } from "../Logo";
 import { Sidebar } from "../Sidebar";
 import { useActiveSection, SectionId } from "../../hooks/useActiveSection";
@@ -33,13 +33,7 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: SectionId,
-  ) => {
-    e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
 
   return (
     <>
@@ -55,7 +49,6 @@ export const Navbar = () => {
                 key={id}
                 href={`#${id}`}
                 className={navItem[activeSection === id ? "active" : "default"]}
-                onClick={(e) => handleNavClick(e, id)}
               >
                 {label}
               </a>
@@ -97,7 +90,7 @@ export const Navbar = () => {
       </nav>
       <Sidebar
         isOpen={sidebarOpen}
-        close={() => setSidebarOpen(false)}
+        close={closeSidebar}
         activeSection={activeSection}
       />
     </>
