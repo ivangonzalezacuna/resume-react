@@ -21,8 +21,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "yarn typecheck && yarn lint && yarn format:check",
-    "ci": "yarn check && yarn build",
-    "test": "echo 'No tests'"
+    "ci": "yarn check && yarn build"
   },
   "engines": {
     "node": ">=24"
