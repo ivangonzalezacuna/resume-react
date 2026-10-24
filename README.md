@@ -31,18 +31,29 @@ yarn build
 yarn preview
 ```
 
+Vite does not apply the headers or redirects in `netlify.toml`. For occasional
+local Netlify emulation, run the CLI on demand without adding it to the project's
+dependencies:
+
+```bash
+yarn dlx netlify-cli@27.14.0 dev
+```
+
+The CLI version is pinned for deliberate updates — its transitive dependencies
+are not covered by this project's lockfile. Use Netlify Deploy Previews to verify
+the production build's security headers, caching, and redirects on Netlify itself.
+
 ## Scripts
 
-| Script             | Description                                                    |
-| ------------------ | -------------------------------------------------------------- |
-| `yarn dev`         | Start the Vite dev server                                      |
-| `yarn dev:netlify` | Run via Netlify CLI (applies `netlify.toml` redirects/headers) |
-| `yarn build`       | Type-check and build for production                            |
-| `yarn preview`     | Serve the production build locally                             |
-| `yarn check`       | Type-check, lint, and format-check (no build)                  |
-| `yarn ci`          | Full gate — `check` plus a production build                    |
-| `yarn lint:fix`    | Auto-fix ESLint issues                                         |
-| `yarn format`      | Auto-format with Prettier                                      |
+| Script          | Description                                   |
+| --------------- | --------------------------------------------- |
+| `yarn dev`      | Start the Vite dev server                     |
+| `yarn build`    | Type-check and build for production           |
+| `yarn preview`  | Serve the production build locally            |
+| `yarn check`    | Type-check, lint, and format-check (no build) |
+| `yarn ci`       | Full gate — `check` plus a production build   |
+| `yarn lint:fix` | Auto-fix ESLint issues                        |
+| `yarn format`   | Auto-format with Prettier                     |
 
 ## Features
 
