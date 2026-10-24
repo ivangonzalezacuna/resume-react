@@ -39,7 +39,7 @@ dependencies:
 yarn dlx netlify-cli@27.14.0 dev
 ```
 
-The CLI version is pinned for deliberate updates — its transitive dependencies
+The CLI version is pinned for deliberate updates, but its transitive dependencies
 are not covered by this project's lockfile. Use Netlify Deploy Previews to verify
 the production build's security headers, caching, and redirects on Netlify itself.
 
