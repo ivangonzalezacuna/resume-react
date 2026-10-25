@@ -2,11 +2,6 @@
   command = "yarn build"
   publish = "dist"
 
-[dev]
-  command = "yarn dev"
-  targetPort = 5173
-  framework = "vite"
-
 [[headers]]
   for = "/*"
   [headers.values]
