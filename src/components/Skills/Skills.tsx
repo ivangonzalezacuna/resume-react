@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
@@ -22,21 +21,14 @@ export const Skills = () => {
         <SectionTitle title="Skills" id="skills-heading" />
         <div className={skillsGrid}>
           {portfolio.skills.map((group) => (
-            <m.div
-              key={group.category}
-              className={categoryColumn}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
+            <div key={group.category} className={categoryColumn}>
               <h3 className={categoryHeader}>{group.category}</h3>
               <div className={tagRow}>
                 {group.technologies.map((tech) => (
                   <TechTag key={tech} name={tech} />
                 ))}
               </div>
-            </m.div>
+            </div>
           ))}
         </div>
       </div>
