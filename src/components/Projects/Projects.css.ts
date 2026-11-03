@@ -43,7 +43,8 @@ export const cardHeader = style({
 
 export const projectTitle = style({
   fontSize: "16px",
-  fontWeight: 700,
+  fontWeight: 600,
+  fontFamily: themeContract.font.display,
   color: themeContract.text.primary,
   margin: "0 0 6px 0",
   lineHeight: 1.4,

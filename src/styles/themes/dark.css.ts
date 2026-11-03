@@ -39,5 +39,6 @@ export const darkTheme = createTheme(themeContract, {
   font: {
     narrative: "'Plus Jakarta Sans', sans-serif",
     technical: "'JetBrains Mono', monospace",
+    display: "'Space Grotesk', sans-serif",
   },
 });

@@ -6,9 +6,9 @@ export const wrapperStyle = style({
 });
 
 export const titleStyle = style({
-  fontFamily: themeContract.font.narrative,
+  fontFamily: themeContract.font.display,
   fontSize: "28px",
-  fontWeight: 700,
+  fontWeight: 600,
   letterSpacing: "-0.02em",
   color: themeContract.text.primary,
   margin: 0,
