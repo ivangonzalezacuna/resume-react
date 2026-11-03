@@ -22,7 +22,7 @@ export const darkTheme = createTheme(themeContract, {
   },
   text: {
     primary: "#E6EDF3",
-    muted: "#94A3B8",
+    muted: "#A8B5CA",
   },
   border: {
     subtle: "rgba(255,255,255,0.08)",
