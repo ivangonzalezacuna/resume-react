@@ -50,3 +50,20 @@ yarn preview
 - PWA-ready — web app manifest and full favicon set
 - Downloadable CV (`/pdf/CV_IvanGonzalezAcuna.pdf`)
 - Responsive layout with smooth scroll navigation
+
+## Performance
+
+- Each typeface uses one self-hosted variable WOFF2 file rather than separate
+  downloads for each weight. Only Latin subsets are emitted; these include the
+  accented characters used by the current content. Add appropriate subsets when
+  introducing content in other scripts.
+- Critical fonts are preloaded in `index.html`. Keep these URLs aligned with the
+  font faces in `src/styles/fonts.css`; Vite hashes and deduplicates the assets.
+- The profile photo uses responsive WebP images, with JPEG fallbacks. Keep its
+  preload and the `<picture>` sources aligned to avoid duplicate downloads.
+- Framer Motion's animations, timings and reduced-motion behavior are retained.
+
+Run `yarn ci`, serve the production build with `yarn preview`, then measure with
+Lighthouse's default mobile settings. Aim for 95+ performance across repeated
+cold-load runs, not just one run. Local results vary with CPU load; verify the
+deployed site too.

@@ -499,24 +499,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/jetbrains-mono@npm:^5.3.0":
+"@fontsource-variable/jetbrains-mono@npm:^5.3.0":
   version: 5.3.0
-  resolution: "@fontsource/jetbrains-mono@npm:5.3.0"
-  checksum: c72611db6c771c2ce98453f8a61808e0aad5256c741935fd3075cdce995a39060d60b34bd4abadbb5cbce732278fda87825be7ce949557a00e3e48c6374f1c98
+  resolution: "@fontsource-variable/jetbrains-mono@npm:5.3.0"
+  checksum: b7f4da6875ebcb1d88ea3c4018eab41b27d54cc998a65bf53014fda30bc26cf1e3b19f0645842be3674e7fbdd7060656e065a21d942503cac81493923b94edd3
   languageName: node
   linkType: hard
 
-"@fontsource/plus-jakarta-sans@npm:^5.3.0":
+"@fontsource-variable/plus-jakarta-sans@npm:^5.3.0":
   version: 5.3.0
-  resolution: "@fontsource/plus-jakarta-sans@npm:5.3.0"
-  checksum: a56f9f455a917cb6751f852fb1078b1b376c4be407d3ced67957bfef51610eb8a37f4e5a8496a7a6224b32a9a3d9156dd74ca2e9d80403b98840e60bba60f8e5
+  resolution: "@fontsource-variable/plus-jakarta-sans@npm:5.3.0"
+  checksum: 2f0070dec22a8ad8892721696f5f0cd6ebf47dd69f4810990deb8bf09a16b1b906dfc38d392117a85b12823e467544102c8bb14c897cf185cb4b920406c4d734
   languageName: node
   linkType: hard
 
-"@fontsource/space-grotesk@npm:^5.3.0":
+"@fontsource-variable/space-grotesk@npm:^5.3.0":
   version: 5.3.0
-  resolution: "@fontsource/space-grotesk@npm:5.3.0"
-  checksum: 6ace7446ca2270830efed885dd008c4ffdca843dcf2dbf8482b5d61eaf223cb35a50132353669876f4a8f605c679f6b979b77f6fc783a1ab0b5228e328167860
+  resolution: "@fontsource-variable/space-grotesk@npm:5.3.0"
+  checksum: 78eb75bdf74f9030d3714ddec46e5b1d2eb4383b2df54657baf0450665db1a507d1f3a013d748df06f1a4a324b47b501abe9b5b3978bfdf2f1202993669e9a10
   languageName: node
   linkType: hard
 
@@ -2623,9 +2623,9 @@ __metadata:
   resolution: "ivangonzalez-resume@workspace:."
   dependencies:
     "@eslint/js": ^10.0.1
-    "@fontsource/jetbrains-mono": ^5.3.0
-    "@fontsource/plus-jakarta-sans": ^5.3.0
-    "@fontsource/space-grotesk": ^5.3.0
+    "@fontsource-variable/jetbrains-mono": ^5.3.0
+    "@fontsource-variable/plus-jakarta-sans": ^5.3.0
+    "@fontsource-variable/space-grotesk": ^5.3.0
     "@types/react": ^19.3.0
     "@types/react-dom": ^19.3.0
     "@typescript-eslint/eslint-plugin": ^8.72.1
