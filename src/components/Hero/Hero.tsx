@@ -60,24 +60,17 @@ export const Hero = () => {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
         >
           <div className={profileImageWrapper}>
-            <picture>
-              <source
-                type="image/webp"
-                srcSet="/images/profile/ivan-280.webp 280w, /images/profile/ivan-400.webp 400w, /images/profile/ivan-560.webp 560w"
-                sizes="(min-width: 768px) 280px, 200px"
-              />
-              <img
-                className={profileImage}
-                src="/images/profile/ivan.jpg"
-                srcSet="/images/profile/ivan-280.jpg 280w, /images/profile/ivan.jpg 560w"
-                sizes="(min-width: 768px) 280px, 200px"
-                alt={`Profile photo of ${personal.name}`}
-                width={560}
-                height={560}
-                fetchPriority="high"
-                decoding="async"
-              />
-            </picture>
+            <img
+              className={profileImage}
+              src="/images/profile/ivan-560.webp"
+              srcSet="/images/profile/ivan-280.webp 280w, /images/profile/ivan-400.webp 400w, /images/profile/ivan-560.webp 560w"
+              sizes="(min-width: 768px) 280px, 200px"
+              alt={`Profile photo of ${personal.name}`}
+              width={560}
+              height={560}
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </m.div>
       </div>
