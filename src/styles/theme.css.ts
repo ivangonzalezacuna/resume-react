@@ -37,5 +37,6 @@ export const themeContract = createThemeContract({
   font: {
     narrative: null,
     technical: null,
+    display: null,
   },
 });

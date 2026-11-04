@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import { TechTag } from "../../atoms/TechTag";
 import { SectionTitle } from "../../atoms/SectionTitle";
 import portfolio from "../../content/portfolio";
@@ -39,14 +38,7 @@ export const About = () => {
           <div>
             <h3 className={subHeading}>Education</h3>
             {portfolio.education.map((entry) => (
-              <m.div
-                key={entry.college}
-                className={card}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
+              <div key={entry.college} className={card}>
                 <div className={cardHeader}>
                   <h4 className={degreeName}>{entry.degree}</h4>
                   <div className={metaColumn}>
@@ -67,24 +59,17 @@ export const About = () => {
                     <TechTag key={tech} name={tech} />
                   ))}
                 </div>
-              </m.div>
+              </div>
             ))}
           </div>
           <div>
             <h3 className={subHeading}>Languages</h3>
             <div className={languageList}>
               {portfolio.languages.map((entry) => (
-                <m.div
-                  key={entry.language}
-                  className={languageItem}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                >
+                <div key={entry.language} className={languageItem}>
                   <span className={languageName}>{entry.language}</span>
                   <span className={proficiencyTag}>{entry.proficiency}</span>
-                </m.div>
+                </div>
               ))}
             </div>
           </div>

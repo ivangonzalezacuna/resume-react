@@ -47,12 +47,12 @@ export const leftBlock = style({
 });
 
 export const heroName = style({
-  fontFamily: themeContract.font.narrative,
+  fontFamily: themeContract.font.display,
   fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-  fontWeight: 700,
+  fontWeight: 600,
   color: themeContract.text.primary,
   lineHeight: 1.1,
-  letterSpacing: "-0.02em",
+  letterSpacing: "-0.01em",
   margin: 0,
 });
 

@@ -42,12 +42,12 @@ export const dossierGrid = style({
 });
 
 export const subHeading = style({
-  fontFamily: themeContract.font.technical,
-  fontSize: "11px",
-  fontWeight: 500,
+  fontFamily: themeContract.font.display,
+  fontSize: "14px",
+  fontWeight: 600,
   textTransform: "uppercase",
-  letterSpacing: "0.12em",
-  color: themeContract.text.muted,
+  letterSpacing: "0.08em",
+  color: themeContract.text.primary,
   margin: "0 0 16px 0",
   paddingBottom: "8px",
   borderBottom: `1px solid ${themeContract.accent.slate}`,
