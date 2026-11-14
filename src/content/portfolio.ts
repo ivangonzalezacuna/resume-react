@@ -5,8 +5,8 @@ const portfolio = {
     location: "Leipzig, Germany",
     summary:
       "Software Engineer with 6+ years building the tools and platforms that engineering " +
-      "teams depend on. Specialised in platform engineering and developer experience — " +
-      "Go backends, Kubernetes infrastructure, CI/CD workflows, and internal tooling. " +
+      "teams depend on. Specialized in platform engineering and developer experience, " +
+      "such as Go backends, Kubernetes infrastructure, CI/CD workflows, and internal tooling. " +
       "Track record of shipping production systems that reduce friction, accelerate delivery, " +
       "and raise the engineering floor for the teams around me, owning solutions end to end " +
       "from design through production operations.",
@@ -23,13 +23,14 @@ const portfolio = {
   experience: [
     {
       company: "Upvest",
-      location: "Berlin, Germany (remote)",
+      location: "Berlin, Germany · remote",
       duration: "Jan 2026 – Present",
       roles: [
         {
-          title: "Software Engineer — Engineering Enablement",
+          title: "Software Engineer · Engineering Enablement",
           duration: "Jan 2026 – Present",
           description: [
+            "Owned the migration of our self-hosted GitHub Actions runners from long-lived to ephemeral, automating vulnerability fixes and cutting costs by 50%+ while keeping them as fast and reliable as before.",
             "Implemented feature-flag infrastructure enabling safe, incremental rollout of new capabilities, reducing incident mitigation time from hours to ~10 minutes when a flagged feature needs to be rolled back.",
             "Built the infrastructure and tooling to make load testing a standard part of the developer workflow.",
             "Integrated Claude Code into the daily development workflow, accelerating problem-solving and delivery.",
@@ -47,7 +48,7 @@ const portfolio = {
     },
     {
       company: "Spreadgroup",
-      location: "Leipzig, Germany (hybrid)",
+      location: "Leipzig, Germany · hybrid",
       duration: "Dec 2021 – Dec 2025",
       roles: [
         {
@@ -87,7 +88,7 @@ const portfolio = {
       duration: "Feb 2020 – Nov 2021",
       roles: [
         {
-          title: "Software Developer — Research & Development",
+          title: "Software Developer · Research & Development",
           duration: "Feb 2020 – Nov 2021",
           description: [
             "Migrated internal applications to hexagonal architecture in Go, improving modularity, testability, and maintainability.",
@@ -99,7 +100,7 @@ const portfolio = {
     },
     {
       company: "Muutech Monitoring Solutions",
-      location: "Vigo, Spain",
+      location: "Nigrán, Spain",
       duration: "Jun 2019 – Jul 2019",
       roles: [
         {
@@ -154,7 +155,7 @@ const portfolio = {
         "Installable PWA with offline support for viewing dashboards and historical snapshots",
         "Leveraged Claude to assist with architecture decisions, implementation, and iterative refinement",
       ],
-      technologies: ["TypeScript", "Vite", "SQLite", "Chart.js", "Claude Code"],
+      technologies: ["TypeScript", "Vite", "SQLite", "ECharts", "Claude Code"],
       url: "https://github.com/ivangonzalezacuna/wealth-tracker",
     },
     {
@@ -183,14 +184,11 @@ const portfolio = {
     },
     {
       category: "Platform & DX",
-      technologies: [
-        "Kubernetes",
-        "Backstage",
-        "ArgoCD",
-        "Docker",
-        "Linux",
-        "Vault",
-      ],
+      technologies: ["Kubernetes", "Backstage", "Docker", "Linux", "Vault"],
+    },
+    {
+      category: "CI/CD & IaC",
+      technologies: ["GitHub Actions", "ArgoCD", "Terraform"],
     },
     {
       category: "Observability",
@@ -214,18 +212,15 @@ const portfolio = {
 
   languages: [
     { language: "Spanish", proficiency: "Native" },
-    {
-      language: "English",
-      proficiency: "C1 — Professional working proficiency",
-    },
-    { language: "German", proficiency: "B2 — Upper intermediate" },
+    { language: "English", proficiency: "C1" },
+    { language: "German", proficiency: "B2" },
   ],
 
   education: [
     {
       college: "University of Vigo",
       location: "Vigo, Spain",
-      degree: "B.Sc. Telecommunications Engineering — Telematics",
+      degree: "B.Sc. Telecommunications Engineering · Telematics",
       duration: "Aug 2016 – Jul 2020",
       description: [
         "Specialised in Telematics, focusing on Internet communication protocols, distributed systems, and low-level programming.",
@@ -234,9 +229,9 @@ const portfolio = {
       technologies: ["Java", "C"],
     },
     {
-      college: "Oulu University of Applied Sciences",
+      college: "Oulu UAS",
       location: "Oulu, Finland",
-      degree: "Software Development — Erasmus+ Exchange",
+      degree: "Software Development · Erasmus+ Exchange",
       duration: "Aug 2019 – Dec 2019",
       description: [
         "Semester abroad funded by an Erasmus+ scholarship, focused on mobile and web application development.",
