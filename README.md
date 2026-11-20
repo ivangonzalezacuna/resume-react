@@ -15,6 +15,10 @@ Personal portfolio and resume site built with React 19 and TypeScript, hosted on
 - **framer-motion** — animations and transitions
 - **Netlify** — hosting and continuous deployment
 
+Type-checking and builds use the native TypeScript 7 compiler (`tsc`). ESLint
+still uses the TypeScript 6 compiler API via `@typescript/typescript6`, aliased
+as `typescript` until `typescript-eslint` supports running without it.
+
 ## Run locally
 
 Clone the repo, install dependencies, then start the dev server:
