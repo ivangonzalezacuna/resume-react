@@ -50,3 +50,6 @@ yarn preview
 - PWA-ready — web app manifest and full favicon set
 - Downloadable CV (`/pdf/CV_IvanGonzalezAcuna.pdf`)
 - Responsive layout with smooth scroll navigation
+- The header and footer logos return to the top without adding a fragment.
+  Browser history returns to the top for fragment-free URLs and keeps normal
+  navigation for section links.
