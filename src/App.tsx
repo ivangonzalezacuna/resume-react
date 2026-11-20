@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import "./styles/global.css";
 import { Navbar } from "./components/Navbar";
@@ -10,6 +11,32 @@ import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 
 const App = () => {
+  useEffect(() => {
+    let scrollReset: number | undefined;
+
+    const resetScrollForCleanUrl = () => {
+      window.clearTimeout(scrollReset);
+      if (window.location.hash) return;
+
+      // Wait until after the browser restores the history entry's scroll position.
+      scrollReset = window.setTimeout(() => {
+        if (!window.location.hash) {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        }
+      }, 0);
+    };
+
+    resetScrollForCleanUrl();
+    window.addEventListener("popstate", resetScrollForCleanUrl);
+    window.addEventListener("pageshow", resetScrollForCleanUrl);
+
+    return () => {
+      window.clearTimeout(scrollReset);
+      window.removeEventListener("popstate", resetScrollForCleanUrl);
+      window.removeEventListener("pageshow", resetScrollForCleanUrl);
+    };
+  }, []);
+
   return (
     <div>
       <a className="skip-nav" href="#main-content">
