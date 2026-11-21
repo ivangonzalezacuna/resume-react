@@ -2707,7 +2707,7 @@ __metadata:
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.72.2"
     vite: "npm:^8.3.8"
-    vite-plugin-sitemap: "npm:^0.8.2"
+    vite-plugin-sitemap: "npm:^0.11.0"
   languageName: unknown
   linkType: soft
 
@@ -3988,10 +3988,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-sitemap@npm:^0.8.2":
-  version: 0.8.2
-  resolution: "vite-plugin-sitemap@npm:0.8.2"
-  checksum: 10c0/d462fbf2f8099985f8768134481c6034e83d91fac2231a160581aca42922c743f7dbb7c8a7bfc11643401a59434ac874639c8c7ee7b3fc41a47cf23e815b555e
+"vite-plugin-sitemap@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "vite-plugin-sitemap@npm:0.11.0"
+  checksum: 10c0/6eb03e8db596f6d4a31fe8e0ad803a4e44535a1331263047ef77832002c11939c897f47ef6376f85f06bfc6cb9bbefc26ab7329435dae0998777b938ce746cf7
   languageName: node
   linkType: hard
 
