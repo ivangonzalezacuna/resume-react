@@ -46,7 +46,8 @@ yarn preview
 | `yarn format:check` | Check formatting with Prettier                |
 
 ESLint and Prettier run separately. Use `yarn format` for formatting fixes;
-`yarn check` runs both checks.
+`yarn check` runs both checks. ESLint uses type-aware rules for TypeScript
+files in `src`.
 
 ## Features
 
