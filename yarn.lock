@@ -2119,11 +2119,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^14.12.0":
-  version: 14.12.0
-  resolution: "framer-motion@npm:14.12.0"
+"framer-motion@npm:^14.14.0":
+  version: 14.14.0
+  resolution: "framer-motion@npm:14.14.0"
   dependencies:
-    motion-dom: "npm:14.12.0"
+    motion-dom: "npm:14.14.0"
     motion-utils: "npm:14.7.0"
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -2137,7 +2137,7 @@ __metadata:
       optional: true
     remix:
       optional: true
-  checksum: 10c0/ee971f8000721c29404331e47ca01ecb3a800d15f111604c13f4f54e1dd9f973f5a00ec6fbcb438ca36b1eb92566a346dd9e633af7f817bef852553364abf9c4
+  checksum: 10c0/405c7ac033bcc308a2444f54526cfc100b2a4373db66ec6d0da5b97c799802490c72a4623d1929a52642470ce6b5c451a1f15806d8bb8c9498a2e5b3d88825e3
   languageName: node
   linkType: hard
 
@@ -2698,7 +2698,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.5.7"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.1.1"
-    framer-motion: "npm:^14.12.0"
+    framer-motion: "npm:^14.14.0"
     globals: "npm:^17.13.0"
     prettier: "npm:^3.10.1"
     react: "npm:^19.3.1"
@@ -3013,12 +3013,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"motion-dom@npm:14.12.0":
-  version: 14.12.0
-  resolution: "motion-dom@npm:14.12.0"
+"motion-dom@npm:14.14.0":
+  version: 14.14.0
+  resolution: "motion-dom@npm:14.14.0"
   dependencies:
     motion-utils: "npm:14.7.0"
-  checksum: 10c0/f1266899afe5e1fb87d273db2236ffac7fa7915b7fe0e31bd8dc284d3e9127d4fa201a610568afa7ef4f4e5f073ce239a5ef0b20490fc8dbfa6e4edb19b6f145
+  checksum: 10c0/8a320425f280d2b413bc4da3b161da30d192180e5b367c4379e17eccdb6070089c71ab794267f073ff4dbeea31b75dfdbfd45d44d9888865fc0b0d22d3ec13c5
   languageName: node
   linkType: hard
 
