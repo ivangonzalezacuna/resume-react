@@ -33,15 +33,20 @@ yarn preview
 
 ## Scripts
 
-| Script          | Description                                   |
-| --------------- | --------------------------------------------- |
-| `yarn dev`      | Start the Vite dev server                     |
-| `yarn build`    | Type-check and build for production           |
-| `yarn preview`  | Serve the production build locally            |
-| `yarn check`    | Type-check, lint, and format-check (no build) |
-| `yarn ci`       | Full gate — `check` plus a production build   |
-| `yarn lint:fix` | Auto-fix ESLint issues                        |
-| `yarn format`   | Auto-format with Prettier                     |
+| Script              | Description                                   |
+| ------------------- | --------------------------------------------- |
+| `yarn dev`          | Start the Vite dev server                     |
+| `yarn build`        | Type-check and build for production           |
+| `yarn preview`      | Serve the production build locally            |
+| `yarn check`        | Type-check, lint, and format-check (no build) |
+| `yarn ci`           | Full gate — `check` plus a production build   |
+| `yarn lint`         | Run ESLint                                    |
+| `yarn lint:fix`     | Auto-fix ESLint issues                        |
+| `yarn format`       | Auto-format with Prettier                     |
+| `yarn format:check` | Check formatting with Prettier                |
+
+ESLint and Prettier run separately. Use `yarn format` for formatting fixes;
+`yarn check` runs both checks.
 
 ## Features
 
