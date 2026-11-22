@@ -7,7 +7,7 @@ import prettierConfig from "eslint-config-prettier/flat";
 import globals from "globals";
 
 export default defineConfig(
-  { ignores: ["node_modules/**", "dist/**", "build/**", "eslint.config.js"] },
+  { ignores: ["dist/**", "build/**"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -28,9 +28,6 @@ export default defineConfig(
     },
     rules: {
       "no-console": "warn",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "react/jsx-one-expression-per-line": "off",
-      "no-use-before-define": "off",
     },
   },
 );

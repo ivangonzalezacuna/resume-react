@@ -20,7 +20,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "yarn typecheck && yarn lint && yarn format:check",
-    "ci": "yarn check && yarn build"
+    "ci": "yarn check && vite build"
   },
   "engines": {
     "node": ">=24"
