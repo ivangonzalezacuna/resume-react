@@ -3,7 +3,6 @@ import tseslint from "typescript-eslint";
 import reactPlugin from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import prettierConfig from "eslint-config-prettier/flat";
-import prettierPlugin from "eslint-plugin-prettier";
 import globals from "globals";
 
 export default tseslint.config(
@@ -15,7 +14,6 @@ export default tseslint.config(
   reactHooks.configs.flat["recommended-latest"],
   prettierConfig,
   {
-    plugins: { prettier: prettierPlugin },
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
     },
@@ -25,7 +23,6 @@ export default tseslint.config(
     rules: {
       "no-console": "warn",
       quotes: ["error", "double"],
-      "prettier/prettier": "error",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "react/jsx-one-expression-per-line": "off",
       "no-use-before-define": "off",
